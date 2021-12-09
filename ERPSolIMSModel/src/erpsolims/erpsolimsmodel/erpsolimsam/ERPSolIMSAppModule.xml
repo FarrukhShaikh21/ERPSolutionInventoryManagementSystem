@@ -13,6 +13,9 @@
         ResId="erpsolims.erpsolimsmodel.erpsolimsam.ERPSolIMSAppModule_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <ViewUsage
+    Name="InReceivedItemShelvesView1"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InReceivedItemShelvesView"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="erpsolims.erpsolimsmodel.ERPSolIMSModelBundle"/>

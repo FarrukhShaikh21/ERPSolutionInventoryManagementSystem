@@ -55,7 +55,7 @@
     Name="ReceivingDate"
     ColumnName="RECEIVING_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="IN_RECEIVED_ITEMS"/>
   <Attribute
@@ -86,7 +86,7 @@
     Name="ChallanNoDate"
     ColumnName="CHALLAN_NO_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="IN_RECEIVED_ITEMS"/>
   <Attribute
@@ -416,7 +416,7 @@
     Name="MigratedDate"
     ColumnName="MIGRATED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="IN_RECEIVED_ITEMS"/>
   <Attribute
@@ -436,7 +436,7 @@
     IsNotNull="true"
     ColumnName="RNOTESEQ"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="IN_RECEIVED_ITEMS"
     PrimaryKey="true"/>
