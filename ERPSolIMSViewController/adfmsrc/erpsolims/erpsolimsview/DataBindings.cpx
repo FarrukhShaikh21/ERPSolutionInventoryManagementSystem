@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.3.10.47" id="DataBindings"
+             SeparateXMLFiles="false" Package="erpsolims.erpsolimsview" ClientType="Generic">
+  <pageMap>
+    <page path="/IN_0004.jsf" usageId="erpsolims_erpsolimsview_IN_0004PageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="erpsolims_erpsolimsview_IN_0004PageDef" path="erpsolims.erpsolimsview.pageDefs.IN_0004PageDef"/>
+  </pageDefinitionUsages>
+</Application>

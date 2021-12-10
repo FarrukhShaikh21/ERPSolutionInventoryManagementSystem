@@ -9,7 +9,13 @@
   DBObjectType="table"
   DBObjectName="IN_RECEIVED_ITEMS_LINES"
   AliasName="InReceivedItemsLines"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsLinesImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Access|DML"/>
+    <Attr Name="_superClass" Value="erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsEntityImpl"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="Storeid"
     IsNotNull="true"
