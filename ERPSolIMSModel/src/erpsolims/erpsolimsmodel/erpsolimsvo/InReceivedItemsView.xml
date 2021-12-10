@@ -110,7 +110,8 @@
     PrecisionRule="true"
     EntityAttrName="ModifiedDate"
     EntityUsage="InReceivedItems"
-    AliasName="MODIFIED_DATE"/>
+    AliasName="MODIFIED_DATE"
+    IsUpdateable="while_insert"/>
   <ViewAttribute
     Name="RefNo"
     PrecisionRule="true"
@@ -254,5 +255,11 @@
     Name="InReceivedItemsLinesView"
     ViewLink="erpsolims.erpsolimsmodel.erpsolimsvo.FkInRecItemLinRnoteseqLink"
     Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AllStoresView"
+    ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.AllStoresInReceivedItemsStoreIdLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
     IsUpdateable="false"/>
 </ViewObject>
