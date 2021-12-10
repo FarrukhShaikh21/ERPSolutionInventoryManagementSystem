@@ -64,6 +64,7 @@ public class InReceivedItemsImpl extends ERPSolGlobalsEntityImpl {
         MigratedDate,
         LcType,
         Rnoteseq,
+        txtStoreName,
         InReceivedItemsLines,
         AllStores;
         private static AttributesEnum[] vals = null;
@@ -128,6 +129,7 @@ public class InReceivedItemsImpl extends ERPSolGlobalsEntityImpl {
     public static final int MIGRATEDDATE = AttributesEnum.MigratedDate.index();
     public static final int LCTYPE = AttributesEnum.LcType.index();
     public static final int RNOTESEQ = AttributesEnum.Rnoteseq.index();
+    public static final int TXTSTORENAME = AttributesEnum.txtStoreName.index();
     public static final int INRECEIVEDITEMSLINES = AttributesEnum.InReceivedItemsLines.index();
     public static final int ALLSTORES = AttributesEnum.AllStores.index();
 
@@ -754,6 +756,22 @@ public class InReceivedItemsImpl extends ERPSolGlobalsEntityImpl {
     }
 
     /**
+     * Gets the attribute value for txtStoreName, using the alias name txtStoreName.
+     * @return the value of txtStoreName
+     */
+    public String gettxtStoreName() {
+        return (String) getAttributeInternal(TXTSTORENAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtStoreName.
+     * @param value value to set the txtStoreName
+     */
+    public void settxtStoreName(String value) {
+        setAttributeInternal(TXTSTORENAME, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getInReceivedItemsLines() {
@@ -818,6 +836,14 @@ public class InReceivedItemsImpl extends ERPSolGlobalsEntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
+        if (operation==DML_INSERT) {
+           String pkValue=" IN_RECEIVED_ITEMS_ID('"+ERPSolGlobClassModel.doGetUserCompanyCode()+"','"+ERPSolGlobClassModel.doGetUserLocationCode()+"','B',TO_DATE('"+getReceivingDate()+"','YYYY-MM-DD'))";
+           System.out.println(pkValue + "pk value");
+           String result= ERPSolGlobClassModel.doGetERPSolPrimaryKeyValueModel(getDBTransaction(), pkValue, "dual", null, null);
+           populateAttributeAsChanged(RNOTENO, result);
+//           populateAttributeAsChanged(DOCTYPEID, getReceiptMode().equals("C")?"SRCT":"SRBT");
+
+        }        
         super.doDML(operation, e);
     }
 }

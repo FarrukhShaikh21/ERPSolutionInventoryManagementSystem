@@ -450,6 +450,21 @@
     TableName="IN_RECEIVED_ITEMS"
     PrimaryKey="true"
     IsNotNull="true"/>
+  <Attribute
+    Name="txtStoreName"
+    Precision="80"
+    ColumnName="TXT_STORE_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="IN_RECEIVED_ITEMS">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[AllStores?.StoreName]]></TransientExpression>
+    <Dependencies>
+      <Item
+        Value="Storeid"/>
+    </Dependencies>
+  </Attribute>
   <AccessorAttribute
     Name="InReceivedItemsLines"
     Association="erpsolims.erpsolimsmodel.erpsolimseo.FkInRecItemLinRnoteseqAssoc"

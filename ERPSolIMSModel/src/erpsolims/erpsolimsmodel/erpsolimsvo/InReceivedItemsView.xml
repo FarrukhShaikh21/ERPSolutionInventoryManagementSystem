@@ -13,6 +13,56 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="AccAllStoresView"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllStoresView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccInReceivingDocTypesView"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InReceivingDocTypesView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LovtxtStoreName"
+    ListVOName="AccAllStoresView"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtStoreName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Storeid"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="StoreName"/>
+      <Item Value="Storeid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="StoreName"/>
+      <Item Value="Storeid"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovRecvdoctypeid"
+    ListVOName="AccInReceivingDocTypesView"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Recvdoctypeid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Recvdoctypeid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="InReceivedItems"
     Entity="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItems"/>
@@ -38,7 +88,15 @@
     PrecisionRule="true"
     EntityAttrName="Recvdoctypeid"
     EntityUsage="InReceivedItems"
-    AliasName="RECVDOCTYPEID"/>
+    AliasName="RECVDOCTYPEID"
+    LOVName="LovRecvdoctypeid">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ReceivingDate"
     PrecisionRule="true"
@@ -251,6 +309,20 @@
     EntityAttrName="Rnoteseq"
     EntityUsage="InReceivedItems"
     AliasName="RNOTESEQ"/>
+  <ViewAttribute
+    Name="txtStoreName"
+    PrecisionRule="true"
+    EntityAttrName="txtStoreName"
+    EntityUsage="InReceivedItems"
+    AliasName="TXT_STORE_NAME"
+    LOVName="LovtxtStoreName">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="InReceivedItemsLinesView"
     ViewLink="erpsolims.erpsolimsmodel.erpsolimsvo.FkInRecItemLinRnoteseqLink"
