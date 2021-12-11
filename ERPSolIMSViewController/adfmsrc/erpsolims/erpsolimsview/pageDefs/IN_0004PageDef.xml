@@ -5,6 +5,19 @@
   <executables>
     <variableIterator id="variables"/>
     <page path="erpsoltemp.erpsoltempview.pageDefs.ERPSolutionTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <iterator Binds="InReceivedItemsCRUD" RangeSize="25" DataControl="ERPSolIMSAppModuleDataControl"
+              id="InReceivedItemsCRUDIterator"/>
   </executables>
-  <bindings/>
+  <bindings>
+    <attributeValues IterBinding="InReceivedItemsCRUDIterator" id="Rnoteno">
+      <AttrNames>
+        <Item Value="Rnoteno"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InReceivedItemsCRUDIterator" id="Posted">
+      <AttrNames>
+        <Item Value="Posted"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
 </pageDefinition>

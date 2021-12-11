@@ -14,8 +14,20 @@
     </SchemaBasedProperties>
   </Properties>
   <ViewUsage
-    Name="InReceivedItemShelvesView1"
-    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InReceivedItemShelvesView"/>
+    Name="InReceivedItemsCRUD"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InReceivedItemsView"/>
+  <ViewUsage
+    Name="InReceivedItemsLinesDetCRUD"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InReceivedItemsLinesView"/>
+  <ViewUsage
+    Name="AllStoresAutoSuggestRO"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllStoresView"/>
+  <ViewLinkUsage
+    Name="FkInRecItemLinRnoteseqLink1"
+    ViewLinkObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.FkInRecItemLinRnoteseqLink"
+    SrcViewUsageName="erpsolims.erpsolimsmodel.erpsolimsam.ERPSolIMSAppModule.InReceivedItemsCRUD"
+    DstViewUsageName="erpsolims.erpsolimsmodel.erpsolimsam.ERPSolIMSAppModule.InReceivedItemsLinesDetCRUD"
+    Reversed="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="erpsolims.erpsolimsmodel.ERPSolIMSModelBundle"/>
