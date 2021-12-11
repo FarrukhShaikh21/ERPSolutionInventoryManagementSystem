@@ -146,7 +146,7 @@
                         <af:button actionListener="#{bindings.Delete.execute}" text="Delete Order"
                                    disabled="#{bindings.Posted.inputValue=='Y'}" id="b2"
                                    icon="#{resource['images:imgDelete.png']}" iconPosition="top" accessKey="l"/>
-                        <af:button actionListener="#{bindings.CreateInsert.execute}" text="New Order"
+                        <af:button actionListener="#{bindings.CreateInsert.execute}" text="New GRN"
                                    disabled="#{pageFlowScope.ERPSolTempBean.LERPSolAllowAdd=='N'}" id="b1"
                                    icon="#{resource['images:imgAdd.png']}" iconPosition="top" accessKey="w"/>
                         <af:button actionListener="#{bindings.Rollback.execute}" text="Undo Changes" immediate="true"
