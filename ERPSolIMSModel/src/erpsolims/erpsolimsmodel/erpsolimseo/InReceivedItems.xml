@@ -465,7 +465,9 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_RECEIVED_ITEMS">
+    TableName="IN_RECEIVED_ITEMS"
+    IsPersistent="false"
+    IsQueriable="false">
     <TransientExpression
       trustMode="untrusted"><![CDATA[AllStores?.StoreName]]></TransientExpression>
     <Dependencies>

@@ -321,7 +321,9 @@
     EntityAttrName="txtStoreName"
     EntityUsage="InReceivedItems"
     AliasName="TXT_STORE_NAME"
-    LOVName="LovtxtStoreName">
+    LOVName="LovtxtStoreName"
+    IsQueriable="false"
+    IsPersistent="false">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

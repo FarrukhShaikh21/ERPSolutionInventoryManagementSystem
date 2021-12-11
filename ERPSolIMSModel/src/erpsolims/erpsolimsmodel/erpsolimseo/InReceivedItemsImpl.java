@@ -812,7 +812,7 @@ public class InReceivedItemsImpl extends ERPSolGlobalsEntityImpl {
         setLocationid(ERPSolGlobClassModel.doGetUserLocationCode());
         setStoreid(ERPSolGlobClassModel.doGetUserStoreCode());
         setERPSolPKColumnName("Rnoteseq");
-        setERPSolPKSeqName("IN_RECEIVED_ITEMS");
+        setERPSolPKSeqName("IN_RECEIVED_ITEMS_SEQ");
         super.create(attributeList);
     }
 
