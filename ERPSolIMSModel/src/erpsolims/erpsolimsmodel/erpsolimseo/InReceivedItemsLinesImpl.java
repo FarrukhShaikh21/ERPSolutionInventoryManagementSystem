@@ -81,6 +81,7 @@ public class InReceivedItemsLinesImpl extends ERPSolGlobalsEntityImpl {
         DunitCostAfterConversion,
         Rnotedetailseq,
         Rnoteseq,
+        txtModelNo,
         InReceivedItems,
         InItems;
         private static AttributesEnum[] vals = null;
@@ -165,6 +166,7 @@ public class InReceivedItemsLinesImpl extends ERPSolGlobalsEntityImpl {
     public static final int DUNITCOSTAFTERCONVERSION = AttributesEnum.DunitCostAfterConversion.index();
     public static final int RNOTEDETAILSEQ = AttributesEnum.Rnotedetailseq.index();
     public static final int RNOTESEQ = AttributesEnum.Rnoteseq.index();
+    public static final int TXTMODELNO = AttributesEnum.txtModelNo.index();
     public static final int INRECEIVEDITEMS = AttributesEnum.InReceivedItems.index();
     public static final int INITEMS = AttributesEnum.InItems.index();
 
@@ -1108,6 +1110,22 @@ public class InReceivedItemsLinesImpl extends ERPSolGlobalsEntityImpl {
      */
     public void setRnoteseq(Integer value) {
         setAttributeInternal(RNOTESEQ, value);
+    }
+
+    /**
+     * Gets the attribute value for txtModelNo, using the alias name txtModelNo.
+     * @return the value of txtModelNo
+     */
+    public String gettxtModelNo() {
+        return (String) getAttributeInternal(TXTMODELNO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtModelNo.
+     * @param value value to set the txtModelNo
+     */
+    public void settxtModelNo(String value) {
+        setAttributeInternal(TXTMODELNO, value);
     }
 
     /**

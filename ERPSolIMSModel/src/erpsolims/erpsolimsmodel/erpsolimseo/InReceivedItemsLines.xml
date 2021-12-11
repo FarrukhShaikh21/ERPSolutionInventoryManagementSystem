@@ -575,6 +575,27 @@
     Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="IN_RECEIVED_ITEMS_LINES"/>
+  <Attribute
+    Name="txtModelNo"
+    Precision="80"
+    ColumnName="TXT_MODEL_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="IN_RECEIVED_ITEMS_LINES"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[InItems?.ModelNo]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsLines.txtModelNo_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="InReceivedItems"
     Association="erpsolims.erpsolimsmodel.erpsolimseo.FkInRecItemLinRnoteseqAssoc"
@@ -632,4 +653,8 @@
       <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsLines.RecvUomsid"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolims.erpsolimsmodel.ERPSolIMSModelBundle"/>
+  </ResourceBundle>
 </Entity>

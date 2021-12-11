@@ -371,6 +371,14 @@
     EntityAttrName="Rnoteseq"
     EntityUsage="InReceivedItemsLines"
     AliasName="RNOTESEQ"/>
+  <ViewAttribute
+    Name="txtModelNo"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtModelNo"
+    EntityUsage="InReceivedItemsLines"
+    AliasName="TXT_MODEL_NO"/>
   <ViewLinkAccessor
     Name="InItemsView"
     ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.InItemsInReceiveItemsLinesItemRefIdLink"
