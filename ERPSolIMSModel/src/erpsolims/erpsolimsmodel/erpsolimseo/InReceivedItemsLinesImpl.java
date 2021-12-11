@@ -9,6 +9,7 @@ import java.sql.Timestamp;
 
 import oracle.jbo.AttributeList;
 import oracle.jbo.Key;
+import oracle.jbo.domain.Date;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.EntityImpl;
 import oracle.jbo.server.TransactionEvent;
@@ -428,15 +429,15 @@ public class InReceivedItemsLinesImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for CreatedDate, using the alias name CreatedDate.
      * @return the value of CreatedDate
      */
-    public Timestamp getCreatedDate() {
-        return (Timestamp) getAttributeInternal(CREATEDDATE);
+    public Date getCreatedDate() {
+        return (Date) getAttributeInternal(CREATEDDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedDate.
      * @param value value to set the CreatedDate
      */
-    public void setCreatedDate(Timestamp value) {
+    public void setCreatedDate(Date value) {
         setAttributeInternal(CREATEDDATE, value);
     }
 
@@ -460,15 +461,15 @@ public class InReceivedItemsLinesImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for ModifiedDate, using the alias name ModifiedDate.
      * @return the value of ModifiedDate
      */
-    public Timestamp getModifiedDate() {
-        return (Timestamp) getAttributeInternal(MODIFIEDDATE);
+    public Date getModifiedDate() {
+        return (Date) getAttributeInternal(MODIFIEDDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ModifiedDate.
      * @param value value to set the ModifiedDate
      */
-    public void setModifiedDate(Timestamp value) {
+    public void setModifiedDate(Date value) {
         setAttributeInternal(MODIFIEDDATE, value);
     }
 
@@ -716,15 +717,15 @@ public class InReceivedItemsLinesImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for MpostedDate, using the alias name MpostedDate.
      * @return the value of MpostedDate
      */
-    public Timestamp getMpostedDate() {
-        return (Timestamp) getAttributeInternal(MPOSTEDDATE);
+    public Date getMpostedDate() {
+        return (Date) getAttributeInternal(MPOSTEDDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for MpostedDate.
      * @param value value to set the MpostedDate
      */
-    public void setMpostedDate(Timestamp value) {
+    public void setMpostedDate(Date value) {
         setAttributeInternal(MPOSTEDDATE, value);
     }
 

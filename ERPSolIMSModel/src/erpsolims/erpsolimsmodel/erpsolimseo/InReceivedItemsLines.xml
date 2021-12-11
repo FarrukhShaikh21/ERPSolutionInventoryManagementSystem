@@ -189,7 +189,7 @@
     Name="CreatedDate"
     ColumnName="CREATED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="IN_RECEIVED_ITEMS_LINES"/>
   <Attribute
@@ -208,7 +208,7 @@
     Name="ModifiedDate"
     ColumnName="MODIFIED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="IN_RECEIVED_ITEMS_LINES"/>
   <Attribute
@@ -355,7 +355,7 @@
     Name="MpostedDate"
     ColumnName="MPOSTED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="IN_RECEIVED_ITEMS_LINES"/>
   <Attribute
@@ -582,7 +582,6 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_RECEIVED_ITEMS_LINES"
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
