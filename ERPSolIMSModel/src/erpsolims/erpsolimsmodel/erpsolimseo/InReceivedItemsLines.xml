@@ -18,46 +18,39 @@
   </DesignTime>
   <Attribute
     Name="Storeid"
-    IsNotNull="true"
     Precision="15"
     ColumnName="STOREID"
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_RECEIVED_ITEMS_LINES"
-    PrimaryKey="true">
+    TableName="IN_RECEIVED_ITEMS_LINES">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
   </Attribute>
   <Attribute
     Name="Rnoteno"
-    IsNotNull="true"
     Precision="18"
     ColumnName="RNOTENO"
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_RECEIVED_ITEMS_LINES"
-    PrimaryKey="true">
+    TableName="IN_RECEIVED_ITEMS_LINES">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="18"/>
     </DesignTime>
   </Attribute>
   <Attribute
     Name="Lineno"
-    IsNotNull="true"
     Precision="4"
     Scale="0"
     ColumnName="LINENO"
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="IN_RECEIVED_ITEMS_LINES"
-    PrimaryKey="true"/>
+    TableName="IN_RECEIVED_ITEMS_LINES"/>
   <Attribute
     Name="RecvUomsid"
-    IsNotNull="true"
     Precision="15"
     ColumnName="RECV_UOMSID"
     SQLType="VARCHAR"
@@ -70,7 +63,6 @@
   </Attribute>
   <Attribute
     Name="Itemid"
-    IsNotNull="true"
     Precision="15"
     ColumnName="ITEMID"
     SQLType="VARCHAR"
@@ -83,7 +75,6 @@
   </Attribute>
   <Attribute
     Name="Siclassid"
-    IsNotNull="true"
     Precision="15"
     ColumnName="SICLASSID"
     SQLType="VARCHAR"
@@ -108,7 +99,6 @@
   </Attribute>
   <Attribute
     Name="Sigroupid"
-    IsNotNull="true"
     Precision="15"
     ColumnName="SIGROUPID"
     SQLType="VARCHAR"
@@ -574,14 +564,15 @@
     Name="Rnotedetailseq"
     ColumnName="RNOTEDETAILSEQ"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="IN_RECEIVED_ITEMS_LINES"/>
+    TableName="IN_RECEIVED_ITEMS_LINES"
+    PrimaryKey="true"/>
   <Attribute
     Name="Rnoteseq"
     ColumnName="RNOTESEQ"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="IN_RECEIVED_ITEMS_LINES"/>
   <AccessorAttribute
@@ -598,9 +589,7 @@
       <Attr Name="_DBObjectName" Value="XPKIN_RECEIVED_ITEMS_LINES"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsLines.Storeid"/>
-      <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsLines.Rnoteno"/>
-      <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsLines.Lineno"/>
+      <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsLines.Rnotedetailseq"/>
     </AttrArray>
   </Key>
   <Key

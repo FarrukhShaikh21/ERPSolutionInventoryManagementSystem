@@ -212,6 +212,13 @@
       <Attr Name="_DisplaySize" Value="5"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="Rnotedetailseq"
+    ColumnName="RNOTEDETAILSEQ"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="IN_RECEIVED_ITEMS_SNO"/>
   <Key
     Name="XpkinReceivedItemsSno"
     PrimaryKey="true">

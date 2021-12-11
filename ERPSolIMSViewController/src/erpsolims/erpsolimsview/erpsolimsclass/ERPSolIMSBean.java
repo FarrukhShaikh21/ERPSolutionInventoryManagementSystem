@@ -189,9 +189,9 @@ public class ERPSolIMSBean {
         return ResultList;
         
     }   
-    public void doERPSolDialogConfirm(DialogEvent erpsolde) {
+    public void doERPSolGRNDialogConfirm(DialogEvent erpsolde) {
         if (erpsolde.getOutcome()==DialogEvent.Outcome.yes) {
-            OperationBinding binding = ERPSolGlobalViewBean.doIsERPSolGerOperationBinding("doSuperviseSaleOrder");
+            OperationBinding binding = ERPSolGlobalViewBean.doIsERPSolGerOperationBinding("doSuperviseGRN");
             binding.execute();
         }
     }

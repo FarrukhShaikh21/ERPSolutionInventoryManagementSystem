@@ -123,4 +123,10 @@
     EntityAttrName="CompanyCode"
     EntityUsage="InReceivedItemsSno"
     AliasName="COMPANY_CODE"/>
+  <ViewAttribute
+    Name="Rnotedetailseq"
+    PrecisionRule="true"
+    EntityAttrName="Rnotedetailseq"
+    EntityUsage="InReceivedItemsSno"
+    AliasName="RNOTEDETAILSEQ"/>
 </ViewObject>

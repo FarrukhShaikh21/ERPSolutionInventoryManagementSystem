@@ -7,6 +7,8 @@
     <page path="erpsoltemp.erpsoltempview.pageDefs.ERPSolutionTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
     <iterator Binds="InReceivedItemsCRUD" RangeSize="25" DataControl="ERPSolIMSAppModuleDataControl"
               id="InReceivedItemsCRUDIterator"/>
+    <iterator Binds="InReceivedItemsLinesDetCRUD" RangeSize="25" DataControl="ERPSolIMSAppModuleDataControl"
+              id="InReceivedItemsLinesDetCRUDIterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="InReceivedItemsCRUDIterator" id="Rnoteno">
@@ -19,5 +21,47 @@
         <Item Value="Posted"/>
       </AttrNames>
     </attributeValues>
+    <action IterBinding="InReceivedItemsCRUDIterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="InReceivedItemsCRUDIterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="InReceivedItemsCRUDIterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="InReceivedItemsCRUDIterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="ERPSolIMSAppModuleDataControl"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="ERPSolIMSAppModuleDataControl"/>
+    <methodAction id="doSuperviseGRN" RequiresUpdateModel="true" Action="invokeMethod" MethodName="doSuperviseGRN"
+                  IsViewObjectMethod="true" DataControl="ERPSolIMSAppModuleDataControl"
+                  InstanceName="data.ERPSolIMSAppModuleDataControl.InReceivedItemsCRUD"
+                  ReturnName="data.ERPSolIMSAppModuleDataControl.methodResults.doSuperviseGRN_ERPSolIMSAppModuleDataControl_InReceivedItemsCRUD_doSuperviseGRN_result"/>
+    <attributeValues IterBinding="InReceivedItemsCRUDIterator" id="ReceivingDate">
+      <AttrNames>
+        <Item Value="ReceivingDate"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues IterBinding="InReceivedItemsCRUDIterator" StaticList="false" Uses="LovtxtStoreName"
+                  id="txtStoreName"/>
+    <attributeValues IterBinding="InReceivedItemsCRUDIterator" id="Locationid">
+      <AttrNames>
+        <Item Value="Locationid"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="InReceivedItemsCRUDIterator" StaticList="false" Uses="LovRecvdoctypeid" id="Recvdoctypeid"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="InReceivedItemsCRUDIterator" id="RefNo">
+      <AttrNames>
+        <Item Value="RefNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InReceivedItemsCRUDIterator" id="Remarks">
+      <AttrNames>
+        <Item Value="Remarks"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="InReceivedItemsLinesDetCRUDIterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="InReceivedItemsLinesDetCRUDIterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

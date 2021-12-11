@@ -37,7 +37,8 @@ public class InReceivedItemsSnoImpl extends ERPSolGlobalsEntityImpl {
         ValidateFlag,
         Boxno,
         TempBoxNo,
-        CompanyCode;
+        CompanyCode,
+        Rnotedetailseq;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -60,6 +61,7 @@ public class InReceivedItemsSnoImpl extends ERPSolGlobalsEntityImpl {
             return vals;
         }
     }
+
     public static final int STOREID = AttributesEnum.Storeid.index();
     public static final int RNOTENO = AttributesEnum.Rnoteno.index();
     public static final int LINENO = AttributesEnum.Lineno.index();
@@ -77,11 +79,19 @@ public class InReceivedItemsSnoImpl extends ERPSolGlobalsEntityImpl {
     public static final int BOXNO = AttributesEnum.Boxno.index();
     public static final int TEMPBOXNO = AttributesEnum.TempBoxNo.index();
     public static final int COMPANYCODE = AttributesEnum.CompanyCode.index();
+    public static final int RNOTEDETAILSEQ = AttributesEnum.Rnotedetailseq.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public InReceivedItemsSnoImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsSno");
     }
 
     /**
@@ -357,6 +367,23 @@ public class InReceivedItemsSnoImpl extends ERPSolGlobalsEntityImpl {
     }
 
     /**
+     * Gets the attribute value for Rnotedetailseq, using the alias name Rnotedetailseq.
+     * @return the value of Rnotedetailseq
+     */
+    public BigDecimal getRnotedetailseq() {
+        return (BigDecimal) getAttributeInternal(RNOTEDETAILSEQ);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Rnotedetailseq.
+     * @param value value to set the Rnotedetailseq
+     */
+    public void setRnotedetailseq(BigDecimal value) {
+        setAttributeInternal(RNOTEDETAILSEQ, value);
+    }
+
+
+    /**
      * @param storeid key constituent
      * @param rnoteno key constituent
      * @param lineno key constituent
@@ -368,13 +395,6 @@ public class InReceivedItemsSnoImpl extends ERPSolGlobalsEntityImpl {
     public static Key createPrimaryKey(String storeid, String rnoteno, Integer lineno, String shelfid,
                                        BigDecimal recvItemSeqno) {
         return new Key(new Object[] { storeid, rnoteno, lineno, shelfid, recvItemSeqno });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsSno");
     }
 
     /**

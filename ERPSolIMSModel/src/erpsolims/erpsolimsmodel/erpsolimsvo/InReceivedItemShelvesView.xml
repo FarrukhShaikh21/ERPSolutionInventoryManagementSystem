@@ -80,4 +80,10 @@
     EntityAttrName="IssuedQty"
     EntityUsage="InReceivedItemShelves"
     AliasName="ISSUED_QTY"/>
+  <ViewAttribute
+    Name="Rnotedetailseq"
+    PrecisionRule="true"
+    EntityAttrName="Rnotedetailseq"
+    EntityUsage="InReceivedItemShelves"
+    AliasName="RNOTEDETAILSEQ"/>
 </ViewObject>

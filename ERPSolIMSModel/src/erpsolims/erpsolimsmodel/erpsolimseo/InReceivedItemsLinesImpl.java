@@ -103,6 +103,8 @@ public class InReceivedItemsLinesImpl extends ERPSolGlobalsEntityImpl {
             return vals;
         }
     }
+
+
     public static final int STOREID = AttributesEnum.Storeid.index();
     public static final int RNOTENO = AttributesEnum.Rnoteno.index();
     public static final int LINENO = AttributesEnum.Lineno.index();
@@ -168,6 +170,14 @@ public class InReceivedItemsLinesImpl extends ERPSolGlobalsEntityImpl {
      */
     public InReceivedItemsLinesImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsLines");
+    }
+
 
     /**
      * Gets the attribute value for Storeid, using the alias name Storeid.
@@ -1069,15 +1079,15 @@ public class InReceivedItemsLinesImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for Rnotedetailseq, using the alias name Rnotedetailseq.
      * @return the value of Rnotedetailseq
      */
-    public BigDecimal getRnotedetailseq() {
-        return (BigDecimal) getAttributeInternal(RNOTEDETAILSEQ);
+    public Integer getRnotedetailseq() {
+        return (Integer) getAttributeInternal(RNOTEDETAILSEQ);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Rnotedetailseq.
      * @param value value to set the Rnotedetailseq
      */
-    public void setRnotedetailseq(BigDecimal value) {
+    public void setRnotedetailseq(Integer value) {
         setAttributeInternal(RNOTEDETAILSEQ, value);
     }
 
@@ -1085,15 +1095,15 @@ public class InReceivedItemsLinesImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for Rnoteseq, using the alias name Rnoteseq.
      * @return the value of Rnoteseq
      */
-    public BigDecimal getRnoteseq() {
-        return (BigDecimal) getAttributeInternal(RNOTESEQ);
+    public Integer getRnoteseq() {
+        return (Integer) getAttributeInternal(RNOTESEQ);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Rnoteseq.
      * @param value value to set the Rnoteseq
      */
-    public void setRnoteseq(BigDecimal value) {
+    public void setRnoteseq(Integer value) {
         setAttributeInternal(RNOTESEQ, value);
     }
 
@@ -1111,22 +1121,14 @@ public class InReceivedItemsLinesImpl extends ERPSolGlobalsEntityImpl {
         setAttributeInternal(INRECEIVEDITEMS, value);
     }
 
+
     /**
-     * @param storeid key constituent
-     * @param rnoteno key constituent
-     * @param lineno key constituent
+     * @param rnotedetailseq key constituent
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(String storeid, String rnoteno, Integer lineno) {
-        return new Key(new Object[] { storeid, rnoteno, lineno });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsLines");
+    public static Key createPrimaryKey(Integer rnotedetailseq) {
+        return new Key(new Object[] { rnotedetailseq });
     }
 
     /**
@@ -1134,6 +1136,8 @@ public class InReceivedItemsLinesImpl extends ERPSolGlobalsEntityImpl {
      * @param attributeList list of attribute names/values to initialize the row
      */
     protected void create(AttributeList attributeList) {
+        setERPSolPKColumnName("Rnotedetailseq");
+        setERPSolPKSeqName("in_received_items_lines_seq");
         super.create(attributeList);
     }
 
