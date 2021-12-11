@@ -53,11 +53,31 @@
         <fixed-outcome>ExecuteWithParams</fixed-outcome>
       </outcome>
     </method-call>
+    <view id="ERPSolIMSMain">
+      <page>/ERPSolIMSMain.jsf</page>
+    </view>
+    <method-call id="doERPGotoIMSActivity">
+      <method>#{pageFlowScope.ERPSolTempBean.doGotoERPSolActivity}</method>
+    </method-call>
     <control-flow-rule id="__5">
       <from-activity-id>doERPSolIMSSessionGlobals</from-activity-id>
       <control-flow-case id="__6">
         <from-outcome>ERP-SOL-ACT-GOTO-MAIN</from-outcome>
         <to-activity-id>ExecuteTransactionMenuIMS</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__7">
+      <from-activity-id>doERPGotoIMSActivity</from-activity-id>
+      <control-flow-case id="__8">
+        <from-outcome>ERP-ACT-IN-0004</from-outcome>
+        <to-activity-id>IN_0004</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__9">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__10">
+        <from-outcome>ACTStartERPSolutionTaskFlow</from-outcome>
+        <to-activity-id>doERPGotoIMSActivity</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
   </task-flow-definition>
