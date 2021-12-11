@@ -1191,6 +1191,12 @@ public class InReceivedItemsLinesImpl extends ERPSolGlobalsEntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
+        if (operation==DML_INSERT) {
+            populateAttributeAsChanged(RNOTENO, getInReceivedItems().getAttribute("Rnoteno"));
+           populateAttributeAsChanged(RNOTENO, getInReceivedItems().getAttribute("Storeid"));
+//           populateAttributeAsChanged(RNOTENO, getInReceivedItems().getAttribute("Rnoteno"));
+//           populateAttributeAsChanged(RNOTENO, getInReceivedItems().getAttribute("Rnoteno"));
+       }
         super.doDML(operation, e);
     }
 }

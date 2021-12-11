@@ -838,7 +838,7 @@ public class InReceivedItemsImpl extends ERPSolGlobalsEntityImpl {
     protected void doDML(int operation, TransactionEvent e) {
         if (operation==DML_INSERT) {
            String pkValue=" IN_RECEIVED_ITEMS_ID('"+ERPSolGlobClassModel.doGetUserCompanyCode()+"','"+ERPSolGlobClassModel.doGetUserLocationCode()+"','B',TO_DATE('"+getReceivingDate()+"','YYYY-MM-DD'))";
-           System.out.println(pkValue + "pk value");
+           System.out.println(pkValue + "RNOTENO pk value");
            String result= ERPSolGlobClassModel.doGetERPSolPrimaryKeyValueModel(getDBTransaction(), pkValue, "dual", null, null);
            populateAttributeAsChanged(RNOTENO, result);
 //           populateAttributeAsChanged(DOCTYPEID, getReceiptMode().equals("C")?"SRCT":"SRBT");

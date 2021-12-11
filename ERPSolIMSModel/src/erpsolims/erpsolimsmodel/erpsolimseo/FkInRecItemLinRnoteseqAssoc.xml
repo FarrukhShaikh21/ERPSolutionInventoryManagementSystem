@@ -13,7 +13,10 @@
     Name="InReceivedItems"
     Cardinality="1"
     Source="true"
-    Owner="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItems">
+    Owner="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItems"
+    LockLevel="NONE"
+    CascadeDelete="true"
+    DeleteContainee="true">
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="InReceivedItems"/>
@@ -27,7 +30,8 @@
   <AssociationEnd
     Name="InReceivedItemsLines"
     Cardinality="-1"
-    Owner="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsLines">
+    Owner="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsLines"
+    HasOwner="true">
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="InReceivedItemsLines"/>

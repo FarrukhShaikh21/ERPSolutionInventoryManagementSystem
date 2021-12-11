@@ -625,6 +625,7 @@
       <Attr Name="_referencedKey" Value="PK_UNQ_IN_RECEIVED_ITEMS"/>
       <Attr Name="_isForeign" Value="true"/>
       <Attr Name="_DBObjectName" Value="FK_IN_REC_ITEM_LIN_RNOTESEQ"/>
+      <Attr Name="_isCascadeDelete" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsLines.Rnoteseq"/>
