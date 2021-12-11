@@ -1303,6 +1303,13 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="IN_ITEMS"/>
+  <AccessorAttribute
+    Name="InReceivedItemsLines"
+    Association="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemsInReceiveItemsLinesItemRefIdAssoc"
+    AssociationEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemsInReceiveItemsLinesItemRefIdAssoc.InReceivedItemsLines"
+    AssociationOtherEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemsInReceiveItemsLinesItemRefIdAssoc.InItems"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="UPkModelNo">
     <DesignTime>

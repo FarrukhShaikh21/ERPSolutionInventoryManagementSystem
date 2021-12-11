@@ -715,4 +715,9 @@
     EntityAttrName="ItemCost"
     EntityUsage="InItems"
     AliasName="ITEM_COST"/>
+  <ViewLinkAccessor
+    Name="InReceivedItemsLinesView"
+    ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.InItemsInReceiveItemsLinesItemRefIdLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>
