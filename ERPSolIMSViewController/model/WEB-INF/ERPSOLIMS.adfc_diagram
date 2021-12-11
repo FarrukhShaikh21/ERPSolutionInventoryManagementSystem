@@ -2,63 +2,8 @@
 <SDM>
    <OverallProperties
       id="OverallProperties1"/>
-   <MethodCall
-      id="MethodCall2">
-      <property
-         name="activityId">doERPSolIMSSessionGlobals</property>
-      <property
-         name="start">true</property>
-      <property
-         name="description">&lt;html>&lt;p>&lt;b>doERPSolIMSSessionGlobals&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
-      <property
-         name="exceptionHandler">false</property>
-      <property
-         name="y">109.49414</property>
-      <property
-         name="x">269.0</property>
-   </MethodCall>
    <View
-      id="View3">
-      <property
-         name="activityId">IN_0004</property>
-      <property
-         name="page">/IN_0004.jsf</property>
-      <property
-         name="description">&lt;html>&lt;p>&lt;b>IN_0004&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
-      <property
-         name="exceptionHandler">false</property>
-      <property
-         name="y">354.39648</property>
-      <property
-         name="x">426.5</property>
-   </View>
-   <TaskFlowReturn
-      id="TaskFlowReturn4">
-      <property
-         name="activityId">ERPSOL-RETURN-FROM-IMS</property>
-      <property
-         name="finish">true</property>
-      <property
-         name="description">&lt;html>&lt;p>&lt;b>ERPSOL-RETURN-FROM-IMS&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  ERPSOL-RETURN-FROM-IMS&lt;/p></property>
-      <property
-         name="exceptionHandler">false</property>
-      <property
-         name="y">52.24707</property>
-      <property
-         name="x">428.0</property>
-   </TaskFlowReturn>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase6"
-      from="MethodCall2"
-      to="View7">
-      <property
-         name="fromOutcome">ERP-SOL-ACT-GOTO-MAIN</property>
-      <property
-         name="sdm:polyPoints">B50,269.0,163.14355,185.18066,332.44824,T56</property>
-   </ControlFlowCase>
-   <View
-      id="View7">
+      id="View17">
       <property
          name="activityId">ERPSolIMSMain</property>
       <property
@@ -68,12 +13,94 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">386.79883</property>
+         name="y">190.79883</property>
       <property
-         name="x">181.68066</property>
+         name="x">511.68066</property>
    </View>
    <MethodCall
-      id="MethodCall8">
+      id="MethodCall19">
+      <property
+         name="activityId">ExecuteWithParamsTransactionIMS</property>
+      <property
+         name="start">false</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExecuteWithParamsTransactionIMS&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">194.44824</property>
+      <property
+         name="x">247.35156</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase20"
+      from="MethodCall19"
+      to="View17">
+      <property
+         name="fromOutcome">ERP-SOL-ACT-GOTO-MAIN</property>
+      <property
+         name="sdm:polyPoints">R50,288.35156,194.09766,470.68066,190.44824,L50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall21">
+      <property
+         name="activityId">doERPSolIMSSessionGlobals</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>doERPSolIMSSessionGlobals&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">52.844727</property>
+      <property
+         name="x">209.0</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase22"
+      from="MethodCall23"
+      to="MethodCall19">
+      <property
+         name="fromOutcome">ERP-SOL-ACT-GOTO-MAIN</property>
+      <property
+         name="sdm:polyPoints">R54,157.35156,149.59766,206.35156,194.09766,L50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall23">
+      <property
+         name="activityId">ExecuteWithParamsSetupIMS</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExecuteWithParamsSetupIMS&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">146.44824</property>
+      <property
+         name="x">116.35156</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase24"
+      from="MethodCall21"
+      to="MethodCall23">
+      <property
+         name="fromOutcome">ERP-SOL-ACT-GOTO-MAIN</property>
+      <property
+         name="sdm:polyPoints">L50,168.0,52.49414,157.35156,142.59766,R46</property>
+   </ControlFlowCase>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule26">
+      <property
+         name="activityId">*</property>
+      <property
+         name="y">-77.70117</property>
+      <property
+         name="x">667.0</property>
+   </WildcardControlFlowRule>
+   <MethodCall
+      id="MethodCall27">
       <property
          name="activityId">doERPGotoIMSActivity</property>
       <property
@@ -81,60 +108,77 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">134.5459</property>
+         name="y">85.19531</property>
       <property
-         name="x">542.0</property>
+         name="x">679.0</property>
    </MethodCall>
    <ControlFlowCase
       islink="true"
-      id="ControlFlowCase9"
-      from="MethodCall8"
-      to="View3">
-      <property
-         name="fromOutcome">ERP-ACT-IN-0004</property>
-      <property
-         name="sdm:polyPoints">B50,542.0,188.19531,426.5,300.0459,T50</property>
-   </ControlFlowCase>
-   <WildcardControlFlowRule
-      id="WildcardControlFlowRule10">
-      <property
-         name="activityId">*</property>
-      <property
-         name="y">12.298828</property>
-      <property
-         name="x">663.0</property>
-   </WildcardControlFlowRule>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase11"
-      from="WildcardControlFlowRule10"
-      to="MethodCall8">
+      id="ControlFlowCase28"
+      from="WildcardControlFlowRule26"
+      to="MethodCall27">
       <property
          name="fromOutcome">ACTStartERPSolutionTaskFlow</property>
       <property
-         name="sdm:polyPoints">L50,627.0,12.448242,542.0,80.19531,T50</property>
+         name="sdm:polyPoints">B50,667.0,-35.051758,679.0,30.844727,T50</property>
    </ControlFlowCase>
-   <MethodCall
-      id="MethodCall14">
+   <View
+      id="View29">
       <property
-         name="activityId">ExecuteWithParams</property>
+         name="activityId">IN_0004</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>ExecuteWithParams&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+         name="page">/IN_0004.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>IN_0004&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">217.14941</property>
+         name="y">213.79883</property>
       <property
-         name="x">139.35156</property>
-   </MethodCall>
+         name="x">664.5</property>
+   </View>
    <ControlFlowCase
       islink="true"
-      id="ControlFlowCase15"
-      from="MethodCall14"
-      to="View7">
+      id="ControlFlowCase30"
+      from="MethodCall27"
+      to="View29">
       <property
-         name="fromOutcome">ExecuteWithParams</property>
+         name="fromOutcome">ERP-ACT-IN-0004</property>
       <property
-         name="sdm:polyPoints">B50,139.35156,270.79883,178.18066,332.44824,T44</property>
+         name="sdm:polyPoints">B50,679.0,138.84473,664.5,159.44824,T50</property>
+   </ControlFlowCase>
+   <TaskFlowReturn
+      id="TaskFlowReturn31">
+      <property
+         name="activityId">ERPSOL-RETURN-FROM-IMS</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ERPSOL-RETURN-FROM-IMS&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  ERPSOL-RETURN-FROM-IMS&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">17.545898</property>
+      <property
+         name="x">448.0</property>
+   </TaskFlowReturn>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule32">
+      <property
+         name="activityId">*</property>
+      <property
+         name="y">-96.70117</property>
+      <property
+         name="x">529.0</property>
+   </WildcardControlFlowRule>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase33"
+      from="WildcardControlFlowRule32"
+      to="TaskFlowReturn31">
+      <property
+         name="fromOutcome">ERPSOL-RETURN-FROM-IMS</property>
+      <property
+         name="sdm:polyPoints">L50,493.0,-96.55176,448.0,-36.804688,T50</property>
    </ControlFlowCase>
 </SDM>

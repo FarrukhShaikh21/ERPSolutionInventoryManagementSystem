@@ -4,8 +4,10 @@
   <pageMap>
     <page path="/IN_0004.jsf" usageId="erpsolims_erpsolimsview_IN_0004PageDef"/>
     <page path="/ERPSolIMSMain.jsf" usageId="erpsolims_erpsolimsview_ERPSolIMSMainPageDef"/>
-    <page path="/WEB-INF/ERPSOLIMS.xml#ERPSOLIMS@ExecuteWithParams"
+    <page path="/WEB-INF/ERPSOLIMS.xml#ERPSOLIMS@ExecuteWithParamsTransactionIMS"
           usageId="erpsolims_erpsolimsview_ERPSOLIMS_ERPSOLIMS_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/ERPSOLIMS.xml#ERPSOLIMS@ExecuteWithParamsSetupIMS"
+          usageId="erpsolims_erpsolimsview_ERPSOLIMS_ERPSOLIMS_ExecuteWithParamsPageDef1"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="erpsolims_erpsolimsview_IN_0004PageDef" path="erpsolims.erpsolimsview.pageDefs.IN_0004PageDef"/>
@@ -13,6 +15,8 @@
           path="erpsolims.erpsolimsview.pageDefs.ERPSolIMSMainPageDef"/>
     <page id="erpsolims_erpsolimsview_ERPSOLIMS_ERPSOLIMS_ExecuteWithParamsPageDef"
           path="erpsolims.erpsolimsview.pageDefs.ERPSOLIMS_ERPSOLIMS_ExecuteWithParamsPageDef"/>
+    <page id="erpsolims_erpsolimsview_ERPSOLIMS_ERPSOLIMS_ExecuteWithParamsPageDef1"
+          path="erpsolims.erpsolimsview.pageDefs.ERPSOLIMS_ERPSOLIMS_ExecuteWithParamsPageDef1"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="ERPSolTempAppModuleDataControl" Package="erpsoltemp.erpsoltempmodel.erpsoltempam"
