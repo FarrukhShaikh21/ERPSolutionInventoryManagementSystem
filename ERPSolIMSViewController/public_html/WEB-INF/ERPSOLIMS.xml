@@ -19,7 +19,7 @@
     <input-parameter-definition id="__3">
       <name>P_ADF_USER_STORECODE</name>
       <value>#{pageFlowScope.ERPSolIMSPageFlowBean.ERPSolStrUserStoreCode}</value>
-      <class>erpsolims.erpsolscmview.erpsolimsclass.ERPSolIMSBean</class>
+      <class>erpsolims.erpsolimsview.erpsolimsclass.ERPSolIMSBean</class>
     </input-parameter-definition>
     <input-parameter-definition id="__4">
       <name>P_ADF_USER_REGIONCODE</name>
@@ -38,6 +38,9 @@
     </managed-bean>
     <method-call id="doERPSolIMSSessionGlobals">
       <method>#{pageFlowScope.ERPSolIMSPageFlowBean.doSetERPSolIMSSessionGlobals}</method>
+      <outcome>
+        <fixed-outcome>ERP-SOL-ACT-GOTO-MAIN</fixed-outcome>
+      </outcome>
     </method-call>
     <view id="IN_0004">
       <page>/IN_0004.jsf</page>
@@ -47,23 +50,26 @@
         <name>ERPSOL-RETURN-FROM-IMS</name>
       </outcome>
     </task-flow-return>
-    <method-call id="ExecuteTransactionMenuIMS">
-      <method>#{bindings.ExecuteWithParams.execute}</method>
-      <outcome>
-        <fixed-outcome>ExecuteWithParams</fixed-outcome>
-      </outcome>
-    </method-call>
     <view id="ERPSolIMSMain">
       <page>/ERPSolIMSMain.jsf</page>
     </view>
     <method-call id="doERPGotoIMSActivity">
       <method>#{pageFlowScope.ERPSolTempBean.doGotoERPSolActivity}</method>
+      <outcome>
+        <to-string/>
+      </outcome>
+    </method-call>
+    <method-call id="ExecuteWithParams">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ExecuteWithParams</fixed-outcome>
+      </outcome>
     </method-call>
     <control-flow-rule id="__5">
       <from-activity-id>doERPSolIMSSessionGlobals</from-activity-id>
       <control-flow-case id="__6">
         <from-outcome>ERP-SOL-ACT-GOTO-MAIN</from-outcome>
-        <to-activity-id>ExecuteTransactionMenuIMS</to-activity-id>
+        <to-activity-id>ERPSolIMSMain</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__7">
@@ -80,5 +86,15 @@
         <to-activity-id>doERPGotoIMSActivity</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
+    <control-flow-rule id="__11">
+      <from-activity-id>ExecuteWithParams</from-activity-id>
+      <control-flow-case id="__12">
+        <from-outcome>ExecuteWithParams</from-outcome>
+        <to-activity-id>ERPSolIMSMain</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <visibility>
+      <url-invoke-allowed/>
+    </visibility>
   </task-flow-definition>
 </adfc-config>

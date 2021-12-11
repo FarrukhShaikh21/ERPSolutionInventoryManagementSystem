@@ -47,28 +47,15 @@
       <property
          name="x">428.0</property>
    </TaskFlowReturn>
-   <MethodCall
-      id="MethodCall5">
-      <property
-         name="activityId">ExecuteTransactionMenuIMS</property>
-      <property
-         name="description">&lt;html>&lt;p>&lt;b>ExecuteTransactionMenuIMS&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
-      <property
-         name="exceptionHandler">false</property>
-      <property
-         name="y">224.44824</property>
-      <property
-         name="x">266.35156</property>
-   </MethodCall>
    <ControlFlowCase
       islink="true"
       id="ControlFlowCase6"
       from="MethodCall2"
-      to="MethodCall5">
+      to="View7">
       <property
          name="fromOutcome">ERP-SOL-ACT-GOTO-MAIN</property>
       <property
-         name="sdm:polyPoints">B50,269.0,163.14355,266.35156,170.09766,T50</property>
+         name="sdm:polyPoints">B50,269.0,163.14355,185.18066,332.44824,T56</property>
    </ControlFlowCase>
    <View
       id="View7">
@@ -126,5 +113,28 @@
          name="fromOutcome">ACTStartERPSolutionTaskFlow</property>
       <property
          name="sdm:polyPoints">L50,627.0,12.448242,542.0,80.19531,T50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall14">
+      <property
+         name="activityId">ExecuteWithParams</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExecuteWithParams&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">217.14941</property>
+      <property
+         name="x">139.35156</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase15"
+      from="MethodCall14"
+      to="View7">
+      <property
+         name="fromOutcome">ExecuteWithParams</property>
+      <property
+         name="sdm:polyPoints">B50,139.35156,270.79883,178.18066,332.44824,T44</property>
    </ControlFlowCase>
 </SDM>
