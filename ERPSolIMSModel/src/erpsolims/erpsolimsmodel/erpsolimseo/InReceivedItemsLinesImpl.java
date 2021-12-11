@@ -1,5 +1,6 @@
 package erpsolims.erpsolimsmodel.erpsolimseo;
 
+import erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel;
 import erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsEntityImpl;
 
 import java.math.BigDecimal;
@@ -1193,10 +1194,17 @@ public class InReceivedItemsLinesImpl extends ERPSolGlobalsEntityImpl {
     protected void doDML(int operation, TransactionEvent e) {
         if (operation==DML_INSERT) {
             populateAttributeAsChanged(RNOTENO, getInReceivedItems().getAttribute("Rnoteno"));
-           populateAttributeAsChanged(RNOTENO, getInReceivedItems().getAttribute("Storeid"));
-//           populateAttributeAsChanged(RNOTENO, getInReceivedItems().getAttribute("Rnoteno"));
-//           populateAttributeAsChanged(RNOTENO, getInReceivedItems().getAttribute("Rnoteno"));
+           populateAttributeAsChanged(STOREID, getInReceivedItems().getAttribute("Storeid"));
+           System.out.println("this is b");
+           String pkValue="FUNC_GET_MAX_ID('IN_RECEIVED_ITEMS_LINES WHERE RNOTENO=''"+getRnoteno()+"''','LINENO')";
+           System.out.println("this is c");
+           System.out.println(pkValue + "pk value");
+           System.out.println("this is d");
+           String result= ERPSolGlobClassModel.doGetERPSolPrimaryKeyValueModel(getDBTransaction(), pkValue, "dual", null, null);
+           System.out.println("this is e");
+           populateAttributeAsChanged(LINENO, Integer.parseInt(result));
        }
+        
         super.doDML(operation, e);
     }
 }

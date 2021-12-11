@@ -13,6 +13,36 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="AccInItemsView"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InItemsView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LovtxtModelNo"
+    ListVOName="AccInItemsView"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtModelNo"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="ItemRefId"/>
+      <Item Value="Itemid"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ModelNo"/>
+      <Item Value="ItemRefId"/>
+      <Item Value="Itemid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ModelNo"/>
+      <Item Value="ItemRefId"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="InReceivedItemsLines"
     Entity="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsLines"/>
@@ -378,7 +408,15 @@
     PrecisionRule="true"
     EntityAttrName="txtModelNo"
     EntityUsage="InReceivedItemsLines"
-    AliasName="TXT_MODEL_NO"/>
+    AliasName="TXT_MODEL_NO"
+    LOVName="LovtxtModelNo">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="InItemsView"
     ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.InItemsInReceiveItemsLinesItemRefIdLink"
