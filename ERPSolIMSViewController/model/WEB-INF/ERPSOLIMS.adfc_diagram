@@ -2,4 +2,72 @@
 <SDM>
    <OverallProperties
       id="OverallProperties1"/>
+   <MethodCall
+      id="MethodCall2">
+      <property
+         name="activityId">doERPSolIMSSessionGlobals</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>doERPSolIMSSessionGlobals&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">109.49414</property>
+      <property
+         name="x">269.0</property>
+   </MethodCall>
+   <View
+      id="View3">
+      <property
+         name="activityId">IN_0004</property>
+      <property
+         name="page">/IN_0004.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>IN_0004&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">126.09766</property>
+      <property
+         name="x">100.5</property>
+   </View>
+   <TaskFlowReturn
+      id="TaskFlowReturn4">
+      <property
+         name="activityId">ERPSOL-RETURN-FROM-IMS</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ERPSOL-RETURN-FROM-IMS&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  ERPSOL-RETURN-FROM-IMS&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">52.24707</property>
+      <property
+         name="x">428.0</property>
+   </TaskFlowReturn>
+   <MethodCall
+      id="MethodCall5">
+      <property
+         name="activityId">ExecuteTransactionMenuIMS</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExecuteTransactionMenuIMS&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">224.44824</property>
+      <property
+         name="x">266.35156</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="MethodCall2"
+      to="MethodCall5">
+      <property
+         name="fromOutcome">ERP-SOL-ACT-GOTO-MAIN</property>
+      <property
+         name="sdm:polyPoints">R50,313.86356,109.143555,311.21518,224.09766,R50</property>
+   </ControlFlowCase>
 </SDM>

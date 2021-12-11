@@ -57,7 +57,7 @@ public class ERPSolIMSBean {
     RichInputText ERPSolRebateImeiBoxText;
     String ERPSolImeiString;
     
-    public void doSetERPSolSCMSessionGlobals() {
+    public void doSetERPSolIMSSessionGlobals() {
         System.out.println("glob user code"+getERPSolStrUserCode());
         if (getERPSolStrUserCode().length()==0) {
            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Users Defaults are not defined properly. Please Check"));

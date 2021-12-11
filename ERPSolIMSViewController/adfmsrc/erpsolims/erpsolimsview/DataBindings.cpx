@@ -3,8 +3,19 @@
              SeparateXMLFiles="false" Package="erpsolims.erpsolimsview" ClientType="Generic">
   <pageMap>
     <page path="/IN_0004.jsf" usageId="erpsolims_erpsolimsview_IN_0004PageDef"/>
+    <page path="/WEB-INF/ERPSOLIMS.xml#ERPSOLIMS@ExecuteTransactionMenuIMS"
+          usageId="erpsolims_erpsolimsview_ERPSOLIMS_ERPSOLIMS_ExecuteWithParamsPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="erpsolims_erpsolimsview_IN_0004PageDef" path="erpsolims.erpsolimsview.pageDefs.IN_0004PageDef"/>
+    <page id="erpsolims_erpsolimsview_ERPSOLIMS_ERPSOLIMS_ExecuteWithParamsPageDef"
+          path="erpsolims.erpsolimsview.pageDefs.ERPSOLIMS_ERPSOLIMS_ExecuteWithParamsPageDef"/>
   </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="ERPSolTempAppModuleDataControl" Package="erpsoltemp.erpsoltempmodel.erpsoltempam"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="ERPSolTempAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
 </Application>
