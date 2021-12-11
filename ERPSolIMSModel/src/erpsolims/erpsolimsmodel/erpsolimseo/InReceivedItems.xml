@@ -216,7 +216,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_RECEIVED_ITEMS">
+    TableName="IN_RECEIVED_ITEMS"
+    DefaultValue="B">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -248,7 +249,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_RECEIVED_ITEMS">
+    TableName="IN_RECEIVED_ITEMS"
+    DefaultValue="N">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
@@ -260,7 +262,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_RECEIVED_ITEMS">
+    TableName="IN_RECEIVED_ITEMS"
+    DefaultValue="N">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="2"/>
     </DesignTime>
@@ -284,7 +287,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_RECEIVED_ITEMS">
+    TableName="IN_RECEIVED_ITEMS"
+    DefaultValue="SRR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -465,7 +469,6 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_RECEIVED_ITEMS"
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
@@ -478,6 +481,8 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItems.txtStoreName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>

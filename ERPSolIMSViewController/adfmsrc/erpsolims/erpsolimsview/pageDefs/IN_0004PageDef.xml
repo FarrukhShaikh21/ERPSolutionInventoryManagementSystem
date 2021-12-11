@@ -63,5 +63,29 @@
             Action="createInsertRow"/>
     <action IterBinding="InReceivedItemsLinesDetCRUDIterator" id="Delete1" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <tree IterBinding="InReceivedItemsLinesDetCRUDIterator" id="InReceivedItemsLinesDetCRUD">
+      <nodeDefinition DefName="erpsolims.erpsolimsmodel.erpsolimsvo.InReceivedItemsLinesView"
+                      Name="InReceivedItemsLinesDetCRUD0">
+        <AttrNames>
+          <Item Value="Lineno"/>
+          <Item Value="ItemRefId"/>
+          <Item Value="txtModelNo"/>
+          <Item Value="QtyReceived"/>
+          <Item Value="Recvalue"/>
+          <Item Value="Shelfqty"/>
+          <Item Value="UnitCostBeforeConversion"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="InReceivedItemsCRUDIterator" id="Storeid">
+      <AttrNames>
+        <Item Value="Storeid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InReceivedItemsCRUDIterator" id="Rnoteseq">
+      <AttrNames>
+        <Item Value="Rnoteseq"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

@@ -12,36 +12,50 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  RowClass="erpsolims.erpsolimsmodel.erpsolimsvo.InReceivedItemsLinesViewRowImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <ViewAccessor
     Name="AccInItemsView"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InItemsView"
     RowLevelBinds="true"/>
   <ListBinding
-    Name="LovtxtModelNo"
+    Name="LovItemRefId"
     ListVOName="AccInItemsView"
     ListRangeSize="-1"
     ComboRowCountHint="10"
     NullValueFlag="none"
     MRUCount="0">
     <AttrArray Name="AttrNames">
-      <Item Value="txtModelNo"/>
+      <Item Value="ItemRefId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="DerivedAttrNames">
-      <Item Value="ItemRefId"/>
       <Item Value="Itemid"/>
+      <Item Value="Siclassid"/>
+      <Item Value="Sigroupid"/>
+      <Item Value="RecvUomsid"/>
+      <Item Value="IssueUomid"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
-      <Item Value="ModelNo"/>
       <Item Value="ItemRefId"/>
       <Item Value="Itemid"/>
+      <Item Value="Siclassid"/>
+      <Item Value="Sigroupid"/>
+      <Item Value="ReceUomsid"/>
+      <Item Value="Uomsid"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="ModelNo"/>
       <Item Value="ItemRefId"/>
+      <Item Value="ModelNo"/>
+      <Item Value="Itemid"/>
     </AttrArray>
-    <DisplayCriteria/>
+    <DisplayCriteria
+      Name="InItemsViewFindVC"
+      Hint="showAndExecute"/>
   </ListBinding>
   <EntityUsage
     Name="InReceivedItemsLines"
@@ -93,7 +107,15 @@
     PrecisionRule="true"
     EntityAttrName="ItemRefId"
     EntityUsage="InReceivedItemsLines"
-    AliasName="ITEM_REF_ID"/>
+    AliasName="ITEM_REF_ID"
+    LOVName="LovItemRefId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Sigroupid"
     IsNotNull="true"
@@ -408,18 +430,16 @@
     PrecisionRule="true"
     EntityAttrName="txtModelNo"
     EntityUsage="InReceivedItemsLines"
-    AliasName="TXT_MODEL_NO"
-    LOVName="LovtxtModelNo">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo_lov"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="TXT_MODEL_NO"/>
   <ViewLinkAccessor
     Name="InItemsView"
     ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.InItemsInReceiveItemsLinesItemRefIdLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="InReceivedItemsView"
+    ViewLink="erpsolims.erpsolimsmodel.erpsolimsvo.FkInRecItemLinRnoteseqLink"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>

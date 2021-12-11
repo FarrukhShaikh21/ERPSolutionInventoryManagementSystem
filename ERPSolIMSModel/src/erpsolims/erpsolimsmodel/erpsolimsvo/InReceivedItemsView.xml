@@ -15,9 +15,13 @@
   PageIterMode="Full"
   ComponentClass="erpsolims.erpsolimsmodel.erpsolimsvo.InReceivedItemsViewImpl"
   ComponentInterface="erpsolims.erpsolimsmodel.erpsolimsvo.common.InReceivedItemsView"
-  ClientProxyName="erpsolims.erpsolimsmodel.erpsolimsvo.client.InReceivedItemsViewClient">
+  ClientProxyName="erpsolims.erpsolimsmodel.erpsolimsvo.client.InReceivedItemsViewClient"
+  RowClass="erpsolims.erpsolimsmodel.erpsolimsvo.InReceivedItemsViewRowImpl">
   <DesignTime>
-    <Attr Name="_codeGenFlag2" Value="Coll|VarAccess"/>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_objectSuperClassName"
+      Value="erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsViewObjectImpl"/>
+    <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <ViewAccessor
     Name="AccAllStoresView"
@@ -344,6 +348,13 @@
     IsUpdateable="false"/>
   <ClientInterface
     Name="__clientInterface">
+    <Method
+      Name="doSuperviseGRN"
+      MethodName="doSuperviseGRN">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+    </Method>
     <Method
       Name="doSuperviseGRN"
       MethodName="doSuperviseGRN">

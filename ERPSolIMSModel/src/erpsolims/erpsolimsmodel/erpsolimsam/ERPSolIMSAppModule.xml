@@ -22,6 +22,9 @@
   <ViewUsage
     Name="AllStoresAutoSuggestRO"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllStoresView"/>
+  <ViewUsage
+    Name="InItemsAutoSuggestRO"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InItemsView"/>
   <ViewLinkUsage
     Name="FkInRecItemLinRnoteseqLink1"
     ViewLinkObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.FkInRecItemLinRnoteseqLink"
