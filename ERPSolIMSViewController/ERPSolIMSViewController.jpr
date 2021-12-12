@@ -239,7 +239,7 @@
                <value n="taskFlowId" v="ERPSOLIMS"/>
                <value n="unboundedTaskFlow" v="false"/>
             </hash>
-            <url n="targetURL" path="public_html/WEB-INF/ERPSOLIMS.xml"/>
+            <value n="targetURL"/>
          </hash>
       </hash>
    </hash>
