@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="ERPSOLIMSBTF">
+    <default-activity>doERPSolIMSSessionGlobals</default-activity>
+    <input-parameter-definition id="__21">
+      <name>P_ADF_USERCODE</name>
+      <value>#{pageFlowScope.ERPSolIMSPageFlowBean.ERPSolStrUserCode}</value>
+      <class>erpsolims.erpsolimsview.erpsolimsclass.ERPSolIMSBean</class>
+    </input-parameter-definition>
+    <input-parameter-definition id="__22">
+      <name>P_ADF_USER_LOCATIONCODE</name>
+      <value>#{pageFlowScope.ERPSolIMSPageFlowBean.ERPSolStrUserLocationCode}</value>
+      <class>erpsolims.erpsolimsview.erpsolimsclass.ERPSolIMSBean</class>
+    </input-parameter-definition>
+    <input-parameter-definition id="__23">
+      <name>P_ADF_USER_STORECODE</name>
+      <value>#{pageFlowScope.ERPSolIMSPageFlowBean.ERPSolStrUserStoreCode}</value>
+      <class>erpsolims.erpsolimsview.erpsolimsclass.ERPSolIMSBean</class>
+    </input-parameter-definition>
+    <input-parameter-definition id="__24">
+      <name>P_ADF_USER_REGIONCODE</name>
+      <value>#{pageFlowScope.ERPSolIMSPageFlowBean.ERPSolStrUserRegionCode}</value>
+      <class>erpsolims.erpsolimsview.erpsolimsclass.ERPSolIMSBean</class>
+    </input-parameter-definition>
+    <managed-bean id="__15">
+      <managed-bean-name>ERPSolTempBean</managed-bean-name>
+      <managed-bean-class>erpsoltemp.erpsoltempview.erptempclass.ERPSolutionTemplateBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__18">
+      <managed-bean-name>ERPSolIMSPageFlowBean</managed-bean-name>
+      <managed-bean-class>erpsolims.erpsolimsview.erpsolimsclass.ERPSolIMSBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="ERPSolIMSMain">
+      <page>/ERPSolIMSMain.jsf</page>
+    </view>
+    <method-call id="ExecuteWithParamsTransactionIMS">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-SOL-ACT-GOTO-MAIN</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="doERPSolIMSSessionGlobals">
+      <method>#{pageFlowScope.ERPSolIMSPageFlowBean.doSetERPSolIMSSessionGlobals}</method>
+      <outcome>
+        <fixed-outcome>ERP-SOL-ACT-GOTO-MAIN</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="ExecuteWithParamsSetupIMS">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-SOL-ACT-GOTO-MAIN</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="doERPGotoIMSActivity">
+      <method>#{pageFlowScope.ERPSolTempBean.doGotoERPSolActivity}</method>
+      <outcome>
+        <to-string/>
+      </outcome>
+    </method-call>
+    <view id="IN_0004">
+      <page>/IN_0004.jsf</page>
+    </view>
+    <task-flow-return id="ERPSOL-RETURN-FROM-IMS">
+      <outcome>
+        <name>ERPSOL-RETURN-FROM-IMS</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__16">
+      <from-activity-id>ExecuteWithParamsTransactionIMS</from-activity-id>
+      <control-flow-case id="__17">
+        <from-outcome>ERP-SOL-ACT-GOTO-MAIN</from-outcome>
+        <to-activity-id>ERPSolIMSMain</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__19">
+      <from-activity-id>doERPSolIMSSessionGlobals</from-activity-id>
+      <control-flow-case id="__25">
+        <from-outcome>ERP-SOL-ACT-GOTO-MAIN</from-outcome>
+        <to-activity-id>ExecuteWithParamsSetupIMS</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__26">
+      <from-activity-id>ExecuteWithParamsSetupIMS</from-activity-id>
+      <control-flow-case id="__27">
+        <from-outcome>ERP-SOL-ACT-GOTO-MAIN</from-outcome>
+        <to-activity-id>ExecuteWithParamsTransactionIMS</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__29">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__30">
+        <from-outcome>ACTStartERPSolutionTaskFlow</from-outcome>
+        <to-activity-id>doERPGotoIMSActivity</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__31">
+      <from-activity-id>doERPGotoIMSActivity</from-activity-id>
+      <control-flow-case id="__32">
+        <from-outcome>ERP-ACT-IN-0004</from-outcome>
+        <to-activity-id>IN_0004</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__33">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__34">
+        <from-outcome>ERPSOL-RETURN-FROM-IMS</from-outcome>
+        <to-activity-id>ERPSOL-RETURN-FROM-IMS</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <visibility>
+      <url-invoke-allowed/>
+    </visibility>
+  </task-flow-definition>
+</adfc-config>
