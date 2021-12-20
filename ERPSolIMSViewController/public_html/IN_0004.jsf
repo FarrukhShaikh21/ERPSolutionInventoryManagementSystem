@@ -135,7 +135,7 @@
                       <af:toolbar id="t1">
                         <af:button actionListener="#{bindings.doSuperviseGRN.execute}" text="doSuperviseGRN"
                                    disabled="#{!bindings.doSuperviseGRN.enabled}" id="b10" rendered="false"/>
-                        <af:button text="Search" id="b12" action="ACT-SEARCH-S0-0167"
+                        <af:button text="Search" id="b12" action="ACT-ERP-IN-0004-SEARCH"
                                    icon="#{resource['images:imgFind.png']}" iconPosition="top" accessKey="s"/>
                         <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
                                    disabled="#{bindings.Rnoteno.inputValue==null || !bindings.Previous.enabled}" partialSubmit="true" id="b4"

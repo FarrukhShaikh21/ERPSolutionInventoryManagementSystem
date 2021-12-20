@@ -31,6 +31,10 @@
     Name="AccInReceivingDocTypesView"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InReceivingDocTypesView"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccVWYesNoQVO"
+    ViewObjectName="erpsolglob.erpsolglobmodel.erpsolglobqvo.VWYesNoQVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovtxtStoreName"
     ListVOName="AccAllStoresView"
@@ -67,6 +71,25 @@
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
       <Item Value="Recvdoctypeid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovPosted"
+    ListVOName="AccVWYesNoQVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Posted"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ID"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Description"/>
@@ -148,7 +171,15 @@
     PrecisionRule="true"
     EntityAttrName="Posted"
     EntityUsage="InReceivedItems"
-    AliasName="POSTED"/>
+    AliasName="POSTED"
+    LOVName="LovPosted">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="PostedBy"
     PrecisionRule="true"
@@ -335,6 +366,111 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewCriteria
+    Name="InReceivedItemsFindVC"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InReceivedItemsView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="InReceivedItemsViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="Rnoteno"
+        ViewAttribute="Rnoteno"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Recvdoctypeid"
+        ViewAttribute="Recvdoctypeid"
+        Operator="="
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="ReceivingDate"
+        ViewAttribute="ReceivingDate"
+        Operator="BETWEEN"
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="SourceDocRef"
+        ViewAttribute="SourceDocRef"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Posted"
+        ViewAttribute="Posted"
+        Operator="="
+        Conjunction="AND"
+        UpperColumns="0"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="InReceivedItemsLinesView"
+        ViewAttribute="InReceivedItemsLinesView"
+        Operator="EXISTS"
+        Conjunction="AND"
+        IsNestedCriteria="true"
+        Required="Optional">
+        <ViewCriteria
+          Name="InReceivedItemsLinesViewNestedCriteria"
+          ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InReceivedItemsLinesView"
+          Conjunction="AND">
+          <ViewCriteriaRow
+            Name="InReceivedItemsLinesViewNestedCriteria_row_0"
+            UpperColumns="1">
+            <ViewCriteriaItem
+              Name="InItemsView"
+              ViewAttribute="InItemsView"
+              Operator="EXISTS"
+              Conjunction="AND"
+              IsNestedCriteria="true"
+              Required="Optional">
+              <ViewCriteria
+                Name="InItemsViewNestedCriteria"
+                ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InItemsView"
+                Conjunction="AND">
+                <ViewCriteriaRow
+                  Name="InItemsViewNestedCriteria_row_0"
+                  UpperColumns="1">
+                  <ViewCriteriaItem
+                    Name="ItemRefId"
+                    ViewAttribute="ItemRefId"
+                    Operator="CONTAINS"
+                    Conjunction="AND"
+                    Required="Optional"/>
+                  <ViewCriteriaItem
+                    Name="ModelNo"
+                    ViewAttribute="ModelNo"
+                    Operator="CONTAINS"
+                    Conjunction="AND"
+                    Required="Optional"/>
+                </ViewCriteriaRow>
+              </ViewCriteria>
+            </ViewCriteriaItem>
+          </ViewCriteriaRow>
+        </ViewCriteria>
+      </ViewCriteriaItem>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="InReceivedItemsLinesView"
     ViewLink="erpsolims.erpsolimsmodel.erpsolimsvo.FkInRecItemLinRnoteseqLink"

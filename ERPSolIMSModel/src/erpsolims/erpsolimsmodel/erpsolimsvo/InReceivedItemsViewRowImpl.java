@@ -17,6 +17,7 @@ import oracle.jbo.server.ViewRowImpl;
 // ---------------------------------------------------------------------
 public class InReceivedItemsViewRowImpl extends ViewRowImpl {
 
+
     public static final int ENTITY_INRECEIVEDITEMS = 0;
 
     /**
@@ -65,7 +66,8 @@ public class InReceivedItemsViewRowImpl extends ViewRowImpl {
         InReceivedItemsLinesView,
         AllStoresView,
         AccAllStoresView,
-        AccInReceivingDocTypesView;
+        AccInReceivingDocTypesView,
+        AccVWYesNoQVO;
         static AttributesEnum[] vals = null;
         ;
         private static final int firstIndex = 0;
@@ -89,6 +91,7 @@ public class InReceivedItemsViewRowImpl extends ViewRowImpl {
             return vals;
         }
     }
+
 
     public static final int STOREID = AttributesEnum.Storeid.index();
     public static final int RNOTENO = AttributesEnum.Rnoteno.index();
@@ -133,6 +136,7 @@ public class InReceivedItemsViewRowImpl extends ViewRowImpl {
     public static final int ALLSTORESVIEW = AttributesEnum.AllStoresView.index();
     public static final int ACCALLSTORESVIEW = AttributesEnum.AccAllStoresView.index();
     public static final int ACCINRECEIVINGDOCTYPESVIEW = AttributesEnum.AccInReceivingDocTypesView.index();
+    public static final int ACCVWYESNOQVO = AttributesEnum.AccVWYesNoQVO.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -806,6 +810,14 @@ public class InReceivedItemsViewRowImpl extends ViewRowImpl {
     public RowSet getAccInReceivingDocTypesView() {
         return (RowSet) getAttributeInternal(ACCINRECEIVINGDOCTYPESVIEW);
     }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> AccVWYesNoQVO.
+     */
+    public RowSet getAccVWYesNoQVO() {
+        return (RowSet) getAttributeInternal(ACCVWYESNOQVO);
+    }
+
     @Override
     public boolean isAttributeUpdateable(int i) {
         // TODO Implement this method

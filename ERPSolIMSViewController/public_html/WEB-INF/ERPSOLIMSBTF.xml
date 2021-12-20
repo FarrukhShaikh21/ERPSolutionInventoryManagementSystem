@@ -67,6 +67,9 @@
         <name>ERPSOL-RETURN-FROM-IMS</name>
       </outcome>
     </task-flow-return>
+    <view id="IN_0004_SEARCH">
+      <page>/IN_0004_SEARCH.jsf</page>
+    </view>
     <control-flow-rule id="__16">
       <from-activity-id>ExecuteWithParamsTransactionIMS</from-activity-id>
       <control-flow-case id="__17">
@@ -107,6 +110,20 @@
       <control-flow-case id="__34">
         <from-outcome>ERPSOL-RETURN-FROM-IMS</from-outcome>
         <to-activity-id>ERPSOL-RETURN-FROM-IMS</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__1">
+      <from-activity-id>IN_0004</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>ACT-ERP-IN-0004-SEARCH</from-outcome>
+        <to-activity-id>IN_0004_SEARCH</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__3">
+      <from-activity-id>IN_0004_SEARCH</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>ACT-ERP-IN-0004-SEARCH-BACK</from-outcome>
+        <to-activity-id>IN_0004</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>
