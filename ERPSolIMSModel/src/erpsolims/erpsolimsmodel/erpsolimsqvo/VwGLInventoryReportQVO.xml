@@ -15,13 +15,87 @@
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="erpsolims.erpsolimsmodel.erpsolimsqvo.VwGLInventoryReportQVO_LABEL"/>
+        ResId=""/>
     </SchemaBasedProperties>
   </Properties>
-  <SQLQuery><![CDATA[select 1 as pk, null regionid, 
-null locationid,null storeid,  
-null productgroup,null productid  
-from dual]]></SQLQuery>
+  <ViewAccessor
+    Name="AccAllCompanyView"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllCompanyView"
+    RowLevelBinds="true"/>
+
+    
+  <ViewAccessor
+    Name="AccAllLocationsView"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllLocationsView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccSoSalesTerritoryView"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.SoSalesTerritoryView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LovCompanyid"
+    ListVOName="AccAllCompanyView"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Companyid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Companyid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CompanyName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovtxtLocationName"
+    ListVOName="AccAllLocationsView"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtLocationName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Locationid"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LocationDescription"/>
+      <Item Value="Locationid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="LocationDescription"/>
+      <Item Value="Locationid"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovRegionid"
+    ListVOName="AccSoSalesTerritoryView"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Regionid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Salesterritoryid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Salesterritoryid"/>
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <SQLQuery><![CDATA[select 1 as pk, null companyid,null regionid,null locationid,null storeid, null customerid, null salespersonid,null productgroup,null productid from dual]]></SQLQuery>
   <ViewAttribute
     Name="Pk"
     IsUpdateable="false"
@@ -31,57 +105,230 @@ from dual]]></SQLQuery>
     ColumnType="NUMBER"
     AliasName="PK"
     Expression="PK"
-    SQLType="NUMERIC"/>
+    SQLType="INTEGER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId=""/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Companyid"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="COMPANYID"
+    Expression="COMPANYID"
+    SQLType="VARCHAR"
+    LOVName="LovCompanyid">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <LABEL
+          ResId=""/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Regionid"
-    IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
     AliasName="REGIONID"
     Expression="REGIONID"
-    SQLType="VARCHAR"/>
+    SQLType="VARCHAR"
+    LOVName="LovRegionid">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId=""/>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Locationid"
-    IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
     AliasName="LOCATIONID"
     Expression="LOCATIONID"
-    SQLType="VARCHAR"/>
+    SQLType="VARCHAR">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId=""/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Storeid"
-    IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
     AliasName="STOREID"
     Expression="STOREID"
-    SQLType="VARCHAR"/>
+    SQLType="VARCHAR">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId=""/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Customerid"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CUSTOMERID"
+    Expression="CUSTOMERID"
+    SQLType="VARCHAR">
+    <Dependencies>
+      <Item
+        Value="Locationid"/>
+      <Item
+        Value="txtLocationName"/>
+    </Dependencies>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId=""/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Salespersonid"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="SALESPERSONID"
+    Expression="SALESPERSONID"
+    SQLType="VARCHAR">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId=""/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <Dependencies>
+      <Item
+        Value="Customerid"/>
+      <Item
+        Value="Locationid"/>
+      <Item
+        Value="txtCustomerName"/>
+      <Item
+        Value="txtLocationName"/>
+    </Dependencies>
+  </ViewAttribute>
   <ViewAttribute
     Name="Productgroup"
-    IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
     AliasName="PRODUCTGROUP"
     Expression="PRODUCTGROUP"
-    SQLType="VARCHAR"/>
+    SQLType="VARCHAR">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId=""/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
-    Name="Productid"
-    IsUpdateable="false"
+    Name="txtLocationName"
+    IsSelected="false"
     IsPersistent="false"
     PrecisionRule="true"
+    Precision="255"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    AliasName="PRODUCTID"
-    Expression="PRODUCTID"
-    SQLType="VARCHAR"/>
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    LOVName="LovtxtLocationName">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId=""/>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="txtFromDate"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    AliasName="VIEW_ATTR"
+    SQLType="DATE">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[adf.currentDate]]></TransientExpression>
+    <RecalcCondition
+      trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId=""/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="txtToDate"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    AliasName="VIEW_ATTR"
+    SQLType="DATE">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[adf.currentDate]]></TransientExpression>
+    <RecalcCondition
+      trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId=""/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="Pk"/>
   </AttrArray>
