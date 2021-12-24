@@ -95,7 +95,7 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
-  <SQLQuery><![CDATA[select 1 as pk, null companyid,null regionid,null locationid,null storeid, null customerid, null salespersonid,null productgroup,null productid from dual]]></SQLQuery>
+  <SQLQuery><![CDATA[select 1 as pk, null companyid,null regionid,null locationid,null storeid ,null productgroup,null productid from dual]]></SQLQuery>
   <ViewAttribute
     Name="Pk"
     IsUpdateable="false"
@@ -194,58 +194,6 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
-    Name="Customerid"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    AliasName="CUSTOMERID"
-    Expression="CUSTOMERID"
-    SQLType="VARCHAR">
-    <Dependencies>
-      <Item
-        Value="Locationid"/>
-      <Item
-        Value="txtLocationName"/>
-    </Dependencies>
-    <Properties>
-      <SchemaBasedProperties>
-        <LABEL
-          ResId=""/>
-        <DISPLAYWIDTH
-          Value="20"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
-  <ViewAttribute
-    Name="Salespersonid"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    AliasName="SALESPERSONID"
-    Expression="SALESPERSONID"
-    SQLType="VARCHAR">
-    <Properties>
-      <SchemaBasedProperties>
-        <LABEL
-          ResId=""/>
-        <DISPLAYWIDTH
-          Value="20"/>
-      </SchemaBasedProperties>
-    </Properties>
-    <Dependencies>
-      <Item
-        Value="Customerid"/>
-      <Item
-        Value="Locationid"/>
-      <Item
-        Value="txtCustomerName"/>
-      <Item
-        Value="txtLocationName"/>
-    </Dependencies>
-  </ViewAttribute>
-  <ViewAttribute
     Name="Productgroup"
     IsPersistent="false"
     PrecisionRule="true"
@@ -263,6 +211,16 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="Productid"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="PRODUCTID"
+    Expression="PRODUCTID"
+    SQLType="VARCHAR"/>
   <ViewAttribute
     Name="txtLocationName"
     IsSelected="false"
@@ -324,6 +282,26 @@
       <SchemaBasedProperties>
         <LABEL
           ResId=""/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="txtSalesTerritory"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimsqvo.VwGLInventoryReportQVO.txtSalesTerritory_LABEL"/>
         <DISPLAYWIDTH
           Value="20"/>
       </SchemaBasedProperties>
