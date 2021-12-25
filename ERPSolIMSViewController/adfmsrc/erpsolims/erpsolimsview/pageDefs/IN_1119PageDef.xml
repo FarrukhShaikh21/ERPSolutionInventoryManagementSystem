@@ -20,11 +20,6 @@
         <Item Value="Locationid"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="VwGLFinanceReportROIterator" id="Productgroup">
-      <AttrNames>
-        <Item Value="Productgroup"/>
-      </AttrNames>
-    </attributeValues>
     <listOfValues IterBinding="VwGLFinanceReportROIterator" StaticList="false" Uses="LovtxtLocationName"
                   id="txtLocationName"/>
     <list IterBinding="VwGLFinanceReportROIterator" StaticList="false" Uses="LovRegionid" id="Regionid"
@@ -56,5 +51,21 @@
     </attributeValues>
     <list IterBinding="VwGLFinanceReportROIterator" StaticList="false" Uses="LovtxtSalesTerritoryId"
           id="txtSalesTerritoryId" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <listOfValues IterBinding="VwGLFinanceReportROIterator" StaticList="false" Uses="LovtxtStoreName"
+                  id="txtStoreName"/>
+    <attributeValues IterBinding="VwGLFinanceReportROIterator" id="Storeid">
+      <AttrNames>
+        <Item Value="Storeid"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="VwGLFinanceReportROIterator" StaticList="false" Uses="LovProductgroup" id="Productgroup"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <listOfValues IterBinding="VwGLFinanceReportROIterator" StaticList="false" Uses="LovtxtProductName"
+                  id="txtProductName"/>
+    <attributeValues IterBinding="VwGLFinanceReportROIterator" id="Productid">
+      <AttrNames>
+        <Item Value="Productid"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

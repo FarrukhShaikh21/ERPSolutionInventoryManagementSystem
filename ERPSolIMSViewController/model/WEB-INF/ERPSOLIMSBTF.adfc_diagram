@@ -166,7 +166,7 @@
       <property
          name="fromsrcid">__31</property>
       <property
-         name="sdm:polyPoints">B50,266.6875,126.149414,346.5,197.0459,T50</property>
+         name="sdm:polyPoints">B56,270.1875,126.149414,346.5,197.0459,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -236,11 +236,11 @@
       islink="true"
       id="ControlFlowCase21"
       from="MethodCall7"
-      to="View20">
+      to="MethodCall28">
       <property
          name="fromOutcome">ERP-ACT-IN-1119</property>
       <property
-         name="sdm:polyPoints">L50,225.6875,72.149414,36.5,464.44824,T50</property>
+         name="sdm:polyPoints">B44,263.1875,126.149414,-61.621094,472.09766,R50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall22">
@@ -306,5 +306,28 @@
          name="fromOutcome">BeforeActivityRollbackIMS</property>
       <property
          name="sdm:polyPoints">B50,224.5,2.3964844,266.6875,18.149414,T50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall28">
+      <property
+         name="activityId">doSetInventoryReportDefaults</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>doSetInventoryReportDefaults&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">472.44824</property>
+      <property
+         name="x">-102.62109</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase29"
+      from="MethodCall28"
+      to="View20">
+      <property
+         name="fromOutcome">ERP-ACT-IN-1119</property>
+      <property
+         name="sdm:polyPoints">R54,-61.621094,475.59766,-4.5,518.44824,L50</property>
    </ControlFlowCase>
 </SDM>

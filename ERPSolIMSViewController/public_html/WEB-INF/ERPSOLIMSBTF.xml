@@ -85,6 +85,12 @@
         <fixed-outcome>BeforeActivityRollbackIMS</fixed-outcome>
       </outcome>
     </method-call>
+    <method-call id="doSetInventoryReportDefaults">
+      <method>#{bindings.doSetInventoryReportDefaults.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-ACT-IN-1119</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__16">
       <from-activity-id>ExecuteWithParamsTransactionIMS</from-activity-id>
       <control-flow-case id="__17">
@@ -114,7 +120,7 @@
       </control-flow-case>
       <control-flow-case id="__5">
         <from-outcome>ERP-ACT-IN-1119</from-outcome>
-        <to-activity-id>IN_1119</to-activity-id>
+        <to-activity-id>doSetInventoryReportDefaults</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__33">
@@ -157,6 +163,13 @@
       <control-flow-case id="__11">
         <from-outcome>BeforeActivityRollbackIMS</from-outcome>
         <to-activity-id>doERPGotoIMSActivity</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__12">
+      <from-activity-id>doSetInventoryReportDefaults</from-activity-id>
+      <control-flow-case id="__13">
+        <from-outcome>ERP-ACT-IN-1119</from-outcome>
+        <to-activity-id>IN_1119</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>

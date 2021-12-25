@@ -14,6 +14,8 @@
           usageId="erpsolims_erpsolimsview_ERPSOLIMSBTF_ERPSOLIMSBTF_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/ERPSOLIMSBTF.xml#ERPSOLIMSBTF@BeforeActivityRollbackIMS"
           usageId="erpsolims_erpsolimsview_ERPSOLIMSBTF_ERPSOLIMSBTF_RollbackPageDef"/>
+    <page path="/WEB-INF/ERPSOLIMSBTF.xml#ERPSOLIMSBTF@doSetInventoryReportDefaults"
+          usageId="erpsolims_erpsolimsview_ERPSOLIMSBTF_ERPSOLIMSBTF_doSetInventoryReportDefaultsPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="erpsolims_erpsolimsview_IN_0004PageDef" path="erpsolims.erpsolimsview.pageDefs.IN_0004PageDef"/>
@@ -30,6 +32,8 @@
           path="erpsolims.erpsolimsview.pageDefs.ERPSOLIMSBTF_ERPSOLIMSBTF_ExecuteWithParamsPageDef"/>
     <page id="erpsolims_erpsolimsview_ERPSOLIMSBTF_ERPSOLIMSBTF_RollbackPageDef"
           path="erpsolims.erpsolimsview.pageDefs.ERPSOLIMSBTF_ERPSOLIMSBTF_RollbackPageDef"/>
+    <page id="erpsolims_erpsolimsview_ERPSOLIMSBTF_ERPSOLIMSBTF_doSetInventoryReportDefaultsPageDef"
+          path="erpsolims.erpsolimsview.pageDefs.ERPSOLIMSBTF_ERPSOLIMSBTF_doSetInventoryReportDefaultsPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="ERPSolTempAppModuleDataControl" Package="erpsoltemp.erpsoltempmodel.erpsoltempam"
