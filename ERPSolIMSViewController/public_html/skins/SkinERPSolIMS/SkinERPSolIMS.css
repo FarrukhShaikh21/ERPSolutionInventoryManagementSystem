@@ -29,15 +29,26 @@ af|inputDate::label{
 
 
 af|inputComboboxListOfValues::label{
+    font-family: Verdana;
     font-weight: bold;
     color: Black;
+}
+af|inputListOfValues::label{
+    font-family: Verdana;
     font-weight: bold;
+    color: Black;
 }
 
+af|panelLabelAndMessage::label{
+    font-family: Verdana;
+    font-weight: bold;
+    color: Black;
+}
 
 af|selectOneChoice::label{
-    color: Black;
     font-family: Verdana;
+    font-weight: bold;
+    color: Black;
 }
 
 af|inputText::content{
