@@ -39,7 +39,17 @@
   <ViewAccessor
     Name="AccInItemsView"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InItemsView"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="InItemsViewFindBySigroupVC"
+      FullName="erpsolims.erpsolimsmodel.erpsolimsvo.InItemsView.InItemsViewFindBySigroupVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_SIGROUPID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[Productgroup==null?"0":Productgroup]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ViewAccessor
     Name="AccInStockItemGroupView"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InStockItemGroupView"
@@ -319,6 +329,12 @@
           ResId="erpsolims.erpsolimsmodel.erpsolimsqvo.VwInInventoryReportQVO.Storeid_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <Dependencies>
+      <Item
+        Value="Locationid"/>
+      <Item
+        Value="txtLocationName"/>
+    </Dependencies>
   </ViewAttribute>
   <ViewAttribute
     Name="Productgroup"
@@ -343,7 +359,6 @@
   </ViewAttribute>
   <ViewAttribute
     Name="Productid"
-    IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Type="java.lang.String"
@@ -357,6 +372,10 @@
           Value="20"/>
       </SchemaBasedProperties>
     </Properties>
+    <Dependencies>
+      <Item
+        Value="Productgroup"/>
+    </Dependencies>
   </ViewAttribute>
   <ViewAttribute
     Name="txtLocationName"
@@ -467,6 +486,10 @@
           ResId="erpsolims.erpsolimsmodel.erpsolimsqvo.VwInInventoryReportQVO.txtProductName_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <Dependencies>
+      <Item
+        Value="Productgroup"/>
+    </Dependencies>
   </ViewAttribute>
   <ViewAttribute
     Name="txtDefaultDate"

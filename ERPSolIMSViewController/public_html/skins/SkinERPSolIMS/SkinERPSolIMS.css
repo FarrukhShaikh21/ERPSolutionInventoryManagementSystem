@@ -23,15 +23,21 @@ af|inputText::label{
 
 af|inputDate::label{
     font-weight: bold;
-    color: Blue;
+    color: Black;
     font-weight: bold;
 }
 
 
 af|inputComboboxListOfValues::label{
     font-weight: bold;
-    color: Blue;
+    color: Black;
     font-weight: bold;
+}
+
+
+af|selectOneChoice::label{
+    color: Black;
+    font-family: Verdana;
 }
 
 af|inputText::content{
