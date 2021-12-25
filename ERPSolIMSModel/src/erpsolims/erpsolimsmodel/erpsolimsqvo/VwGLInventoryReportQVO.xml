@@ -8,9 +8,11 @@
   InheritPersonalization="merge"
   BindingStyle="OracleName"
   CustomQuery="true"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  ComponentClass="erpsolims.erpsolimsmodel.erpsolimsqvo.VwGLInventoryReportQVOImpl">
   <DesignTime>
     <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_codeGenFlag2" Value="Coll|VarAccess"/>
   </DesignTime>
   <Properties>
     <SchemaBasedProperties>
@@ -31,6 +33,14 @@
   <ViewAccessor
     Name="AccSoSalesTerritoryView"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.SoSalesTerritoryView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccInItemsView"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InItemsView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccInStockItemGroupView"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InStockItemGroupView"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LovCompanyid"
@@ -91,6 +101,69 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Salesterritoryid"/>
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovtxtSalesTerritoryId"
+    ListVOName="AccSoSalesTerritoryView"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtSalesTerritoryId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Salesterritoryid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovtxtProductName"
+    ListVOName="AccInItemsView"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtProductName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Productid"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ModelNo"/>
+      <Item Value="ItemRefId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ModelNo"/>
+      <Item Value="Productid"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="InItemsViewFindVC"/>
+  </ListBinding>
+  <ListBinding
+    Name="LovProductgroup"
+    ListVOName="AccInStockItemGroupView"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Productgroup"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Sigroupid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Description"/>
     </AttrArray>
     <DisplayCriteria/>
@@ -201,13 +274,16 @@
     ColumnType="VARCHAR2"
     AliasName="PRODUCTGROUP"
     Expression="PRODUCTGROUP"
-    SQLType="VARCHAR">
+    SQLType="VARCHAR"
+    LOVName="LovProductgroup">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
           ResId=""/>
         <DISPLAYWIDTH
           Value="20"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -306,6 +382,61 @@
           Value="20"/>
       </SchemaBasedProperties>
     </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="txtSalesTerritoryId"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    LOVName="LovtxtSalesTerritoryId">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimsqvo.VwGLInventoryReportQVO.txtSalesTerritoryId_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="txtProductName"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    LOVName="LovtxtProductName">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="txtDefaultDate"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    AliasName="VIEW_ATTR"
+    SQLType="DATE">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[adf.currentDate]]></TransientExpression>
+    <RecalcCondition
+      trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
   </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="Pk"/>
