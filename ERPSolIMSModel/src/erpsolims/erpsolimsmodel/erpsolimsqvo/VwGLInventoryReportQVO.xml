@@ -42,6 +42,10 @@
     Name="AccInStockItemGroupView"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InStockItemGroupView"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccAllStoresView"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllStoresView"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovCompanyid"
     ListVOName="AccAllCompanyView"
@@ -168,6 +172,30 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LovtxtInventoryOrgName"
+    ListVOName="AccAllStoresView"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtInventoryOrgName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Storeid"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="StoreName"/>
+      <Item Value="Storeid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="StoreName"/>
+      <Item Value="Storeid"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <SQLQuery><![CDATA[select 1 as pk, null companyid,null regionid,null locationid,null storeid ,null productgroup,null productid from dual]]></SQLQuery>
   <ViewAttribute
     Name="Pk"
@@ -202,10 +230,10 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
-        <LABEL
-          ResId=""/>
         <DISPLAYWIDTH
           Value="20"/>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimsqvo.VwGLInventoryReportQVO.Companyid_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -221,12 +249,12 @@
     LOVName="LovRegionid">
     <Properties>
       <SchemaBasedProperties>
-        <LABEL
-          ResId=""/>
         <DISPLAYWIDTH
           Value="20"/>
         <CONTROLTYPE
           Value="choice"/>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimsqvo.VwGLInventoryReportQVO.Regionid_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -244,7 +272,7 @@
         <DISPLAYWIDTH
           Value="20"/>
         <LABEL
-          ResId=""/>
+          ResId="erpsolims.erpsolimsmodel.erpsolimsqvo.VwGLInventoryReportQVO.Locationid_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -259,10 +287,10 @@
     SQLType="VARCHAR">
     <Properties>
       <SchemaBasedProperties>
-        <LABEL
-          ResId=""/>
         <DISPLAYWIDTH
           Value="20"/>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimsqvo.VwGLInventoryReportQVO.Storeid_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -278,12 +306,12 @@
     LOVName="LovProductgroup">
     <Properties>
       <SchemaBasedProperties>
-        <LABEL
-          ResId=""/>
         <DISPLAYWIDTH
           Value="20"/>
         <CONTROLTYPE
           Value="choice"/>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimsqvo.VwGLInventoryReportQVO.Productgroup_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -296,7 +324,14 @@
     ColumnType="VARCHAR2"
     AliasName="PRODUCTID"
     Expression="PRODUCTID"
-    SQLType="VARCHAR"/>
+    SQLType="VARCHAR">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="txtLocationName"
     IsSelected="false"
@@ -310,12 +345,12 @@
     LOVName="LovtxtLocationName">
     <Properties>
       <SchemaBasedProperties>
-        <LABEL
-          ResId=""/>
         <DISPLAYWIDTH
           Value="20"/>
         <CONTROLTYPE
           Value="combo_lov"/>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimsqvo.VwGLInventoryReportQVO.txtLocationName_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -334,10 +369,10 @@
       trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
     <Properties>
       <SchemaBasedProperties>
-        <LABEL
-          ResId=""/>
         <DISPLAYWIDTH
           Value="20"/>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimsqvo.VwGLInventoryReportQVO.txtFromDate_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -356,30 +391,10 @@
       trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
     <Properties>
       <SchemaBasedProperties>
-        <LABEL
-          ResId=""/>
         <DISPLAYWIDTH
           Value="20"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
-  <ViewAttribute
-    Name="txtSalesTerritory"
-    IsUpdateable="false"
-    IsSelected="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Precision="255"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    AliasName="VIEW_ATTR"
-    SQLType="VARCHAR">
-    <Properties>
-      <SchemaBasedProperties>
         <LABEL
-          ResId="erpsolims.erpsolimsmodel.erpsolimsqvo.VwGLInventoryReportQVO.txtSalesTerritory_LABEL"/>
-        <DISPLAYWIDTH
-          Value="20"/>
+          ResId="erpsolims.erpsolimsmodel.erpsolimsqvo.VwGLInventoryReportQVO.txtToDate_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -420,6 +435,10 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="combo_lov"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimsqvo.VwGLInventoryReportQVO.txtProductName_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -437,6 +456,29 @@
       trustMode="untrusted"><![CDATA[adf.currentDate]]></TransientExpression>
     <RecalcCondition
       trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="txtInventoryOrgName"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    LOVName="LovtxtInventoryOrgName">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimsqvo.VwGLInventoryReportQVO.txtInventoryOrgName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="Pk"/>
