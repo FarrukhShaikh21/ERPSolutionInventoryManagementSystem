@@ -25,6 +25,9 @@
   <ViewUsage
     Name="InItemsAutoSuggestRO"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InItemsView"/>
+  <ViewUsage
+    Name="VwInInventoryReportRO"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsqvo.VwInInventoryReportQVO"/>
   <ViewLinkUsage
     Name="FkInRecItemLinRnoteseqLink1"
     ViewLinkObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.FkInRecItemLinRnoteseqLink"
