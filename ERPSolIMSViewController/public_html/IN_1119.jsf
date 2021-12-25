@@ -181,10 +181,10 @@
                                                         <f:validator binding="#{row.bindings.ExecName.validator}"/>
                                                     </af:inputText>
                                                     <af:link text="Execute Report" id="l1"
-                                                             action="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolExecuteARReport}"
+                                                             action="#{pageFlowScope.ERPSolIMSPageFlowBean.doERPSolExecutIMSReport}"
                                                              partialSubmit="true">
                                                         <af:setActionListener from="#{row.bindings.ExecName.inputValue}"
-                                                                              to="#{pageFlowScope.ERPSolFMSPageFlowBean.ERPSolReportName}"/>
+                                                                              to="#{pageFlowScope.ERPSolIMSPageFlowBean.ERPSolReportName}"/>
                                                     </af:link>
                                                 </af:column>
                                             </af:table>
