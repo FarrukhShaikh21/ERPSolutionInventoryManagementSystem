@@ -70,11 +70,20 @@
     <view id="IN_0004_SEARCH">
       <page>/IN_0004_SEARCH.jsf</page>
     </view>
+    <view id="IN_1119">
+      <page>/IN_1119.jsf</page>
+    </view>
+    <method-call id="ExecuteWithParamsReportIMS">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-SOL-ACT-GOTO-MAIN</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__16">
       <from-activity-id>ExecuteWithParamsTransactionIMS</from-activity-id>
       <control-flow-case id="__17">
         <from-outcome>ERP-SOL-ACT-GOTO-MAIN</from-outcome>
-        <to-activity-id>ERPSolIMSMain</to-activity-id>
+        <to-activity-id>ExecuteWithParamsReportIMS</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__19">
@@ -91,18 +100,15 @@
         <to-activity-id>ExecuteWithParamsTransactionIMS</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
-    <control-flow-rule id="__29">
-      <from-activity-id>*</from-activity-id>
-      <control-flow-case id="__30">
-        <from-outcome>ACTStartERPSolutionTaskFlow</from-outcome>
-        <to-activity-id>doERPGotoIMSActivity</to-activity-id>
-      </control-flow-case>
-    </control-flow-rule>
     <control-flow-rule id="__31">
       <from-activity-id>doERPGotoIMSActivity</from-activity-id>
       <control-flow-case id="__32">
         <from-outcome>ERP-ACT-IN-0004</from-outcome>
         <to-activity-id>IN_0004</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__5">
+        <from-outcome>ERP-ACT-IN-1119</from-outcome>
+        <to-activity-id>IN_1119</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__33">
@@ -124,6 +130,13 @@
       <control-flow-case id="__4">
         <from-outcome>ACT-ERP-IN-0004-SEARCH-BACK</from-outcome>
         <to-activity-id>IN_0004</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__6">
+      <from-activity-id>ExecuteWithParamsReportIMS</from-activity-id>
+      <control-flow-case id="__7">
+        <from-outcome>ERP-SOL-ACT-GOTO-MAIN</from-outcome>
+        <to-activity-id>ERPSolIMSMain</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>

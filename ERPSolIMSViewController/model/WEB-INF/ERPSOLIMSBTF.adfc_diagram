@@ -28,21 +28,10 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">173.79883</property>
+         name="y">167.69531</property>
       <property
-         name="x">69.680664</property>
+         name="x">-191.31934</property>
    </View>
-   <WildcardControlFlowRule
-      id="WildcardControlFlowRule4">
-      <property
-         name="activityId">*</property>
-      <property
-         name="srcid">__29</property>
-      <property
-         name="y">163.0</property>
-      <property
-         name="x">140.0</property>
-   </WildcardControlFlowRule>
    <View
       id="View5">
       <property
@@ -67,9 +56,9 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">273.34473</property>
+         name="y">211.64355</property>
       <property
-         name="x">195.69824</property>
+         name="x">90.69824</property>
    </MethodCall>
    <MethodCall
       id="MethodCall7">
@@ -125,20 +114,6 @@
    </MethodCall>
    <ControlFlowCase
       islink="true"
-      id="ControlFlowCase11"
-      from="WildcardControlFlowRule8"
-      to="MethodCall7">
-      <property
-         name="fromOutcome">ACTStartERPSolutionTaskFlow</property>
-      <property
-         name="tosrcid">__30</property>
-      <property
-         name="fromsrcid">__29</property>
-      <property
-         name="sdm:polyPoints">L50,194.0,163.14941,225.6875,72.149414,L50</property>
-   </ControlFlowCase>
-   <ControlFlowCase
-      islink="true"
       id="ControlFlowCase12"
       from="WildcardControlFlowRule8"
       to="TaskFlowReturn9">
@@ -155,7 +130,7 @@
       islink="true"
       id="ControlFlowCase13"
       from="MethodCall10"
-      to="View3">
+      to="MethodCall22">
       <property
          name="fromOutcome">ERP-SOL-ACT-GOTO-MAIN</property>
       <property
@@ -163,7 +138,7 @@
       <property
          name="fromsrcid">__16</property>
       <property
-         name="sdm:polyPoints">T50,-49.63379,293.29297,69.680664,227.44824,B50</property>
+         name="sdm:polyPoints">L50,-90.63379,347.29297,-118.64844,336.09766,R50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -177,7 +152,7 @@
       <property
          name="fromsrcid">__19</property>
       <property
-         name="sdm:polyPoints">R50,146.03906,72.149414,195.69824,218.99414,T50</property>
+         name="sdm:polyPoints">B50,105.03906,126.149414,90.69824,157.29297,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -205,7 +180,7 @@
       <property
          name="fromsrcid">__26</property>
       <property
-         name="sdm:polyPoints">L50,154.69824,272.99414,-8.633789,347.29297,R50</property>
+         name="sdm:polyPoints">L50,49.698242,211.29297,-49.63379,293.29297,T50</property>
    </ControlFlowCase>
    <View
       id="View17">
@@ -230,7 +205,7 @@
       <property
          name="fromOutcome">ACT-ERP-IN-0004-SEARCH</property>
       <property
-         name="sdm:polyPoints">B50,346.5,305.0459,396.02637,327.44824,T50</property>
+         name="sdm:polyPoints">B44,343.0,309.56238,392.52637,327.44824,T44</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -241,5 +216,53 @@
          name="fromOutcome">ACT-ERP-IN-0004-SEARCH-BACK</property>
       <property
          name="sdm:polyPoints">T56,399.52637,322.73273,350.0,305.0459,B56</property>
+   </ControlFlowCase>
+   <View
+      id="View20">
+      <property
+         name="activityId">IN_1119</property>
+      <property
+         name="page">/IN_1119.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>IN_1119&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">518.7988</property>
+      <property
+         name="x">36.5</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase21"
+      from="MethodCall7"
+      to="View20">
+      <property
+         name="fromOutcome">ERP-ACT-IN-1119</property>
+      <property
+         name="sdm:polyPoints">L50,225.6875,72.149414,36.5,464.44824,T50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall22">
+      <property
+         name="activityId">ExecuteWithParamsReportIMS</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExecuteWithParamsReportIMS&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">336.44824</property>
+      <property
+         name="x">-159.64844</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase23"
+      from="MethodCall22"
+      to="View3">
+      <property
+         name="fromOutcome">ERP-SOL-ACT-GOTO-MAIN</property>
+      <property
+         name="sdm:polyPoints">T50,-159.64844,282.09766,-191.31934,221.34473,B50</property>
    </ControlFlowCase>
 </SDM>
