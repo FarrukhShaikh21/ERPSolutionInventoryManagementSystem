@@ -79,6 +79,12 @@
         <fixed-outcome>ERP-SOL-ACT-GOTO-MAIN</fixed-outcome>
       </outcome>
     </method-call>
+    <method-call id="BeforeActivityRollbackIMS">
+      <method>#{bindings.Rollback.execute}</method>
+      <outcome>
+        <fixed-outcome>BeforeActivityRollbackIMS</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__16">
       <from-activity-id>ExecuteWithParamsTransactionIMS</from-activity-id>
       <control-flow-case id="__17">
@@ -137,6 +143,20 @@
       <control-flow-case id="__7">
         <from-outcome>ERP-SOL-ACT-GOTO-MAIN</from-outcome>
         <to-activity-id>ERPSolIMSMain</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__8">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__9">
+        <from-outcome>ACTStartERPSolutionTaskFlow</from-outcome>
+        <to-activity-id>BeforeActivityRollbackIMS</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__10">
+      <from-activity-id>BeforeActivityRollbackIMS</from-activity-id>
+      <control-flow-case id="__11">
+        <from-outcome>BeforeActivityRollbackIMS</from-outcome>
+        <to-activity-id>doERPGotoIMSActivity</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>

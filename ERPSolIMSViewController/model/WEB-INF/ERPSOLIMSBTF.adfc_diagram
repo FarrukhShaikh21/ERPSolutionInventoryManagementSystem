@@ -95,9 +95,9 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">393.79883</property>
+         name="y">422.09766</property>
       <property
-         name="x">108.666016</property>
+         name="x">203.66602</property>
    </TaskFlowReturn>
    <MethodCall
       id="MethodCall10">
@@ -124,7 +124,7 @@
       <property
          name="fromsrcid">__33</property>
       <property
-         name="sdm:polyPoints">B50,230.0,205.64941,108.666016,339.44824,T50</property>
+         name="sdm:polyPoints">B50,230.0,205.64941,203.66602,367.74707,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -264,5 +264,47 @@
          name="fromOutcome">ERP-SOL-ACT-GOTO-MAIN</property>
       <property
          name="sdm:polyPoints">T50,-159.64844,282.09766,-191.31934,221.34473,B50</property>
+   </ControlFlowCase>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule24">
+      <property
+         name="activityId">*</property>
+      <property
+         name="y">-97.70117</property>
+      <property
+         name="x">379.0</property>
+   </WildcardControlFlowRule>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase25"
+      from="WildcardControlFlowRule24"
+      to="MethodCall26">
+      <property
+         name="fromOutcome">ACTStartERPSolutionTaskFlow</property>
+      <property
+         name="sdm:polyPoints">L50,343.0,-97.55176,265.5,-51.603516,R50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall26">
+      <property
+         name="activityId">BeforeActivityRollbackIMS</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>BeforeActivityRollbackIMS&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">-51.25293</property>
+      <property
+         name="x">224.5</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase27"
+      from="MethodCall26"
+      to="MethodCall7">
+      <property
+         name="fromOutcome">BeforeActivityRollbackIMS</property>
+      <property
+         name="sdm:polyPoints">B50,224.5,2.3964844,266.6875,18.149414,T50</property>
    </ControlFlowCase>
 </SDM>

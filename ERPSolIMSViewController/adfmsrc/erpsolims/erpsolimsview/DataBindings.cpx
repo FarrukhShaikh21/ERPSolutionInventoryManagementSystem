@@ -12,6 +12,8 @@
     <page path="/IN_1119.jsf" usageId="erpsolims_erpsolimsview_IN_1119PageDef"/>
     <page path="/WEB-INF/ERPSOLIMSBTF.xml#ERPSOLIMSBTF@ExecuteWithParamsReportIMS"
           usageId="erpsolims_erpsolimsview_ERPSOLIMSBTF_ERPSOLIMSBTF_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/ERPSOLIMSBTF.xml#ERPSOLIMSBTF@BeforeActivityRollbackIMS"
+          usageId="erpsolims_erpsolimsview_ERPSOLIMSBTF_ERPSOLIMSBTF_RollbackPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="erpsolims_erpsolimsview_IN_0004PageDef" path="erpsolims.erpsolimsview.pageDefs.IN_0004PageDef"/>
@@ -26,6 +28,8 @@
     <page id="erpsolims_erpsolimsview_IN_1119PageDef" path="erpsolims.erpsolimsview.pageDefs.IN_1119PageDef"/>
     <page id="erpsolims_erpsolimsview_ERPSOLIMSBTF_ERPSOLIMSBTF_ExecuteWithParamsPageDef"
           path="erpsolims.erpsolimsview.pageDefs.ERPSOLIMSBTF_ERPSOLIMSBTF_ExecuteWithParamsPageDef"/>
+    <page id="erpsolims_erpsolimsview_ERPSOLIMSBTF_ERPSOLIMSBTF_RollbackPageDef"
+          path="erpsolims.erpsolimsview.pageDefs.ERPSOLIMSBTF_ERPSOLIMSBTF_RollbackPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="ERPSolTempAppModuleDataControl" Package="erpsoltemp.erpsoltempmodel.erpsoltempam"
