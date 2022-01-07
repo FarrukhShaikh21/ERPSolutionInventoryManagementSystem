@@ -4,6 +4,11 @@ import erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel;
 
 import erpsolims.erpsolimsmodel.erpsolimsqvo.common.VwInInventoryReportQVO;
 
+import java.sql.CallableStatement;
+import java.sql.SQLException;
+import java.sql.Types;
+
+import oracle.jbo.JboException;
 import oracle.jbo.ViewObject;
 import oracle.jbo.server.ViewObjectImpl;
 // ---------------------------------------------------------------------
@@ -33,6 +38,34 @@ public class VwInInventoryReportQVOImpl extends ViewObjectImpl implements VwInIn
               vo.remove();
     }
     
+    public void doExecuteStockAgingProcedure() {
+    //Locationid
+//        System.out.println("begin ?:=PKG_GRN.FUNC_RUN_STOCK_AGING('"+this.getCurrentRow().getAttribute("txtFromDate")+"',0); END;");
+        CallableStatement cs=this.getDBTransaction().createCallableStatement("begin ?:=PKG_GRN.FUNC_RUN_STOCK_AGING(TO_DATE('"+this.getCurrentRow().getAttribute("txtFromDate")+"','YYYY-MM-DD'),0); END;", 1);
+        try {
+            cs.registerOutParameter(1, Types.VARCHAR);
+            cs.executeUpdate();
+            
+            if (!cs.getString(1).equals("ERPSOLSUCCESS")) {
+        //               this.getCurrentRow().setAttribute("Submit", "N");
+               this.getDBTransaction().commit();
+                throw new JboException("Unable to supervise due to "+cs.getString(1));
+           }
+            this.getDBTransaction().commit();
+        } catch (SQLException e) {
+        //            this.getCurrentRow().setAttribute("Submit", "N");
+            this.getDBTransaction().commit();
+            System.out.println(e.getMessage()+ "this is message");
+            throw new JboException("Unable to supervise ");
+        }
+        finally{
+            try {
+                cs.close();
+            } catch (SQLException e) {
+            }
+        }
+
+    }
 
 }
 

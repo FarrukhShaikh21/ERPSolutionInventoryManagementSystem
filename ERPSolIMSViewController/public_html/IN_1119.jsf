@@ -152,7 +152,15 @@
                                         <af:panelCollection id="pc1" styleClass="AFStretchWidth"
                                                             featuresOff="viewMenu detach">
                                             <f:facet name="menus"/>
-                                            <f:facet name="toolbar"/>
+                                            <f:facet name="toolbar">
+                                                <af:toolbar id="t2" flex="5">
+                                                    <af:button actionListener="#{bindings.doExecuteStockAgingProcedure.execute}"
+                                                               text="Process"
+                                                               disabled="#{!bindings.doExecuteStockAgingProcedure.enabled}"
+                                                               id="b2"
+                                                               visible="#{bindings.ParameterFormId.inputValue=='btnAging'}"/>
+                                                </af:toolbar>
+                                            </f:facet>
                                             <f:facet name="statusbar"/>
                                             <af:table value="#{bindings.SysProgramDetRO.collectionModel}" var="row"
                                                       rows="#{bindings.SysProgramDetRO.rangeSize}"

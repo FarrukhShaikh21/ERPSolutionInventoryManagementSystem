@@ -408,8 +408,6 @@
     ColumnType="DATE"
     AliasName="VIEW_ATTR"
     SQLType="DATE">
-    <TransientExpression
-      trustMode="untrusted"><![CDATA[adf.currentDate]]></TransientExpression>
     <RecalcCondition
       trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
     <Properties>
@@ -430,8 +428,6 @@
     ColumnType="DATE"
     AliasName="VIEW_ATTR"
     SQLType="DATE">
-    <TransientExpression
-      trustMode="untrusted"><![CDATA[adf.currentDate]]></TransientExpression>
     <RecalcCondition
       trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
     <Properties>
@@ -558,6 +554,13 @@
     <Method
       Name="doSetInventoryReportDefaults"
       MethodName="doSetInventoryReportDefaults">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+    </Method>
+    <Method
+      Name="doExecuteStockAgingProcedure"
+      MethodName="doExecuteStockAgingProcedure">
       <Return
         Name="_return_type_"
         Type="void"/>

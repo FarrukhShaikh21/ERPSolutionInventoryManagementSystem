@@ -7,5 +7,7 @@ import oracle.jbo.ViewObject;
 // ---------------------------------------------------------------------
 public interface VwInInventoryReportQVO extends ViewObject {
     void doSetInventoryReportDefaults();
+
+    void doExecuteStockAgingProcedure();
 }
 

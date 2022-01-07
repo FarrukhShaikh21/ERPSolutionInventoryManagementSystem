@@ -67,5 +67,10 @@
         <Item Value="Productid"/>
       </AttrNames>
     </attributeValues>
+    <methodAction id="doExecuteStockAgingProcedure" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="doExecuteStockAgingProcedure" IsViewObjectMethod="true"
+                  DataControl="ERPSolIMSAppModuleDataControl"
+                  InstanceName="data.ERPSolIMSAppModuleDataControl.VwInInventoryReportRO"
+                  ReturnName="data.ERPSolIMSAppModuleDataControl.methodResults.doExecuteStockAgingProcedure_ERPSolIMSAppModuleDataControl_VwInInventoryReportRO_doExecuteStockAgingProcedure_result"/>
   </bindings>
 </pageDefinition>
