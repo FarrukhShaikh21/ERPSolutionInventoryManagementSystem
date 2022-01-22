@@ -91,6 +91,9 @@
         <fixed-outcome>ERP-ACT-IN-1119</fixed-outcome>
       </outcome>
     </method-call>
+    <view id="IN_0002">
+      <page>/IN_0002.jsf</page>
+    </view>
     <control-flow-rule id="__16">
       <from-activity-id>ExecuteWithParamsTransactionIMS</from-activity-id>
       <control-flow-case id="__17">
@@ -121,6 +124,10 @@
       <control-flow-case id="__5">
         <from-outcome>ERP-ACT-IN-1119</from-outcome>
         <to-activity-id>doSetInventoryReportDefaults</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__14">
+        <from-outcome>ERP-ACT-IN-0002</from-outcome>
+        <to-activity-id>IN_0002</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__33">
