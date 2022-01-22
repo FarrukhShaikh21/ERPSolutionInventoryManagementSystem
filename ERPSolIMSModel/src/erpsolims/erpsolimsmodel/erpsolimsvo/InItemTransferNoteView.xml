@@ -69,6 +69,30 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LovtxtReceivingSroreName"
+    ListVOName="AccAllStoresView"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtReceivingSroreName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Receivingstoreid"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="StoreName"/>
+      <Item Value="Storeid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="StoreName"/>
+      <Item Value="Storeid"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="InItemTransferNote"
     Entity="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNote"/>
@@ -280,6 +304,22 @@
     EntityUsage="InItemTransferNote"
     AliasName="TXT_LOCATION_NAME"
     LOVName="LovtxtLocationName">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="txtReceivingSroreName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtReceivingSroreName"
+    EntityUsage="InItemTransferNote"
+    AliasName="TXT_RECEIVING_SRORE_NAME"
+    LOVName="LovtxtReceivingSroreName">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

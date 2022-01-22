@@ -5,7 +5,7 @@
     <af:messages id="m1"/>
     <af:form id="f1">
       <af:popup childCreation="deferred" autoCancel="disabled" id="p1" contentDelivery="lazyUncached">
-        <af:dialog id="d2" title="Do you want to Supervise this transaction? (#{bindings.Rnoteno.inputValue})"
+        <af:dialog id="d2" title="Do you want to Supervise this transaction? (#{bindings.Stnno.inputValue})"
                    dialogListener="#{pageFlowScope.ERPSolIMSPageFlowBean.doERPSolGRNDialogConfirm}" type="yesNo">
           <f:facet name="buttonBar"/>
         </af:dialog>
@@ -146,7 +146,7 @@
                         <af:button actionListener="#{bindings.Delete.execute}" text="Delete Order"
                                    disabled="#{bindings.Posted.inputValue=='Y'}" id="b2"
                                    icon="#{resource['images:imgDelete.png']}" iconPosition="top" accessKey="l"/>
-                        <af:button actionListener="#{bindings.CreateInsert.execute}" text="New GRN"
+                        <af:button actionListener="#{bindings.CreateInsert.execute}" text="New Transfer Note"
                                    disabled="#{pageFlowScope.ERPSolTempBean.LERPSolAllowAdd=='N'}" id="b1"
                                    icon="#{resource['images:imgAdd.png']}" iconPosition="top" accessKey="w"/>
                         <af:button actionListener="#{bindings.Rollback.execute}" text="Undo Changes" immediate="true"
@@ -168,24 +168,16 @@
                     <af:panelGridLayout id="pgl5">
                       <af:gridRow height="30px" id="gr4">
                         <af:gridCell marginStart="5px" width="15%" id="gc2" valign="middle">
-                          <af:outputLabel value="#{bindings.Rnoteno.hints.label}" id="ol5"/>
+                          <af:outputLabel value="#{bindings.Stnno.hints.label}" id="ol5"/>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="35%" id="gc3" valign="middle">
-                          <af:inputText value="#{bindings.Rnoteseq.inputValue}" label="#{bindings.Rnoteseq.hints.label}"
-                                        required="#{bindings.Rnoteseq.hints.mandatory}"
-                                        columns="#{bindings.Rnoteseq.hints.displayWidth}"
-                                        maximumLength="#{bindings.Rnoteseq.hints.precision}"
-                                        shortDesc="#{bindings.Rnoteseq.hints.tooltip}" id="it6" rendered="false">
-                            <f:validator binding="#{bindings.Rnoteseq.validator}"/>
-                            <af:convertNumber groupingUsed="false" pattern="#{bindings.Rnoteseq.format}"/>
-                          </af:inputText>
-                          <af:inputText value="#{bindings.Rnoteno.inputValue}" label="#{bindings.Rnoteno.hints.label}"
-                                        required="#{bindings.Rnoteno.hints.mandatory}"
-                                        columns="#{bindings.Rnoteno.hints.displayWidth}"
-                                        maximumLength="#{bindings.Rnoteno.hints.precision}"
-                                        shortDesc="#{bindings.Rnoteno.hints.tooltip}" id="it2" simple="true"
+                          <af:inputText value="#{bindings.Stnno.inputValue}" label="#{bindings.Stnno.hints.label}"
+                                        required="#{bindings.Stnno.hints.mandatory}"
+                                        columns="#{bindings.Stnno.hints.displayWidth}"
+                                        maximumLength="#{bindings.Stnno.hints.precision}"
+                                        shortDesc="#{bindings.Stnno.hints.tooltip}" id="it2" simple="true"
                                         readOnly="true">
-                            <f:validator binding="#{bindings.Rnoteno.validator}"/>
+                            <f:validator binding="#{bindings.Stnno.validator}"/>
                           </af:inputText>
                           <af:inputText value="#{bindings.Posted.inputValue}" label="#{bindings.Posted.hints.label}"
                                         required="#{bindings.Posted.hints.mandatory}"
@@ -196,15 +188,16 @@
                           </af:inputText>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="15%" id="gc6" valign="middle">
-                          <af:outputLabel value="#{bindings.ReceivingDate.hints.label}" id="ol10"/>
+                          <af:outputLabel value="#{bindings.DateOfTransfer.hints.label}" id="ol10"/>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="35%" marginEnd="5px" id="gc7" valign="middle">
-                          <af:inputDate value="#{bindings.ReceivingDate.inputValue}"
-                                        required="#{bindings.ReceivingDate.hints.mandatory}"
-                                        columns="#{bindings.ReceivingDate.hints.displayWidth}"
-                                        shortDesc="#{bindings.ReceivingDate.hints.tooltip}" id="id2" simple="true">
-                            <f:validator binding="#{bindings.ReceivingDate.validator}"/>
-                            <af:convertDateTime pattern="#{bindings.ReceivingDate.format}"/>
+                          <af:inputDate value="#{bindings.DateOfTransfer.inputValue}"
+                                        label="#{bindings.DateOfTransfer.hints.label}"
+                                        required="#{bindings.DateOfTransfer.hints.mandatory}"
+                                        columns="#{bindings.DateOfTransfer.hints.displayWidth}"
+                                        shortDesc="#{bindings.DateOfTransfer.hints.tooltip}" id="id1" simple="true">
+                            <f:validator binding="#{bindings.DateOfTransfer.validator}"/>
+                            <af:convertDateTime pattern="#{bindings.DateOfTransfer.format}"/>
                           </af:inputDate>
                         </af:gridCell>
                       </af:gridRow>
@@ -213,6 +206,17 @@
                           <af:outputLabel value="#{bindings.Locationid.hints.label}" id="ol4"/>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="35%" id="gc9" halign="stretch" valign="middle">
+                          <af:inputComboboxListOfValues id="txtLocationNameId"
+                                                        popupTitle="Search and Select: #{bindings.txtLocationName.hints.label}"
+                                                        value="#{bindings.txtLocationName.inputValue}"
+                                                        label="#{bindings.txtLocationName.hints.label}"
+                                                        model="#{bindings.txtLocationName.listOfValuesModel}"
+                                                        required="#{bindings.txtLocationName.hints.mandatory}"
+                                                        columns="#{bindings.txtLocationName.hints.displayWidth}"
+                                                        shortDesc="#{bindings.txtLocationName.hints.tooltip}"
+                                                        simple="true">
+                            <f:validator binding="#{bindings.txtLocationName.validator}"/>
+                          </af:inputComboboxListOfValues>
                           <af:inputText value="#{bindings.Locationid.inputValue}"
                                         label="#{bindings.Locationid.hints.label}"
                                         required="#{bindings.Locationid.hints.mandatory}"
@@ -228,7 +232,7 @@
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="35%" marginEnd="5px" id="gc11"
                                      valign="middle" halign="stretch">
-                          <af:inputComboboxListOfValues id="txtStoreNameId"
+                          <af:inputComboboxListOfValues id="iclov1"
                                                         popupTitle="Search and Select: #{bindings.txtStoreName.hints.label}"
                                                         value="#{bindings.txtStoreName.inputValue}"
                                                         label="#{bindings.txtStoreName.hints.label}"
@@ -236,9 +240,8 @@
                                                         required="#{bindings.txtStoreName.hints.mandatory}"
                                                         columns="#{bindings.txtStoreName.hints.displayWidth}"
                                                         shortDesc="#{bindings.txtStoreName.hints.tooltip}"
-                                                        autoSubmit="true" simple="true">
+                                                        simple="true">
                             <f:validator binding="#{bindings.txtStoreName.validator}"/>
-                            <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolIMSPageFlowBean.doERPSolGetAutoSuggestedStoreValues}"/>
                           </af:inputComboboxListOfValues>
                           <af:spacer width="10" height="10" id="s3"/>
                           <af:outputText value="#{bindings.Storeid.inputValue}" id="ot3" noWrap="true"/>
@@ -246,29 +249,60 @@
                       </af:gridRow>
                       <af:gridRow height="30px" id="gr6">
                         <af:gridCell marginStart="5px" width="15%" id="gc12" valign="middle">
-                          <af:outputLabel value="#{bindings.Recvdoctypeid.label}" id="ol1"/>
+                          <af:outputLabel value="#{bindings.txtReceivingSroreName.hints.label}" id="ol1"/>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="35%" id="gc13" halign="stretch" valign="middle">
-                          <af:selectOneChoice value="#{bindings.Recvdoctypeid.inputValue}"
-                                              label="#{bindings.Recvdoctypeid.label}"
-                                              required="#{bindings.Recvdoctypeid.hints.mandatory}"
-                                              shortDesc="#{bindings.Recvdoctypeid.hints.tooltip}" id="soc2"
-                                              simple="true" autoSubmit="true">
-                            <f:selectItems value="#{bindings.Recvdoctypeid.items}" id="si3"/>
-                            <f:validator binding="#{bindings.Recvdoctypeid.validator}"/>
-                          </af:selectOneChoice>
+                          <af:inputComboboxListOfValues id="txtReceivingSroreNameId"
+                                                        popupTitle="Search and Select: #{bindings.txtReceivingSroreName.hints.label}"
+                                                        value="#{bindings.txtReceivingSroreName.inputValue}"
+                                                        label="#{bindings.txtReceivingSroreName.hints.label}"
+                                                        model="#{bindings.txtReceivingSroreName.listOfValuesModel}"
+                                                        required="#{bindings.txtReceivingSroreName.hints.mandatory}"
+                                                        columns="#{bindings.txtReceivingSroreName.hints.displayWidth}"
+                                                        shortDesc="#{bindings.txtReceivingSroreName.hints.tooltip}"
+                                                        simple="true">
+                            <f:validator binding="#{bindings.txtReceivingSroreName.validator}"/>
+                          </af:inputComboboxListOfValues>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="15%" id="gc14" valign="middle">
-                          <af:outputLabel value="#{bindings.RefNo.hints.label}" id="ol6"/>
+                          <af:outputLabel value="#{bindings.Gatepassrefno.hints.label}" id="ol3"/>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="35%" marginEnd="5px" id="gc15" valign="middle"
                                      halign="stretch">
-                          <af:inputText value="#{bindings.RefNo.inputValue}" label="#{bindings.RefNo.hints.label}"
-                                        required="#{bindings.RefNo.hints.mandatory}"
-                                        columns="#{bindings.RefNo.hints.displayWidth}"
-                                        maximumLength="#{bindings.RefNo.hints.precision}"
-                                        shortDesc="#{bindings.RefNo.hints.tooltip}" id="it1" simple="true">
-                            <f:validator binding="#{bindings.RefNo.validator}"/>
+                          <af:inputText value="#{bindings.Gatepassrefno.inputValue}"
+                                        label="#{bindings.Gatepassrefno.hints.label}"
+                                        required="#{bindings.Gatepassrefno.hints.mandatory}"
+                                        columns="#{bindings.Gatepassrefno.hints.displayWidth}"
+                                        maximumLength="#{bindings.Gatepassrefno.hints.precision}"
+                                        shortDesc="#{bindings.Gatepassrefno.hints.tooltip}" id="it1" simple="true">
+                            <f:validator binding="#{bindings.Gatepassrefno.validator}"/>
+                          </af:inputText>
+                        </af:gridCell>
+                      </af:gridRow>
+                      <af:gridRow id="gr7">
+                        <af:gridCell id="gc16" width="15%" valign="middle">
+                          <af:outputLabel value="#{bindings.BiltyNo.hints.label}" id="ol7"/>
+                        </af:gridCell>
+                        <af:gridCell id="gc17" width="35%">
+                          <af:inputText value="#{bindings.BiltyNo.inputValue}" label="#{bindings.BiltyNo.hints.label}"
+                                        required="#{bindings.BiltyNo.hints.mandatory}"
+                                        columns="#{bindings.BiltyNo.hints.displayWidth}"
+                                        maximumLength="#{bindings.BiltyNo.hints.precision}"
+                                        shortDesc="#{bindings.BiltyNo.hints.tooltip}" id="it6" simple="true">
+                            <f:validator binding="#{bindings.BiltyNo.validator}"/>
+                          </af:inputText>
+                        </af:gridCell>
+                        <af:gridCell id="gc18" width="15%" valign="middle">
+                          <af:outputLabel value="#{bindings.TransporterName.hints.label}" id="ol6"/>
+                        </af:gridCell>
+                        <af:gridCell id="gc19" width="35%">
+                          <af:inputText value="#{bindings.TransporterName.inputValue}"
+                                        label="#{bindings.TransporterName.hints.label}"
+                                        required="#{bindings.TransporterName.hints.mandatory}"
+                                        columns="#{bindings.TransporterName.hints.displayWidth}"
+                                        maximumLength="#{bindings.TransporterName.hints.precision}"
+                                        shortDesc="#{bindings.TransporterName.hints.tooltip}" id="it10" simple="true">
+                            <f:validator binding="#{bindings.TransporterName.validator}"/>
                           </af:inputText>
                         </af:gridCell>
                       </af:gridRow>

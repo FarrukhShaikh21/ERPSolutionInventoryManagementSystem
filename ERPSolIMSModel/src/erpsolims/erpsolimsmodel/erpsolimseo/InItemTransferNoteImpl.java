@@ -53,6 +53,7 @@ public class InItemTransferNoteImpl extends ERPSolGlobalsEntityImpl {
         Stnnoseq,
         txtStoreName,
         txtLocationName,
+        txtReceivingSroreName,
         InItemTransferNoteLines,
         AllStores,
         AllLocations,
@@ -113,6 +114,7 @@ public class InItemTransferNoteImpl extends ERPSolGlobalsEntityImpl {
     public static final int STNNOSEQ = AttributesEnum.Stnnoseq.index();
     public static final int TXTSTORENAME = AttributesEnum.txtStoreName.index();
     public static final int TXTLOCATIONNAME = AttributesEnum.txtLocationName.index();
+    public static final int TXTRECEIVINGSRORENAME = AttributesEnum.txtReceivingSroreName.index();
     public static final int INITEMTRANSFERNOTELINES = AttributesEnum.InItemTransferNoteLines.index();
     public static final int ALLSTORES = AttributesEnum.AllStores.index();
     public static final int ALLLOCATIONS = AttributesEnum.AllLocations.index();
@@ -642,6 +644,22 @@ public class InItemTransferNoteImpl extends ERPSolGlobalsEntityImpl {
      */
     public void settxtLocationName(String value) {
         setAttributeInternal(TXTLOCATIONNAME, value);
+    }
+
+    /**
+     * Gets the attribute value for txtReceivingSroreName, using the alias name txtReceivingSroreName.
+     * @return the value of txtReceivingSroreName
+     */
+    public String gettxtReceivingSroreName() {
+        return (String) getAttributeInternal(TXTRECEIVINGSRORENAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtReceivingSroreName.
+     * @param value value to set the txtReceivingSroreName
+     */
+    public void settxtReceivingSroreName(String value) {
+        setAttributeInternal(TXTRECEIVINGSRORENAME, value);
     }
 
     /**
