@@ -199,4 +199,9 @@
     EntityAttrName="Stnnoseq"
     EntityUsage="InItemTransferNote"
     AliasName="STNNOSEQ"/>
+  <ViewLinkAccessor
+    Name="InItemTransferNoteLinesView"
+    ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.InItemTransferNoteInItemTransferNoteLinStnnoseqLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

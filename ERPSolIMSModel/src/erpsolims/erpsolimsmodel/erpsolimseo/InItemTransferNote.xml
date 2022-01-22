@@ -40,6 +40,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="18"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNote.Stnno_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="DateOfTransfer"
@@ -47,7 +55,18 @@
     SQLType="DATE"
     Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
-    TableName="IN_ITEM_TRANSFER_NOTE"/>
+    TableName="IN_ITEM_TRANSFER_NOTE">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[adf.currentDate]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNote.DateOfTransfer_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Receivingstoreid"
     IsNotNull="true"
@@ -72,6 +91,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNote.TransferReference_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="SourceDocRef"
@@ -84,6 +111,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNote.SourceDocRef_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Remarks"
@@ -96,6 +131,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="350"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Createdby"
@@ -142,7 +183,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEM_TRANSFER_NOTE">
+    TableName="IN_ITEM_TRANSFER_NOTE"
+    DefaultValue="N">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
@@ -178,7 +220,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEM_TRANSFER_NOTE">
+    TableName="IN_ITEM_TRANSFER_NOTE"
+    DefaultValue="B">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -218,6 +261,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNote.Gatepassrefno_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Gatepassdate"
@@ -324,7 +373,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEM_TRANSFER_NOTE">
+    TableName="IN_ITEM_TRANSFER_NOTE"
+    DefaultValue="N">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
@@ -344,6 +394,13 @@
     ColumnType="NUMBER"
     TableName="IN_ITEM_TRANSFER_NOTE"
     PrimaryKey="true"/>
+  <AccessorAttribute
+    Name="InItemTransferNoteLines"
+    Association="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemTransferNoteInItemTransferNoteLinStnnoseqAssoc"
+    AssociationEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemTransferNoteInItemTransferNoteLinStnnoseqAssoc.InItemTransferNoteLines"
+    AssociationOtherEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemTransferNoteInItemTransferNoteLinStnnoseqAssoc.InItemTransferNote"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="XpkinItemTransferNote"
     PrimaryKey="true">
@@ -376,4 +433,8 @@
       <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNote.Deptid"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolims.erpsolimsmodel.ERPSolIMSModelBundle"/>
+  </ResourceBundle>
 </Entity>

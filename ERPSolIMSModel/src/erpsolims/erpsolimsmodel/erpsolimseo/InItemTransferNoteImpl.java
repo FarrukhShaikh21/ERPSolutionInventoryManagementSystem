@@ -1,9 +1,11 @@
 package erpsolims.erpsolimsmodel.erpsolimseo;
 
+import erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel;
 import erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsEntityImpl;
 
 import oracle.jbo.AttributeList;
 import oracle.jbo.Key;
+import oracle.jbo.RowIterator;
 import oracle.jbo.domain.Date;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.TransactionEvent;
@@ -47,7 +49,8 @@ public class InItemTransferNoteImpl extends ERPSolGlobalsEntityImpl {
         BillOfEntry,
         IsMigrated,
         MigratedDate,
-        Stnnoseq;
+        Stnnoseq,
+        InItemTransferNoteLines;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -70,6 +73,8 @@ public class InItemTransferNoteImpl extends ERPSolGlobalsEntityImpl {
             return vals;
         }
     }
+
+
     public static final int SENDINGSTOREID = AttributesEnum.Sendingstoreid.index();
     public static final int STNNO = AttributesEnum.Stnno.index();
     public static final int DATEOFTRANSFER = AttributesEnum.DateOfTransfer.index();
@@ -100,12 +105,21 @@ public class InItemTransferNoteImpl extends ERPSolGlobalsEntityImpl {
     public static final int ISMIGRATED = AttributesEnum.IsMigrated.index();
     public static final int MIGRATEDDATE = AttributesEnum.MigratedDate.index();
     public static final int STNNOSEQ = AttributesEnum.Stnnoseq.index();
+    public static final int INITEMTRANSFERNOTELINES = AttributesEnum.InItemTransferNoteLines.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public InItemTransferNoteImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNote");
+    }
+
 
     /**
      * Gets the attribute value for Sendingstoreid, using the alias name Sendingstoreid.
@@ -588,6 +602,14 @@ public class InItemTransferNoteImpl extends ERPSolGlobalsEntityImpl {
     }
 
     /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getInItemTransferNoteLines() {
+        return (RowIterator) getAttributeInternal(INITEMTRANSFERNOTELINES);
+    }
+
+
+    /**
      * @param stnnoseq key constituent
 
      * @return a Key object based on given key constituents.
@@ -597,17 +619,16 @@ public class InItemTransferNoteImpl extends ERPSolGlobalsEntityImpl {
     }
 
     /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNote");
-    }
-
-    /**
      * Add attribute defaulting logic in this method.
      * @param attributeList list of attribute names/values to initialize the row
      */
     protected void create(AttributeList attributeList) {
+        
+        setERPSolPKColumnName("Stnnoseq");
+        setERPSolPKSeqName("IN_ITEM_TRANSFER_NOTE_SEQ");
+        setCompanyid(ERPSolGlobClassModel.doGetUserCompanyCode());
+        setLocationid(ERPSolGlobClassModel.doGetUserLocationCode());
+        setSendingstoreid(ERPSolGlobClassModel.doGetUserStoreCode());
         super.create(attributeList);
     }
 
@@ -631,6 +652,14 @@ public class InItemTransferNoteImpl extends ERPSolGlobalsEntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
+
+        if (operation==DML_INSERT) {
+           String pkValue=" initm_transfernote_id('"+ERPSolGlobClassModel.doGetUserCompanyCode()+"','"+ERPSolGlobClassModel.doGetUserLocationCode()+"','B','"+getSendingstoreid()+"',TO_DATE('"+getDateOfTransfer()+"','YYYY-MM-DD'))";
+           System.out.println(pkValue + "RNOTENO pk value");
+           String result= ERPSolGlobClassModel.doGetERPSolPrimaryKeyValueModel(getDBTransaction(), pkValue, "dual", null, null);
+           populateAttributeAsChanged(STNNO, result);
+
+        }          
         super.doDML(operation, e);
     }
 }
