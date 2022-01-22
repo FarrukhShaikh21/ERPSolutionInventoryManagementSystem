@@ -865,6 +865,13 @@
     AssociationOtherEnd="erpsolims.erpsolimsmodel.erpsolimseo.R264Assoc.AllLocations"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="InItemTransferNote"
+    Association="erpsolims.erpsolimsmodel.erpsolimsassoc.AllLocationsInItemTransferNoteLocationIdAssoc"
+    AssociationEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.AllLocationsInItemTransferNoteLocationIdAssoc.InItemTransferNote"
+    AssociationOtherEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.AllLocationsInItemTransferNoteLocationIdAssoc.AllLocations"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="XpkallLocations"
     PrimaryKey="true">

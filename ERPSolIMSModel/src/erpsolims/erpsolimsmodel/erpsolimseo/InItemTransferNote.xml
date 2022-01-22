@@ -401,21 +401,43 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEM_TRANSFER_NOTE">
+    IsPersistent="false"
+    IsQueriable="false">
     <TransientExpression
       trustMode="untrusted"><![CDATA[AllStores?.StoreName]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
-        <LABEL
-          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNote.txtStoreName_LABEL"/>
         <DISPLAYWIDTH
           Value="20"/>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNote.txtStoreName_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
     <Dependencies>
       <Item
         Value="Sendingstoreid"/>
     </Dependencies>
+  </Attribute>
+  <Attribute
+    Name="txtLocationName"
+    Precision="80"
+    ColumnName="TXT_LOCATION_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="IN_ITEM_TRANSFER_NOTE"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[AllLocations?.LocationDescription]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNote.txtLocationName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <AccessorAttribute
     Name="InItemTransferNoteLines"
@@ -429,6 +451,13 @@
     Association="erpsolims.erpsolimsmodel.erpsolimsassoc.AllStoresInItemTransferSendingStoreIdAssoc"
     AssociationEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.AllStoresInItemTransferSendingStoreIdAssoc.AllStores"
     AssociationOtherEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.AllStoresInItemTransferSendingStoreIdAssoc.InItemTransferNote"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="AllLocations"
+    Association="erpsolims.erpsolimsmodel.erpsolimsassoc.AllLocationsInItemTransferNoteLocationIdAssoc"
+    AssociationEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.AllLocationsInItemTransferNoteLocationIdAssoc.AllLocations"
+    AssociationOtherEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.AllLocationsInItemTransferNoteLocationIdAssoc.InItemTransferNote"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
   <Key
@@ -472,6 +501,17 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNote.Sendingstoreid"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_InItemTransferNote1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="XPKALL_LOCATIONS"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_IN_ITEM_TRANSFER_NOTE1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNote.Locationid"/>
     </AttrArray>
   </Key>
   <ResourceBundle>

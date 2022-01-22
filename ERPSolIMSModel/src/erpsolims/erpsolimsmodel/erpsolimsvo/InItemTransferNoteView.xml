@@ -17,6 +17,10 @@
     Name="AccAllStoresView"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllStoresView"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccAllLocationsView"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllLocationsView"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovtxtStoreName"
     ListVOName="AccAllStoresView"
@@ -38,6 +42,30 @@
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="StoreName"/>
       <Item Value="Storeid"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovtxtLocationName"
+    ListVOName="AccAllLocationsView"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtLocationName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Locationid"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LocationDescription"/>
+      <Item Value="Locationid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="LocationDescription"/>
+      <Item Value="Locationid"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -233,7 +261,25 @@
     EntityAttrName="txtStoreName"
     EntityUsage="InItemTransferNote"
     AliasName="TXT_STORE_NAME"
-    LOVName="LovtxtStoreName">
+    LOVName="LovtxtStoreName"
+    IsQueriable="false"
+    IsPersistent="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="txtLocationName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtLocationName"
+    EntityUsage="InItemTransferNote"
+    AliasName="TXT_LOCATION_NAME"
+    LOVName="LovtxtLocationName">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -249,6 +295,12 @@
   <ViewLinkAccessor
     Name="AllStoresView"
     ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.AllStoresInItemTransferSendingStoreIdLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AllLocationsView"
+    ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.AllLocationsInItemTransferNoteLocationIdLink"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>

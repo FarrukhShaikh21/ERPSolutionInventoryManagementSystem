@@ -52,8 +52,10 @@ public class InItemTransferNoteImpl extends ERPSolGlobalsEntityImpl {
         MigratedDate,
         Stnnoseq,
         txtStoreName,
+        txtLocationName,
         InItemTransferNoteLines,
-        AllStores;
+        AllStores,
+        AllLocations;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -109,8 +111,10 @@ public class InItemTransferNoteImpl extends ERPSolGlobalsEntityImpl {
     public static final int MIGRATEDDATE = AttributesEnum.MigratedDate.index();
     public static final int STNNOSEQ = AttributesEnum.Stnnoseq.index();
     public static final int TXTSTORENAME = AttributesEnum.txtStoreName.index();
+    public static final int TXTLOCATIONNAME = AttributesEnum.txtLocationName.index();
     public static final int INITEMTRANSFERNOTELINES = AttributesEnum.InItemTransferNoteLines.index();
     public static final int ALLSTORES = AttributesEnum.AllStores.index();
+    public static final int ALLLOCATIONS = AttributesEnum.AllLocations.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -623,6 +627,22 @@ public class InItemTransferNoteImpl extends ERPSolGlobalsEntityImpl {
     }
 
     /**
+     * Gets the attribute value for txtLocationName, using the alias name txtLocationName.
+     * @return the value of txtLocationName
+     */
+    public String gettxtLocationName() {
+        return (String) getAttributeInternal(TXTLOCATIONNAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtLocationName.
+     * @param value value to set the txtLocationName
+     */
+    public void settxtLocationName(String value) {
+        setAttributeInternal(TXTLOCATIONNAME, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getInItemTransferNoteLines() {
@@ -642,6 +662,21 @@ public class InItemTransferNoteImpl extends ERPSolGlobalsEntityImpl {
      */
     public void setAllStores(EntityImpl value) {
         setAttributeInternal(ALLSTORES, value);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getAllLocations() {
+        return (EntityImpl) getAttributeInternal(ALLLOCATIONS);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setAllLocations(EntityImpl value) {
+        setAttributeInternal(ALLLOCATIONS, value);
     }
 
 
