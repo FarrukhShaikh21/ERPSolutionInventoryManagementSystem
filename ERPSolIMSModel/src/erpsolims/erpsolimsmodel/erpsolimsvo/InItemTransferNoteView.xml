@@ -13,6 +13,34 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="AccAllStoresView"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllStoresView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LovtxtStoreName"
+    ListVOName="AccAllStoresView"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtStoreName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Sendingstoreid"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="StoreName"/>
+      <Item Value="Storeid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="StoreName"/>
+      <Item Value="Storeid"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="InItemTransferNote"
     Entity="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNote"/>
@@ -199,6 +227,20 @@
     EntityAttrName="Stnnoseq"
     EntityUsage="InItemTransferNote"
     AliasName="STNNOSEQ"/>
+  <ViewAttribute
+    Name="txtStoreName"
+    PrecisionRule="true"
+    EntityAttrName="txtStoreName"
+    EntityUsage="InItemTransferNote"
+    AliasName="TXT_STORE_NAME"
+    LOVName="LovtxtStoreName">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="InItemTransferNoteLinesView"
     ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.InItemTransferNoteInItemTransferNoteLinStnnoseqLink"

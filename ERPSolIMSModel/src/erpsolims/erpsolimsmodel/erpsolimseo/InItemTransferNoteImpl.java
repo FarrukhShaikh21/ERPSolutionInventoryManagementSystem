@@ -51,6 +51,7 @@ public class InItemTransferNoteImpl extends ERPSolGlobalsEntityImpl {
         IsMigrated,
         MigratedDate,
         Stnnoseq,
+        txtStoreName,
         InItemTransferNoteLines,
         AllStores;
         private static AttributesEnum[] vals = null;
@@ -107,6 +108,7 @@ public class InItemTransferNoteImpl extends ERPSolGlobalsEntityImpl {
     public static final int ISMIGRATED = AttributesEnum.IsMigrated.index();
     public static final int MIGRATEDDATE = AttributesEnum.MigratedDate.index();
     public static final int STNNOSEQ = AttributesEnum.Stnnoseq.index();
+    public static final int TXTSTORENAME = AttributesEnum.txtStoreName.index();
     public static final int INITEMTRANSFERNOTELINES = AttributesEnum.InItemTransferNoteLines.index();
     public static final int ALLSTORES = AttributesEnum.AllStores.index();
 
@@ -602,6 +604,22 @@ public class InItemTransferNoteImpl extends ERPSolGlobalsEntityImpl {
      */
     public void setStnnoseq(Integer value) {
         setAttributeInternal(STNNOSEQ, value);
+    }
+
+    /**
+     * Gets the attribute value for txtStoreName, using the alias name txtStoreName.
+     * @return the value of txtStoreName
+     */
+    public String gettxtStoreName() {
+        return (String) getAttributeInternal(TXTSTORENAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtStoreName.
+     * @param value value to set the txtStoreName
+     */
+    public void settxtStoreName(String value) {
+        setAttributeInternal(TXTSTORENAME, value);
     }
 
     /**

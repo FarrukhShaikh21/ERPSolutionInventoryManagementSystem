@@ -394,6 +394,29 @@
     ColumnType="NUMBER"
     TableName="IN_ITEM_TRANSFER_NOTE"
     PrimaryKey="true"/>
+  <Attribute
+    Name="txtStoreName"
+    Precision="80"
+    ColumnName="TXT_STORE_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="IN_ITEM_TRANSFER_NOTE">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[AllStores?.StoreName]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNote.txtStoreName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <Dependencies>
+      <Item
+        Value="Sendingstoreid"/>
+    </Dependencies>
+  </Attribute>
   <AccessorAttribute
     Name="InItemTransferNoteLines"
     Association="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemTransferNoteInItemTransferNoteLinStnnoseqAssoc"
