@@ -9,7 +9,13 @@
   DBObjectType="table"
   DBObjectName="IN_ITEM_TRANSFER_NOTE"
   AliasName="InItemTransferNote"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <Attr Name="_superClass" Value="erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsEntityImpl"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="Sendingstoreid"
     IsNotNull="true"
@@ -18,22 +24,19 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEM_TRANSFER_NOTE"
-    PrimaryKey="true">
+    TableName="IN_ITEM_TRANSFER_NOTE">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
   </Attribute>
   <Attribute
     Name="Stnno"
-    IsNotNull="true"
     Precision="18"
     ColumnName="STNNO"
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEM_TRANSFER_NOTE"
-    PrimaryKey="true">
+    TableName="IN_ITEM_TRANSFER_NOTE">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="18"/>
     </DesignTime>
@@ -42,7 +45,7 @@
     Name="DateOfTransfer"
     ColumnName="DATE_OF_TRANSFER"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="IN_ITEM_TRANSFER_NOTE"/>
   <Attribute
@@ -110,7 +113,7 @@
     Name="CreatedDate"
     ColumnName="CREATED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="IN_ITEM_TRANSFER_NOTE"/>
   <Attribute
@@ -129,7 +132,7 @@
     Name="ModifiedDate"
     ColumnName="MODIFIED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="IN_ITEM_TRANSFER_NOTE"/>
   <Attribute
@@ -220,7 +223,7 @@
     Name="Gatepassdate"
     ColumnName="GATEPASSDATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="IN_ITEM_TRANSFER_NOTE"/>
   <Attribute
@@ -275,7 +278,7 @@
     Name="BiltyDate"
     ColumnName="BILTY_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="IN_ITEM_TRANSFER_NOTE"/>
   <Attribute
@@ -330,16 +333,17 @@
     Name="MigratedDate"
     ColumnName="MIGRATED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="IN_ITEM_TRANSFER_NOTE"/>
   <Attribute
     Name="Stnnoseq"
     ColumnName="STNNOSEQ"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="IN_ITEM_TRANSFER_NOTE"/>
+    TableName="IN_ITEM_TRANSFER_NOTE"
+    PrimaryKey="true"/>
   <Key
     Name="XpkinItemTransferNote"
     PrimaryKey="true">
@@ -347,8 +351,7 @@
       <Attr Name="_DBObjectName" Value="XPKIN_ITEM_TRANSFER_NOTE"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNote.Sendingstoreid"/>
-      <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNote.Stnno"/>
+      <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNote.Stnnoseq"/>
     </AttrArray>
   </Key>
   <Key
