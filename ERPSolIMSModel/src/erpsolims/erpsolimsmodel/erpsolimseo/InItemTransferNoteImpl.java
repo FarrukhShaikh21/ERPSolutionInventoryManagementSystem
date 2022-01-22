@@ -55,7 +55,8 @@ public class InItemTransferNoteImpl extends ERPSolGlobalsEntityImpl {
         txtLocationName,
         InItemTransferNoteLines,
         AllStores,
-        AllLocations;
+        AllLocations,
+        AllStores1;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -115,6 +116,7 @@ public class InItemTransferNoteImpl extends ERPSolGlobalsEntityImpl {
     public static final int INITEMTRANSFERNOTELINES = AttributesEnum.InItemTransferNoteLines.index();
     public static final int ALLSTORES = AttributesEnum.AllStores.index();
     public static final int ALLLOCATIONS = AttributesEnum.AllLocations.index();
+    public static final int ALLSTORES1 = AttributesEnum.AllStores1.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -677,6 +679,21 @@ public class InItemTransferNoteImpl extends ERPSolGlobalsEntityImpl {
      */
     public void setAllLocations(EntityImpl value) {
         setAttributeInternal(ALLLOCATIONS, value);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getAllStores1() {
+        return (EntityImpl) getAttributeInternal(ALLSTORES1);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setAllStores1(EntityImpl value) {
+        setAttributeInternal(ALLSTORES1, value);
     }
 
 

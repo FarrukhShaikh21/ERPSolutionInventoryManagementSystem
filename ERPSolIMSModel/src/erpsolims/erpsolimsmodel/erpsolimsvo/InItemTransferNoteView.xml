@@ -304,4 +304,10 @@
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AllStoresView1"
+    ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.AllStoreInItemTransferNoteReceivingStoreIdLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
 </ViewObject>
