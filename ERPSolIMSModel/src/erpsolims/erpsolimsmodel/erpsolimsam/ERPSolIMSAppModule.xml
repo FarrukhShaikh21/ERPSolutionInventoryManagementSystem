@@ -31,11 +31,23 @@
   <ViewUsage
     Name="AllLocationsAutoSuggestRO"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllLocationsView"/>
+  <ViewUsage
+    Name="InItemTransferNoteCRUD"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InItemTransferNoteView"/>
+  <ViewUsage
+    Name="InItemTransferNoteLinesDetCRUD"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InItemTransferNoteLinesView"/>
   <ViewLinkUsage
     Name="FkInRecItemLinRnoteseqLink1"
     ViewLinkObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.FkInRecItemLinRnoteseqLink"
     SrcViewUsageName="erpsolims.erpsolimsmodel.erpsolimsam.ERPSolIMSAppModule.InReceivedItemsCRUD"
     DstViewUsageName="erpsolims.erpsolimsmodel.erpsolimsam.ERPSolIMSAppModule.InReceivedItemsLinesDetCRUD"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="InItemTransferNoteInItemTransferNoteLinStnnoseqLink1"
+    ViewLinkObjectName="erpsolims.erpsolimsmodel.erpsolimslink.InItemTransferNoteInItemTransferNoteLinStnnoseqLink"
+    SrcViewUsageName="erpsolims.erpsolimsmodel.erpsolimsam.ERPSolIMSAppModule.InItemTransferNoteCRUD"
+    DstViewUsageName="erpsolims.erpsolimsmodel.erpsolimsam.ERPSolIMSAppModule.InItemTransferNoteLinesDetCRUD"
     Reversed="false"/>
   <ResourceBundle>
     <PropertiesBundle

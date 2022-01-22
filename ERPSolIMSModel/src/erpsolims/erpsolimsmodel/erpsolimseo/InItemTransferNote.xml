@@ -401,6 +401,13 @@
     AssociationOtherEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemTransferNoteInItemTransferNoteLinStnnoseqAssoc.InItemTransferNote"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="AllStores"
+    Association="erpsolims.erpsolimsmodel.erpsolimsassoc.AllStoresInItemTransferSendingStoreIdAssoc"
+    AssociationEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.AllStoresInItemTransferSendingStoreIdAssoc.AllStores"
+    AssociationOtherEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.AllStoresInItemTransferSendingStoreIdAssoc.InItemTransferNote"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="XpkinItemTransferNote"
     PrimaryKey="true">
@@ -431,6 +438,17 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNote.Deptid"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_InItemTransferNote">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="XPKALL_STORES"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_IN_ITEM_TRANSFER_NOTE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNote.Sendingstoreid"/>
     </AttrArray>
   </Key>
   <ResourceBundle>

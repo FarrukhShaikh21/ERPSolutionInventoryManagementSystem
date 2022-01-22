@@ -204,4 +204,10 @@
     ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.InItemTransferNoteInItemTransferNoteLinStnnoseqLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AllStoresView"
+    ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.AllStoresInItemTransferSendingStoreIdLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
 </ViewObject>
