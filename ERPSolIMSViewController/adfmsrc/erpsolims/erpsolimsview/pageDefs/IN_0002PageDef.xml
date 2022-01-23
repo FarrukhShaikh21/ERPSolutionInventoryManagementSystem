@@ -7,6 +7,8 @@
     <page path="erpsoltemp.erpsoltempview.pageDefs.ERPSolutionTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
     <iterator Binds="InItemTransferNoteCRUD" RangeSize="25" DataControl="ERPSolIMSAppModuleDataControl"
               id="InItemTransferNoteCRUDIterator"/>
+    <iterator Binds="InItemTransferNoteLinesDetCRUD" RangeSize="25" DataControl="ERPSolIMSAppModuleDataControl"
+              id="InItemTransferNoteLinesDetCRUDIterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="InItemTransferNoteCRUDIterator" id="Posted">
@@ -65,5 +67,23 @@
             DataControl="ERPSolIMSAppModuleDataControl"/>
     <action IterBinding="InItemTransferNoteCRUDIterator" id="CreateInsert" RequiresUpdateModel="true"
             Action="createInsertRow"/>
+    <tree IterBinding="InItemTransferNoteLinesDetCRUDIterator" id="InItemTransferNoteLinesDetCRUD">
+      <nodeDefinition DefName="erpsolims.erpsolimsmodel.erpsolimsvo.InItemTransferNoteLinesView"
+                      Name="InItemTransferNoteLinesDetCRUD0">
+        <AttrNames>
+          <Item Value="Lineno"/>
+          <Item Value="ItemRefId"/>
+          <Item Value="txtModelNo"/>
+          <Item Value="OhQty"/>
+          <Item Value="AvailQty"/>
+          <Item Value="TransferQty"/>
+          <Item Value="Remarks"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="InItemTransferNoteLinesDetCRUDIterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="InItemTransferNoteLinesDetCRUDIterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

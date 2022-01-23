@@ -1,5 +1,6 @@
 package erpsolims.erpsolimsmodel.erpsolimseo;
 
+import erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel;
 import erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsEntityImpl;
 
 import java.math.BigDecimal;
@@ -8,6 +9,7 @@ import java.sql.Timestamp;
 
 import oracle.jbo.AttributeList;
 import oracle.jbo.Key;
+import oracle.jbo.domain.Date;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.EntityImpl;
 import oracle.jbo.server.TransactionEvent;
@@ -49,6 +51,7 @@ public class InItemTransferNoteLinesImpl extends ERPSolGlobalsEntityImpl {
         AvailQty,
         Stnlineseq,
         Stnnoseq,
+        txtModelNo,
         InItemTransferNote,
         InItems;
         private static AttributesEnum[] vals = null;
@@ -73,6 +76,8 @@ public class InItemTransferNoteLinesImpl extends ERPSolGlobalsEntityImpl {
             return vals;
         }
     }
+
+
     public static final int SENDINGSTOREID = AttributesEnum.Sendingstoreid.index();
     public static final int STNNO = AttributesEnum.Stnno.index();
     public static final int LINENO = AttributesEnum.Lineno.index();
@@ -100,6 +105,7 @@ public class InItemTransferNoteLinesImpl extends ERPSolGlobalsEntityImpl {
     public static final int AVAILQTY = AttributesEnum.AvailQty.index();
     public static final int STNLINESEQ = AttributesEnum.Stnlineseq.index();
     public static final int STNNOSEQ = AttributesEnum.Stnnoseq.index();
+    public static final int TXTMODELNO = AttributesEnum.txtModelNo.index();
     public static final int INITEMTRANSFERNOTE = AttributesEnum.InItemTransferNote.index();
     public static final int INITEMS = AttributesEnum.InItems.index();
 
@@ -108,6 +114,14 @@ public class InItemTransferNoteLinesImpl extends ERPSolGlobalsEntityImpl {
      */
     public InItemTransferNoteLinesImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteLines");
+    }
+
 
     /**
      * Gets the attribute value for Sendingstoreid, using the alias name Sendingstoreid.
@@ -305,15 +319,15 @@ public class InItemTransferNoteLinesImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for CreatedDate, using the alias name CreatedDate.
      * @return the value of CreatedDate
      */
-    public Timestamp getCreatedDate() {
-        return (Timestamp) getAttributeInternal(CREATEDDATE);
+    public Date getCreatedDate() {
+        return (Date) getAttributeInternal(CREATEDDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedDate.
      * @param value value to set the CreatedDate
      */
-    public void setCreatedDate(Timestamp value) {
+    public void setCreatedDate(Date value) {
         setAttributeInternal(CREATEDDATE, value);
     }
 
@@ -337,15 +351,15 @@ public class InItemTransferNoteLinesImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for ModifiedDate, using the alias name ModifiedDate.
      * @return the value of ModifiedDate
      */
-    public Timestamp getModifiedDate() {
-        return (Timestamp) getAttributeInternal(MODIFIEDDATE);
+    public Date getModifiedDate() {
+        return (Date) getAttributeInternal(MODIFIEDDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ModifiedDate.
      * @param value value to set the ModifiedDate
      */
-    public void setModifiedDate(Timestamp value) {
+    public void setModifiedDate(Date value) {
         setAttributeInternal(MODIFIEDDATE, value);
     }
 
@@ -542,6 +556,22 @@ public class InItemTransferNoteLinesImpl extends ERPSolGlobalsEntityImpl {
     }
 
     /**
+     * Gets the attribute value for txtModelNo, using the alias name txtModelNo.
+     * @return the value of txtModelNo
+     */
+    public String gettxtModelNo() {
+        return (String) getAttributeInternal(TXTMODELNO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtModelNo.
+     * @param value value to set the txtModelNo
+     */
+    public void settxtModelNo(String value) {
+        setAttributeInternal(TXTMODELNO, value);
+    }
+
+    /**
      * @return the associated entity InItemTransferNoteImpl.
      */
     public InItemTransferNoteImpl getInItemTransferNote() {
@@ -569,6 +599,7 @@ public class InItemTransferNoteLinesImpl extends ERPSolGlobalsEntityImpl {
         setAttributeInternal(INITEMS, value);
     }
 
+
     /**
      * @param stnlineseq key constituent
 
@@ -579,17 +610,13 @@ public class InItemTransferNoteLinesImpl extends ERPSolGlobalsEntityImpl {
     }
 
     /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteLines");
-    }
-
-    /**
      * Add attribute defaulting logic in this method.
      * @param attributeList list of attribute names/values to initialize the row
      */
     protected void create(AttributeList attributeList) {
+        setERPSolPKColumnName("Stnlineseq");
+        setERPSolPKSeqName("IN_ITEM_TRANSFER_NOTE_LINE_SEQ");
+        
         super.create(attributeList);
     }
 
@@ -616,6 +643,11 @@ public class InItemTransferNoteLinesImpl extends ERPSolGlobalsEntityImpl {
         if (operation==DML_INSERT) {
             populateAttributeAsChanged(STNNO, getInItemTransferNote().getAttribute("Stnno"));
             populateAttributeAsChanged(STOREID, getInItemTransferNote().getAttribute("Sendingstoreid"));
+           populateAttributeAsChanged(SENDINGSTOREID, getInItemTransferNote().getAttribute("Sendingstoreid"));
+           
+           String pkValue="FUNC_GET_MAX_ID('IN_ITEM_TRANSFER_NOTE_LINES WHERE STNNO=''"+getStnno()+"''','LINENO')";
+           String result= ERPSolGlobClassModel.doGetERPSolPrimaryKeyValueModel(getDBTransaction(), pkValue, "dual", null, null);
+           populateAttributeAsChanged(LINENO, Integer.parseInt(result));
             
        }
         super.doDML(operation, e);

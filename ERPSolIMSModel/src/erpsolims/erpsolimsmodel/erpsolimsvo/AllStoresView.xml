@@ -314,6 +314,12 @@
     EntityAttrName="ShortExcess"
     EntityUsage="AllStores"
     AliasName="SHORT_EXCESS"/>
+  <ViewAttribute
+    Name="ReceivingStoreName"
+    PrecisionRule="true"
+    EntityAttrName="StoreName"
+    EntityUsage="AllStores"
+    AliasName="STORE_NAME1"/>
   <ViewLinkAccessor
     Name="AllStoresView"
     ViewLink="erpsolims.erpsolimsmodel.erpsolimsvo.RPstoreLink"

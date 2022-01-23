@@ -205,7 +205,7 @@
       <property
          name="fromOutcome">ACT-ERP-IN-0004-SEARCH</property>
       <property
-         name="sdm:polyPoints">B44,343.0,305.06854,343.52637,386.44824,T44</property>
+         name="sdm:polyPoints">B44,343.0,305.06863,343.52637,386.09766,T44</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -215,7 +215,7 @@
       <property
          name="fromOutcome">ACT-ERP-IN-0004-SEARCH-BACK</property>
       <property
-         name="sdm:polyPoints">T56,350.52637,386.4256,350.0,305.0459,B56</property>
+         name="sdm:polyPoints">T56,350.52637,386.07492,350.0,305.0459,B56</property>
    </ControlFlowCase>
    <View
       id="View20">
@@ -354,5 +354,40 @@
          name="fromOutcome">ERP-ACT-IN-0002</property>
       <property
          name="sdm:polyPoints">R50,307.6875,72.149414,622.5,267.44824,L50</property>
+   </ControlFlowCase>
+   <View
+      id="View32">
+      <property
+         name="activityId">IN_0002_SEARCH</property>
+      <property
+         name="page">/IN_0002_SEARCH.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>IN_0002_SEARCH&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">149.79883</property>
+      <property
+         name="x">782.02637</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase33"
+      from="View30"
+      to="View32">
+      <property
+         name="fromOutcome">ERP-ACT-IN-0002-SEARCH</property>
+      <property
+         name="sdm:polyPoints">T44,660.0,210.14885,738.5595,145.94824,L46</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase34"
+      from="View32"
+      to="View30">
+      <property
+         name="fromOutcome">ACT-ERP-IN-0002-SEARCH-BACK</property>
+      <property
+         name="sdm:polyPoints">L54,741.02637,152.94824,667.0,213.44824,T56</property>
    </ControlFlowCase>
 </SDM>

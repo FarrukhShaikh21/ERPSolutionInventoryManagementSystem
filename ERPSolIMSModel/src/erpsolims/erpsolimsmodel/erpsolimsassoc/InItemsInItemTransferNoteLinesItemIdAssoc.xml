@@ -18,7 +18,6 @@
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="InItems"/>
-      <Attr Name="_foreignKey" Value="erpsolims.erpsolimsmodel.erpsolimseo.InItems.XpkinItems"/>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_minCardinality" Value="1"/>
     </DesignTime>
@@ -33,8 +32,6 @@
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="InItemTransferNoteLines"/>
-      <Attr Name="_foreignKey"
-        Value="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteLines.fk_InItemTransferNoteLines1"/>
       <Attr Name="_isUpdateable" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">

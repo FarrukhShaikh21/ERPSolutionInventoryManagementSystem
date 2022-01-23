@@ -94,6 +94,9 @@
     <view id="IN_0002">
       <page>/IN_0002.jsf</page>
     </view>
+    <view id="IN_0002_SEARCH">
+      <page>/IN_0002_SEARCH.jsf</page>
+    </view>
     <control-flow-rule id="__16">
       <from-activity-id>ExecuteWithParamsTransactionIMS</from-activity-id>
       <control-flow-case id="__17">
@@ -177,6 +180,20 @@
       <control-flow-case id="__13">
         <from-outcome>ERP-ACT-IN-1119</from-outcome>
         <to-activity-id>IN_1119</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__20">
+      <from-activity-id>IN_0002</from-activity-id>
+      <control-flow-case id="__28">
+        <from-outcome>ERP-ACT-IN-0002-SEARCH</from-outcome>
+        <to-activity-id>IN_0002_SEARCH</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__29">
+      <from-activity-id>IN_0002_SEARCH</from-activity-id>
+      <control-flow-case id="__30">
+        <from-outcome>ACT-ERP-IN-0002-SEARCH-BACK</from-outcome>
+        <to-activity-id>IN_0002</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>

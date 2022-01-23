@@ -12,7 +12,51 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  RowClass="erpsolims.erpsolimsmodel.erpsolimsvo.InItemTransferNoteLinesViewRowImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="AccVwFuncCheckQuantityQVO"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsqvo.VWFuncCheckQuantityQVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccVWItemOpeningQVO"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsqvo.VWItemOpeningQVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccInItemsView"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InItemsView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LovItemRefId"
+    ListVOName="AccInItemsView"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ItemRefId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Itemid"/>
+      <Item Value="Uomsid"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ItemRefId"/>
+      <Item Value="Itemid"/>
+      <Item Value="Uomsid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ModelNo"/>
+      <Item Value="ItemRefId"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="InItemsViewFindVC"/>
+  </ListBinding>
   <EntityUsage
     Name="InItemTransferNoteLines"
     Entity="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteLines"/>
@@ -69,7 +113,15 @@
     PrecisionRule="true"
     EntityAttrName="ItemRefId"
     EntityUsage="InItemTransferNoteLines"
-    AliasName="ITEM_REF_ID"/>
+    AliasName="ITEM_REF_ID"
+    LOVName="LovItemRefId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="SourceDocRef"
     PrecisionRule="true"
@@ -186,6 +238,14 @@
     EntityAttrName="Stnnoseq"
     EntityUsage="InItemTransferNoteLines"
     AliasName="STNNOSEQ"/>
+  <ViewAttribute
+    Name="txtModelNo"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtModelNo"
+    EntityUsage="InItemTransferNoteLines"
+    AliasName="TXT_MODEL_NO"/>
   <ViewLinkAccessor
     Name="InItemTransferNoteView"
     ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.InItemTransferNoteInItemTransferNoteLinStnnoseqLink"
