@@ -15,9 +15,11 @@
   PageIterMode="Full"
   ComponentClass="erpsolims.erpsolimsmodel.erpsolimsvo.InItemTransferNoteViewImpl"
   ComponentInterface="erpsolims.erpsolimsmodel.erpsolimsvo.common.InItemTransferNoteView"
-  ClientProxyName="erpsolims.erpsolimsmodel.erpsolimsvo.client.InItemTransferNoteViewClient">
+  ClientProxyName="erpsolims.erpsolimsmodel.erpsolimsvo.client.InItemTransferNoteViewClient"
+  RowClass="erpsolims.erpsolimsmodel.erpsolimsvo.InItemTransferNoteViewRowImpl">
   <DesignTime>
-    <Attr Name="_codeGenFlag2" Value="Coll|VarAccess"/>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <ViewAccessor
     Name="AccAllStoresView"

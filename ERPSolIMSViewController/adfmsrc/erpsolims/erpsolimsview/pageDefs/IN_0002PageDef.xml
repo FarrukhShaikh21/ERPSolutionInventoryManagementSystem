@@ -85,5 +85,9 @@
             Action="createInsertRow"/>
     <action IterBinding="InItemTransferNoteLinesDetCRUDIterator" id="Delete1" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <methodAction id="doSuperviseSTN" RequiresUpdateModel="true" Action="invokeMethod" MethodName="doSuperviseSTN"
+                  IsViewObjectMethod="true" DataControl="ERPSolIMSAppModuleDataControl"
+                  InstanceName="data.ERPSolIMSAppModuleDataControl.InItemTransferNoteCRUD"
+                  ReturnName="data.ERPSolIMSAppModuleDataControl.methodResults.doSuperviseSTN_ERPSolIMSAppModuleDataControl_InItemTransferNoteCRUD_doSuperviseSTN_result"/>
   </bindings>
 </pageDefinition>

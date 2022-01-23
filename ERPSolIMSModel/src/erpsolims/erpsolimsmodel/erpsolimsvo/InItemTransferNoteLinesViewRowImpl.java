@@ -667,5 +667,14 @@ public class InItemTransferNoteLinesViewRowImpl extends ViewRowImpl {
     public RowSet getAccInItemsView() {
         return (RowSet) getAttributeInternal(ACCINITEMSVIEW);
     }
+    
+    @Override
+    public boolean isAttributeUpdateable(int i) {
+        // TODO Implement this method
+        if (getInItemTransferNoteView().getAttribute("Posted").equals("Y")) {
+            return false;
+       }
+        return super.isAttributeUpdateable(i);
+    }
 }
 

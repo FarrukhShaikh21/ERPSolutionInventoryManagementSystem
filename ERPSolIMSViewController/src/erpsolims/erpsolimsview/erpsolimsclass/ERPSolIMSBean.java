@@ -203,9 +203,10 @@ public class ERPSolIMSBean {
         }
     }
 
-    public void doERPSoRebatelDialogConfirm(DialogEvent erpsolde) {
+
+    public void doERPSolSTNDialogConfirm(DialogEvent erpsolde) {
         if (erpsolde.getOutcome()==DialogEvent.Outcome.yes) {
-            OperationBinding binding = ERPSolGlobalViewBean.doIsERPSolGerOperationBinding("doSuperviseSalesRebate");
+            OperationBinding binding = ERPSolGlobalViewBean.doIsERPSolGerOperationBinding("doSuperviseSTN");
             binding.execute();
         }
     }
