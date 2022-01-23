@@ -1310,6 +1310,13 @@
     AssociationOtherEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemsInReceiveItemsLinesItemRefIdAssoc.InItems"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="InItemTransferNoteLines"
+    Association="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemsInItemTransferNoteLinesItemIdAssoc"
+    AssociationEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemsInItemTransferNoteLinesItemIdAssoc.InItemTransferNoteLines"
+    AssociationOtherEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemsInItemTransferNoteLinesItemIdAssoc.InItems"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="UPkModelNo">
     <DesignTime>

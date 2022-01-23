@@ -298,6 +298,13 @@
     AssociationOtherEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemTransferNoteInItemTransferNoteLinStnnoseqAssoc.InItemTransferNoteLines"
     Type="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="InItems"
+    Association="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemsInItemTransferNoteLinesItemIdAssoc"
+    AssociationEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemsInItemTransferNoteLinesItemIdAssoc.InItems"
+    AssociationOtherEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemsInItemTransferNoteLinesItemIdAssoc.InItemTransferNoteLines"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="UnqInItemTranNoteLines">
     <DesignTime>
@@ -329,6 +336,17 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteLines.Stnnoseq"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_InItemTransferNoteLines1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="XPKIN_ITEMS"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_IN_ITEM_TRANSFER_NOTE_LINES"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteLines.Itemid"/>
     </AttrArray>
   </Key>
 </Entity>

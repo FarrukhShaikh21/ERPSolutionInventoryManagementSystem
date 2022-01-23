@@ -192,4 +192,10 @@
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="InItemsView"
+    ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.InItemsInItemTransferNoteLinesItemIdLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
 </ViewObject>
