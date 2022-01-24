@@ -324,6 +324,13 @@
     AssociationOtherEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemsInItemTransferNoteLinesItemIdAssoc.InItemTransferNoteLines"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="InItemTransferNoteImei"
+    Association="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemTransNoteLineInItemTransNoteIMEIstnlineseqAssoc"
+    AssociationEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemTransNoteLineInItemTransNoteIMEIstnlineseqAssoc.InItemTransferNoteImei"
+    AssociationOtherEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemTransNoteLineInItemTransNoteIMEIstnlineseqAssoc.InItemTransferNoteLines"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="UnqInItemTranNoteLines">
     <DesignTime>

@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 
 import oracle.jbo.Row;
+import oracle.jbo.RowIterator;
 import oracle.jbo.RowSet;
 import oracle.jbo.domain.Date;
 import oracle.jbo.server.ViewRowImpl;
@@ -55,6 +56,7 @@ public class InItemTransferNoteLinesViewRowImpl extends ViewRowImpl {
         txtModelNo,
         InItemTransferNoteView,
         InItemsView,
+        InItemTransferNoteImeiView,
         AccVwFuncCheckQuantityQVO,
         AccVWItemOpeningQVO,
         AccInItemsView;
@@ -113,6 +115,7 @@ public class InItemTransferNoteLinesViewRowImpl extends ViewRowImpl {
     public static final int TXTMODELNO = AttributesEnum.txtModelNo.index();
     public static final int INITEMTRANSFERNOTEVIEW = AttributesEnum.InItemTransferNoteView.index();
     public static final int INITEMSVIEW = AttributesEnum.InItemsView.index();
+    public static final int INITEMTRANSFERNOTEIMEIVIEW = AttributesEnum.InItemTransferNoteImeiView.index();
     public static final int ACCVWFUNCCHECKQUANTITYQVO = AttributesEnum.AccVwFuncCheckQuantityQVO.index();
     public static final int ACCVWITEMOPENINGQVO = AttributesEnum.AccVWItemOpeningQVO.index();
     public static final int ACCINITEMSVIEW = AttributesEnum.AccInItemsView.index();
@@ -645,6 +648,13 @@ public class InItemTransferNoteLinesViewRowImpl extends ViewRowImpl {
      */
     public void setInItemsView(Row value) {
         setAttributeInternal(INITEMSVIEW, value);
+    }
+
+    /**
+     * Gets the associated <code>RowIterator</code> using master-detail link InItemTransferNoteImeiView.
+     */
+    public RowIterator getInItemTransferNoteImeiView() {
+        return (RowIterator) getAttributeInternal(INITEMTRANSFERNOTEIMEIVIEW);
     }
 
     /**

@@ -258,4 +258,9 @@
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="InItemTransferNoteImeiView"
+    ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.InItemTransNoteLineInItemTransNoteIMEIstnlineseqLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

@@ -9,6 +9,7 @@ import java.sql.Timestamp;
 
 import oracle.jbo.AttributeList;
 import oracle.jbo.Key;
+import oracle.jbo.RowIterator;
 import oracle.jbo.domain.Date;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.EntityImpl;
@@ -53,7 +54,8 @@ public class InItemTransferNoteLinesImpl extends ERPSolGlobalsEntityImpl {
         Stnnoseq,
         txtModelNo,
         InItemTransferNote,
-        InItems;
+        InItems,
+        InItemTransferNoteImei;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -108,6 +110,7 @@ public class InItemTransferNoteLinesImpl extends ERPSolGlobalsEntityImpl {
     public static final int TXTMODELNO = AttributesEnum.txtModelNo.index();
     public static final int INITEMTRANSFERNOTE = AttributesEnum.InItemTransferNote.index();
     public static final int INITEMS = AttributesEnum.InItems.index();
+    public static final int INITEMTRANSFERNOTEIMEI = AttributesEnum.InItemTransferNoteImei.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -597,6 +600,14 @@ public class InItemTransferNoteLinesImpl extends ERPSolGlobalsEntityImpl {
      */
     public void setInItems(EntityImpl value) {
         setAttributeInternal(INITEMS, value);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getInItemTransferNoteImei() {
+        return (RowIterator) getAttributeInternal(INITEMTRANSFERNOTEIMEI);
     }
 
 
