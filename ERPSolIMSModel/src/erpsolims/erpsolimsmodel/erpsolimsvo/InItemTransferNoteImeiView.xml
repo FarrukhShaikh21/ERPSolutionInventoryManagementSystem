@@ -13,6 +13,10 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="P_ADF_STNLINESEQ"
+    Kind="viewcriteria"
+    Type="java.lang.Integer"/>
   <EntityUsage
     Name="InItemTransferNoteImei"
     Entity="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteImei"/>
@@ -81,6 +85,42 @@
     EntityAttrName="Stnlineseq"
     EntityUsage="InItemTransferNoteImei"
     AliasName="STNLINESEQ"/>
+  <ViewCriteria
+    Name="InItemTransferNoteImeiByStnLineSeqVC"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InItemTransferNoteImeiView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="InItemTransferNoteImeiViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="Stnlineseq"
+        ViewAttribute="Stnlineseq"
+        Operator="="
+        Conjunction="AND"
+        Value=":P_ADF_STNLINESEQ"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="InItemTransferNoteLinesView"
     ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.InItemTransNoteLineInItemTransNoteIMEIstnlineseqLink"

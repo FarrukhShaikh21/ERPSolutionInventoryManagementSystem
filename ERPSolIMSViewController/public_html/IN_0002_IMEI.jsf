@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="IN_0002_IMEI.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelHeader text="Sale Order IMEI" id="ph1">
+                <f:facet name="context"/>
+                <f:facet name="menuBar"/>
+                <f:facet name="toolbar"/>
+                <f:facet name="legend"/>
+                <f:facet name="info"/>
+                <af:panelGridLayout id="pgl1">
+                    <af:gridRow marginTop="5px" height="auto" id="gr1">
+                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+                    </af:gridRow>
+                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2">
+                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                            <af:panelCollection id="pc1" styleClass="AFStretchWidth" featuresOff="detach">
+                                <f:facet name="menus"/>
+                                <f:facet name="toolbar">
+                                    <af:toolbar id="t2">
+                                        <af:button text="Export To Excel" id="b1">
+                                            <af:exportCollectionActionListener type="excelHTML" exportedId="t1"
+                                                                               filename="STNIMEI.xls" title="STN IMEI"/>
+                                        </af:button>
+                                        <af:button actionListener="#{bindings.Delete.execute}"
+                                                   text="Delete Selected IMEI"
+                                                   disabled="#{!bindings.Delete.enabled}" id="b2"
+                                                   icon="#{resource['images:imgDelete.png']}"/>
+                                    </af:toolbar>
+                                </f:facet>
+                                <f:facet name="statusbar"/>
+                                <af:table value="#{bindings.InItemTransferNoteImeiByStnseqlineCRUD.collectionModel}"
+                                          var="row" rows="#{bindings.InItemTransferNoteImeiByStnseqlineCRUD.rangeSize}"
+                                          emptyText="#{bindings.InItemTransferNoteImeiByStnseqlineCRUD.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.InItemTransferNoteImeiByStnseqlineCRUD.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.InItemTransferNoteImeiByStnseqlineCRUD.collectionModel.makeCurrent}"
+                                          rowSelection="single"
+                                          fetchSize="#{bindings.InItemTransferNoteImeiByStnseqlineCRUD.rangeSize}"
+                                          filterModel="#{bindings.InItemTransferNoteImeiByStnseqlineCRUDQuery.queryDescriptor}"
+                                          queryListener="#{bindings.InItemTransferNoteImeiByStnseqlineCRUDQuery.processQuery}"
+                                          filterVisible="true" varStatus="vs" id="t1" partialTriggers="::b2">
+                                    <af:column sortProperty="#{bindings.InItemTransferNoteImeiByStnseqlineCRUD.hints.LineNo.name}"
+                                               filterable="true"
+                                               headerText="#{bindings.InItemTransferNoteImeiByStnseqlineCRUD.hints.LineNo.label}"
+                                               id="c1">
+                                        <af:outputText value="#{row.LineNo}"
+                                                       shortDesc="#{bindings.InItemTransferNoteImeiByStnseqlineCRUD.hints.LineNo.tooltip}"
+                                                       id="ot1">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.InItemTransferNoteImeiByStnseqlineCRUD.hints.LineNo.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.InItemTransferNoteImeiByStnseqlineCRUD.hints.ItemRefId.name}"
+                                               filterable="true"
+                                               headerText="#{bindings.InItemTransferNoteImeiByStnseqlineCRUD.hints.ItemRefId.label}"
+                                               id="c2">
+                                        <af:outputText value="#{row.ItemRefId}"
+                                                       shortDesc="#{bindings.InItemTransferNoteImeiByStnseqlineCRUD.hints.ItemRefId.tooltip}"
+                                                       id="ot2"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.InItemTransferNoteImeiByStnseqlineCRUD.hints.ImeiNo.name}"
+                                               filterable="true"
+                                               headerText="#{bindings.InItemTransferNoteImeiByStnseqlineCRUD.hints.ImeiNo.label}"
+                                               id="c3" width="200" displayIndex="-1">
+                                        <af:outputText value="#{row.ImeiNo}"
+                                                       shortDesc="#{bindings.InItemTransferNoteImeiByStnseqlineCRUD.hints.ImeiNo.tooltip}"
+                                                       id="ot3"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.InItemTransferNoteImeiByStnseqlineCRUD.hints.TempBoxNo.name}"
+                                               filterable="true"
+                                               headerText="#{bindings.InItemTransferNoteImeiByStnseqlineCRUD.hints.TempBoxNo.label}"
+                                               id="c4" width="200" displayIndex="-1">
+                                        <af:outputText value="#{row.TempBoxNo}"
+                                                       shortDesc="#{bindings.InItemTransferNoteImeiByStnseqlineCRUD.hints.TempBoxNo.tooltip}"
+                                                       id="ot4"/>
+                                    </af:column>
+                                </af:table>
+                            </af:panelCollection>
+                        </af:gridCell>
+                    </af:gridRow>
+                </af:panelGridLayout>
+            </af:panelHeader>
+        </af:form>
+    </af:document>
+</f:view>

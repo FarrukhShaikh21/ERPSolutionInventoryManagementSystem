@@ -37,6 +37,13 @@
   <ViewUsage
     Name="InItemTransferNoteLinesDetCRUD"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InItemTransferNoteLinesView"/>
+  <ViewUsage
+    Name="InItemTransferNoteImeiByStnseqlineCRUD"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InItemTransferNoteImeiView">
+    <ViewCriteriaUsage
+      Name="InItemTransferNoteImeiByStnLineSeqVC"
+      FullName="erpsolims.erpsolimsmodel.erpsolimsvo.InItemTransferNoteImeiView.InItemTransferNoteImeiByStnLineSeqVC"/>
+  </ViewUsage>
   <ViewLinkUsage
     Name="FkInRecItemLinRnoteseqLink1"
     ViewLinkObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.FkInRecItemLinRnoteseqLink"

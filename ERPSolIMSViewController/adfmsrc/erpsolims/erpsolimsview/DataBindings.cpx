@@ -18,6 +18,7 @@
           usageId="erpsolims_erpsolimsview_ERPSOLIMSBTF_ERPSOLIMSBTF_doSetInventoryReportDefaultsPageDef"/>
     <page path="/IN_0002.jsf" usageId="erpsolims_erpsolimsview_IN_0002PageDef"/>
     <page path="/IN_0002_SEARCH.jsf" usageId="erpsolims_erpsolimsview_IN_0002_SEARCHPageDef"/>
+    <page path="/IN_0002_IMEI.jsf" usageId="erpsolims_erpsolimsview_IN_0002_IMEIPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="erpsolims_erpsolimsview_IN_0004PageDef" path="erpsolims.erpsolimsview.pageDefs.IN_0004PageDef"/>
@@ -39,6 +40,7 @@
     <page id="erpsolims_erpsolimsview_IN_0002PageDef" path="erpsolims.erpsolimsview.pageDefs.IN_0002PageDef"/>
     <page id="erpsolims_erpsolimsview_IN_0002_SEARCHPageDef"
           path="erpsolims.erpsolimsview.pageDefs.IN_0002_SEARCHPageDef"/>
+    <page id="erpsolims_erpsolimsview_IN_0002_IMEIPageDef" path="erpsolims.erpsolimsview.pageDefs.IN_0002_IMEIPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="ERPSolTempAppModuleDataControl" Package="erpsoltemp.erpsoltempmodel.erpsoltempam"
