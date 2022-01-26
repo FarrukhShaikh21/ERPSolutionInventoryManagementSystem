@@ -132,6 +132,16 @@ public class ERPSolIMSBean {
         
     }
     
+    public List<SelectItem> doERPSolGetAutoSuggestedReceiveStoreValues(String pStringValues) {
+        List<SelectItem> ResultList=new ArrayList<SelectItem>();
+        BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
+        ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "AllStoresReceivingAutoSuggestRO",
+                                                            " UPPER(CONCAT(STOREID,STORE_NAME))", "StoreName", "Storeid", 10,"ERPSolIMSAppModuleDataControl");
+        return ResultList;
+        
+    }
+    
+    
     public List<SelectItem> doERPSolGetAutoSuggestedCustomerValues(String pStringValues) {
     //public static List<SelectItem> doERPSolGetAutoSuggestedValues(String pSearch,String pViewObjectName,String pWhereColumn,String pAttribute1,String pAttribute2,Integer pNoOfRecordsSuggest) {
         //public List<SelectItem> doERPSolGetAutoSuggestedValues(String pSearch,String pViewObjectName,String pWhereColumn,String pAttribute1,String pAttribute2,Integer pNoOfRecordsSuggest) {
@@ -253,7 +263,7 @@ public class ERPSolIMSBean {
         DCDataControl dc = bc.getDataControl();
         
         System.out.println("3");
-        String ERPSolPlsql="begin ?:=PKG_SALE_ORDER.FUNC_STA_IMEI_BOX_VALIDATION('"+getERPSolSTNNO()+"','"+pImeiBox+"','"+pValueType+"','"+getERPSolProductId()+"'); end;";
+        String ERPSolPlsql="begin ?:=PKG_GRN.FUNC_STA_IMEI_BOX_VALIDATION('"+getERPSolSTNNO()+"','"+pImeiBox+"','"+pValueType+"','"+getERPSolProductId()+"'); end;";
         System.out.println(ERPSolPlsql +"ERPSolPlsql");
         System.out.println("4");
         DBTransaction erpsoldbt=(DBTransaction)dc.getApplicationModule().getTransaction();
@@ -288,9 +298,6 @@ public class ERPSolIMSBean {
                     } catch (SQLException e) {
                     }
                 }
-    System.out.println("hello");
-//        AdfFacesContext.getCurrentInstance().addPartialTarget(getERPSolImeiBoxText());
-        System.out.println("5435");    
         
     }
 

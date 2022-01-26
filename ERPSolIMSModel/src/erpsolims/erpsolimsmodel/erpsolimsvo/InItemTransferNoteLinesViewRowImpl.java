@@ -54,6 +54,7 @@ public class InItemTransferNoteLinesViewRowImpl extends ViewRowImpl {
         Stnlineseq,
         Stnnoseq,
         txtModelNo,
+        txtSumTransferQuantity,
         InItemTransferNoteView,
         InItemsView,
         InItemTransferNoteImeiView,
@@ -113,6 +114,7 @@ public class InItemTransferNoteLinesViewRowImpl extends ViewRowImpl {
     public static final int STNLINESEQ = AttributesEnum.Stnlineseq.index();
     public static final int STNNOSEQ = AttributesEnum.Stnnoseq.index();
     public static final int TXTMODELNO = AttributesEnum.txtModelNo.index();
+    public static final int TXTSUMTRANSFERQUANTITY = AttributesEnum.txtSumTransferQuantity.index();
     public static final int INITEMTRANSFERNOTEVIEW = AttributesEnum.InItemTransferNoteView.index();
     public static final int INITEMSVIEW = AttributesEnum.InItemsView.index();
     public static final int INITEMTRANSFERNOTEIMEIVIEW = AttributesEnum.InItemTransferNoteImeiView.index();
@@ -620,6 +622,14 @@ public class InItemTransferNoteLinesViewRowImpl extends ViewRowImpl {
      */
     public void settxtModelNo(String value) {
         setAttributeInternal(TXTMODELNO, value);
+    }
+
+    /**
+     * Gets the attribute value for the calculated attribute txtSumTransferQuantity.
+     * @return the txtSumTransferQuantity
+     */
+    public BigDecimal gettxtSumTransferQuantity() {
+        return (BigDecimal) getAttributeInternal(TXTSUMTRANSFERQUANTITY);
     }
 
     /**

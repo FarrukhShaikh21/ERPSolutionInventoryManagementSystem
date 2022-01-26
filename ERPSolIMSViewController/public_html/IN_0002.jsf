@@ -108,7 +108,7 @@
       </af:popup>
       <af:pageTemplate viewId="/ERPSolutionTemplate.jsf" value="#{bindings.ptb1}" id="pt1">
         <f:facet name="erptempmain">
-          <af:panelHeader text="IMEI" id="ph1" partialTriggers="b4 b3 b2 b1 b6 b5 ::d2">
+          <af:panelHeader text=" " id="ph1" partialTriggers="b4 b3 b2 b1 b6 b5 ::d2">
             <f:facet name="context"/>
             <f:facet name="menuBar"/>
             <f:facet name="toolbar"/>
@@ -195,7 +195,8 @@
                                         label="#{bindings.DateOfTransfer.hints.label}"
                                         required="#{bindings.DateOfTransfer.hints.mandatory}"
                                         columns="#{bindings.DateOfTransfer.hints.displayWidth}"
-                                        shortDesc="#{bindings.DateOfTransfer.hints.tooltip}" id="id1" simple="true">
+                                        shortDesc="#{bindings.DateOfTransfer.hints.tooltip}" id="id1" simple="true"
+                                        readOnly="#{bindings.Stnno.inputValue!=null}" inlineStyle="speak-as:normal;">
                             <f:validator binding="#{bindings.DateOfTransfer.validator}"/>
                             <af:convertDateTime pattern="#{bindings.DateOfTransfer.format}"/>
                           </af:inputDate>
@@ -203,7 +204,7 @@
                       </af:gridRow>
                       <af:gridRow height="30px" id="gr5">
                         <af:gridCell marginStart="5px" width="15%" id="gc8" valign="middle">
-                          <af:outputLabel value="#{bindings.Locationid.hints.label}" id="ol4"/>
+                          <af:outputLabel value="#{bindings.txtLocationName.hints.label}" id="ol4"/>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="35%" id="gc9" halign="stretch" valign="middle">
                           <af:inputComboboxListOfValues id="txtLocationNameId"
@@ -214,8 +215,9 @@
                                                         required="#{bindings.txtLocationName.hints.mandatory}"
                                                         columns="#{bindings.txtLocationName.hints.displayWidth}"
                                                         shortDesc="#{bindings.txtLocationName.hints.tooltip}"
-                                                        simple="true">
+                                                        simple="true" autoSubmit="true">
                             <f:validator binding="#{bindings.txtLocationName.validator}"/>
+                            <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolIMSPageFlowBean.doERPSolGetAutoSuggestedLocationValues}"/>
                           </af:inputComboboxListOfValues>
                           <af:inputText value="#{bindings.Locationid.inputValue}"
                                         label="#{bindings.Locationid.hints.label}"
@@ -240,11 +242,15 @@
                                                         required="#{bindings.txtStoreName.hints.mandatory}"
                                                         columns="#{bindings.txtStoreName.hints.displayWidth}"
                                                         shortDesc="#{bindings.txtStoreName.hints.tooltip}"
-                                                        simple="true">
+                                                        simple="true"
+                                                        disabled="#{bindings.InItemTransferNoteLinesDetCRUDIterator.estimatedRowCount>0}"
+                                                        partialTriggers="pc1:b7 pc1:b8">
                             <f:validator binding="#{bindings.txtStoreName.validator}"/>
+                            <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolIMSPageFlowBean.doERPSolGetAutoSuggestedStoreValues}"/>
                           </af:inputComboboxListOfValues>
                           <af:spacer width="10" height="10" id="s3"/>
-                          <af:outputText value="#{bindings.Storeid.inputValue}" id="ot3" noWrap="true"/>
+                          <af:outputText value="#{bindings.Sendingstoreid.inputValue}" id="ot3" noWrap="true"
+                                         partialTriggers="iclov1"/>
                         </af:gridCell>
                       </af:gridRow>
                       <af:gridRow height="30px" id="gr6">
@@ -260,8 +266,9 @@
                                                         required="#{bindings.txtReceivingSroreName.hints.mandatory}"
                                                         columns="#{bindings.txtReceivingSroreName.hints.displayWidth}"
                                                         shortDesc="#{bindings.txtReceivingSroreName.hints.tooltip}"
-                                                        simple="true">
+                                                        simple="true" autoSubmit="true">
                             <f:validator binding="#{bindings.txtReceivingSroreName.validator}"/>
+                            <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolIMSPageFlowBean.doERPSolGetAutoSuggestedReceiveStoreValues}"/>
                           </af:inputComboboxListOfValues>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="15%" id="gc14" valign="middle">
@@ -481,6 +488,15 @@
                         </af:inputText>
                       </af:column>
                     </af:table>
+                    <f:facet name="secondaryToolbar">
+                      <af:toolbar id="t5">
+                        <af:outputText value="Total Transfer Quantity : #{bindings.txtSumTransferQuantity.inputValue}"
+                                       shortDesc="#{bindings.txtSumTransferQuantity.hints.tooltip}" id="ot2"
+                                       inlineStyle="font-weight:bold">
+                          <af:convertNumber groupingUsed="false" pattern="#{bindings.txtSumTransferQuantity.format}"/>
+                        </af:outputText>
+                      </af:toolbar>
+                    </f:facet>
                   </af:panelCollection>
                 </af:gridCell>
               </af:gridRow>

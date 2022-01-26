@@ -63,7 +63,8 @@ public class InItemTransferNoteViewRowImpl extends ViewRowImpl {
         AccAllStoresView,
         AccAllLocationsView,
         AccVWYesNoQVO,
-        AccPuSuppliersView;
+        AccPuSuppliersView,
+        AccAllStoresReceivingView;
         static AttributesEnum[] vals = null;
         ;
         private static final int firstIndex = 0;
@@ -131,6 +132,7 @@ public class InItemTransferNoteViewRowImpl extends ViewRowImpl {
     public static final int ACCALLLOCATIONSVIEW = AttributesEnum.AccAllLocationsView.index();
     public static final int ACCVWYESNOQVO = AttributesEnum.AccVWYesNoQVO.index();
     public static final int ACCPUSUPPLIERSVIEW = AttributesEnum.AccPuSuppliersView.index();
+    public static final int ACCALLSTORESRECEIVINGVIEW = AttributesEnum.AccAllStoresReceivingView.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -765,6 +767,13 @@ public class InItemTransferNoteViewRowImpl extends ViewRowImpl {
      */
     public RowSet getAccPuSuppliersView() {
         return (RowSet) getAttributeInternal(ACCPUSUPPLIERSVIEW);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> AccAllStoresReceivingView.
+     */
+    public RowSet getAccAllStoresReceivingView() {
+        return (RowSet) getAttributeInternal(ACCALLSTORESRECEIVINGVIEW);
     }
 
     @Override

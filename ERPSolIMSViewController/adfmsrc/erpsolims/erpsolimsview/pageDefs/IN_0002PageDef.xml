@@ -92,5 +92,15 @@
     </attributeValues>
     <list IterBinding="InItemTransferNoteCRUDIterator" StaticList="false" Uses="LovSupplierid" id="Supplierid"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="InItemTransferNoteCRUDIterator" id="Sendingstoreid">
+      <AttrNames>
+        <Item Value="Sendingstoreid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InItemTransferNoteLinesDetCRUDIterator" id="txtSumTransferQuantity">
+      <AttrNames>
+        <Item Value="txtSumTransferQuantity"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

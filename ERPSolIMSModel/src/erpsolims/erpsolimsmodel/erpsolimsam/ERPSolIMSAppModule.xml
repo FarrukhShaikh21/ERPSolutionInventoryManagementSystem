@@ -44,6 +44,9 @@
       Name="InItemTransferNoteImeiByStnLineSeqVC"
       FullName="erpsolims.erpsolimsmodel.erpsolimsvo.InItemTransferNoteImeiView.InItemTransferNoteImeiByStnLineSeqVC"/>
   </ViewUsage>
+  <ViewUsage
+    Name="AllStoresReceivingAutoSuggestRO"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllStoresView"/>
   <ViewLinkUsage
     Name="FkInRecItemLinRnoteseqLink1"
     ViewLinkObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.FkInRecItemLinRnoteseqLink"

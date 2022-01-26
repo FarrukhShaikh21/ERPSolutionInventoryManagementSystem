@@ -9,6 +9,8 @@
     <searchRegion Binds="InItemTransferNoteImeiByStnseqlineCRUDIterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="InItemTransferNoteImeiByStnseqlineCRUDQuery"/>
+    <iterator Binds="InItemTransferNoteCRUD" RangeSize="25" DataControl="ERPSolIMSAppModuleDataControl"
+              id="InItemTransferNoteCRUDIterator"/>
   </executables>
   <bindings>
     <tree IterBinding="InItemTransferNoteImeiByStnseqlineCRUDIterator" id="InItemTransferNoteImeiByStnseqlineCRUD">
@@ -33,5 +35,10 @@
                   DataControl="ERPSolIMSAppModuleDataControl"
                   InstanceName="data.ERPSolIMSAppModuleDataControl.InItemTransferNoteImeiByStnseqlineCRUD"
                   ReturnName="data.ERPSolIMSAppModuleDataControl.methodResults.doERPSolRemoveSTNBox_ERPSolIMSAppModuleDataControl_InItemTransferNoteImeiByStnseqlineCRUD_doERPSolRemoveSTNBox_result"/>
+    <attributeValues IterBinding="InItemTransferNoteCRUDIterator" id="Posted">
+      <AttrNames>
+        <Item Value="Posted"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

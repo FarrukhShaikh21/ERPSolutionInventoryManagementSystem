@@ -13,6 +13,10 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="P_ADF_LOCATIONID"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
   <EntityUsage
     Name="AllStores"
     Entity="erpsolims.erpsolimsmodel.erpsolimseo.AllStores"/>
@@ -320,6 +324,43 @@
     EntityAttrName="StoreName"
     EntityUsage="AllStores"
     AliasName="STORE_NAME1"/>
+  <ViewCriteria
+    Name="AllStoresViewByStoreVC"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllStoresView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="AllStoresViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="Locationid"
+        ViewAttribute="Locationid"
+        Operator="="
+        Conjunction="AND"
+        Value=":P_ADF_LOCATIONID"
+        UpperColumns="0"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="AllStoresView"
     ViewLink="erpsolims.erpsolimsmodel.erpsolimsvo.RPstoreLink"

@@ -39,7 +39,7 @@
                                            id="ot3"/>
                         </af:column>
                         <af:column headerText="#{bindings.InItemTransferNoteCRUD.hints.txtLocationName.label}"
-                                   id="resId1c4">
+                                   id="resId1c4" width="200">
                             <af:outputText value="#{row.txtLocationName}"
                                            shortDesc="#{bindings.InItemTransferNoteCRUD.hints.txtLocationName.tooltip}"
                                            id="ot4"/>
@@ -51,7 +51,7 @@
                                            id="ot5"/>
                         </af:column>
                         <af:column headerText="#{bindings.InItemTransferNoteCRUD.hints.txtStoreName.label}"
-                                   id="resId1c6">
+                                   id="resId1c6" width="200" minimumWidth="12">
                             <af:outputText value="#{row.txtStoreName}"
                                            shortDesc="#{bindings.InItemTransferNoteCRUD.hints.txtStoreName.tooltip}"
                                            id="ot6"/>
@@ -63,7 +63,7 @@
                                            id="ot7"/>
                         </af:column>
                         <af:column headerText="#{bindings.InItemTransferNoteCRUD.hints.txtReceivingSroreName.label}"
-                                   id="resId1c8">
+                                   id="resId1c8" width="200">
                             <af:outputText value="#{row.txtReceivingSroreName}"
                                            shortDesc="#{bindings.InItemTransferNoteCRUD.hints.txtReceivingSroreName.tooltip}"
                                            id="ot8"/>

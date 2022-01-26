@@ -246,6 +246,29 @@
     EntityAttrName="txtModelNo"
     EntityUsage="InItemTransferNoteLines"
     AliasName="TXT_MODEL_NO"/>
+  <ViewAttribute
+    Name="txtSumTransferQuantity"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="NUMERIC">
+    <TransientExpression><![CDATA[getRowSet().sum("TransferQty")]]></TransientExpression>
+    <RecalcCondition><![CDATA[true]]></RecalcCondition>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <FMT_FORMAT
+          ResId="erpsolims.erpsolimsmodel.erpsolimsvo.InItemTransferNoteLinesView.txtSumTransferQuantity_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="erpsolims.erpsolimsmodel.erpsolimsvo.InItemTransferNoteLinesView.txtSumTransferQuantity_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="InItemTransferNoteView"
     ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.InItemTransferNoteInItemTransferNoteLinStnnoseqLink"
@@ -263,4 +286,8 @@
     ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.InItemTransNoteLineInItemTransNoteIMEIstnlineseqLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolims.erpsolimsmodel.ERPSolIMSModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

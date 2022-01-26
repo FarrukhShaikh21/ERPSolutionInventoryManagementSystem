@@ -10,7 +10,8 @@
   DBObjectName="IN_ITEM_TRANSFER_NOTE"
   AliasName="InItemTransferNote"
   BindingStyle="OracleName"
-  RowClass="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteImpl">
+  RowClass="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteImpl"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
     <Attr Name="_superClass" Value="erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsEntityImpl"/>
@@ -28,6 +29,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Dependencies>
+      <Item
+        Value="Locationid"/>
+      <Item
+        Value="txtLocationName"/>
+    </Dependencies>
   </Attribute>
   <Attribute
     Name="Stnno"
@@ -432,7 +439,11 @@
     </Properties>
     <Dependencies>
       <Item
+        Value="Locationid"/>
+      <Item
         Value="Sendingstoreid"/>
+      <Item
+        Value="txtLocationName"/>
     </Dependencies>
   </Attribute>
   <Attribute
@@ -588,6 +599,21 @@
       <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNote.Receivingstoreid"/>
     </AttrArray>
   </Key>
+  <validation:CompareValidationBean
+    Name="InItemTransferSendReceiveStoreBR"
+    ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNote_Rule_0"
+    OnAttribute="Sendingstoreid"
+    OperandType="ATTR"
+    Inverse="true"
+    CompareType="EQUALTO"
+    CompareValue="Receivingstoreid">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="Sendingstoreid"/>
+      <validation:Item
+        Value="Receivingstoreid"/>
+    </validation:OnAttributes>
+  </validation:CompareValidationBean>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="erpsolims.erpsolimsmodel.ERPSolIMSModelBundle"/>

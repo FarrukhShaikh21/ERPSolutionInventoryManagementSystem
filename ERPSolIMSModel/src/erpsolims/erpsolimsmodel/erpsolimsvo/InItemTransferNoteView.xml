@@ -24,7 +24,17 @@
   <ViewAccessor
     Name="AccAllStoresView"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllStoresView"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="AllStoresViewByStoreVC"
+      FullName="erpsolims.erpsolimsmodel.erpsolimsvo.AllStoresView.AllStoresViewByStoreVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_ADF_LOCATIONID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[Locationid]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ViewAccessor
     Name="AccAllLocationsView"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllLocationsView"
@@ -40,7 +50,17 @@
     <ViewCriteriaUsage
       Name="PuSuppliersViewByLocationVC"
       FullName="erpsolims.erpsolimsmodel.erpsolimsvo.PuSuppliersView.PuSuppliersViewByLocationVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_ADF_LOCATIONID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[Locationid==null?"0":Locationid]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="AccAllStoresReceivingView"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllStoresView"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovtxtStoreName"
     ListVOName="AccAllStoresView"
@@ -91,7 +111,7 @@
   </ListBinding>
   <ListBinding
     Name="LovtxtReceivingSroreName"
-    ListVOName="AccAllStoresView"
+    ListVOName="AccAllStoresReceivingView"
     ListRangeSize="-1"
     ComboRowCountHint="10"
     NullValueFlag="none"
@@ -433,6 +453,12 @@
     <ViewCriteriaRow
       Name="InItemTransferNoteViewCriteria_row_0"
       UpperColumns="1">
+      <ViewCriteriaItem
+        Name="Stnno"
+        ViewAttribute="Stnno"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Required="Optional"/>
       <ViewCriteriaItem
         Name="DateOfTransfer"
         ViewAttribute="DateOfTransfer"
