@@ -14,12 +14,11 @@
     Cardinality="1"
     Source="true"
     Owner="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteLines"
-    LockLevel="NONE">
+    LockLevel="NONE"
+    DeleteContainee="true">
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="InItemTransferNoteLines"/>
-      <Attr Name="_foreignKey"
-        Value="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteLines.UnqInItemTranNoteLines"/>
       <Attr Name="_isUpdateable" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">
@@ -29,12 +28,11 @@
   <AssociationEnd
     Name="InItemTransferNoteImei"
     Cardinality="-1"
-    Owner="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteImei">
+    Owner="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteImei"
+    HasOwner="true">
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="InItemTransferNoteImei"/>
-      <Attr Name="_foreignKey"
-        Value="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteImei.fk_InItemTransferNoteImei"/>
       <Attr Name="_isUpdateable" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">

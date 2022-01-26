@@ -108,7 +108,7 @@
       </af:popup>
       <af:pageTemplate viewId="/ERPSolutionTemplate.jsf" value="#{bindings.ptb1}" id="pt1">
         <f:facet name="erptempmain">
-          <af:panelHeader text=" " id="ph1" partialTriggers="b4 b3 b2 b1 b6 b5 ::d2">
+          <af:panelHeader text="IMEI" id="ph1" partialTriggers="b4 b3 b2 b1 b6 b5 ::d2">
             <f:facet name="context"/>
             <f:facet name="menuBar"/>
             <f:facet name="toolbar"/>
@@ -138,10 +138,10 @@
                         <af:button text="Search" id="b12" action="ERP-ACT-IN-0002-SEARCH"
                                    icon="#{resource['images:imgFind.png']}" iconPosition="top" accessKey="s"/>
                         <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
-                                   disabled="#{bindings.Rnoteno.inputValue==null || !bindings.Previous.enabled}" partialSubmit="true" id="b4"
+                                   disabled="#{bindings.Stnno.inputValue==null || !bindings.Previous.enabled}" partialSubmit="true" id="b4"
                                    icon="#{resource['images:imgPrevious.png']}" iconPosition="top" accessKey="r"/>
                         <af:button actionListener="#{bindings.Next.execute}" text="Next"
-                                   disabled="#{bindings.Rnoteno.inputValue==null || !bindings.Next.enabled}" partialSubmit="true" id="b3"
+                                   disabled="#{bindings.Stnno.inputValue==null || !bindings.Next.enabled}" partialSubmit="true" id="b3"
                                    icon="#{resource['images:imgNext.png']}" iconPosition="top" accessKey="n"/>
                         <af:button actionListener="#{bindings.Delete.execute}" text="Delete Order"
                                    disabled="#{bindings.Posted.inputValue=='Y'}" id="b2"
@@ -343,6 +343,14 @@
               </af:gridRow>
               <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr11">
                 <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc27" halign="stretch">
+                  <af:inputText value="#{bindings.Stnlineseq.inputValue}" label="#{bindings.Stnlineseq.hints.label}"
+                                required="#{bindings.Stnlineseq.hints.mandatory}"
+                                columns="#{bindings.Stnlineseq.hints.displayWidth}"
+                                maximumLength="#{bindings.Stnlineseq.hints.precision}"
+                                shortDesc="#{bindings.Stnlineseq.hints.tooltip}" id="it14" rendered="false">
+                    <f:validator binding="#{bindings.Stnlineseq.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Stnlineseq.format}"/>
+                  </af:inputText>
                   <af:panelCollection id="pc1" styleClass="AFStretchWidth" featuresOff="viewMenu detach">
                     <f:facet name="menus"/>
                     <f:facet name="toolbar">
@@ -361,7 +369,27 @@
                               selectedRowKeys="#{bindings.InItemTransferNoteLinesDetCRUD.collectionModel.selectedRow}"
                               selectionListener="#{bindings.InItemTransferNoteLinesDetCRUD.collectionModel.makeCurrent}"
                               rowSelection="single" fetchSize="#{bindings.InItemTransferNoteLinesDetCRUD.rangeSize}"
-                              id="t2" columnStretching="last" partialTriggers="::b7 ::b8">
+                              id="t2" columnStretching="last" partialTriggers="::b7 ::b8" autoHeightRows="3"
+                              scrollPolicy="page">
+                      <af:column id="c8" width="50">
+                        <af:inputText value="#{row.bindings.Stnlineseq.inputValue}"
+                                      label="#{bindings.InItemTransferNoteLinesDetCRUD.hints.Stnlineseq.label}"
+                                      required="#{bindings.InItemTransferNoteLinesDetCRUD.hints.Stnlineseq.mandatory}"
+                                      columns="#{bindings.InItemTransferNoteLinesDetCRUD.hints.Stnlineseq.displayWidth}"
+                                      maximumLength="#{bindings.InItemTransferNoteLinesDetCRUD.hints.Stnlineseq.precision}"
+                                      shortDesc="#{bindings.InItemTransferNoteLinesDetCRUD.hints.Stnlineseq.tooltip}"
+                                      id="it13" rendered="false">
+                          <f:validator binding="#{row.bindings.Stnlineseq.validator}"/>
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.InItemTransferNoteLinesDetCRUD.hints.Stnlineseq.format}"/>
+                        </af:inputText>
+                        <af:button text="IMEI" id="b11" action="ACT-ERP-IN-0002-IMEI">
+                          <af:setActionListener from="#{row.bindings.ItemRefId.inputValue}"
+                                                to="#{pageFlowScope.ERPSolIMSPageFlowBean.ERPSolProductId}"/>
+                          <af:setActionListener from="#{bindings.Stnno.inputValue}"
+                                                to="#{pageFlowScope.ERPSolIMSPageFlowBean.ERPSolSTNNO}"/>
+                        </af:button>
+                      </af:column>
                       <af:column headerText="#{bindings.InItemTransferNoteLinesDetCRUD.hints.Lineno.label}" id="c1"
                                  width="80" displayIndex="-1">
                         <af:inputText value="#{row.bindings.Lineno.inputValue}"

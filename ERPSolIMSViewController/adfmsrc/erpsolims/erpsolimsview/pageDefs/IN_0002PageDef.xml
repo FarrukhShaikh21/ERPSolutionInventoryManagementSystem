@@ -78,6 +78,7 @@
           <Item Value="AvailQty"/>
           <Item Value="TransferQty"/>
           <Item Value="Remarks"/>
+          <Item Value="Stnlineseq"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -89,5 +90,10 @@
                   IsViewObjectMethod="true" DataControl="ERPSolIMSAppModuleDataControl"
                   InstanceName="data.ERPSolIMSAppModuleDataControl.InItemTransferNoteCRUD"
                   ReturnName="data.ERPSolIMSAppModuleDataControl.methodResults.doSuperviseSTN_ERPSolIMSAppModuleDataControl_InItemTransferNoteCRUD_doSuperviseSTN_result"/>
+    <attributeValues IterBinding="InItemTransferNoteLinesDetCRUDIterator" id="Stnlineseq">
+      <AttrNames>
+        <Item Value="Stnlineseq"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

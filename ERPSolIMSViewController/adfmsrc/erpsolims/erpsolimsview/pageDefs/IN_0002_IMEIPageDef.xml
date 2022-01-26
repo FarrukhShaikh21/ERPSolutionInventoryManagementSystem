@@ -24,5 +24,14 @@
     </tree>
     <action IterBinding="InItemTransferNoteImeiByStnseqlineCRUDIterator" id="Delete" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="ERPSolIMSAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="ERPSolIMSAppModuleDataControl"/>
+    <methodAction id="doERPSolRemoveSTNBox" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="doERPSolRemoveSTNBox" IsViewObjectMethod="true"
+                  DataControl="ERPSolIMSAppModuleDataControl"
+                  InstanceName="data.ERPSolIMSAppModuleDataControl.InItemTransferNoteImeiByStnseqlineCRUD"
+                  ReturnName="data.ERPSolIMSAppModuleDataControl.methodResults.doERPSolRemoveSTNBox_ERPSolIMSAppModuleDataControl_InItemTransferNoteImeiByStnseqlineCRUD_doERPSolRemoveSTNBox_result"/>
   </bindings>
 </pageDefinition>

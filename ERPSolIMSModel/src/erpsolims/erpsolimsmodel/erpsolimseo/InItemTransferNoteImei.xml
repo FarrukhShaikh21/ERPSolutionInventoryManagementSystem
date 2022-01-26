@@ -9,10 +9,14 @@
   DBObjectType="table"
   DBObjectName="IN_ITEM_TRANSFER_NOTE_IMEI"
   AliasName="InItemTransferNoteImei"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteImeiImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="TransferNoteImeiSno"
-    IsNotNull="true"
     Precision="10"
     Scale="0"
     ColumnName="TRANSFER_NOTE_IMEI_SNO"
@@ -23,13 +27,11 @@
     PrimaryKey="true"/>
   <Attribute
     Name="Stnnoseq"
-    IsNotNull="true"
     ColumnName="STNNOSEQ"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="IN_ITEM_TRANSFER_NOTE_IMEI"
-    PrimaryKey="true"/>
+    TableName="IN_ITEM_TRANSFER_NOTE_IMEI"/>
   <Attribute
     Name="LineNo"
     IsNotNull="true"
@@ -39,8 +41,7 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="IN_ITEM_TRANSFER_NOTE_IMEI"
-    PrimaryKey="true"/>
+    TableName="IN_ITEM_TRANSFER_NOTE_IMEI"/>
   <Attribute
     Name="ItemId"
     IsNotNull="true"
@@ -49,8 +50,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEM_TRANSFER_NOTE_IMEI"
-    PrimaryKey="true">
+    TableName="IN_ITEM_TRANSFER_NOTE_IMEI">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
@@ -63,8 +63,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEM_TRANSFER_NOTE_IMEI"
-    PrimaryKey="true">
+    TableName="IN_ITEM_TRANSFER_NOTE_IMEI">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
@@ -76,8 +75,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEM_TRANSFER_NOTE_IMEI"
-    PrimaryKey="true">
+    TableName="IN_ITEM_TRANSFER_NOTE_IMEI">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="30"/>
     </DesignTime>
@@ -89,8 +87,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEM_TRANSFER_NOTE_IMEI"
-    PrimaryKey="true">
+    TableName="IN_ITEM_TRANSFER_NOTE_IMEI">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="35"/>
     </DesignTime>
@@ -102,8 +99,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEM_TRANSFER_NOTE_IMEI"
-    PrimaryKey="true">
+    TableName="IN_ITEM_TRANSFER_NOTE_IMEI">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
@@ -115,8 +111,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEM_TRANSFER_NOTE_IMEI"
-    PrimaryKey="true">
+    TableName="IN_ITEM_TRANSFER_NOTE_IMEI">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="3"/>
     </DesignTime>
@@ -127,8 +122,7 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="IN_ITEM_TRANSFER_NOTE_IMEI"
-    PrimaryKey="true"/>
+    TableName="IN_ITEM_TRANSFER_NOTE_IMEI"/>
   <AccessorAttribute
     Name="InItemTransferNoteLines"
     Association="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemTransNoteLineInItemTransNoteIMEIstnlineseqAssoc"
@@ -144,15 +138,6 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteImei.TransferNoteImeiSno"/>
-      <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteImei.Stnnoseq"/>
-      <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteImei.LineNo"/>
-      <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteImei.ItemId"/>
-      <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteImei.ItemRefId"/>
-      <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteImei.ImeiNo"/>
-      <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteImei.BoxNo"/>
-      <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteImei.TempBoxNo"/>
-      <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteImei.CompanyCode"/>
-      <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteImei.Stnlineseq"/>
     </AttrArray>
   </Key>
   <Key

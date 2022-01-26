@@ -97,6 +97,15 @@
     <view id="IN_0002_SEARCH">
       <page>/IN_0002_SEARCH.jsf</page>
     </view>
+    <view id="IN_0002_IMEI">
+      <page>/IN_0002_IMEI.jsf</page>
+    </view>
+    <method-call id="ExeWithIN_0002_IMEIStnlineseq">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ACT-ERP-IN-0002-IMEI</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__16">
       <from-activity-id>ExecuteWithParamsTransactionIMS</from-activity-id>
       <control-flow-case id="__17">
@@ -188,12 +197,30 @@
         <from-outcome>ERP-ACT-IN-0002-SEARCH</from-outcome>
         <to-activity-id>IN_0002_SEARCH</to-activity-id>
       </control-flow-case>
+      <control-flow-case id="__35">
+        <from-outcome>ACT-ERP-IN-0002-IMEI</from-outcome>
+        <to-activity-id>ExeWithIN_0002_IMEIStnlineseq</to-activity-id>
+      </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__29">
       <from-activity-id>IN_0002_SEARCH</from-activity-id>
       <control-flow-case id="__30">
         <from-outcome>ACT-ERP-IN-0002-SEARCH-BACK</from-outcome>
         <to-activity-id>IN_0002</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__36">
+      <from-activity-id>IN_0002_IMEI</from-activity-id>
+      <control-flow-case id="__37">
+        <from-outcome>ACT-ERP-IN-0002-IMEI-BACK</from-outcome>
+        <to-activity-id>IN_0002</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__38">
+      <from-activity-id>ExeWithIN_0002_IMEIStnlineseq</from-activity-id>
+      <control-flow-case id="__39">
+        <from-outcome>ACT-ERP-IN-0002-IMEI</from-outcome>
+        <to-activity-id>IN_0002_IMEI</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>

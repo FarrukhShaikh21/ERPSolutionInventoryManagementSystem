@@ -57,13 +57,12 @@ public class ERPSolIMSBean {
     String ERPSolStrUserStoreCode;
     String ERPSolScanType="B";
     String ERPSolProductId;
-    String ERPSolSalesOrderId;
+    String ERPSolSTNNO;
     RichPopup ERPSolImeiPopup;
-    String ERPSolImeiBox;
-    RichInputText ERPSolImeiBoxText;
-    RichInputText ERPSolRebateImeiBoxText;
+//    RichInputText ERPSolImeiBoxText;
     String ERPSolImeiString;
     String ERPSolReportName;
+    Integer ERPSolStnLineSeq;
     public void doSetERPSolIMSSessionGlobals() {
         System.out.println("glob user code"+getERPSolStrUserCode());
         if (getERPSolStrUserCode().length()==0) {
@@ -224,16 +223,38 @@ public class ERPSolIMSBean {
         getERPSolImeiPopup().show(ERPSolHints);
         return null;
     }
-    public void erpSolSoImeiBox(ValueChangeEvent erpvce) {
+    public void erpSolSTNIMEI(ValueChangeEvent erpvce) {
         if (erpvce.getNewValue()==null) {
+            return ;
+        }
+        doInserterpSolSTNImeiBox(erpvce.getNewValue().toString(),"I");
+//        AdfFacesContext.getCurrentInstance().addPartialTarget(getERPSolImeiBoxText());
+        System.out.println("5435");    
+        
+    }
+
+    public void erpSolSTNBOX(ValueChangeEvent erpvce) {
+        if (erpvce.getNewValue()==null) {
+            return ;
+        }
+        doInserterpSolSTNImeiBox(erpvce.getNewValue().toString(),"B");
+//        AdfFacesContext.getCurrentInstance().addPartialTarget(getERPSolImeiBoxText());
+        System.out.println("5435");    
+        
+    }
+    
+    public void doInserterpSolSTNImeiBox(String pImeiBox, String pValueType) {
+        if (pImeiBox==null) {
             return ;
         }
         System.out.println("1so");
         DCBindingContainer bc = (DCBindingContainer) ERPSolGlobalViewBean.doGetERPBindings();
         System.out.println("2so");
         DCDataControl dc = bc.getDataControl();
+        
         System.out.println("3");
-        String ERPSolPlsql="begin ?:=PKG_SALE_ORDER.FUNC_IMEI_BOX_VALIDATION('"+getERPSolSalesOrderId()+"','"+erpvce.getNewValue()+"','"+getERPSolScanType()+"','"+getERPSolProductId()+"'); end;";
+        String ERPSolPlsql="begin ?:=PKG_SALE_ORDER.FUNC_STA_IMEI_BOX_VALIDATION('"+getERPSolSTNNO()+"','"+pImeiBox+"','"+pValueType+"','"+getERPSolProductId()+"'); end;";
+        System.out.println(ERPSolPlsql +"ERPSolPlsql");
         System.out.println("4");
         DBTransaction erpsoldbt=(DBTransaction)dc.getApplicationModule().getTransaction();
         System.out.println("5");
@@ -250,14 +271,15 @@ public class ERPSolIMSBean {
                      {  
                          
                          erpsoldbt.commit();
-                     dc.getApplicationModule().findViewObject("SoSalesOrderImeiDetCRUD").executeQuery();
-                         dc.getApplicationModule().findViewObject("SoSalesOrderViewCRUD").getCurrentRow().setAttribute("txtIMEIAndBox", null);
+                     dc.getApplicationModule().findViewObject("InItemTransferNoteImeiByStnseqlineCRUD").executeQuery();
+//                         dc.getApplicationModule().findViewObject("SoSalesOrderViewCRUD").getCurrentRow().setAttribute("txtIMEIAndBox", null);
                      }
                      else {
                          FacesContext.getCurrentInstance().addMessage(null , new FacesMessage(ERPSolPlsql));
                 //                throw new JboException(ERPSolPlsql);
                      }
                  } catch (SQLException e) {
+                e.printStackTrace();
                      
                  }
                  finally{
@@ -267,59 +289,16 @@ public class ERPSolIMSBean {
                     }
                 }
     System.out.println("hello");
-        setERPSolImeiBox(null);
-        getERPSolImeiBoxText().setValue(null);
-        AdfFacesContext.getCurrentInstance().addPartialTarget(getERPSolImeiBoxText());
+//        AdfFacesContext.getCurrentInstance().addPartialTarget(getERPSolImeiBoxText());
         System.out.println("5435");    
         
     }
+
 
     public void doERPSolScanRebateImei2(ValueChangeEvent erpvcevt) {
         System.out.println(erpvcevt.getNewValue()+ " get new value");
         System.out.println("one");
     }
-
-    public void doERPSolScanRebateImei(ValueChangeEvent erpvce) {
-        System.out.println(erpvce.getNewValue()+ " get new value");
-        System.out.println("1");
-        DCBindingContainer bc = (DCBindingContainer) ERPSolGlobalViewBean.doGetERPBindings();
-        System.out.println("2");
-        DCDataControl dc = bc.getDataControl();
-        System.out.println("3");
-        String ERPSolPlsql="begin ?:=PKG_SALES_REBATE.FUNC_IMEI_VALIDATION('"+getERPSolSalesOrderId()+"','"+erpvce.getNewValue()+"','"+ERPSolGlobClassModel.doGetUserCode()+"'); end;";
-        System.out.println("4");
-        DBTransaction erpsoldbt=(DBTransaction)dc.getApplicationModule().getTransaction();
-        System.out.println("5");
-        CallableStatement cs = erpsoldbt.createCallableStatement(ERPSolPlsql, DBTransaction.DEFAULT);
-        try {
-                     System.out.println("6");
-                     cs.registerOutParameter(1, Types.VARCHAR);
-                     System.out.println("7");
-                     cs.executeUpdate();
-                     System.out.println("8");
-                     ERPSolPlsql=cs.getString(1);
-                     System.out.println("9");
-                     if (ERPSolPlsql.equals("ERPSOLSUCCESS"))
-                     {  
-                         
-                         erpsoldbt.commit();
-                     }
-                     else {
-                         FacesContext.getCurrentInstance().addMessage(null , new FacesMessage(ERPSolPlsql));
-                     }
-                 } catch (SQLException e) {
-                     
-                 }
-                 finally{
-                    try {
-                        cs.close();
-                    } catch (SQLException e) {
-                    }
-                }
-        
-        dc.getApplicationModule().findViewObject("SoRebateImeDetCRUD").executeQuery();
-    }
-
 
     public void setERPSolScanType(String ERPSolScanType) {
         this.ERPSolScanType = ERPSolScanType;
@@ -337,44 +316,14 @@ public class ERPSolIMSBean {
         return ERPSolProductId;
     }
 
-    public void setERPSolSalesOrderId(String ERPSolSalesOrderId) {
-        this.ERPSolSalesOrderId = ERPSolSalesOrderId;
-    }
-
-    public String getERPSolSalesOrderId() {
-        return ERPSolSalesOrderId;
-    }
-
-    public void setERPSolImeiBox(String ERPSolImeiBox) {
-        this.ERPSolImeiBox = ERPSolImeiBox;
-    }
-
-    public String getERPSolImeiBox() {
-        return ERPSolImeiBox;
-    }
-
-    public void setERPSolImeiBoxText(RichInputText ERPSolImeiBoxText) {
-        this.ERPSolImeiBoxText = ERPSolImeiBoxText;
-    }
-
-    public RichInputText getERPSolImeiBoxText() {
-        return ERPSolImeiBoxText;
-    }
-
-    public void setERPSolRebateImeiBoxText(RichInputText ERPSolRebateImeiBoxText) {
-        this.ERPSolRebateImeiBoxText = ERPSolRebateImeiBoxText;
-    }
-
-    public RichInputText getERPSolRebateImeiBoxText() {
-        return ERPSolRebateImeiBoxText;
-    }
+  
 
     public void setERPSolImeiString(String ERPSolImeiString) {
         this.ERPSolImeiString = ERPSolImeiString;
     }
 
     public String getERPSolImeiString() {
-        return ERPSolImeiString;
+        return null;
     }
 
     public String doERPSolExecutIMSReport() {
@@ -479,5 +428,23 @@ public class ERPSolIMSBean {
         return ResultList;
         
     }
+
+    public void setERPSolSTNNO(String ERPSolSTNNO) {
+        this.ERPSolSTNNO = ERPSolSTNNO;
+    }
+
+    public String getERPSolSTNNO() {
+        return ERPSolSTNNO;
+    }
+
+
+    public void setERPSolStnLineSeq(Integer ERPSolStnLineSeq) {
+        this.ERPSolStnLineSeq = ERPSolStnLineSeq;
+    }
+
+    public Integer getERPSolStnLineSeq() {
+        return ERPSolStnLineSeq;
+    }
+
 }
 

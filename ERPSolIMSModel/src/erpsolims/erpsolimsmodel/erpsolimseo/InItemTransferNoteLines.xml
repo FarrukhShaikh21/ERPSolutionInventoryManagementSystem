@@ -388,6 +388,19 @@
         Value="AvailQty"/>
     </validation:OnAttributes>
   </validation:CompareValidationBean>
+  <validation:CompareValidationBean
+    Name="InItemTransferNoteLinesBR"
+    ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteLines_Rule_1"
+    OnAttribute="TransferQty"
+    OperandType="LITERAL"
+    Inverse="false"
+    CompareType="GREATERTHAN"
+    CompareValue="0">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="TransferQty"/>
+    </validation:OnAttributes>
+  </validation:CompareValidationBean>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="erpsolims.erpsolimsmodel.ERPSolIMSModelBundle"/>

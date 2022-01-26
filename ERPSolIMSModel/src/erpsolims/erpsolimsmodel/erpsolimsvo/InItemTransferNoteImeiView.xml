@@ -12,7 +12,13 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  ComponentClass="erpsolims.erpsolimsmodel.erpsolimsvo.InItemTransferNoteImeiViewImpl"
+  ComponentInterface="erpsolims.erpsolimsmodel.erpsolimsvo.common.InItemTransferNoteImeiView"
+  ClientProxyName="erpsolims.erpsolimsmodel.erpsolimsvo.client.InItemTransferNoteImeiViewClient">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Coll|VarAccess"/>
+  </DesignTime>
   <Variable
     Name="P_ADF_STNLINESEQ"
     Kind="viewcriteria"
@@ -127,4 +133,14 @@
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
+  <ClientInterface
+    Name="__clientInterface">
+    <Method
+      Name="doERPSolRemoveSTNBox"
+      MethodName="doERPSolRemoveSTNBox">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+    </Method>
+  </ClientInterface>
 </ViewObject>

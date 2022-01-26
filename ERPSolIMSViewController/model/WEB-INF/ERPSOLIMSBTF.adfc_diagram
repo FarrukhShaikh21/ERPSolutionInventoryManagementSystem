@@ -341,9 +341,9 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">267.79883</property>
+         name="y">266.09766</property>
       <property
-         name="x">663.5</property>
+         name="x">567.5</property>
    </View>
    <ControlFlowCase
       islink="true"
@@ -353,7 +353,7 @@
       <property
          name="fromOutcome">ERP-ACT-IN-0002</property>
       <property
-         name="sdm:polyPoints">R50,307.6875,72.149414,622.5,267.44824,L50</property>
+         name="sdm:polyPoints">R50,307.6875,72.149414,526.5,265.74707,L50</property>
    </ControlFlowCase>
    <View
       id="View32">
@@ -378,7 +378,7 @@
       <property
          name="fromOutcome">ERP-ACT-IN-0002-SEARCH</property>
       <property
-         name="sdm:polyPoints">T44,660.0,210.14885,738.5595,145.94824,L46</property>
+         name="sdm:polyPoints">R38,608.5,255.24707,738.4935,145.94824,L46</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -388,6 +388,64 @@
       <property
          name="fromOutcome">ACT-ERP-IN-0002-SEARCH-BACK</property>
       <property
-         name="sdm:polyPoints">L54,741.02637,152.94824,667.0,213.44824,T56</property>
+         name="sdm:polyPoints">L54,741.02637,152.94824,611.01416,262.24707,R46</property>
+   </ControlFlowCase>
+   <View
+      id="View35">
+      <property
+         name="activityId">IN_0002_IMEI</property>
+      <property
+         name="page">/IN_0002_IMEI.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>IN_0002_IMEI&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">272.39648</property>
+      <property
+         name="x">854.35547</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase36"
+      from="View30"
+      to="MethodCall38">
+      <property
+         name="fromOutcome">ACT-ERP-IN-0002-IMEI</property>
+      <property
+         name="sdm:polyPoints">R62,608.5,276.24707,693.35156,370.09766,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase37"
+      from="View35"
+      to="View30">
+      <property
+         name="fromOutcome">ACT-ERP-IN-0002-IMEI-BACK</property>
+      <property
+         name="sdm:polyPoints">L46,812.50354,268.5459,612.2773,269.24707,R54</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall38">
+      <property
+         name="activityId">ExeWithIN_0002_IMEIStnlineseq</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExeWithIN_0002_IMEIStnlineseq&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">370.44824</property>
+      <property
+         name="x">734.35156</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase39"
+      from="MethodCall38"
+      to="View35">
+      <property
+         name="fromOutcome">ACT-ERP-IN-0002-IMEI</property>
+      <property
+         name="sdm:polyPoints">T50,734.35156,316.09766,813.35547,275.5459,L54</property>
    </ControlFlowCase>
 </SDM>
