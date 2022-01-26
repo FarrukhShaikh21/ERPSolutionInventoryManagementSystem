@@ -293,17 +293,16 @@
                           </af:inputText>
                         </af:gridCell>
                         <af:gridCell id="gc18" width="15%" valign="middle">
-                          <af:outputLabel value="#{bindings.TransporterName.hints.label}" id="ol6"/>
+                          <af:outputLabel value="#{bindings.Supplierid.label}" id="ol6"/>
                         </af:gridCell>
                         <af:gridCell id="gc19" width="35%">
-                          <af:inputText value="#{bindings.TransporterName.inputValue}"
-                                        label="#{bindings.TransporterName.hints.label}"
-                                        required="#{bindings.TransporterName.hints.mandatory}"
-                                        columns="#{bindings.TransporterName.hints.displayWidth}"
-                                        maximumLength="#{bindings.TransporterName.hints.precision}"
-                                        shortDesc="#{bindings.TransporterName.hints.tooltip}" id="it10" simple="true">
-                            <f:validator binding="#{bindings.TransporterName.validator}"/>
-                          </af:inputText>
+                          <af:selectOneChoice value="#{bindings.Supplierid.inputValue}"
+                                              label="#{bindings.Supplierid.label}"
+                                              required="#{bindings.Supplierid.hints.mandatory}"
+                                              shortDesc="#{bindings.Supplierid.hints.tooltip}" id="soc2" simple="true">
+                            <f:selectItems value="#{bindings.Supplierid.items}" id="si3"/>
+                            <f:validator binding="#{bindings.Supplierid.validator}"/>
+                          </af:selectOneChoice>
                         </af:gridCell>
                       </af:gridRow>
                       <af:gridRow height="30px" marginBottom="5px" id="gr9">

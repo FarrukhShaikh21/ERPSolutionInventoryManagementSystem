@@ -54,6 +54,7 @@ public class InItemTransferNoteImpl extends ERPSolGlobalsEntityImpl {
         txtStoreName,
         txtLocationName,
         txtReceivingSroreName,
+        Supplierid,
         InItemTransferNoteLines,
         AllStores,
         AllLocations,
@@ -115,6 +116,7 @@ public class InItemTransferNoteImpl extends ERPSolGlobalsEntityImpl {
     public static final int TXTSTORENAME = AttributesEnum.txtStoreName.index();
     public static final int TXTLOCATIONNAME = AttributesEnum.txtLocationName.index();
     public static final int TXTRECEIVINGSRORENAME = AttributesEnum.txtReceivingSroreName.index();
+    public static final int SUPPLIERID = AttributesEnum.Supplierid.index();
     public static final int INITEMTRANSFERNOTELINES = AttributesEnum.InItemTransferNoteLines.index();
     public static final int ALLSTORES = AttributesEnum.AllStores.index();
     public static final int ALLLOCATIONS = AttributesEnum.AllLocations.index();
@@ -660,6 +662,22 @@ public class InItemTransferNoteImpl extends ERPSolGlobalsEntityImpl {
      */
     public void settxtReceivingSroreName(String value) {
         setAttributeInternal(TXTRECEIVINGSRORENAME, value);
+    }
+
+    /**
+     * Gets the attribute value for Supplierid, using the alias name Supplierid.
+     * @return the value of Supplierid
+     */
+    public String getSupplierid() {
+        return (String) getAttributeInternal(SUPPLIERID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Supplierid.
+     * @param value value to set the Supplierid
+     */
+    public void setSupplierid(String value) {
+        setAttributeInternal(SUPPLIERID, value);
     }
 
     /**

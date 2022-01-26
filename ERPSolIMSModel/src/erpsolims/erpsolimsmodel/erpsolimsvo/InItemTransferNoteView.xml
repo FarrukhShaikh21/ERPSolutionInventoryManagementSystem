@@ -33,6 +33,14 @@
     Name="AccVWYesNoQVO"
     ViewObjectName="erpsolglob.erpsolglobmodel.erpsolglobqvo.VWYesNoQVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccPuSuppliersView"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.PuSuppliersView"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="PuSuppliersViewByLocationVC"
+      FullName="erpsolims.erpsolimsmodel.erpsolimsvo.PuSuppliersView.PuSuppliersViewByLocationVC"/>
+  </ViewAccessor>
   <ListBinding
     Name="LovtxtStoreName"
     ListVOName="AccAllStoresView"
@@ -121,6 +129,25 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovSupplierid"
+    ListVOName="AccPuSuppliersView"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Supplierid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Supplierid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="SuppName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -366,6 +393,20 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="Supplierid"
+    PrecisionRule="true"
+    EntityAttrName="Supplierid"
+    EntityUsage="InItemTransferNote"
+    AliasName="SUPPLIERID"
+    LOVName="LovSupplierid">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="InItemTransferNoteViewFindVC"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InItemTransferNoteView"
@@ -442,6 +483,29 @@
         </ViewCriteria>
       </ViewCriteriaItem>
       <ViewCriteriaItem
+        Name="InItemTransferNoteViewCriteria_InItemTransferNoteViewCriteria_row_0_AllStoresView1"
+        ViewAttribute="AllStoresView1"
+        Operator="EXISTS"
+        Conjunction="AND"
+        IsNestedCriteria="true"
+        Required="Optional">
+        <ViewCriteria
+          Name="AllStoresViewNestedCriteria"
+          ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllStoresView"
+          Conjunction="AND">
+          <ViewCriteriaRow
+            Name="AllStoresViewNestedCriteria_row_0"
+            UpperColumns="1">
+            <ViewCriteriaItem
+              Name="ReceivingStoreName"
+              ViewAttribute="ReceivingStoreName"
+              Operator="STARTSWITH"
+              Conjunction="AND"
+              Required="Optional"/>
+          </ViewCriteriaRow>
+        </ViewCriteria>
+      </ViewCriteriaItem>
+      <ViewCriteriaItem
         Name="InItemTransferNoteViewCriteria_InItemTransferNoteViewCriteria_row_0_AllLocationsView"
         ViewAttribute="AllLocationsView"
         Operator="EXISTS"
@@ -465,29 +529,6 @@
               Name="LocationDescription"
               ViewAttribute="LocationDescription"
               Operator="CONTAINS"
-              Conjunction="AND"
-              Required="Optional"/>
-          </ViewCriteriaRow>
-        </ViewCriteria>
-      </ViewCriteriaItem>
-      <ViewCriteriaItem
-        Name="InItemTransferNoteViewCriteria_InItemTransferNoteViewCriteria_row_0_AllStoresView1"
-        ViewAttribute="AllStoresView1"
-        Operator="EXISTS"
-        Conjunction="AND"
-        IsNestedCriteria="true"
-        Required="Optional">
-        <ViewCriteria
-          Name="AllStoresViewNestedCriteria"
-          ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllStoresView"
-          Conjunction="AND">
-          <ViewCriteriaRow
-            Name="AllStoresViewNestedCriteria_row_0"
-            UpperColumns="1">
-            <ViewCriteriaItem
-              Name="ReceivingStoreName"
-              ViewAttribute="ReceivingStoreName"
-              Operator="STARTSWITH"
               Conjunction="AND"
               Required="Optional"/>
           </ViewCriteriaRow>

@@ -14,6 +14,8 @@ import oracle.jbo.server.ViewRowImpl;
 // ---    Warning: Do not modify method signatures of generated methods.
 // ---------------------------------------------------------------------
 public class InItemTransferNoteViewRowImpl extends ViewRowImpl {
+
+
     public static final int ENTITY_INITEMTRANSFERNOTE = 0;
 
     /**
@@ -53,14 +55,17 @@ public class InItemTransferNoteViewRowImpl extends ViewRowImpl {
         txtStoreName,
         txtLocationName,
         txtReceivingSroreName,
+        Supplierid,
         InItemTransferNoteLinesView,
         AllStoresView,
         AllLocationsView,
         AllStoresView1,
         AccAllStoresView,
         AccAllLocationsView,
-        AccVWYesNoQVO;
-        private static AttributesEnum[] vals = null;
+        AccVWYesNoQVO,
+        AccPuSuppliersView;
+        static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         public int index() {
@@ -82,6 +87,8 @@ public class InItemTransferNoteViewRowImpl extends ViewRowImpl {
             return vals;
         }
     }
+
+
     public static final int SENDINGSTOREID = AttributesEnum.Sendingstoreid.index();
     public static final int STNNO = AttributesEnum.Stnno.index();
     public static final int DATEOFTRANSFER = AttributesEnum.DateOfTransfer.index();
@@ -115,6 +122,7 @@ public class InItemTransferNoteViewRowImpl extends ViewRowImpl {
     public static final int TXTSTORENAME = AttributesEnum.txtStoreName.index();
     public static final int TXTLOCATIONNAME = AttributesEnum.txtLocationName.index();
     public static final int TXTRECEIVINGSRORENAME = AttributesEnum.txtReceivingSroreName.index();
+    public static final int SUPPLIERID = AttributesEnum.Supplierid.index();
     public static final int INITEMTRANSFERNOTELINESVIEW = AttributesEnum.InItemTransferNoteLinesView.index();
     public static final int ALLSTORESVIEW = AttributesEnum.AllStoresView.index();
     public static final int ALLLOCATIONSVIEW = AttributesEnum.AllLocationsView.index();
@@ -122,6 +130,7 @@ public class InItemTransferNoteViewRowImpl extends ViewRowImpl {
     public static final int ACCALLSTORESVIEW = AttributesEnum.AccAllStoresView.index();
     public static final int ACCALLLOCATIONSVIEW = AttributesEnum.AccAllLocationsView.index();
     public static final int ACCVWYESNOQVO = AttributesEnum.AccVWYesNoQVO.index();
+    public static final int ACCPUSUPPLIERSVIEW = AttributesEnum.AccPuSuppliersView.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -666,6 +675,22 @@ public class InItemTransferNoteViewRowImpl extends ViewRowImpl {
     }
 
     /**
+     * Gets the attribute value for SUPPLIERID using the alias name Supplierid.
+     * @return the SUPPLIERID
+     */
+    public String getSupplierid() {
+        return (String) getAttributeInternal(SUPPLIERID);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for SUPPLIERID using the alias name Supplierid.
+     * @param value value to set the SUPPLIERID
+     */
+    public void setSupplierid(String value) {
+        setAttributeInternal(SUPPLIERID, value);
+    }
+
+    /**
      * Gets the associated <code>RowIterator</code> using master-detail link InItemTransferNoteLinesView.
      */
     public RowIterator getInItemTransferNoteLinesView() {
@@ -734,6 +759,14 @@ public class InItemTransferNoteViewRowImpl extends ViewRowImpl {
     public RowSet getAccVWYesNoQVO() {
         return (RowSet) getAttributeInternal(ACCVWYESNOQVO);
     }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> AccPuSuppliersView.
+     */
+    public RowSet getAccPuSuppliersView() {
+        return (RowSet) getAttributeInternal(ACCPUSUPPLIERSVIEW);
+    }
+
     @Override
     public boolean isAttributeUpdateable(int i) {
         // TODO Implement this method

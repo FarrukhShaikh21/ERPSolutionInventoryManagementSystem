@@ -47,11 +47,6 @@
         <Item Value="BiltyNo"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="InItemTransferNoteCRUDIterator" id="TransporterName">
-      <AttrNames>
-        <Item Value="TransporterName"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="InItemTransferNoteCRUDIterator" id="Remarks">
       <AttrNames>
         <Item Value="Remarks"/>
@@ -95,5 +90,7 @@
         <Item Value="Stnlineseq"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="InItemTransferNoteCRUDIterator" StaticList="false" Uses="LovSupplierid" id="Supplierid"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>
