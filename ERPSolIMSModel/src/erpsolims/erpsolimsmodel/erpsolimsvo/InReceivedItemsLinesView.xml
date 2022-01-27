@@ -448,4 +448,9 @@
     ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.InRecItemsLinesInRecItemsShelveRnotedetailseqLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="InReceivedItemsSnoView"
+    ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.InRecItemsLinesInRecItemsSeriallveRnotedetailseqLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

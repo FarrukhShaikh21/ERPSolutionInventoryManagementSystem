@@ -87,7 +87,8 @@ public class InReceivedItemsLinesImpl extends ERPSolGlobalsEntityImpl {
         txtModelNo,
         InReceivedItems,
         InItems,
-        InReceivedItemShelves;
+        InReceivedItemShelves,
+        InReceivedItemsSno;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -174,6 +175,7 @@ public class InReceivedItemsLinesImpl extends ERPSolGlobalsEntityImpl {
     public static final int INRECEIVEDITEMS = AttributesEnum.InReceivedItems.index();
     public static final int INITEMS = AttributesEnum.InItems.index();
     public static final int INRECEIVEDITEMSHELVES = AttributesEnum.InReceivedItemShelves.index();
+    public static final int INRECEIVEDITEMSSNO = AttributesEnum.InReceivedItemsSno.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -1169,6 +1171,14 @@ public class InReceivedItemsLinesImpl extends ERPSolGlobalsEntityImpl {
      */
     public RowIterator getInReceivedItemShelves() {
         return (RowIterator) getAttributeInternal(INRECEIVEDITEMSHELVES);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getInReceivedItemsSno() {
+        return (RowIterator) getAttributeInternal(INRECEIVEDITEMSSNO);
     }
 
 

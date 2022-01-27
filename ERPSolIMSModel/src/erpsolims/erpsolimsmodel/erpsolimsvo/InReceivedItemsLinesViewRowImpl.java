@@ -87,6 +87,7 @@ public class InReceivedItemsLinesViewRowImpl extends ViewRowImpl {
         InItemsView,
         InReceivedItemsView,
         InReceivedItemShelvesView,
+        InReceivedItemsSnoView,
         AccInItemsView;
         static AttributesEnum[] vals = null;
         ;
@@ -175,6 +176,7 @@ public class InReceivedItemsLinesViewRowImpl extends ViewRowImpl {
     public static final int INITEMSVIEW = AttributesEnum.InItemsView.index();
     public static final int INRECEIVEDITEMSVIEW = AttributesEnum.InReceivedItemsView.index();
     public static final int INRECEIVEDITEMSHELVESVIEW = AttributesEnum.InReceivedItemShelvesView.index();
+    public static final int INRECEIVEDITEMSSNOVIEW = AttributesEnum.InReceivedItemsSnoView.index();
     public static final int ACCINITEMSVIEW = AttributesEnum.AccInItemsView.index();
 
     /**
@@ -1168,6 +1170,13 @@ public class InReceivedItemsLinesViewRowImpl extends ViewRowImpl {
      */
     public RowIterator getInReceivedItemShelvesView() {
         return (RowIterator) getAttributeInternal(INRECEIVEDITEMSHELVESVIEW);
+    }
+
+    /**
+     * Gets the associated <code>RowIterator</code> using master-detail link InReceivedItemsSnoView.
+     */
+    public RowIterator getInReceivedItemsSnoView() {
+        return (RowIterator) getAttributeInternal(INRECEIVEDITEMSSNOVIEW);
     }
 
     /**

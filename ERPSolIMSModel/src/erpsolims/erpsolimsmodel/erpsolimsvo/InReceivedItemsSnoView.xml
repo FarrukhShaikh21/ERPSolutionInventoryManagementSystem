@@ -129,4 +129,10 @@
     EntityAttrName="Rnotedetailseq"
     EntityUsage="InReceivedItemsSno"
     AliasName="RNOTEDETAILSEQ"/>
+  <ViewLinkAccessor
+    Name="InReceivedItemsLinesView"
+    ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.InRecItemsLinesInRecItemsSeriallveRnotedetailseqLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
 </ViewObject>

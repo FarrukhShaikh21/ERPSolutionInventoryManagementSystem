@@ -632,6 +632,13 @@
     AssociationOtherEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InRecItemsLinesInRecItemsShelveRnotedetailseqAssoc.InReceivedItemsLines"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="InReceivedItemsSno"
+    Association="erpsolims.erpsolimsmodel.erpsolimsassoc.InRecItemsLinesInRecItemsSeriallveRnotedetailseqAssoc"
+    AssociationEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InRecItemsLinesInRecItemsSeriallveRnotedetailseqAssoc.InReceivedItemsSno"
+    AssociationOtherEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InRecItemsLinesInRecItemsSeriallveRnotedetailseqAssoc.InReceivedItemsLines"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="XpkinReceivedItemsLines"
     PrimaryKey="true">
