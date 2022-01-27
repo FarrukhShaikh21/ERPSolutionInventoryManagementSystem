@@ -31,7 +31,8 @@ public class InReceivedItemShelvesImpl extends ERPSolGlobalsEntityImpl {
         Modifiedby,
         ModifiedDate,
         IssuedQty,
-        Rnotedetailseq;
+        Rnotedetailseq,
+        InReceivedItemsLines;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -55,6 +56,7 @@ public class InReceivedItemShelvesImpl extends ERPSolGlobalsEntityImpl {
         }
     }
 
+
     public static final int STOREID = AttributesEnum.Storeid.index();
     public static final int RNOTENO = AttributesEnum.Rnoteno.index();
     public static final int LINENO = AttributesEnum.Lineno.index();
@@ -66,6 +68,7 @@ public class InReceivedItemShelvesImpl extends ERPSolGlobalsEntityImpl {
     public static final int MODIFIEDDATE = AttributesEnum.ModifiedDate.index();
     public static final int ISSUEDQTY = AttributesEnum.IssuedQty.index();
     public static final int RNOTEDETAILSEQ = AttributesEnum.Rnotedetailseq.index();
+    public static final int INRECEIVEDITEMSLINES = AttributesEnum.InReceivedItemsLines.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -79,6 +82,7 @@ public class InReceivedItemShelvesImpl extends ERPSolGlobalsEntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemShelves");
     }
+
 
     /**
      * Gets the attribute value for Storeid, using the alias name Storeid.
@@ -254,6 +258,21 @@ public class InReceivedItemShelvesImpl extends ERPSolGlobalsEntityImpl {
      */
     public void setRnotedetailseq(BigDecimal value) {
         setAttributeInternal(RNOTEDETAILSEQ, value);
+    }
+
+
+    /**
+     * @return the associated entity InReceivedItemsLinesImpl.
+     */
+    public InReceivedItemsLinesImpl getInReceivedItemsLines() {
+        return (InReceivedItemsLinesImpl) getAttributeInternal(INRECEIVEDITEMSLINES);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity InReceivedItemsLinesImpl.
+     */
+    public void setInReceivedItemsLines(InReceivedItemsLinesImpl value) {
+        setAttributeInternal(INRECEIVEDITEMSLINES, value);
     }
 
 

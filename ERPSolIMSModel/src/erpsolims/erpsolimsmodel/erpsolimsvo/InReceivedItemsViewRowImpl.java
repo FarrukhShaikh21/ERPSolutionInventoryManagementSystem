@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 import oracle.jbo.Row;
 import oracle.jbo.RowIterator;
 import oracle.jbo.RowSet;
+import oracle.jbo.RowSetIterator;
 import oracle.jbo.domain.Date;
 import oracle.jbo.server.ViewRowImpl;
 // ---------------------------------------------------------------------
@@ -68,7 +69,8 @@ public class InReceivedItemsViewRowImpl extends ViewRowImpl {
         AccAllStoresView,
         AccInReceivingDocTypesView,
         AccVWYesNoQVO,
-        AccVWGRNSourceDocNoQVO;
+        AccVWGRNSourceDocNoQVO,
+        AccVWGRNSourceDocNoItemQVO;
         static AttributesEnum[] vals = null;
         ;
         private static final int firstIndex = 0;
@@ -139,6 +141,7 @@ public class InReceivedItemsViewRowImpl extends ViewRowImpl {
     public static final int ACCINRECEIVINGDOCTYPESVIEW = AttributesEnum.AccInReceivingDocTypesView.index();
     public static final int ACCVWYESNOQVO = AttributesEnum.AccVWYesNoQVO.index();
     public static final int ACCVWGRNSOURCEDOCNOQVO = AttributesEnum.AccVWGRNSourceDocNoQVO.index();
+    public static final int ACCVWGRNSOURCEDOCNOITEMQVO = AttributesEnum.AccVWGRNSourceDocNoItemQVO.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -232,6 +235,32 @@ public class InReceivedItemsViewRowImpl extends ViewRowImpl {
      */
     public void setSourceDocRef(String value) {
         setAttributeInternal(SOURCEDOCREF, value);
+        
+        while (getInReceivedItemsLinesView().getRowCount() > 0) {
+            getInReceivedItemsLinesView().first().remove();
+        }
+        getAccVWGRNSourceDocNoItemQVO().setNamedWhereClauseParam("P_ADF_STNNO", value);
+        getAccVWGRNSourceDocNoItemQVO().executeQuery();
+        RowSetIterator rsi=getAccVWGRNSourceDocNoItemQVO();
+        while(rsi.hasNext()) {
+            Row stnRow=rsi.next();
+            Row newRow=getInReceivedItemsLinesView().createRow();
+            newRow.setAttribute("Itemid", stnRow.getAttribute("Itemid"));
+            newRow.setAttribute("RecvUomsid", stnRow.getAttribute("RecUomsid"));
+            newRow.setAttribute("Siclassid", stnRow.getAttribute("Siclassid"));
+            newRow.setAttribute("ItemRefId", stnRow.getAttribute("ItemRefId"));
+            newRow.setAttribute("Sigroupid", stnRow.getAttribute("Sigroupid"));
+            newRow.setAttribute("IssueUomid", stnRow.getAttribute("IssueUomsid"));
+            newRow.setAttribute("QtyReceived", stnRow.getAttribute("TransferQty"));
+            newRow.setAttribute("Shelfqty", stnRow.getAttribute("TransferQty"));
+            newRow.setAttribute("SourceDocLineno", stnRow.getAttribute("Lineno"));
+            newRow.setAttribute("ProductCost", stnRow.getAttribute("ProductCost"));
+//            newRow.setAttribute("Dvalue", stnRow.getAttribute("Dcost"));
+//            newRow.setAttribute("Dvalue", stnRow.getAttribute("Dcost"));
+            newRow.setAttribute("QtyAfterConversion", stnRow.getAttribute("TransferQty"));
+            getInReceivedItemsLinesView().insertRow(newRow);
+            
+        }
     }
 
     /**
@@ -825,6 +854,13 @@ public class InReceivedItemsViewRowImpl extends ViewRowImpl {
      */
     public RowSet getAccVWGRNSourceDocNoQVO() {
         return (RowSet) getAttributeInternal(ACCVWGRNSOURCEDOCNOQVO);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> AccVWGRNSourceDocNoItemQVO.
+     */
+    public RowSet getAccVWGRNSourceDocNoItemQVO() {
+        return (RowSet) getAttributeInternal(ACCVWGRNSOURCEDOCNOITEMQVO);
     }
 
     @Override

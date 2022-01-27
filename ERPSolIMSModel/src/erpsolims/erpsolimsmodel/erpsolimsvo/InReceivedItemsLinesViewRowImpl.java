@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 
 import oracle.jbo.Row;
+import oracle.jbo.RowIterator;
 import oracle.jbo.RowSet;
 import oracle.jbo.domain.Date;
 import oracle.jbo.server.ViewRowImpl;
@@ -16,6 +17,7 @@ import oracle.jbo.server.ViewRowImpl;
 // ---    Warning: Do not modify method signatures of generated methods.
 // ---------------------------------------------------------------------
 public class InReceivedItemsLinesViewRowImpl extends ViewRowImpl {
+
 
     public static final int ENTITY_INRECEIVEDITEMSLINES = 0;
 
@@ -84,6 +86,7 @@ public class InReceivedItemsLinesViewRowImpl extends ViewRowImpl {
         txtModelNo,
         InItemsView,
         InReceivedItemsView,
+        InReceivedItemShelvesView,
         AccInItemsView;
         static AttributesEnum[] vals = null;
         ;
@@ -108,6 +111,7 @@ public class InReceivedItemsLinesViewRowImpl extends ViewRowImpl {
             return vals;
         }
     }
+
 
     public static final int STOREID = AttributesEnum.Storeid.index();
     public static final int RNOTENO = AttributesEnum.Rnoteno.index();
@@ -170,6 +174,7 @@ public class InReceivedItemsLinesViewRowImpl extends ViewRowImpl {
     public static final int TXTMODELNO = AttributesEnum.txtModelNo.index();
     public static final int INITEMSVIEW = AttributesEnum.InItemsView.index();
     public static final int INRECEIVEDITEMSVIEW = AttributesEnum.InReceivedItemsView.index();
+    public static final int INRECEIVEDITEMSHELVESVIEW = AttributesEnum.InReceivedItemShelvesView.index();
     public static final int ACCINITEMSVIEW = AttributesEnum.AccInItemsView.index();
 
     /**
@@ -1156,6 +1161,13 @@ public class InReceivedItemsLinesViewRowImpl extends ViewRowImpl {
      */
     public void setInReceivedItemsView(Row value) {
         setAttributeInternal(INRECEIVEDITEMSVIEW, value);
+    }
+
+    /**
+     * Gets the associated <code>RowIterator</code> using master-detail link InReceivedItemShelvesView.
+     */
+    public RowIterator getInReceivedItemShelvesView() {
+        return (RowIterator) getAttributeInternal(INRECEIVEDITEMSHELVESVIEW);
     }
 
     /**

@@ -54,6 +54,17 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="AccVWGRNSourceDocNoItemQVO"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsqvo.VWGRNSourceDocNoItemQVO"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="P_ADF_STNNO">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[SourceDocRef==null?"0":SourceDocRef]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LovtxtStoreName"
     ListVOName="AccAllStoresView"

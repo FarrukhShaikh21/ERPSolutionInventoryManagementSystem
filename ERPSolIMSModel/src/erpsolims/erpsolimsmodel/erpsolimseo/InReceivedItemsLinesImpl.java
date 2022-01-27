@@ -10,6 +10,7 @@ import java.sql.Timestamp;
 
 import oracle.jbo.AttributeList;
 import oracle.jbo.Key;
+import oracle.jbo.RowIterator;
 import oracle.jbo.domain.Date;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.EntityImpl;
@@ -85,7 +86,8 @@ public class InReceivedItemsLinesImpl extends ERPSolGlobalsEntityImpl {
         Rnoteseq,
         txtModelNo,
         InReceivedItems,
-        InItems;
+        InItems,
+        InReceivedItemShelves;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -171,6 +173,7 @@ public class InReceivedItemsLinesImpl extends ERPSolGlobalsEntityImpl {
     public static final int TXTMODELNO = AttributesEnum.txtModelNo.index();
     public static final int INRECEIVEDITEMS = AttributesEnum.InReceivedItems.index();
     public static final int INITEMS = AttributesEnum.InItems.index();
+    public static final int INRECEIVEDITEMSHELVES = AttributesEnum.InReceivedItemShelves.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -1158,6 +1161,14 @@ public class InReceivedItemsLinesImpl extends ERPSolGlobalsEntityImpl {
      */
     public void setInItems(EntityImpl value) {
         setAttributeInternal(INITEMS, value);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getInReceivedItemShelves() {
+        return (RowIterator) getAttributeInternal(INRECEIVEDITEMSHELVES);
     }
 
 

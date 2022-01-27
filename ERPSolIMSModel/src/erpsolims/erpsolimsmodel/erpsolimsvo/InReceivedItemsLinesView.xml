@@ -443,4 +443,9 @@
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="InReceivedItemShelvesView"
+    ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.InRecItemsLinesInRecItemsShelveRnotedetailseqLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

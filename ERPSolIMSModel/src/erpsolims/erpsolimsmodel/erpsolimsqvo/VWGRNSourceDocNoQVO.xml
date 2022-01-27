@@ -21,15 +21,36 @@
   <Variable
     Name="P_ADF_STOREID"
     Kind="where"
-    Type="java.lang.String"/>
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
   <Variable
     Name="P_ADF_DATE"
     Kind="where"
-    Type="oracle.jbo.domain.Date"/>
+    Type="oracle.jbo.domain.Date">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
   <Variable
     Name="P_ADF_DOC_TYPE"
     Kind="where"
-    Type="java.lang.String"/>
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
   <SQLQuery><![CDATA[select a.stnno,   
 date_of_transfer,   
 GATEPASSREFNO,   
@@ -74,17 +95,34 @@ order by date_of_transfer desc]]></SQLQuery>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="18"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimsqvo.VWGRNSourceDocNoQVO.Stnno_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="DateOfTransfer"
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     AliasName="DATE_OF_TRANSFER"
     Expression="DATE_OF_TRANSFER"
-    SQLType="DATE"/>
+    SQLType="DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimsqvo.VWGRNSourceDocNoQVO.DateOfTransfer_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Gatepassrefno"
     IsUpdateable="false"
@@ -99,6 +137,14 @@ order by date_of_transfer desc]]></SQLQuery>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimsqvo.VWGRNSourceDocNoQVO.Gatepassrefno_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="Transportno"
@@ -114,6 +160,14 @@ order by date_of_transfer desc]]></SQLQuery>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimsqvo.VWGRNSourceDocNoQVO.Transportno_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="BiltyNo"
@@ -129,6 +183,14 @@ order by date_of_transfer desc]]></SQLQuery>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimsqvo.VWGRNSourceDocNoQVO.BiltyNo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="Sname"
@@ -144,17 +206,32 @@ order by date_of_transfer desc]]></SQLQuery>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="Gatepassdate"
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     AliasName="GATEPASSDATE"
     Expression="GATEPASSDATE"
-    SQLType="DATE"/>
+    SQLType="DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimsqvo.VWGRNSourceDocNoQVO.Gatepassdate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Remarks"
     IsUpdateable="false"
@@ -169,6 +246,14 @@ order by date_of_transfer desc]]></SQLQuery>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="350"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimsqvo.VWGRNSourceDocNoQVO.Remarks_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="Stnno"/>

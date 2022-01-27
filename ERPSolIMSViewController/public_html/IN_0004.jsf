@@ -236,7 +236,8 @@
                                                         required="#{bindings.txtStoreName.hints.mandatory}"
                                                         columns="#{bindings.txtStoreName.hints.displayWidth}"
                                                         shortDesc="#{bindings.txtStoreName.hints.tooltip}"
-                                                        autoSubmit="true" simple="true">
+                                                        autoSubmit="true" simple="true"
+                                                        readOnly="#{bindings.InReceivedItemsLinesDetCRUDIterator.estimatedRowCount>0}">
                             <f:validator binding="#{bindings.txtStoreName.validator}"/>
                             <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolIMSPageFlowBean.doERPSolGetAutoSuggestedStoreValues}"/>
                           </af:inputComboboxListOfValues>
@@ -271,7 +272,8 @@
                                                         required="#{bindings.SourceDocRef.hints.mandatory}"
                                                         columns="#{bindings.SourceDocRef.hints.displayWidth}"
                                                         shortDesc="#{bindings.SourceDocRef.hints.tooltip}"
-                                                        simple="true" partialTriggers="soc2">
+                                                        simple="true" partialTriggers="soc2"
+                                                        autoSubmit="true">
                             <f:validator binding="#{bindings.SourceDocRef.validator}"/>
                           </af:inputComboboxListOfValues>
                         </af:gridCell>
@@ -331,7 +333,8 @@
                               selectedRowKeys="#{bindings.InReceivedItemsLinesDetCRUD.collectionModel.selectedRow}"
                               selectionListener="#{bindings.InReceivedItemsLinesDetCRUD.collectionModel.makeCurrent}"
                               rowSelection="single" fetchSize="#{bindings.InReceivedItemsLinesDetCRUD.rangeSize}"
-                              id="t2" partialTriggers="::b7 ::b8" autoHeightRows="5" scrollPolicy="page">
+                              id="t2" partialTriggers="::b7 ::b8" autoHeightRows="5" scrollPolicy="page"
+                              columnStretching="column:c2">
                       <af:column headerText="#{bindings.InReceivedItemsLinesDetCRUD.hints.Lineno.label}" id="c1"
                                  width="80" displayIndex="-1">
                         <af:inputText value="#{row.bindings.Lineno.inputValue}"
@@ -355,7 +358,8 @@
                                                       required="#{bindings.InReceivedItemsLinesDetCRUD.hints.ItemRefId.mandatory}"
                                                       columns="#{bindings.InReceivedItemsLinesDetCRUD.hints.ItemRefId.displayWidth}"
                                                       shortDesc="#{bindings.InReceivedItemsLinesDetCRUD.hints.ItemRefId.tooltip}"
-                                                      autoSubmit="true">
+                                                      autoSubmit="true"
+                                                      disabled="#{bindings.Recvdoctypeid.inputValue=='STA'}">
                           <f:validator binding="#{row.bindings.ItemRefId.validator}"/>
                           <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolIMSPageFlowBean.doERPSolGetAutoSuggestedModelValues}"/>
                         </af:inputComboboxListOfValues>
@@ -379,35 +383,8 @@
                                       columns="#{bindings.InReceivedItemsLinesDetCRUD.hints.Shelfqty.displayWidth}"
                                       maximumLength="#{bindings.InReceivedItemsLinesDetCRUD.hints.Shelfqty.precision}"
                                       shortDesc="#{bindings.InReceivedItemsLinesDetCRUD.hints.Shelfqty.tooltip}"
-                                      id="it9" autoSubmit="true">
+                                      id="it9" autoSubmit="true" disabled="#{bindings.Recvdoctypeid.inputValue=='STA'}">
                           <f:validator binding="#{row.bindings.Shelfqty.validator}"/>
-                        </af:inputText>
-                      </af:column>
-                      <af:column headerText="#{bindings.InReceivedItemsLinesDetCRUD.hints.UnitCostBeforeConversion.label}"
-                                 id="c8">
-                        <af:inputText value="#{row.bindings.UnitCostBeforeConversion.inputValue}"
-                                      label="#{bindings.InReceivedItemsLinesDetCRUD.hints.UnitCostBeforeConversion.label}"
-                                      required="#{bindings.InReceivedItemsLinesDetCRUD.hints.UnitCostBeforeConversion.mandatory}"
-                                      columns="#{bindings.InReceivedItemsLinesDetCRUD.hints.UnitCostBeforeConversion.displayWidth}"
-                                      maximumLength="#{bindings.InReceivedItemsLinesDetCRUD.hints.UnitCostBeforeConversion.precision}"
-                                      shortDesc="#{bindings.InReceivedItemsLinesDetCRUD.hints.UnitCostBeforeConversion.tooltip}"
-                                      id="it11">
-                          <f:validator binding="#{row.bindings.UnitCostBeforeConversion.validator}"/>
-                          <af:convertNumber groupingUsed="false"
-                                            pattern="#{bindings.InReceivedItemsLinesDetCRUD.hints.UnitCostBeforeConversion.format}"/>
-                        </af:inputText>
-                      </af:column>
-                      <af:column headerText="#{bindings.InReceivedItemsLinesDetCRUD.hints.Recvalue.label}" id="c5">
-                        <af:inputText value="#{row.bindings.Recvalue.inputValue}"
-                                      label="#{bindings.InReceivedItemsLinesDetCRUD.hints.Recvalue.label}"
-                                      required="#{bindings.InReceivedItemsLinesDetCRUD.hints.Recvalue.mandatory}"
-                                      columns="#{bindings.InReceivedItemsLinesDetCRUD.hints.Recvalue.displayWidth}"
-                                      maximumLength="#{bindings.InReceivedItemsLinesDetCRUD.hints.Recvalue.precision}"
-                                      shortDesc="#{bindings.InReceivedItemsLinesDetCRUD.hints.Recvalue.tooltip}"
-                                      id="it7" autoSubmit="true" partialTriggers="it9">
-                          <f:validator binding="#{row.bindings.Recvalue.validator}"/>
-                          <af:convertNumber groupingUsed="false"
-                                            pattern="#{bindings.InReceivedItemsLinesDetCRUD.hints.Recvalue.format}"/>
                         </af:inputText>
                       </af:column>
                     </af:table>

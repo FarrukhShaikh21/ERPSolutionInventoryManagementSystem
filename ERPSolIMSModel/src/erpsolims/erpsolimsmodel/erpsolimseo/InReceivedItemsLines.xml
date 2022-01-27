@@ -625,6 +625,13 @@
     AssociationOtherEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemsInReceiveItemsLinesItemRefIdAssoc.InReceivedItemsLines"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="InReceivedItemShelves"
+    Association="erpsolims.erpsolimsmodel.erpsolimsassoc.InRecItemsLinesInRecItemsShelveRnotedetailseqAssoc"
+    AssociationEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InRecItemsLinesInRecItemsShelveRnotedetailseqAssoc.InReceivedItemShelves"
+    AssociationOtherEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InRecItemsLinesInRecItemsShelveRnotedetailseqAssoc.InReceivedItemsLines"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="XpkinReceivedItemsLines"
     PrimaryKey="true">

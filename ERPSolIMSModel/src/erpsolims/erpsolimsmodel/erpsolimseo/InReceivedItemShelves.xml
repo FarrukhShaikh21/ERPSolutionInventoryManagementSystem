@@ -132,6 +132,13 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="IN_RECEIVED_ITEM_SHELVES"/>
+  <AccessorAttribute
+    Name="InReceivedItemsLines"
+    Association="erpsolims.erpsolimsmodel.erpsolimsassoc.InRecItemsLinesInRecItemsShelveRnotedetailseqAssoc"
+    AssociationEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InRecItemsLinesInRecItemsShelveRnotedetailseqAssoc.InReceivedItemsLines"
+    AssociationOtherEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InRecItemsLinesInRecItemsShelveRnotedetailseqAssoc.InReceivedItemShelves"
+    Type="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsLinesImpl"
+    IsUpdateable="true"/>
   <Key
     Name="SysC0016006"
     PrimaryKey="true">

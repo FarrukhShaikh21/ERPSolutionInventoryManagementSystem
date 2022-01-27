@@ -26,7 +26,10 @@
     <action IterBinding="InReceivedItemsCRUDIterator" id="Delete" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
     <action IterBinding="InReceivedItemsCRUDIterator" id="CreateInsert" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
+            Action="createWithParams" InstanceName="ERPSolIMSAppModuleDataControl.InReceivedItemsCRUD"
+            DataControl="ERPSolIMSAppModuleDataControl">
+      <NamedData NDName="Recvdoctypeid" NDValue="#{'STA'}" NDType="java.lang.String"/>
+    </action>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
             DataControl="ERPSolIMSAppModuleDataControl"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
