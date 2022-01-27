@@ -67,7 +67,8 @@ public class InReceivedItemsViewRowImpl extends ViewRowImpl {
         AllStoresView,
         AccAllStoresView,
         AccInReceivingDocTypesView,
-        AccVWYesNoQVO;
+        AccVWYesNoQVO,
+        AccVWGRNSourceDocNoQVO;
         static AttributesEnum[] vals = null;
         ;
         private static final int firstIndex = 0;
@@ -137,6 +138,7 @@ public class InReceivedItemsViewRowImpl extends ViewRowImpl {
     public static final int ACCALLSTORESVIEW = AttributesEnum.AccAllStoresView.index();
     public static final int ACCINRECEIVINGDOCTYPESVIEW = AttributesEnum.AccInReceivingDocTypesView.index();
     public static final int ACCVWYESNOQVO = AttributesEnum.AccVWYesNoQVO.index();
+    public static final int ACCVWGRNSOURCEDOCNOQVO = AttributesEnum.AccVWGRNSourceDocNoQVO.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -816,6 +818,13 @@ public class InReceivedItemsViewRowImpl extends ViewRowImpl {
      */
     public RowSet getAccVWYesNoQVO() {
         return (RowSet) getAttributeInternal(ACCVWYESNOQVO);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> AccVWGRNSourceDocNoQVO.
+     */
+    public RowSet getAccVWGRNSourceDocNoQVO() {
+        return (RowSet) getAttributeInternal(ACCVWGRNSOURCEDOCNOQVO);
     }
 
     @Override

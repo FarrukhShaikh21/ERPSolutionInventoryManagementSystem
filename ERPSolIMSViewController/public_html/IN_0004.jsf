@@ -259,17 +259,21 @@
                           </af:selectOneChoice>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="15%" id="gc14" valign="middle">
-                          <af:outputLabel value="#{bindings.RefNo.hints.label}" id="ol6"/>
+                          <af:outputLabel value="#{bindings.SourceDocRef.hints.label}" id="ol3"/>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="35%" marginEnd="5px" id="gc15" valign="middle"
                                      halign="stretch">
-                          <af:inputText value="#{bindings.RefNo.inputValue}" label="#{bindings.RefNo.hints.label}"
-                                        required="#{bindings.RefNo.hints.mandatory}"
-                                        columns="#{bindings.RefNo.hints.displayWidth}"
-                                        maximumLength="#{bindings.RefNo.hints.precision}"
-                                        shortDesc="#{bindings.RefNo.hints.tooltip}" id="it1" simple="true">
-                            <f:validator binding="#{bindings.RefNo.validator}"/>
-                          </af:inputText>
+                          <af:inputComboboxListOfValues id="sourceDocRefId"
+                                                        popupTitle="Search and Select: #{bindings.SourceDocRef.hints.label}"
+                                                        value="#{bindings.SourceDocRef.inputValue}"
+                                                        label="#{bindings.SourceDocRef.hints.label}"
+                                                        model="#{bindings.SourceDocRef.listOfValuesModel}"
+                                                        required="#{bindings.SourceDocRef.hints.mandatory}"
+                                                        columns="#{bindings.SourceDocRef.hints.displayWidth}"
+                                                        shortDesc="#{bindings.SourceDocRef.hints.tooltip}"
+                                                        simple="true" partialTriggers="soc2">
+                            <f:validator binding="#{bindings.SourceDocRef.validator}"/>
+                          </af:inputComboboxListOfValues>
                         </af:gridCell>
                       </af:gridRow>
                       <af:gridRow height="30px" marginBottom="5px" id="gr9">

@@ -35,6 +35,25 @@
     Name="AccVWYesNoQVO"
     ViewObjectName="erpsolglob.erpsolglobmodel.erpsolglobqvo.VWYesNoQVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccVWGRNSourceDocNoQVO"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsqvo.VWGRNSourceDocNoQVO"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="P_ADF_DATE">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[ReceivingDate==null?adf.currentDate-10000:ReceivingDate]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="P_ADF_DOC_TYPE">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[Recvdoctypeid==null?"0":Recvdoctypeid]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="P_ADF_STOREID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[Storeid==null?"0":Storeid]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LovtxtStoreName"
     ListVOName="AccAllStoresView"
@@ -96,6 +115,27 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LovSourceDocRef"
+    ListVOName="AccVWGRNSourceDocNoQVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SourceDocRef"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Stnno"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Stnno"/>
+      <Item Value="DateOfTransfer"/>
+      <Item Value="Remarks"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="InReceivedItems"
     Entity="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItems"/>
@@ -141,7 +181,19 @@
     PrecisionRule="true"
     EntityAttrName="SourceDocRef"
     EntityUsage="InReceivedItems"
-    AliasName="SOURCE_DOC_REF"/>
+    AliasName="SOURCE_DOC_REF"
+    LOVName="LovSourceDocRef">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <Dependencies>
+      <Item
+        Value="Recvdoctypeid"/>
+    </Dependencies>
+  </ViewAttribute>
   <ViewAttribute
     Name="ChallanNo"
     PrecisionRule="true"

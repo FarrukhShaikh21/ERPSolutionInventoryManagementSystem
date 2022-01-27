@@ -49,11 +49,6 @@
     </attributeValues>
     <list IterBinding="InReceivedItemsCRUDIterator" StaticList="false" Uses="LovRecvdoctypeid" id="Recvdoctypeid"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="InReceivedItemsCRUDIterator" id="RefNo">
-      <AttrNames>
-        <Item Value="RefNo"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="InReceivedItemsCRUDIterator" id="Remarks">
       <AttrNames>
         <Item Value="Remarks"/>
@@ -87,5 +82,7 @@
         <Item Value="Rnoteseq"/>
       </AttrNames>
     </attributeValues>
+    <listOfValues IterBinding="InReceivedItemsCRUDIterator" StaticList="false" Uses="LovSourceDocRef"
+                  id="SourceDocRef"/>
   </bindings>
 </pageDefinition>

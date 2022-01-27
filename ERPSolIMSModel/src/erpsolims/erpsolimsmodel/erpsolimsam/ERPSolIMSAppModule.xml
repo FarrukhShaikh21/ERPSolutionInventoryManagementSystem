@@ -47,6 +47,9 @@
   <ViewUsage
     Name="AllStoresReceivingAutoSuggestRO"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllStoresView"/>
+  <ViewUsage
+    Name="VWGRNSourceDocNoAutoSuggestRO"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsqvo.VWGRNSourceDocNoQVO"/>
   <ViewLinkUsage
     Name="FkInRecItemLinRnoteseqLink1"
     ViewLinkObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.FkInRecItemLinRnoteseqLink"

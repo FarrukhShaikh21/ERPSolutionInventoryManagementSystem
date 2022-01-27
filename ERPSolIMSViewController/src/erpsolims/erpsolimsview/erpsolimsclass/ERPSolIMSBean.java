@@ -140,6 +140,17 @@ public class ERPSolIMSBean {
         return ResultList;
         
     }
+    public List<SelectItem> doERPSolGetAutoSuggestedGRNSourceDocValues(String pStringValues) {
+        List<SelectItem> ResultList=new ArrayList<SelectItem>();
+        BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
+        System.out.println("b");
+        AttributeBinding ERPStoreid =(AttributeBinding)ERPSolbc.getControlBinding("Storeid");
+        ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "VWGRNSourceDocNoAutoSuggestRO",
+                                                            " UPPER(CONCAT(STOREID,STORE_NAME))", "StoreName", "Storeid", 10,"ERPSolIMSAppModuleDataControl");
+        return ResultList;
+        
+    }
+    
     
     
     public List<SelectItem> doERPSolGetAutoSuggestedCustomerValues(String pStringValues) {
