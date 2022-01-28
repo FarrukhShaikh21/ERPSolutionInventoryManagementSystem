@@ -137,6 +137,8 @@
                                    disabled="#{!bindings.doSuperviseSTN.enabled}" id="b10" rendered="false"/>
                         <af:button text="Search" id="b12" action="ERP-ACT-IN-0002-SEARCH"
                                    icon="#{resource['images:imgFind.png']}" iconPosition="top" accessKey="s"/>
+                        <af:button text="Exit" id="b13" action="ERP-ACT-EXIT-FORM-IMS" iconPosition="top"
+                                   icon="#{resource['images:imgExitForm.png']}"/>
                         <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
                                    disabled="#{bindings.Stnno.inputValue==null || !bindings.Previous.enabled}" partialSubmit="true" id="b4"
                                    icon="#{resource['images:imgPrevious.png']}" iconPosition="top" accessKey="r"/>

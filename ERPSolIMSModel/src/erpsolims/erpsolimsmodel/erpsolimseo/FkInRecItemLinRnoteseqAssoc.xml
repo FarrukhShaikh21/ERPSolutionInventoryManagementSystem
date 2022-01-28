@@ -15,12 +15,10 @@
     Source="true"
     Owner="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItems"
     LockLevel="NONE"
-    CascadeDelete="true"
     DeleteContainee="true">
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="InReceivedItems"/>
-      <Attr Name="_foreignKey" Value="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItems.PkUnqInReceivedItems"/>
       <Attr Name="_isUpdateable" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">
@@ -35,8 +33,6 @@
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="InReceivedItemsLines"/>
-      <Attr Name="_foreignKey"
-        Value="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsLines.FkInRecItemLinRnoteseq"/>
       <Attr Name="_isUpdateable" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">

@@ -446,7 +446,7 @@ public class InReceivedItemsSnoImpl extends ERPSolGlobalsEntityImpl {
 
         if (operation==DML_INSERT) {
             System.out.println("pak");
-           String pkValue = "FUNC_GET_MAX_ID('IN_RECEIVED_ITEMS_SNO','LINENO')";
+           String pkValue = "FUNC_GET_MAX_ID('IN_RECEIVED_ITEMS_SNO','RECV_ITEM_SEQNO')";
             String result =
                 ERPSolGlobClassModel.doGetERPSolPrimaryKeyValueModel(getDBTransaction(), pkValue, "dual", null, null);
             System.out.println("pak-old"+result); 

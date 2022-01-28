@@ -143,10 +143,17 @@ public class ERPSolIMSBean {
     public List<SelectItem> doERPSolGetAutoSuggestedGRNSourceDocValues(String pStringValues) {
         List<SelectItem> ResultList=new ArrayList<SelectItem>();
         BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
-        System.out.println("b");
-        AttributeBinding ERPStoreid =(AttributeBinding)ERPSolbc.getControlBinding("Storeid");
+        DCIteratorBinding ERPSolIB=(DCIteratorBinding)ERPSolbc.get("InReceivedItemsCRUDIterator");
+        ApplicationModule ERPSolAM=ERPSolIB.getViewObject().getApplicationModule();
+        ViewObject vo=ERPSolAM.findViewObject("VWGRNSourceDocNoAutoSuggestRO");
+        AttributeBinding ERPStoreid         =(AttributeBinding)ERPSolbc.getControlBinding("Storeid");
+        AttributeBinding ERPReceivingDate   =(AttributeBinding)ERPSolbc.getControlBinding("ReceivingDate");
+        vo.setNamedWhereClauseParam("P_ADF_DATE", ERPReceivingDate.getInputValue());
+        vo.setNamedWhereClauseParam("P_ADF_DOC_TYPE", "STA");
+        vo.setNamedWhereClauseParam("P_ADF_STOREID", ERPStoreid.getInputValue());
+        vo.executeQuery();
         ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "VWGRNSourceDocNoAutoSuggestRO",
-                                                            " UPPER(CONCAT(STOREID,STORE_NAME))", "StoreName", "Storeid", 10,"ERPSolIMSAppModuleDataControl");
+                                                            " UPPER(CONCAT(Stnno,Sname))", "Stnno", "Sname", 10,"ERPSolIMSAppModuleDataControl");
         return ResultList;
         
     }

@@ -151,6 +151,10 @@
         <from-outcome>ERPSOL-RETURN-FROM-IMS</from-outcome>
         <to-activity-id>ERPSOL-RETURN-FROM-IMS</to-activity-id>
       </control-flow-case>
+      <control-flow-case id="__43">
+        <from-outcome>ERP-ACT-EXIT-FORM-IMS</from-outcome>
+        <to-activity-id>ERPSolIMSMain</to-activity-id>
+      </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__1">
       <from-activity-id>IN_0004</from-activity-id>

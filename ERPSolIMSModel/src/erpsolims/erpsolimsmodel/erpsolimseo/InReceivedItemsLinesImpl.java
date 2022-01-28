@@ -1231,7 +1231,7 @@ public class InReceivedItemsLinesImpl extends ERPSolGlobalsEntityImpl {
            Row newRow=getInReceivedItemShelves().createRow();
            System.out.println("this is g"+result);
 
-           newRow.setAttribute("Lineno", 1);
+           newRow.setAttribute("Lineno", Integer.parseInt(result));
            System.out.println("this is h"+"h");
 
            newRow.setAttribute("Shelfid", "01");

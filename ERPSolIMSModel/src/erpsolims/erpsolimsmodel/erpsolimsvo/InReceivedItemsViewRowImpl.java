@@ -279,6 +279,7 @@ public class InReceivedItemsViewRowImpl extends ViewRowImpl {
             Row newImeiRow=getApplicationModule().findViewObject("InReceivedItemsSnoDetCRUD").createAndInitRow(new NameValuePairs(new String[] { "Rnotedetailseq" }, new Object[] { seq}));
                 newImeiRow.setAttribute("Rnotedetailseq", seq);
                 newImeiRow.setAttribute("SerialNo", nextImeiRow.getAttribute("ImeiNo"));
+                newImeiRow.setAttribute("TempBoxNo", nextImeiRow.getAttribute("TempBoxNo"));
                 getApplicationModule().findViewObject("InReceivedItemsSnoDetCRUD").insertRow(newImeiRow);    
 //Row myRow = ruleAttrIter.createAndInitRow(new NameValuePairs(new String[] { "AttributeName" }, new Object[] { "AttributeValue" }));            
         }
