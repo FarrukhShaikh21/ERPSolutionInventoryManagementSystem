@@ -448,4 +448,39 @@
       <property
          name="sdm:polyPoints">T50,734.35156,316.09766,813.35547,275.5459,L54</property>
    </ControlFlowCase>
+   <View
+      id="View40">
+      <property
+         name="activityId">IN_0004_IMEI</property>
+      <property
+         name="page">/IN_0004_IMEI.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>IN_0004_IMEI&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">446.79883</property>
+      <property
+         name="x">192.35547</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase41"
+      from="View5"
+      to="View40">
+      <property
+         name="fromOutcome">ACT-ERP-IN-0004-IMEI</property>
+      <property
+         name="sdm:polyPoints">B39,339.5,305.0459,192.35547,392.44824,T50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase42"
+      from="View40"
+      to="View5">
+      <property
+         name="fromOutcome">ACT-ERP-IN-0004-IMEI-BACK</property>
+      <property
+         name="sdm:polyPoints">T56,195.85547,392.44824,343.0,309.02972,B44</property>
+   </ControlFlowCase>
 </SDM>
