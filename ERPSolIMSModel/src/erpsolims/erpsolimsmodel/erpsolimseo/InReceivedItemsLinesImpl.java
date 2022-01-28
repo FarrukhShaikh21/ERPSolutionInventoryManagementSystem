@@ -10,6 +10,7 @@ import java.sql.Timestamp;
 
 import oracle.jbo.AttributeList;
 import oracle.jbo.Key;
+import oracle.jbo.Row;
 import oracle.jbo.RowIterator;
 import oracle.jbo.domain.Date;
 import oracle.jbo.server.EntityDefImpl;
@@ -1196,6 +1197,7 @@ public class InReceivedItemsLinesImpl extends ERPSolGlobalsEntityImpl {
      * @param attributeList list of attribute names/values to initialize the row
      */
     protected void create(AttributeList attributeList) {
+        System.out.println("this is rnoteseqdel");
         setERPSolPKColumnName("Rnotedetailseq");
         setERPSolPKSeqName("in_received_items_lines_seq");
         super.create(attributeList);
@@ -1217,7 +1219,7 @@ public class InReceivedItemsLinesImpl extends ERPSolGlobalsEntityImpl {
         if (operation==DML_INSERT) {
             populateAttributeAsChanged(RNOTENO, getInReceivedItems().getAttribute("Rnoteno"));
            populateAttributeAsChanged(STOREID, getInReceivedItems().getAttribute("Storeid"));
-           System.out.println("this is b");
+           System.out.println("this is b"+getInReceivedItems().getAttribute("Storeid"));
            String pkValue="FUNC_GET_MAX_ID('IN_RECEIVED_ITEMS_LINES WHERE RNOTENO=''"+getRnoteno()+"''','LINENO')";
            System.out.println("this is c");
            System.out.println(pkValue + "pk value");
@@ -1225,6 +1227,17 @@ public class InReceivedItemsLinesImpl extends ERPSolGlobalsEntityImpl {
            String result= ERPSolGlobClassModel.doGetERPSolPrimaryKeyValueModel(getDBTransaction(), pkValue, "dual", null, null);
            System.out.println("this is e");
            populateAttributeAsChanged(LINENO, Integer.parseInt(result));
+           System.out.println("this is f"+result);
+           Row newRow=getInReceivedItemShelves().createRow();
+           System.out.println("this is g"+result);
+
+           newRow.setAttribute("Lineno", 1);
+           System.out.println("this is h"+"h");
+
+           newRow.setAttribute("Shelfid", "01");
+           System.out.println("this is i"+"i");
+           getInReceivedItemShelves().insertRow(newRow);
+           System.out.println("this is j"+"j");
        }
         if (operation!=DML_DELETE) {
             populateAttributeAsChanged(QTYRECEIVED, getShelfqty());

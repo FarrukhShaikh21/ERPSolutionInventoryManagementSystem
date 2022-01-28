@@ -54,5 +54,37 @@ public class InItemTransferNoteImeiViewImpl extends ViewObjectImpl implements In
         }
 
     }
+
+    /**
+     * Returns the variable value for P_ADF_ITEMID.
+     * @return variable value for P_ADF_ITEMID
+     */
+    public String getP_ADF_ITEMID() {
+        return (String) ensureVariableManager().getVariableValue("P_ADF_ITEMID");
+    }
+
+    /**
+     * Sets <code>value</code> for variable P_ADF_ITEMID.
+     * @param value value to bind as P_ADF_ITEMID
+     */
+    public void setP_ADF_ITEMID(String value) {
+        ensureVariableManager().setVariableValue("P_ADF_ITEMID", value);
+    }
+
+    /**
+     * Returns the variable value for P_ADF_STNNO.
+     * @return variable value for P_ADF_STNNO
+     */
+    public String getP_ADF_STNNO() {
+        return (String) ensureVariableManager().getVariableValue("P_ADF_STNNO");
+    }
+
+    /**
+     * Sets <code>value</code> for variable P_ADF_STNNO.
+     * @param value value to bind as P_ADF_STNNO
+     */
+    public void setP_ADF_STNNO(String value) {
+        ensureVariableManager().setVariableValue("P_ADF_STNNO", value);
+    }
 }
 

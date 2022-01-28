@@ -23,6 +23,14 @@
     Name="P_ADF_STNLINESEQ"
     Kind="viewcriteria"
     Type="java.lang.Integer"/>
+  <Variable
+    Name="P_ADF_ITEMID"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="P_ADF_STNNO"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
   <EntityUsage
     Name="InItemTransferNoteImei"
     Entity="erpsolims.erpsolimsmodel.erpsolimseo.InItemTransferNoteImei"/>
@@ -125,6 +133,70 @@
         Value=":P_ADF_STNLINESEQ"
         IsBindVarValue="true"
         Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ViewCriteria
+    Name="InItemTransferNoteImeiBySTNNOItemVC"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InItemTransferNoteImeiView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="InItemTransferNoteImeiViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="ItemId"
+        ViewAttribute="ItemId"
+        Operator="="
+        Conjunction="AND"
+        Value=":P_ADF_ITEMID"
+        UpperColumns="0"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="InItemTransferNoteLinesView"
+        ViewAttribute="InItemTransferNoteLinesView"
+        Operator="EXISTS"
+        Conjunction="AND"
+        IsNestedCriteria="true"
+        UpperColumns="0"
+        Required="Optional">
+        <ViewCriteria
+          Name="InItemTransferNoteLinesViewNestedCriteria"
+          ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InItemTransferNoteLinesView"
+          Conjunction="AND">
+          <ViewCriteriaRow
+            Name="InItemTransferNoteLinesViewNestedCriteria_row_0"
+            UpperColumns="1">
+            <ViewCriteriaItem
+              Name="Stnno"
+              ViewAttribute="Stnno"
+              Operator="="
+              Conjunction="AND"
+              Value=":P_ADF_STNNO"
+              UpperColumns="0"
+              IsBindVarValue="true"
+              Required="Optional"/>
+          </ViewCriteriaRow>
+        </ViewCriteria>
+      </ViewCriteriaItem>
     </ViewCriteriaRow>
   </ViewCriteria>
   <ViewLinkAccessor

@@ -65,6 +65,14 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="AccInItemTransferNoteImeiView"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InItemTransferNoteImeiView"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="InItemTransferNoteImeiBySTNNOItemVC"
+      FullName="erpsolims.erpsolimsmodel.erpsolimsvo.InItemTransferNoteImeiView.InItemTransferNoteImeiBySTNNOItemVC"/>
+  </ViewAccessor>
   <ListBinding
     Name="LovtxtStoreName"
     ListVOName="AccAllStoresView"

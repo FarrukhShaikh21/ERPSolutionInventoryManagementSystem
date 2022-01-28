@@ -18,53 +18,45 @@
   </DesignTime>
   <Attribute
     Name="Storeid"
-    IsNotNull="true"
     Precision="15"
     ColumnName="STOREID"
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_RECEIVED_ITEMS_SNO"
-    PrimaryKey="true">
+    TableName="IN_RECEIVED_ITEMS_SNO">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
   </Attribute>
   <Attribute
     Name="Rnoteno"
-    IsNotNull="true"
     Precision="18"
     ColumnName="RNOTENO"
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_RECEIVED_ITEMS_SNO"
-    PrimaryKey="true">
+    TableName="IN_RECEIVED_ITEMS_SNO">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="18"/>
     </DesignTime>
   </Attribute>
   <Attribute
     Name="Lineno"
-    IsNotNull="true"
     Precision="4"
     Scale="0"
     ColumnName="LINENO"
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="IN_RECEIVED_ITEMS_SNO"
-    PrimaryKey="true"/>
+    TableName="IN_RECEIVED_ITEMS_SNO"/>
   <Attribute
     Name="Shelfid"
-    IsNotNull="true"
     Precision="15"
     ColumnName="SHELFID"
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_RECEIVED_ITEMS_SNO"
-    PrimaryKey="true">
+    TableName="IN_RECEIVED_ITEMS_SNO">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -97,7 +89,7 @@
     Name="CreatedDate"
     ColumnName="CREATED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="IN_RECEIVED_ITEMS_SNO"/>
   <Attribute
@@ -116,7 +108,7 @@
     Name="ModifiedDate"
     ColumnName="MODIFIED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="IN_RECEIVED_ITEMS_SNO"/>
   <Attribute
@@ -126,17 +118,17 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_RECEIVED_ITEMS_SNO">
+    TableName="IN_RECEIVED_ITEMS_SNO"
+    DefaultValue="N">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
   </Attribute>
   <Attribute
     Name="RecvItemSeqno"
-    IsNotNull="true"
     ColumnName="RECV_ITEM_SEQNO"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="IN_RECEIVED_ITEMS_SNO"
     PrimaryKey="true"/>
@@ -171,7 +163,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_RECEIVED_ITEMS_SNO">
+    TableName="IN_RECEIVED_ITEMS_SNO"
+    DefaultValue="N">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
@@ -216,7 +209,7 @@
     Name="Rnotedetailseq"
     ColumnName="RNOTEDETAILSEQ"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="IN_RECEIVED_ITEMS_SNO"/>
   <AccessorAttribute
@@ -233,10 +226,6 @@
       <Attr Name="_DBObjectName" Value="XPKIN_RECEIVED_ITEMS_SNO"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsSno.Storeid"/>
-      <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsSno.Rnoteno"/>
-      <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsSno.Lineno"/>
-      <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsSno.Shelfid"/>
       <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsSno.RecvItemSeqno"/>
     </AttrArray>
   </Key>

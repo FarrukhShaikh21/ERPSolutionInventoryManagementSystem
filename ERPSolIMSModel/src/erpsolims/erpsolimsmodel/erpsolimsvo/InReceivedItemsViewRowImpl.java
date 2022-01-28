@@ -4,6 +4,7 @@ import erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsImpl;
 
 import java.math.BigDecimal;
 
+import oracle.jbo.NameValuePairs;
 import oracle.jbo.Row;
 import oracle.jbo.RowIterator;
 import oracle.jbo.RowSet;
@@ -70,7 +71,8 @@ public class InReceivedItemsViewRowImpl extends ViewRowImpl {
         AccInReceivingDocTypesView,
         AccVWYesNoQVO,
         AccVWGRNSourceDocNoQVO,
-        AccVWGRNSourceDocNoItemQVO;
+        AccVWGRNSourceDocNoItemQVO,
+        AccInItemTransferNoteImeiView;
         static AttributesEnum[] vals = null;
         ;
         private static final int firstIndex = 0;
@@ -142,6 +144,7 @@ public class InReceivedItemsViewRowImpl extends ViewRowImpl {
     public static final int ACCVWYESNOQVO = AttributesEnum.AccVWYesNoQVO.index();
     public static final int ACCVWGRNSOURCEDOCNOQVO = AttributesEnum.AccVWGRNSourceDocNoQVO.index();
     public static final int ACCVWGRNSOURCEDOCNOITEMQVO = AttributesEnum.AccVWGRNSourceDocNoItemQVO.index();
+    public static final int ACCINITEMTRANSFERNOTEIMEIVIEW = AttributesEnum.AccInItemTransferNoteImeiView.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -245,6 +248,9 @@ public class InReceivedItemsViewRowImpl extends ViewRowImpl {
         while(rsi.hasNext()) {
             Row stnRow=rsi.next();
             Row newRow=getInReceivedItemsLinesView().createRow();
+            System.out.println("rnotedets");
+            System.out.println(newRow.getAttribute("Rnotedetailseq"));
+            Integer seq=Integer.parseInt(newRow.getAttribute("Rnotedetailseq").toString());
             newRow.setAttribute("Itemid", stnRow.getAttribute("Itemid"));
             newRow.setAttribute("RecvUomsid", stnRow.getAttribute("RecUomsid"));
             newRow.setAttribute("Siclassid", stnRow.getAttribute("Siclassid"));
@@ -259,7 +265,23 @@ public class InReceivedItemsViewRowImpl extends ViewRowImpl {
 //            newRow.setAttribute("Dvalue", stnRow.getAttribute("Dcost"));
             newRow.setAttribute("QtyAfterConversion", stnRow.getAttribute("TransferQty"));
             getInReceivedItemsLinesView().insertRow(newRow);
-            
+//            getInReceivedItemsLinesView().setCurrentRow(newRow);
+            System.out.println("aaa no");
+//            System.out.println(getInReceivedItemsLinesView().getCurrentRow().getAttribute("Rnotedetailseq"));
+            System.out.println("bbb no");
+            getAccInItemTransferNoteImeiView().setNamedWhereClauseParam("P_ADF_ITEMID", stnRow.getAttribute("Itemid"));
+            getAccInItemTransferNoteImeiView().setNamedWhereClauseParam("P_ADF_STNNO", value);
+            getAccInItemTransferNoteImeiView().executeQuery();
+            RowSetIterator imeirsi=getAccInItemTransferNoteImeiView();
+            while(imeirsi.hasNext()){
+            Row nextImeiRow=imeirsi.next();
+//            Row myRow = ruleAttrIter.createAndInitRow(new NameValuePairs(new String[] { "Rnotedetailseq" }, new Object[] { seq}));
+            Row newImeiRow=getApplicationModule().findViewObject("InReceivedItemsSnoDetCRUD").createAndInitRow(new NameValuePairs(new String[] { "Rnotedetailseq" }, new Object[] { seq}));
+                newImeiRow.setAttribute("Rnotedetailseq", seq);
+                newImeiRow.setAttribute("SerialNo", nextImeiRow.getAttribute("ImeiNo"));
+                getApplicationModule().findViewObject("InReceivedItemsSnoDetCRUD").insertRow(newImeiRow);    
+//Row myRow = ruleAttrIter.createAndInitRow(new NameValuePairs(new String[] { "AttributeName" }, new Object[] { "AttributeValue" }));            
+        }
         }
     }
 
@@ -861,6 +883,13 @@ public class InReceivedItemsViewRowImpl extends ViewRowImpl {
      */
     public RowSet getAccVWGRNSourceDocNoItemQVO() {
         return (RowSet) getAttributeInternal(ACCVWGRNSOURCEDOCNOITEMQVO);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> AccInItemTransferNoteImeiView.
+     */
+    public RowSet getAccInItemTransferNoteImeiView() {
+        return (RowSet) getAttributeInternal(ACCINITEMTRANSFERNOTEIMEIVIEW);
     }
 
     @Override

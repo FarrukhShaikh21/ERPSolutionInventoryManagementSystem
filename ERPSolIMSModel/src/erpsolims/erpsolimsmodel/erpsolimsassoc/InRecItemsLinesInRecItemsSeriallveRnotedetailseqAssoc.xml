@@ -14,13 +14,11 @@
     Cardinality="1"
     Source="true"
     Owner="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsLines"
-    DeleteContainee="true"
-    LockLevel="NONE">
+    LockLevel="NONE"
+    DeleteContainee="true">
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="InReceivedItemsLines"/>
-      <Attr Name="_foreignKey"
-        Value="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsLines.XpkinReceivedItemsLines"/>
       <Attr Name="_isUpdateable" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">
@@ -35,7 +33,6 @@
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="InReceivedItemsSno"/>
-      <Attr Name="_foreignKey" Value="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsSno.fk_InReceivedItemsSno"/>
       <Attr Name="_isUpdateable" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">

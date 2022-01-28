@@ -8,6 +8,7 @@ import java.sql.Timestamp;
 
 import oracle.jbo.AttributeList;
 import oracle.jbo.Key;
+import oracle.jbo.domain.Date;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.TransactionEvent;
 // ---------------------------------------------------------------------
@@ -184,15 +185,15 @@ public class InReceivedItemShelvesImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for CreatedDate, using the alias name CreatedDate.
      * @return the value of CreatedDate
      */
-    public Timestamp getCreatedDate() {
-        return (Timestamp) getAttributeInternal(CREATEDDATE);
+    public Date getCreatedDate() {
+        return (Date) getAttributeInternal(CREATEDDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedDate.
      * @param value value to set the CreatedDate
      */
-    public void setCreatedDate(Timestamp value) {
+    public void setCreatedDate(Date value) {
         setAttributeInternal(CREATEDDATE, value);
     }
 
@@ -216,15 +217,15 @@ public class InReceivedItemShelvesImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for ModifiedDate, using the alias name ModifiedDate.
      * @return the value of ModifiedDate
      */
-    public Timestamp getModifiedDate() {
-        return (Timestamp) getAttributeInternal(MODIFIEDDATE);
+    public Date getModifiedDate() {
+        return (Date) getAttributeInternal(MODIFIEDDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ModifiedDate.
      * @param value value to set the ModifiedDate
      */
-    public void setModifiedDate(Timestamp value) {
+    public void setModifiedDate(Date value) {
         setAttributeInternal(MODIFIEDDATE, value);
     }
 
@@ -248,15 +249,15 @@ public class InReceivedItemShelvesImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for Rnotedetailseq, using the alias name Rnotedetailseq.
      * @return the value of Rnotedetailseq
      */
-    public BigDecimal getRnotedetailseq() {
-        return (BigDecimal) getAttributeInternal(RNOTEDETAILSEQ);
+    public Integer getRnotedetailseq() {
+        return (Integer) getAttributeInternal(RNOTEDETAILSEQ);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Rnotedetailseq.
      * @param value value to set the Rnotedetailseq
      */
-    public void setRnotedetailseq(BigDecimal value) {
+    public void setRnotedetailseq(Integer value) {
         setAttributeInternal(RNOTEDETAILSEQ, value);
     }
 
@@ -277,15 +278,12 @@ public class InReceivedItemShelvesImpl extends ERPSolGlobalsEntityImpl {
 
 
     /**
-     * @param storeid key constituent
-     * @param rnoteno key constituent
-     * @param lineno key constituent
-     * @param shelfid key constituent
+     * @param rnotedetailseq key constituent
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(String storeid, String rnoteno, Integer lineno, String shelfid) {
-        return new Key(new Object[] { storeid, rnoteno, lineno, shelfid });
+    public static Key createPrimaryKey(Integer rnotedetailseq) {
+        return new Key(new Object[] { rnotedetailseq });
     }
 
     /**
@@ -293,6 +291,7 @@ public class InReceivedItemShelvesImpl extends ERPSolGlobalsEntityImpl {
      * @param attributeList list of attribute names/values to initialize the row
      */
     protected void create(AttributeList attributeList) {
+        setERPISGenertePK("NO");
         super.create(attributeList);
     }
 
@@ -316,6 +315,17 @@ public class InReceivedItemShelvesImpl extends ERPSolGlobalsEntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
+        if (operation == DML_INSERT) {
+            System.out.println("aaaa");
+            populateAttributeAsChanged(STOREID, getInReceivedItemsLines().getAttribute("Storeid"));
+            System.out.println("bbb");
+            populateAttributeAsChanged(ISSUEDQTY, getInReceivedItemsLines().getAttribute("Shelfqty"));
+            System.out.println("ccc");
+            populateAttributeAsChanged(QTYAFTERCONVERSION, getInReceivedItemsLines().getAttribute("Shelfqty"));
+            System.out.println("ddd");
+            populateAttributeAsChanged(RNOTENO, getInReceivedItemsLines().getAttribute("Rnoteno"));
+            System.out.println("eee");
+        }
         super.doDML(operation, e);
     }
 }

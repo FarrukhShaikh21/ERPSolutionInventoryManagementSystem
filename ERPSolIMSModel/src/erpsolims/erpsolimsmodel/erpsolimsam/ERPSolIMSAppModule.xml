@@ -50,6 +50,12 @@
   <ViewUsage
     Name="VWGRNSourceDocNoAutoSuggestRO"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsqvo.VWGRNSourceDocNoQVO"/>
+  <ViewUsage
+    Name="InReceivedItemShelvesDetCRUD"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InReceivedItemShelvesView"/>
+  <ViewUsage
+    Name="InReceivedItemsSnoDetCRUD"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InReceivedItemsSnoView"/>
   <ViewLinkUsage
     Name="FkInRecItemLinRnoteseqLink1"
     ViewLinkObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.FkInRecItemLinRnoteseqLink"
@@ -61,6 +67,18 @@
     ViewLinkObjectName="erpsolims.erpsolimsmodel.erpsolimslink.InItemTransferNoteInItemTransferNoteLinStnnoseqLink"
     SrcViewUsageName="erpsolims.erpsolimsmodel.erpsolimsam.ERPSolIMSAppModule.InItemTransferNoteCRUD"
     DstViewUsageName="erpsolims.erpsolimsmodel.erpsolimsam.ERPSolIMSAppModule.InItemTransferNoteLinesDetCRUD"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="InRecItemsLinesInRecItemsShelveRnotedetailseqLink1"
+    ViewLinkObjectName="erpsolims.erpsolimsmodel.erpsolimslink.InRecItemsLinesInRecItemsShelveRnotedetailseqLink"
+    SrcViewUsageName="erpsolims.erpsolimsmodel.erpsolimsam.ERPSolIMSAppModule.InReceivedItemsLinesDetCRUD"
+    DstViewUsageName="erpsolims.erpsolimsmodel.erpsolimsam.ERPSolIMSAppModule.InReceivedItemShelvesDetCRUD"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="InRecItemsLinesInRecItemsSeriallveRnotedetailseqLink1"
+    ViewLinkObjectName="erpsolims.erpsolimsmodel.erpsolimslink.InRecItemsLinesInRecItemsSeriallveRnotedetailseqLink"
+    SrcViewUsageName="erpsolims.erpsolimsmodel.erpsolimsam.ERPSolIMSAppModule.InReceivedItemsLinesDetCRUD"
+    DstViewUsageName="erpsolims.erpsolimsmodel.erpsolimsam.ERPSolIMSAppModule.InReceivedItemsSnoDetCRUD"
     Reversed="false"/>
   <ResourceBundle>
     <PropertiesBundle
