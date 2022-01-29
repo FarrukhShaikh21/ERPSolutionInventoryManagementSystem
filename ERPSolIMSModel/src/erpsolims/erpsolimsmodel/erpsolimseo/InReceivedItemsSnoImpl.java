@@ -5,6 +5,8 @@ import erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsEntityImpl;
 
 import java.math.BigDecimal;
 
+import java.sql.CallableStatement;
+import java.sql.SQLException;
 import java.sql.Timestamp;
 
 import oracle.jbo.AttributeList;
@@ -445,28 +447,32 @@ public class InReceivedItemsSnoImpl extends ERPSolGlobalsEntityImpl {
     protected void doDML(int operation, TransactionEvent e) {
 
         if (operation==DML_INSERT) {
-            System.out.println("pak");
-           String pkValue = "FUNC_GET_MAX_ID('IN_RECEIVED_ITEMS_SNO','RECV_ITEM_SEQNO')";
-            String result =
-                ERPSolGlobClassModel.doGetERPSolPrimaryKeyValueModel(getDBTransaction(), pkValue, "dual", null, null);
-            System.out.println("pak-old"+result); 
-            System.out.println("detv"+ getRnotedetailseq());
-            System.out.println("pak-store"+getInReceivedItemsLines().getAttribute("Storeid")); 
-//            populateAttributeAsChanged(RECVITEMSEQNO, Integer.parseInt(result));
             populateAttributeAsChanged(STOREID, getInReceivedItemsLines().getAttribute("Storeid"));
-            System.out.println( getInReceivedItemsLines().getAttribute("Storeid") + "storeid");
             populateAttributeAsChanged(LINENO, getInReceivedItemsLines().getAttribute("Lineno"));
-            System.out.println( getInReceivedItemsLines().getAttribute("Lineno") + "Lineno");
             populateAttributeAsChanged(ITEMID, getInReceivedItemsLines().getAttribute("Itemid"));
-            System.out.println( getInReceivedItemsLines().getAttribute("Itemid") + "Itemid");
             populateAttributeAsChanged(ITEMREFID, getInReceivedItemsLines().getAttribute("ItemRefId"));
-            System.out.println( getInReceivedItemsLines().getAttribute("ItemRefId") + "Lineno");
-            System.out.println( getInReceivedItemsLines().getAttribute("Rnoteno") + "Rnoteno");
-            
             populateAttributeAsChanged(SHELFID, "01");
             populateAttributeAsChanged(RNOTENO, getInReceivedItemsLines().getAttribute("Rnoteno"));
-                        
+               
         }
+        
+        if (operation!=DML_DELETE) {
+           CallableStatement cs=null;
+           String ERPsolPLSQL="begin update item_imei_info set is_available='"+(operation==3?"N":"Y")+"', STOREID='"+getStoreid()+"'";
+           ERPsolPLSQL+=" where IMEI="+getSerialNo()+"; end;";
+           System.out.println(ERPsolPLSQL);
+           cs=getDBTransaction().createCallableStatement(ERPsolPLSQL, getDBTransaction().DEFAULT);
+           try {
+               cs.executeUpdate();
+           } catch (SQLException f) {
+           }
+           finally{
+               try {
+                   cs.close();
+               } catch (SQLException f) {
+               }
+           } 
+       }        
 
         super.doDML(operation, e);
     }
