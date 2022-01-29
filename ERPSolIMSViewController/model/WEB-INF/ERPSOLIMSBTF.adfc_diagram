@@ -263,7 +263,7 @@
       <property
          name="fromOutcome">ERP-SOL-ACT-GOTO-MAIN</property>
       <property
-         name="sdm:polyPoints">T50,-159.64844,282.09766,-191.31934,221.34473,B50</property>
+         name="sdm:polyPoints">T50,-159.64844,282.09766,-187.81934,221.34473,B56</property>
    </ControlFlowCase>
    <WildcardControlFlowRule
       id="WildcardControlFlowRule24">
@@ -493,4 +493,19 @@
       <property
          name="sdm:polyPoints">L50,-10.0,617.44824,-194.81934,222.89308,B44</property>
    </ControlFlowCase>
+   <View
+      id="View44">
+      <property
+         name="activityId">ERPSolIMSException</property>
+      <property
+         name="page">/ERPSolIMSException.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ERPSolIMSException&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">true</property>
+      <property
+         name="y">628.7988</property>
+      <property
+         name="x">-196.97461</property>
+   </View>
 </SDM>

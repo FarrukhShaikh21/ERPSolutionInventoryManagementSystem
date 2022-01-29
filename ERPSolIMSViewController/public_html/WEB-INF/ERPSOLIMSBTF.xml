@@ -32,6 +32,7 @@
       <managed-bean-class>erpsolims.erpsolimsview.erpsolimsclass.ERPSolIMSBean</managed-bean-class>
       <managed-bean-scope>pageFlow</managed-bean-scope>
     </managed-bean>
+    <exception-handler>ERPSolIMSException</exception-handler>
     <view id="ERPSolIMSMain">
       <page>/ERPSolIMSMain.jsf</page>
     </view>
@@ -108,6 +109,9 @@
     </method-call>
     <view id="IN_0004_IMEI">
       <page>/IN_0004_IMEI.jsf</page>
+    </view>
+    <view id="ERPSolIMSException">
+      <page>/ERPSolIMSException.jsf</page>
     </view>
     <control-flow-rule id="__16">
       <from-activity-id>ExecuteWithParamsTransactionIMS</from-activity-id>
