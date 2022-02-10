@@ -113,6 +113,11 @@
     <view id="ERPSolIMSException">
       <page>/ERPSolIMSException.jsf</page>
     </view>
+    <task-flow-return id="ACT-ERP-SOL-LOGOUT">
+      <outcome>
+        <name>ACT-ERP-SOL-LOGOUT</name>
+      </outcome>
+    </task-flow-return>
     <control-flow-rule id="__16">
       <from-activity-id>ExecuteWithParamsTransactionIMS</from-activity-id>
       <control-flow-case id="__17">
@@ -243,6 +248,13 @@
       <control-flow-case id="__42">
         <from-outcome>ACT-ERP-IN-0004-IMEI-BACK</from-outcome>
         <to-activity-id>IN_0004</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__44">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__45">
+        <from-outcome>ACT-ERP-SOL-LOGOUT</from-outcome>
+        <to-activity-id>ACT-ERP-SOL-LOGOUT</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>

@@ -508,4 +508,38 @@
       <property
          name="x">-196.97461</property>
    </View>
+   <TaskFlowReturn
+      id="TaskFlowReturn45">
+      <property
+         name="activityId">ACT-ERP-SOL-LOGOUT</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ACT-ERP-SOL-LOGOUT&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  ACT-ERP-SOL-LOGOUT&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">720.59766</property>
+      <property
+         name="x">127.0</property>
+   </TaskFlowReturn>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule46">
+      <property
+         name="activityId">*</property>
+      <property
+         name="y">720.44824</property>
+      <property
+         name="x">-130.0</property>
+   </WildcardControlFlowRule>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase47"
+      from="WildcardControlFlowRule46"
+      to="TaskFlowReturn45">
+      <property
+         name="fromOutcome">ACT-ERP-SOL-LOGOUT</property>
+      <property
+         name="sdm:polyPoints">R50,-94.0,720.44824,86.0,720.2471,L50</property>
+   </ControlFlowCase>
 </SDM>
