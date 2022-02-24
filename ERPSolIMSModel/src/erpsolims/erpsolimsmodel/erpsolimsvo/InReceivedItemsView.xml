@@ -474,7 +474,15 @@
         ViewAttribute="Recvdoctypeid"
         Operator="="
         Conjunction="AND"
-        Required="Optional"/>
+        Required="Optional">
+        <Properties>
+          <CustomProperties>
+            <Property
+              Name="AllowMultipleValues"
+              Value="true"/>
+          </CustomProperties>
+        </Properties>
+      </ViewCriteriaItem>
       <ViewCriteriaItem
         Name="ReceivingDate"
         ViewAttribute="ReceivingDate"

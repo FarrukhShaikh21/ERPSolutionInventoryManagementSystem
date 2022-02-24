@@ -11,7 +11,7 @@
                               model="#{bindings.InReceivedItemsFindVCQuery.queryModel}"
                               queryListener="#{bindings.InReceivedItemsFindVCQuery.processQuery}"
                               queryOperationListener="#{bindings.InReceivedItemsFindVCQuery.processQueryOperation}"
-                              resultComponentId="::resId1" saveQueryMode="hidden"/>
+                              resultComponentId="::resId1" saveQueryMode="hidden" modeChangeVisible="false"/>
                     <af:table value="#{bindings.InReceivedItemsCRUD.collectionModel}" var="row"
                               rows="#{bindings.InReceivedItemsCRUD.rangeSize}"
                               emptyText="#{bindings.InReceivedItemsCRUD.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -35,12 +35,14 @@
                             <af:outputText value="#{row.Storeid}"
                                            shortDesc="#{bindings.InReceivedItemsCRUD.hints.Storeid.tooltip}" id="ot3"/>
                         </af:column>
-                        <af:column headerText="#{bindings.InReceivedItemsCRUD.hints.txtStoreName.label}" id="resId1c4">
+                        <af:column headerText="#{bindings.InReceivedItemsCRUD.hints.txtStoreName.label}" id="resId1c4"
+                                   width="200" displayIndex="-1">
                             <af:outputText value="#{row.txtStoreName}"
                                            shortDesc="#{bindings.InReceivedItemsCRUD.hints.txtStoreName.tooltip}"
                                            id="ot4"/>
                         </af:column>
-                        <af:column headerText="#{bindings.InReceivedItemsCRUD.hints.Recvdoctypeid.label}" id="resId1c5">
+                        <af:column headerText="#{bindings.InReceivedItemsCRUD.hints.Recvdoctypeid.label}" id="resId1c5"
+                                   width="200" displayIndex="-1">
                             <af:selectOneChoice value="#{row.bindings.Recvdoctypeid.inputValue}"
                                                 label="#{row.bindings.Recvdoctypeid.label}"
                                                 required="#{bindings.InReceivedItemsCRUD.hints.Recvdoctypeid.mandatory}"
@@ -76,7 +78,8 @@
                 </af:panelGroupLayout>
                 <f:facet name="toolbar">
                     <af:toolbar id="t1">
-                        <af:button text="Back To GRN" id="b1" action="ACT-ERP-IN-0004-SEARCH-BACK"/>
+                        <af:button text="Back To GRN" id="b1" action="ACT-ERP-IN-0004-SEARCH-BACK"
+                                   icon="#{resource['images:imgExitForm.png']}"/>
                     </af:toolbar>
                 </f:facet>
             </af:panelHeader>
