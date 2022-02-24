@@ -277,7 +277,8 @@
                                                         columns="#{bindings.SourceDocRef.hints.displayWidth}"
                                                         shortDesc="#{bindings.SourceDocRef.hints.tooltip}"
                                                         simple="true" partialTriggers="soc2"
-                                                        autoSubmit="true">
+                                                        autoSubmit="true"
+                                                        readOnly="#{bindings.Recvdoctypeid.inputValue=='FPRD'}">
                             <f:validator binding="#{bindings.SourceDocRef.validator}"/>
                             <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolIMSPageFlowBean.doERPSolGetAutoSuggestedGRNSourceDocValues}"/>
                           </af:inputComboboxListOfValues>
