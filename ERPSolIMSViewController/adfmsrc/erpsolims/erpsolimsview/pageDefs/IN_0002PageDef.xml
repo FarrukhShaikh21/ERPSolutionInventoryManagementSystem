@@ -61,7 +61,10 @@
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
             DataControl="ERPSolIMSAppModuleDataControl"/>
     <action IterBinding="InItemTransferNoteCRUDIterator" id="CreateInsert" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
+            Action="createWithParams" InstanceName="ERPSolIMSAppModuleDataControl.InItemTransferNoteCRUD"
+            DataControl="ERPSolIMSAppModuleDataControl">
+      <NamedData NDName="Remarks" NDValue="#{''}" NDType="java.lang.String"/>
+    </action>
     <tree IterBinding="InItemTransferNoteLinesDetCRUDIterator" id="InItemTransferNoteLinesDetCRUD">
       <nodeDefinition DefName="erpsolims.erpsolimsmodel.erpsolimsvo.InItemTransferNoteLinesView"
                       Name="InItemTransferNoteLinesDetCRUD0">
