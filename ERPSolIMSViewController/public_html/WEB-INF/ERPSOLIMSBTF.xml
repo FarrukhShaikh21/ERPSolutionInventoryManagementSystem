@@ -118,6 +118,12 @@
         <name>ACT-ERP-SOL-LOGOUT</name>
       </outcome>
     </task-flow-return>
+    <method-call id="ExecuteWithParamsReportDetIMS">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-SOL-ACT-GOTO-MAIN</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__16">
       <from-activity-id>ExecuteWithParamsTransactionIMS</from-activity-id>
       <control-flow-case id="__17">
@@ -187,7 +193,7 @@
       <from-activity-id>ExecuteWithParamsReportIMS</from-activity-id>
       <control-flow-case id="__7">
         <from-outcome>ERP-SOL-ACT-GOTO-MAIN</from-outcome>
-        <to-activity-id>ERPSolIMSMain</to-activity-id>
+        <to-activity-id>ExecuteWithParamsReportDetIMS</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__8">
@@ -255,6 +261,13 @@
       <control-flow-case id="__45">
         <from-outcome>ACT-ERP-SOL-LOGOUT</from-outcome>
         <to-activity-id>ACT-ERP-SOL-LOGOUT</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__46">
+      <from-activity-id>ExecuteWithParamsReportDetIMS</from-activity-id>
+      <control-flow-case id="__47">
+        <from-outcome>ERP-SOL-ACT-GOTO-MAIN</from-outcome>
+        <to-activity-id>ERPSolIMSMain</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>
