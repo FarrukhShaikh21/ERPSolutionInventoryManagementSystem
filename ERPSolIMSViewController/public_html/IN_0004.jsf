@@ -258,7 +258,7 @@
                                               required="#{bindings.Recvdoctypeid.hints.mandatory}"
                                               shortDesc="#{bindings.Recvdoctypeid.hints.tooltip}" id="soc2"
                                               simple="true" autoSubmit="true"
-                                              readOnly="#{bindings.InReceivedItemsCRUDIterator.estimatedRowCount>0}">
+                                              readOnly="#{bindings.InReceivedItemsLinesDetCRUDIterator.estimatedRowCount>0}">
                             <f:selectItems value="#{bindings.Recvdoctypeid.items}" id="si3"/>
                             <f:validator binding="#{bindings.Recvdoctypeid.validator}"/>
                           </af:selectOneChoice>
@@ -369,7 +369,8 @@
                                                       shortDesc="#{bindings.InReceivedItemsLinesDetCRUD.hints.ItemRefId.tooltip}"
                                                       autoSubmit="true"
                                                       disabled="#{bindings.Recvdoctypeid.inputValue=='STA'}"
-                                                      contentStyle="width:100%">
+                                                      contentStyle="width:100%"
+                                                      readOnly="#{row.bindings.Lineno.inputValue>0}">
                           <f:validator binding="#{row.bindings.ItemRefId.validator}"/>
                           <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolIMSPageFlowBean.doERPSolGetAutoSuggestedModelValues}"/>
                         </af:inputComboboxListOfValues>
@@ -393,7 +394,8 @@
                                       columns="#{bindings.InReceivedItemsLinesDetCRUD.hints.Shelfqty.displayWidth}"
                                       maximumLength="#{bindings.InReceivedItemsLinesDetCRUD.hints.Shelfqty.precision}"
                                       shortDesc="#{bindings.InReceivedItemsLinesDetCRUD.hints.Shelfqty.tooltip}"
-                                      id="it9" autoSubmit="true" disabled="#{bindings.Recvdoctypeid.inputValue=='STA'}">
+                                      id="it9" autoSubmit="true" disabled="#{bindings.Recvdoctypeid.inputValue=='STA'}"
+                                      readOnly="#{row.bindings.Lineno.inputValue>0}">
                           <f:validator binding="#{row.bindings.Shelfqty.validator}"/>
                         </af:inputText>
                       </af:column>
