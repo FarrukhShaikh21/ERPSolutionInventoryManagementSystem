@@ -59,4 +59,40 @@
     EntityAttrName="Active"
     EntityUsage="InReceivingDocTypes"
     AliasName="ACTIVE"/>
+  <ViewCriteria
+    Name="InReceivingDocTypesActiveVC"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InReceivingDocTypesView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="InReceivingDocTypesViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="InReceivingDocTypesViewCriteria_InReceivingDocTypesViewCriteria_row_0_Active"
+        ViewAttribute="Active"
+        Operator="="
+        Conjunction="AND"
+        Value="Y"
+        UpperColumns="0"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
 </ViewObject>

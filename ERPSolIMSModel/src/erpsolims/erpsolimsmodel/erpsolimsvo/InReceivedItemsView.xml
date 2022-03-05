@@ -30,7 +30,11 @@
   <ViewAccessor
     Name="AccInReceivingDocTypesView"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InReceivingDocTypesView"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="InReceivingDocTypesActiveVC"
+      FullName="erpsolims.erpsolimsmodel.erpsolimsvo.InReceivingDocTypesView.InReceivingDocTypesActiveVC"/>
+  </ViewAccessor>
   <ViewAccessor
     Name="AccVWYesNoQVO"
     ViewObjectName="erpsolglob.erpsolglobmodel.erpsolglobqvo.VWYesNoQVO"
