@@ -24,6 +24,7 @@
     <page path="/IN_0004_IMEI.jsf" usageId="erpsolims_erpsolimsview_IN_0004_IMEIPageDef"/>
     <page path="/WEB-INF/ERPSOLIMSBTF.xml#ERPSOLIMSBTF@ExecuteWithParamsReportDetIMS"
           usageId="erpsolims_erpsolimsview_ERPSOLIMSBTF_ERPSOLIMSBTF_ExecuteWithParamsPageDef11"/>
+    <page path="/IN_0001.jsf" usageId="erpsolims_erpsolimsview_IN_0001PageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="erpsolims_erpsolimsview_IN_0004PageDef" path="erpsolims.erpsolimsview.pageDefs.IN_0004PageDef"/>
@@ -51,6 +52,7 @@
     <page id="erpsolims_erpsolimsview_IN_0004_IMEIPageDef" path="erpsolims.erpsolimsview.pageDefs.IN_0004_IMEIPageDef"/>
     <page id="erpsolims_erpsolimsview_ERPSOLIMSBTF_ERPSOLIMSBTF_ExecuteWithParamsPageDef11"
           path="erpsolims.erpsolimsview.pageDefs.ERPSOLIMSBTF_ERPSOLIMSBTF_ExecuteWithParamsPageDef11"/>
+    <page id="erpsolims_erpsolimsview_IN_0001PageDef" path="erpsolims.erpsolimsview.pageDefs.IN_0001PageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="ERPSolTempAppModuleDataControl" Package="erpsoltemp.erpsoltempmodel.erpsoltempam"
