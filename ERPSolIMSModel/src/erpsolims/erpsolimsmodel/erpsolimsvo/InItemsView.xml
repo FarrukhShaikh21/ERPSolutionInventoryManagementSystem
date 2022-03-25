@@ -17,6 +17,52 @@
     Name="P_SIGROUPID"
     Kind="viewcriteria"
     Type="java.lang.String"/>
+  <ViewAccessor
+    Name="AccInStockItemGroupView"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InStockItemGroupView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccInStockItemClassView"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InStockItemClassView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LovSigroupid"
+    ListVOName="AccInStockItemGroupView"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Sigroupid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Sigroupid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovSiclassid"
+    ListVOName="AccInStockItemClassView"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Siclassid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Siclassid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="InItems"
     Entity="erpsolims.erpsolimsmodel.erpsolimseo.InItems"/>
@@ -50,13 +96,29 @@
     PrecisionRule="true"
     EntityAttrName="Sigroupid"
     EntityUsage="InItems"
-    AliasName="SIGROUPID"/>
+    AliasName="SIGROUPID"
+    LOVName="LovSigroupid">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Siclassid"
     PrecisionRule="true"
     EntityAttrName="Siclassid"
     EntityUsage="InItems"
-    AliasName="SICLASSID"/>
+    AliasName="SICLASSID"
+    LOVName="LovSiclassid">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Description"
     PrecisionRule="true"
