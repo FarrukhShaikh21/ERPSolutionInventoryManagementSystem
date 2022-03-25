@@ -56,6 +56,9 @@
   <ViewUsage
     Name="InReceivedItemsSnoDetCRUD"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InReceivedItemsSnoView"/>
+  <ViewUsage
+    Name="InItemsViewCRUD"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InItemsView"/>
   <ViewLinkUsage
     Name="FkInRecItemLinRnoteseqLink1"
     ViewLinkObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.FkInRecItemLinRnoteseqLink"

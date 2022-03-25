@@ -25,6 +25,26 @@
     Name="AccInStockItemClassView"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InStockItemClassView"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccSoProductSubTypeView"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.SoProductSubTypeView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccInStockItemGroupNewView"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InStockItemGroupNewView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccAllProdcategoryView"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllProdcategoryView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccSoProductBrandsView"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.SoProductBrandsView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccInStockItemSubGroupView"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InStockItemSubGroupView"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovSigroupid"
     ListVOName="AccInStockItemGroupView"
@@ -57,6 +77,101 @@
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
       <Item Value="Siclassid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovProductsubtype"
+    ListVOName="AccSoProductSubTypeView"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Productsubtype"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Productsubtype"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovItgroupid"
+    ListVOName="AccInStockItemGroupNewView"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Itgroupid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Itgroupid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Itdescription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovProdId"
+    ListVOName="AccAllProdcategoryView"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ProdId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ProdId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovBrandid"
+    ListVOName="AccSoProductBrandsView"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Brandid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Pbrandid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="BrandName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovSubgroupid"
+    ListVOName="AccInStockItemSubGroupView"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Subgroupid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Subgroupid"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Description"/>
@@ -227,7 +342,15 @@
     PrecisionRule="true"
     EntityAttrName="Productsubtype"
     EntityUsage="InItems"
-    AliasName="PRODUCTSUBTYPE"/>
+    AliasName="PRODUCTSUBTYPE"
+    LOVName="LovProductsubtype">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Scglcode"
     PrecisionRule="true"
@@ -401,7 +524,15 @@
     PrecisionRule="true"
     EntityAttrName="Itgroupid"
     EntityUsage="InItems"
-    AliasName="ITGROUPID"/>
+    AliasName="ITGROUPID"
+    LOVName="LovItgroupid">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Smgroupid"
     PrecisionRule="true"
@@ -497,19 +628,43 @@
     PrecisionRule="true"
     EntityAttrName="ProdId"
     EntityUsage="InItems"
-    AliasName="PROD_ID"/>
+    AliasName="PROD_ID"
+    LOVName="LovProdId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Brandid"
     PrecisionRule="true"
     EntityAttrName="Brandid"
     EntityUsage="InItems"
-    AliasName="BRANDID"/>
+    AliasName="BRANDID"
+    LOVName="LovBrandid">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Subgroupid"
     PrecisionRule="true"
     EntityAttrName="Subgroupid"
     EntityUsage="InItems"
-    AliasName="SUBGROUPID"/>
+    AliasName="SUBGROUPID"
+    LOVName="LovSubgroupid">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ItemWeight"
     PrecisionRule="true"

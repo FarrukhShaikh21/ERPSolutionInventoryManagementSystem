@@ -5,6 +5,33 @@
   <executables>
     <variableIterator id="variables"/>
     <page path="erpsoltemp.erpsoltempview.pageDefs.ERPSolutionTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <iterator Binds="InItemsViewCRUD" RangeSize="25" DataControl="ERPSolIMSAppModuleDataControl"
+              id="InItemsViewCRUDIterator"/>
   </executables>
-  <bindings/>
+  <bindings>
+    <attributeValues IterBinding="InItemsViewCRUDIterator" id="ItemRefId">
+      <AttrNames>
+        <Item Value="ItemRefId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InItemsViewCRUDIterator" id="Itemid">
+      <AttrNames>
+        <Item Value="Itemid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InItemsViewCRUDIterator" id="Description">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InItemsViewCRUDIterator" id="ModelNo">
+      <AttrNames>
+        <Item Value="ModelNo"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="InItemsViewCRUDIterator" StaticList="false" Uses="LovSiclassid" id="Siclassid"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="InItemsViewCRUDIterator" StaticList="false" Uses="LovSigroupid" id="Sigroupid"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+  </bindings>
 </pageDefinition>
