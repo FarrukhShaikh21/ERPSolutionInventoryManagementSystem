@@ -23,6 +23,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Itemid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ItemRefId"
@@ -35,6 +43,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.ItemRefId_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Uomsid"
@@ -47,6 +63,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Uomsid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Productid"
@@ -59,6 +83,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Productid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Sigroupid"
@@ -71,6 +103,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Sigroupid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Siclassid"
@@ -83,6 +123,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Siclassid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Description"
@@ -95,6 +143,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Description_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ModelNo"
@@ -108,6 +164,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.ModelNo_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Createdby"
@@ -120,14 +184,31 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Createdby_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="CreatedDate"
     ColumnName="CREATED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
-    TableName="IN_ITEMS"/>
+    TableName="IN_ITEMS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.CreatedDate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Modifiedby"
     Precision="20"
@@ -139,6 +220,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Modifiedby_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="LeadTime"
@@ -146,14 +235,32 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="IN_ITEMS"/>
+    TableName="IN_ITEMS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.LeadTime_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ModifiedDate"
     ColumnName="MODIFIED_DATE"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="IN_ITEMS"/>
+    TableName="IN_ITEMS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.ModifiedDate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Pglcode"
     Precision="15"
@@ -165,6 +272,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Pglcode_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Pccenter"
@@ -177,6 +292,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Pccenter_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Iglcode"
@@ -189,6 +312,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Iglcode_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Iccenter"
@@ -201,6 +332,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Iccenter_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Sglcode"
@@ -213,6 +352,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Sglcode_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Sccenter"
@@ -225,6 +372,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Sccenter_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Mglcode"
@@ -237,6 +392,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Mglcode_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Mccenter"
@@ -249,6 +412,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Mccenter_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Cglcode"
@@ -261,6 +432,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Cglcode_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Cccenter"
@@ -273,6 +452,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Cccenter_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Productsubtype"
@@ -285,6 +472,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Productsubtype_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Scglcode"
@@ -297,6 +492,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Scglcode_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Scccenter"
@@ -309,6 +512,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Scccenter_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Uglcode"
@@ -321,6 +532,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Uglcode_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Uccenter"
@@ -333,6 +552,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Uccenter_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ReceUomsid"
@@ -345,6 +572,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.ReceUomsid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Plglcode"
@@ -357,6 +592,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Plglcode_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Plccenter"
@@ -369,6 +612,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Plccenter_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Srglcode"
@@ -381,6 +632,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Srglcode_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Srccenter"
@@ -393,6 +652,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Srccenter_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Specification"
@@ -405,6 +672,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Specification_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="SerialFlag"
@@ -417,6 +692,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.SerialFlag_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="PpaNo"
@@ -429,6 +712,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.PpaNo_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Hscode"
@@ -441,6 +732,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Hscode_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Currcode"
@@ -453,6 +752,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="3"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Currcode_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="HsRate"
@@ -462,7 +769,16 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="IN_ITEMS"/>
+    TableName="IN_ITEMS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.HsRate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Pplgroupid"
     Precision="15"
@@ -474,6 +790,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Pplgroupid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="AppKitExtraQty"
@@ -486,6 +810,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.AppKitExtraQty_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ConvCost"
@@ -495,7 +827,16 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="IN_ITEMS"/>
+    TableName="IN_ITEMS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.ConvCost_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ExpGlcode"
     Precision="15"
@@ -507,6 +848,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.ExpGlcode_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ExpCcenter"
@@ -519,6 +868,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.ExpCcenter_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="AdjGlcode"
@@ -531,6 +888,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.AdjGlcode_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="AdjCcenter"
@@ -543,6 +908,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.AdjCcenter_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Stax"
@@ -551,10 +924,19 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEMS">
+    TableName="IN_ITEMS"
+    DefaultValue="N">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Stax_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Itax"
@@ -563,10 +945,19 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEMS">
+    TableName="IN_ITEMS"
+    DefaultValue="N">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Itax_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Discontinue"
@@ -575,10 +966,19 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEMS">
+    TableName="IN_ITEMS"
+    DefaultValue="N">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Discontinue_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="OldItemid"
@@ -591,6 +991,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.OldItemid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ObsoleteItem"
@@ -603,6 +1011,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.ObsoleteItem_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Rate"
@@ -610,7 +1026,16 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="IN_ITEMS"/>
+    TableName="IN_ITEMS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Rate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Itgroupid"
     Precision="15"
@@ -622,6 +1047,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Itgroupid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Smgroupid"
@@ -634,6 +1067,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Smgroupid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="SmRates"
@@ -641,28 +1082,64 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="IN_ITEMS"/>
+    TableName="IN_ITEMS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.SmRates_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="SmMinSellingPrice"
     ColumnName="SM_MIN_SELLING_PRICE"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="IN_ITEMS"/>
+    TableName="IN_ITEMS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.SmMinSellingPrice_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="StRates"
     ColumnName="ST_RATES"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="IN_ITEMS"/>
+    TableName="IN_ITEMS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.StRates_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="StDis"
     ColumnName="ST_DIS"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="IN_ITEMS"/>
+    TableName="IN_ITEMS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.StDis_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Sed"
     Precision="1"
@@ -674,6 +1151,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Sed_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ExtraTax"
@@ -682,10 +1167,19 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEMS">
+    TableName="IN_ITEMS"
+    DefaultValue="N">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.ExtraTax_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ItemStatus"
@@ -694,10 +1188,19 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEMS">
+    TableName="IN_ITEMS"
+    DefaultValue="Y">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.ItemStatus_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Rd"
@@ -710,6 +1213,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Rd_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Divid"
@@ -722,6 +1233,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="5"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Divid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ExtraSno"
@@ -734,6 +1253,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.ExtraSno_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Childpartno"
@@ -746,6 +1273,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="25"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Childpartno_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Partweight"
@@ -755,7 +1290,16 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="IN_ITEMS"/>
+    TableName="IN_ITEMS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Partweight_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Partno"
     Precision="25"
@@ -767,6 +1311,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="25"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Partno_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="TacCode"
@@ -779,6 +1331,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.TacCode_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ProdId"
@@ -791,6 +1351,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.ProdId_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Brandid"
@@ -803,6 +1371,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Brandid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Subgroupid"
@@ -815,6 +1391,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Subgroupid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ItemWeight"
@@ -822,7 +1406,16 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="IN_ITEMS"/>
+    TableName="IN_ITEMS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.ItemWeight_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="EolDesc"
     Precision="200"
@@ -834,6 +1427,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="200"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.EolDesc_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Print"
@@ -843,7 +1444,16 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="IN_ITEMS"/>
+    TableName="IN_ITEMS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Print_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Perbox"
     Precision="5"
@@ -852,7 +1462,16 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="IN_ITEMS"/>
+    TableName="IN_ITEMS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Perbox_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="TypeApproval"
     Precision="30"
@@ -864,6 +1483,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="30"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.TypeApproval_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="TmpItemid"
@@ -876,6 +1503,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.TmpItemid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="TmpItemDesc"
@@ -888,6 +1523,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.TmpItemDesc_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Newmodle"
@@ -900,6 +1543,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Newmodle_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Desce"
@@ -912,6 +1563,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="200"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Desce_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Incentive"
@@ -919,7 +1578,16 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="IN_ITEMS"/>
+    TableName="IN_ITEMS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Incentive_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="IncMsg"
     Precision="500"
@@ -931,6 +1599,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="500"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.IncMsg_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="SaleDays"
@@ -938,7 +1614,16 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="IN_ITEMS"/>
+    TableName="IN_ITEMS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.SaleDays_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="RetQtyExempted"
     Precision="1"
@@ -950,6 +1635,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.RetQtyExempted_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ItemRebateAct"
@@ -962,6 +1655,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.ItemRebateAct_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="RestrictBoxNo"
@@ -974,6 +1675,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.RestrictBoxNo_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="IsSpecial"
@@ -986,6 +1695,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.IsSpecial_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="IsRunning"
@@ -998,6 +1715,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.IsRunning_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="CounterDeadDays"
@@ -1005,7 +1730,16 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="IN_ITEMS"/>
+    TableName="IN_ITEMS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.CounterDeadDays_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="RestrictRebateSo"
     Precision="1"
@@ -1017,6 +1751,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.RestrictRebateSo_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="StopCustomer"
@@ -1029,6 +1771,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.StopCustomer_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ExcludeGiftQty"
@@ -1041,6 +1791,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.ExcludeGiftQty_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ImeiSerial"
@@ -1053,6 +1811,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.ImeiSerial_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ForceAllowReturn"
@@ -1065,6 +1831,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.ForceAllowReturn_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="IsPreviousSameRate"
@@ -1077,6 +1851,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.IsPreviousSameRate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="PreviousRebateRate"
@@ -1086,14 +1868,32 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="IN_ITEMS"/>
+    TableName="IN_ITEMS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.PreviousRebateRate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="WrefreshDate"
     ColumnName="WREFRESH_DATE"
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="IN_ITEMS"/>
+    TableName="IN_ITEMS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.WrefreshDate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="IsStopWrefReturn"
     Precision="1"
@@ -1105,6 +1905,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.IsStopWrefReturn_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="RebateDays"
@@ -1114,14 +1922,32 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="IN_ITEMS"/>
+    TableName="IN_ITEMS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.RebateDays_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="IncPst"
     ColumnName="INC_PST"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="IN_ITEMS"/>
+    TableName="IN_ITEMS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.IncPst_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="EbsItemid"
     Precision="30"
@@ -1133,6 +1959,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="30"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.EbsItemid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="IsReturnAllow"
@@ -1145,6 +1979,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.IsReturnAllow_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Active"
@@ -1158,6 +2000,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Active_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="IsImeiWiseRetAllow"
@@ -1170,6 +2020,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.IsImeiWiseRetAllow_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ProdItemid"
@@ -1182,6 +2040,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="30"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.ProdItemid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ScreenSize"
@@ -1191,7 +2057,16 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="IN_ITEMS"/>
+    TableName="IN_ITEMS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.ScreenSize_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ActualFlatRate"
     Precision="1"
@@ -1203,6 +2078,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.ActualFlatRate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="IntraCompanyItemid"
@@ -1215,6 +2098,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.IntraCompanyItemid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="IntraCompanyProductid"
@@ -1227,6 +2118,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.IntraCompanyProductid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="LandedCost"
@@ -1236,7 +2135,16 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="IN_ITEMS"/>
+    TableName="IN_ITEMS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.LandedCost_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="BarCode"
     Precision="20"
@@ -1248,6 +2156,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.BarCode_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Siclassidn"
@@ -1260,6 +2176,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Siclassidn_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Sigroupidn"
@@ -1272,6 +2196,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Sigroupidn_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Itgroupidn"
@@ -1284,6 +2216,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Itgroupidn_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Discount"
@@ -1293,7 +2233,16 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="IN_ITEMS"/>
+    TableName="IN_ITEMS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.Discount_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ItemCost"
     Precision="16"
@@ -1302,7 +2251,16 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="IN_ITEMS"/>
+    TableName="IN_ITEMS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.ItemCost_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="InReceivedItemsLines"
     Association="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemsInReceiveItemsLinesItemRefIdAssoc"
@@ -1403,4 +2361,8 @@
       <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InItems.ReceUomsid"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolims.erpsolimsmodel.ERPSolIMSModelBundle"/>
+  </ResourceBundle>
 </Entity>
