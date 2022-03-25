@@ -59,7 +59,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEMS">
+    TableName="IN_ITEMS"
+    DefaultValue="01">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -99,7 +100,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEMS">
+    TableName="IN_ITEMS"
+    DefaultValue="006">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -119,7 +121,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEMS">
+    TableName="IN_ITEMS"
+    DefaultValue="01">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -468,7 +471,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEMS">
+    TableName="IN_ITEMS"
+    DefaultValue="M">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
