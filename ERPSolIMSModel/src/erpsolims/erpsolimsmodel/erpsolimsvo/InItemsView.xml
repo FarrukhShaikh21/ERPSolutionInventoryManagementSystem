@@ -53,6 +53,10 @@
     Name="AccVWCostCenterQVO"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsqvo.VWCostCenterQVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccAllDivisionsView"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllDivisionsView"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovSigroupid"
     ListVOName="AccInStockItemGroupView"
@@ -507,6 +511,25 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Costcenterid"/>
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovDivid"
+    ListVOName="AccAllDivisionsView"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Divid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Divid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Description"/>
     </AttrArray>
     <DisplayCriteria/>
@@ -1053,7 +1076,15 @@
     PrecisionRule="true"
     EntityAttrName="Divid"
     EntityUsage="InItems"
-    AliasName="DIVID"/>
+    AliasName="DIVID"
+    LOVName="LovDivid">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ExtraSno"
     PrecisionRule="true"
@@ -1494,6 +1525,11 @@
   <ViewLinkAccessor
     Name="InItemTransferNoteLinesView"
     ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.InItemsInItemTransferNoteLinesItemIdLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="SoProductsView"
+    ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.InItemsSoProductProductIDLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>

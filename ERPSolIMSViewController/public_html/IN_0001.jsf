@@ -178,7 +178,7 @@
                           </af:selectOneChoice>
                         </af:gridCell>
                       </af:gridRow>
-                      <af:gridRow id="gr7">
+                      <af:gridRow id="gr7" height="30px">
                         <af:gridCell id="gc18" width="15%" halign="center" valign="middle">
                           <af:outputLabel value="#{bindings.Brandid.label}" id="ol10"/>
                         </af:gridCell>
@@ -203,6 +203,33 @@
                             <f:selectItems value="#{bindings.Subgroupid.items}" id="si6"/>
                             <f:validator binding="#{bindings.Subgroupid.validator}"/>
                           </af:selectOneChoice>
+                        </af:gridCell>
+                      </af:gridRow>
+                      <af:gridRow id="gr8" height="30px">
+                        <af:gridCell id="gc22" width="15%" valign="middle" halign="center">
+                          <af:outputLabel value="#{bindings.Divid.label}" id="ol11"/>
+                        </af:gridCell>
+                        <af:gridCell id="gc23" width="35%" halign="stretch">
+                          <af:selectOneChoice value="#{bindings.Divid.inputValue}" label="#{bindings.Divid.label}"
+                                              required="#{bindings.Divid.hints.mandatory}"
+                                              shortDesc="#{bindings.Divid.hints.tooltip}" id="soc7" simple="true"
+                                              contentStyle="width:50%">
+                            <f:selectItems value="#{bindings.Divid.items}" id="si7"/>
+                            <f:validator binding="#{bindings.Divid.validator}"/>
+                          </af:selectOneChoice>
+                        </af:gridCell>
+                        <af:gridCell id="gc29" width="15%" halign="center" valign="middle">
+                          <af:outputLabel value="#{bindings.Perbox.hints.label}" id="ol12"/>
+                        </af:gridCell>
+                        <af:gridCell id="gc30" width="35%" halign="stretch">
+                          <af:inputText value="#{bindings.Perbox.inputValue}" label="#{bindings.Perbox.hints.label}"
+                                        required="#{bindings.Perbox.hints.mandatory}"
+                                        columns="#{bindings.Perbox.hints.displayWidth}"
+                                        maximumLength="#{bindings.Perbox.hints.precision}"
+                                        shortDesc="#{bindings.Perbox.hints.tooltip}" id="it3" simple="true">
+                            <f:validator binding="#{bindings.Perbox.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.Perbox.format}"/>
+                          </af:inputText>
                         </af:gridCell>
                       </af:gridRow>
                     </af:panelGridLayout>

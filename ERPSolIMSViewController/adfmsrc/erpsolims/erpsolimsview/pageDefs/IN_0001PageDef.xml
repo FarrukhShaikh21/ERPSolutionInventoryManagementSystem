@@ -62,5 +62,12 @@
     <listOfValues IterBinding="InItemsViewCRUDIterator" StaticList="false" Uses="LovSrglcode" id="Srglcode"/>
     <listOfValues IterBinding="InItemsViewCRUDIterator" StaticList="false" Uses="LovSrccenter" id="Srccenter"/>
     <listOfValues IterBinding="InItemsViewCRUDIterator" StaticList="false" Uses="LovAdjCcenter" id="AdjCcenter"/>
+    <list IterBinding="InItemsViewCRUDIterator" StaticList="false" Uses="LovDivid" id="Divid" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="InItemsViewCRUDIterator" id="Perbox">
+      <AttrNames>
+        <Item Value="Perbox"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

@@ -141,7 +141,8 @@ public class InItemsImpl extends ERPSolGlobalsEntityImpl {
         Discount,
         ItemCost,
         InReceivedItemsLines,
-        InItemTransferNoteLines;
+        InItemTransferNoteLines,
+        SoProducts;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -164,6 +165,7 @@ public class InItemsImpl extends ERPSolGlobalsEntityImpl {
             return vals;
         }
     }
+
 
     public static final int ITEMID = AttributesEnum.Itemid.index();
     public static final int ITEMREFID = AttributesEnum.ItemRefId.index();
@@ -283,6 +285,7 @@ public class InItemsImpl extends ERPSolGlobalsEntityImpl {
     public static final int ITEMCOST = AttributesEnum.ItemCost.index();
     public static final int INRECEIVEDITEMSLINES = AttributesEnum.InReceivedItemsLines.index();
     public static final int INITEMTRANSFERNOTELINES = AttributesEnum.InItemTransferNoteLines.index();
+    public static final int SOPRODUCTS = AttributesEnum.SoProducts.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -296,6 +299,7 @@ public class InItemsImpl extends ERPSolGlobalsEntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("erpsolims.erpsolimsmodel.erpsolimseo.InItems");
     }
+
 
     /**
      * Gets the attribute value for Itemid, using the alias name Itemid.
@@ -2165,6 +2169,14 @@ public class InItemsImpl extends ERPSolGlobalsEntityImpl {
      */
     public RowIterator getInItemTransferNoteLines() {
         return (RowIterator) getAttributeInternal(INITEMTRANSFERNOTELINES);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getSoProducts() {
+        return (RowIterator) getAttributeInternal(SOPRODUCTS);
     }
 
 
