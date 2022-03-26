@@ -33,5 +33,13 @@
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="InItemsViewCRUDIterator" StaticList="false" Uses="LovSigroupid" id="Sigroupid"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="InItemsViewCRUDIterator" StaticList="false" Uses="LovItgroupid" id="Itgroupid"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="InItemsViewCRUDIterator" StaticList="false" Uses="LovProductsubtype" id="Productsubtype"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="InItemsViewCRUDIterator" StaticList="false" Uses="LovBrandid" id="Brandid" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="InItemsViewCRUDIterator" StaticList="false" Uses="LovSubgroupid" id="Subgroupid"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>
