@@ -55,5 +55,12 @@
     <listOfValues IterBinding="InItemsViewCRUDIterator" StaticList="false" Uses="LovPglcode" id="Pglcode"/>
     <listOfValues IterBinding="InItemsViewCRUDIterator" StaticList="false" Uses="LovPccenter" id="Pccenter"/>
     <listOfValues IterBinding="InItemsViewCRUDIterator" StaticList="false" Uses="LovPlccenter" id="Plccenter"/>
+    <listOfValues IterBinding="InItemsViewCRUDIterator" StaticList="false" Uses="LovSglcode" id="Sglcode"/>
+    <listOfValues IterBinding="InItemsViewCRUDIterator" StaticList="false" Uses="LovSccenter" id="Sccenter"/>
+    <listOfValues IterBinding="InItemsViewCRUDIterator" StaticList="false" Uses="LovCglcode" id="Cglcode"/>
+    <listOfValues IterBinding="InItemsViewCRUDIterator" StaticList="false" Uses="LovCccenter" id="Cccenter"/>
+    <listOfValues IterBinding="InItemsViewCRUDIterator" StaticList="false" Uses="LovSrglcode" id="Srglcode"/>
+    <listOfValues IterBinding="InItemsViewCRUDIterator" StaticList="false" Uses="LovSrccenter" id="Srccenter"/>
+    <listOfValues IterBinding="InItemsViewCRUDIterator" StaticList="false" Uses="LovAdjCcenter" id="AdjCcenter"/>
   </bindings>
 </pageDefinition>

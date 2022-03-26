@@ -2214,7 +2214,9 @@ public class InItemsImpl extends ERPSolGlobalsEntityImpl {
             pkValue=" lpad(to_number(nvl(max(itemid),0)) + 1,15,'0')";
             result= ERPSolGlobClassModel.doGetERPSolPrimaryKeyValueModel(getDBTransaction(), pkValue, "in_items", null, null);
             populateAttributeAsChanged(ITEMID, result);
-
+            setProductid(getItemRefId());
+            setOldItemid(getItemRefId());
+            
         } 
         super.doDML(operation, e);
     }

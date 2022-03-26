@@ -312,6 +312,205 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LovSglcode"
+    ListVOName="AccVWChartOfAccQVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Sglcode"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Glcode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Glcode"/>
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovSccenter"
+    ListVOName="AccVWCostCenterQVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Sccenter"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Costcenterid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Costcenterid"/>
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovCglcode"
+    ListVOName="AccVWChartOfAccQVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Cglcode"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Glcode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Glcode"/>
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovCccenter"
+    ListVOName="AccVWCostCenterQVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Cccenter"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Costcenterid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Costcenterid"/>
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovSrglcode"
+    ListVOName="AccVWChartOfAccQVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Srglcode"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Glcode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Glcode"/>
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovSrccenter"
+    ListVOName="AccVWCostCenterQVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Srccenter"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Costcenterid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Costcenterid"/>
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovAdjGlcode"
+    ListVOName="AccVWChartOfAccQVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AdjGlcode"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Glcode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Glcode"/>
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovAdjCcenter"
+    ListVOName="AccVWCostCenterQVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AdjCcenter"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Costcenterid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Costcenterid"/>
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovExpGlcode"
+    ListVOName="AccVWChartOfAccQVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ExpGlcode"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Glcode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Glcode"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovExpCcenter"
+    ListVOName="AccVWCostCenterQVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ExpCcenter"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Costcenterid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Costcenterid"/>
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="InItems"
     Entity="erpsolims.erpsolimsmodel.erpsolimseo.InItems"/>
@@ -472,13 +671,29 @@
     PrecisionRule="true"
     EntityAttrName="Sglcode"
     EntityUsage="InItems"
-    AliasName="SGLCODE"/>
+    AliasName="SGLCODE"
+    LOVName="LovSglcode">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Sccenter"
     PrecisionRule="true"
     EntityAttrName="Sccenter"
     EntityUsage="InItems"
-    AliasName="SCCENTER"/>
+    AliasName="SCCENTER"
+    LOVName="LovSccenter">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Mglcode"
     PrecisionRule="true"
@@ -496,13 +711,29 @@
     PrecisionRule="true"
     EntityAttrName="Cglcode"
     EntityUsage="InItems"
-    AliasName="CGLCODE"/>
+    AliasName="CGLCODE"
+    LOVName="LovCglcode">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Cccenter"
     PrecisionRule="true"
     EntityAttrName="Cccenter"
     EntityUsage="InItems"
-    AliasName="CCCENTER"/>
+    AliasName="CCCENTER"
+    LOVName="LovCccenter">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Productsubtype"
     PrecisionRule="true"
@@ -580,13 +811,29 @@
     PrecisionRule="true"
     EntityAttrName="Srglcode"
     EntityUsage="InItems"
-    AliasName="SRGLCODE"/>
+    AliasName="SRGLCODE"
+    LOVName="LovSrglcode">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Srccenter"
     PrecisionRule="true"
     EntityAttrName="Srccenter"
     EntityUsage="InItems"
-    AliasName="SRCCENTER"/>
+    AliasName="SRCCENTER"
+    LOVName="LovSrccenter">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Specification"
     PrecisionRule="true"
@@ -646,25 +893,57 @@
     PrecisionRule="true"
     EntityAttrName="ExpGlcode"
     EntityUsage="InItems"
-    AliasName="EXP_GLCODE"/>
+    AliasName="EXP_GLCODE"
+    LOVName="LovExpGlcode">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ExpCcenter"
     PrecisionRule="true"
     EntityAttrName="ExpCcenter"
     EntityUsage="InItems"
-    AliasName="EXP_CCENTER"/>
+    AliasName="EXP_CCENTER"
+    LOVName="LovExpCcenter">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="AdjGlcode"
     PrecisionRule="true"
     EntityAttrName="AdjGlcode"
     EntityUsage="InItems"
-    AliasName="ADJ_GLCODE"/>
+    AliasName="ADJ_GLCODE"
+    LOVName="LovAdjGlcode">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="AdjCcenter"
     PrecisionRule="true"
     EntityAttrName="AdjCcenter"
     EntityUsage="InItems"
-    AliasName="ADJ_CCENTER"/>
+    AliasName="ADJ_CCENTER"
+    LOVName="LovAdjCcenter">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Stax"
     PrecisionRule="true"
