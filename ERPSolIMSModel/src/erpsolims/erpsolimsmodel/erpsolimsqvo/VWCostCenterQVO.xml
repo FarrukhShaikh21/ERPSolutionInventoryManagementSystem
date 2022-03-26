@@ -38,6 +38,14 @@ from vw_cost_center]]></SQLQuery>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="9"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimsqvo.VWCostCenterQVO.Costcenterid_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="Ccregion"
@@ -53,6 +61,12 @@ from vw_cost_center]]></SQLQuery>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="2"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="CcsubLocation"
@@ -98,6 +112,12 @@ from vw_cost_center]]></SQLQuery>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="35"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="Costcenterid"/>

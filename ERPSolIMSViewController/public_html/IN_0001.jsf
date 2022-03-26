@@ -31,7 +31,7 @@
                                inlineStyle="border-color:#b8d6f3; outline-width:thin; border-width:thin thin thin thin;">
                     <f:facet name="toolbar">
                       <af:toolbar id="t1">
-                        <af:button text="Search" id="b12" action="ACT-ERP-IN-0004-SEARCH"
+                        <af:button text="Search" id="b12" action="ERP-ACT-IN-0001-SEARCH"
                                    icon="#{resource['images:imgFind.png']}" iconPosition="top" accessKey="s"/>
                         <af:button text="Print Preview" id="b14" icon="#{resource['images:imgPrintPreview.png']}"
                                    iconPosition="top"
@@ -44,7 +44,7 @@
                         <af:button actionListener="#{bindings.Next.execute}" text="Next"
                                    disabled="#{bindings.Rnoteno.inputValue==null || !bindings.Next.enabled}" partialSubmit="true" id="b3"
                                    icon="#{resource['images:imgNext.png']}" iconPosition="top" accessKey="n"/>
-                        <af:button actionListener="#{bindings.Delete.execute}" text="Delete Order"
+                        <af:button actionListener="#{bindings.Delete.execute}" text="Delete Item"
                                    disabled="#{bindings.Posted.inputValue=='Y'}" id="b2"
                                    icon="#{resource['images:imgDelete.png']}" iconPosition="top" accessKey="l"/>
                         <af:button actionListener="#{bindings.CreateInsert.execute}" text="New Item"
@@ -84,7 +84,8 @@
                                         required="#{bindings.ItemRefId.hints.mandatory}"
                                         columns="#{bindings.ItemRefId.hints.displayWidth}"
                                         maximumLength="#{bindings.ItemRefId.hints.precision}"
-                                        shortDesc="#{bindings.ItemRefId.hints.tooltip}" id="it1" simple="true">
+                                        shortDesc="#{bindings.ItemRefId.hints.tooltip}" id="it1" simple="true"
+                                        readOnly="true">
                             <f:validator binding="#{bindings.ItemRefId.validator}"/>
                           </af:inputText>
                         </af:gridCell>
@@ -99,7 +100,8 @@
                                         required="#{bindings.Description.hints.mandatory}"
                                         columns="#{bindings.Description.hints.displayWidth}"
                                         maximumLength="#{bindings.Description.hints.precision}"
-                                        shortDesc="#{bindings.Description.hints.tooltip}" id="it4" simple="true">
+                                        shortDesc="#{bindings.Description.hints.tooltip}" id="it4" simple="true"
+                                        contentStyle="width:50%">
                             <f:validator binding="#{bindings.Description.validator}"/>
                           </af:inputText>
                         </af:gridCell>
@@ -113,7 +115,7 @@
                                         columns="#{bindings.ModelNo.hints.displayWidth}"
                                         maximumLength="#{bindings.ModelNo.hints.precision}"
                                         shortDesc="#{bindings.ModelNo.hints.tooltip}" id="it6" simple="true"
-                                        contentStyle="width:100%">
+                                        contentStyle="width:50%">
                             <f:validator binding="#{bindings.ModelNo.validator}"/>
                           </af:inputText>
                         </af:gridCell>
@@ -126,7 +128,8 @@
                           <af:selectOneChoice value="#{bindings.Siclassid.inputValue}"
                                               label="#{bindings.Siclassid.label}"
                                               required="#{bindings.Siclassid.hints.mandatory}"
-                                              shortDesc="#{bindings.Siclassid.hints.tooltip}" id="soc1" simple="true">
+                                              shortDesc="#{bindings.Siclassid.hints.tooltip}" id="soc1" simple="true"
+                                              contentStyle="width:50%">
                             <f:selectItems value="#{bindings.Siclassid.items}" id="si1"/>
                             <f:validator binding="#{bindings.Siclassid.validator}"/>
                           </af:selectOneChoice>
@@ -140,7 +143,7 @@
                                               label="#{bindings.Sigroupid.label}"
                                               required="#{bindings.Sigroupid.hints.mandatory}"
                                               shortDesc="#{bindings.Sigroupid.hints.tooltip}" id="soc2" simple="true"
-                                              contentStyle="width:100%">
+                                              contentStyle="width:50%" readOnly="#{bindings.Itemid.inputValue!=null}">
                             <f:selectItems value="#{bindings.Sigroupid.items}" id="si2"/>
                             <f:validator binding="#{bindings.Sigroupid.validator}"/>
                           </af:selectOneChoice>
@@ -155,7 +158,8 @@
                           <af:selectOneChoice value="#{bindings.Itgroupid.inputValue}"
                                               label="#{bindings.Itgroupid.label}"
                                               required="#{bindings.Itgroupid.hints.mandatory}"
-                                              shortDesc="#{bindings.Itgroupid.hints.tooltip}" id="soc3" simple="true">
+                                              shortDesc="#{bindings.Itgroupid.hints.tooltip}" id="soc3" simple="true"
+                                              contentStyle="width:50%">
                             <f:selectItems value="#{bindings.Itgroupid.items}" id="si3"/>
                             <f:validator binding="#{bindings.Itgroupid.validator}"/>
                           </af:selectOneChoice>
@@ -163,12 +167,12 @@
                         <af:gridCell id="gc16" width="15%" marginStart="5px" halign="center" valign="middle">
                           <af:outputLabel value="#{bindings.Productsubtype.label}" id="ol8"/>
                         </af:gridCell>
-                        <af:gridCell id="gc17" width="35%" marginStart="5px">
+                        <af:gridCell id="gc17" width="35%" marginStart="5px" halign="stretch">
                           <af:selectOneChoice value="#{bindings.Productsubtype.inputValue}"
                                               label="#{bindings.Productsubtype.label}"
                                               required="#{bindings.Productsubtype.hints.mandatory}"
                                               shortDesc="#{bindings.Productsubtype.hints.tooltip}" id="soc4"
-                                              simple="true" contentStyle="width:100%">
+                                              simple="true" contentStyle="width:50%">
                             <f:selectItems value="#{bindings.Productsubtype.items}" id="si4"/>
                             <f:validator binding="#{bindings.Productsubtype.validator}"/>
                           </af:selectOneChoice>
@@ -178,11 +182,11 @@
                         <af:gridCell id="gc18" width="15%" halign="center" valign="middle">
                           <af:outputLabel value="#{bindings.Brandid.label}" id="ol10"/>
                         </af:gridCell>
-                        <af:gridCell id="gc19" width="35%">
+                        <af:gridCell id="gc19" width="35%" halign="stretch">
                           <af:selectOneChoice value="#{bindings.Brandid.inputValue}" label="#{bindings.Brandid.label}"
                                               required="#{bindings.Brandid.hints.mandatory}"
                                               shortDesc="#{bindings.Brandid.hints.tooltip}" id="soc5" simple="true"
-                                              contentStyle="width:100%">
+                                              contentStyle="width:50%">
                             <f:selectItems value="#{bindings.Brandid.items}" id="si5"/>
                             <f:validator binding="#{bindings.Brandid.validator}"/>
                           </af:selectOneChoice>
@@ -190,12 +194,12 @@
                         <af:gridCell id="gc20" width="15%" halign="center" valign="middle">
                           <af:outputLabel value="#{bindings.Subgroupid.label}" id="ol9"/>
                         </af:gridCell>
-                        <af:gridCell id="gc21" width="35%">
+                        <af:gridCell id="gc21" width="35%" halign="stretch" inlineStyle="font-feature-settings:normal;">
                           <af:selectOneChoice value="#{bindings.Subgroupid.inputValue}"
                                               label="#{bindings.Subgroupid.label}"
                                               required="#{bindings.Subgroupid.hints.mandatory}"
                                               shortDesc="#{bindings.Subgroupid.hints.tooltip}" id="soc6" simple="true"
-                                              contentStyle="width:100%">
+                                              contentStyle="width:50%">
                             <f:selectItems value="#{bindings.Subgroupid.items}" id="si6"/>
                             <f:validator binding="#{bindings.Subgroupid.validator}"/>
                           </af:selectOneChoice>
@@ -223,8 +227,71 @@
               <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr11">
                 <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc27" halign="stretch">
                   <af:panelTabbed position="above" id="pt2">
-                    <af:showDetailItem id="tab1" text="Store"/>
-                    <af:showDetailItem id="tab2" text="Chart Of Account Code"/>
+                    <af:showDetailItem id="tab2" text="Chart Of Account Code">
+                      <af:panelFormLayout id="pfl1">
+                        <af:inputComboboxListOfValues id="iglcodeId"
+                                                      popupTitle="Search and Select: #{bindings.Iglcode.hints.label}"
+                                                      value="#{bindings.Iglcode.inputValue}"
+                                                      label="#{bindings.Iglcode.hints.label}"
+                                                      model="#{bindings.Iglcode.listOfValuesModel}"
+                                                      required="#{bindings.Iglcode.hints.mandatory}"
+                                                      columns="#{bindings.Iglcode.hints.displayWidth}"
+                                                      shortDesc="#{bindings.Iglcode.hints.tooltip}">
+                          <f:validator binding="#{bindings.Iglcode.validator}"/>
+                        </af:inputComboboxListOfValues>
+                        <af:inputComboboxListOfValues id="iccenterId"
+                                                      popupTitle="Search and Select: #{bindings.Iccenter.hints.label}"
+                                                      value="#{bindings.Iccenter.inputValue}"
+                                                      label="#{bindings.Iccenter.hints.label}"
+                                                      model="#{bindings.Iccenter.listOfValuesModel}"
+                                                      required="#{bindings.Iccenter.hints.mandatory}"
+                                                      columns="#{bindings.Iccenter.hints.displayWidth}"
+                                                      shortDesc="#{bindings.Iccenter.hints.tooltip}">
+                          <f:validator binding="#{bindings.Iccenter.validator}"/>
+                        </af:inputComboboxListOfValues>
+                        <af:inputComboboxListOfValues id="pglcodeId"
+                                                      popupTitle="Search and Select: #{bindings.Pglcode.hints.label}"
+                                                      value="#{bindings.Pglcode.inputValue}"
+                                                      label="#{bindings.Pglcode.hints.label}"
+                                                      model="#{bindings.Pglcode.listOfValuesModel}"
+                                                      required="#{bindings.Pglcode.hints.mandatory}"
+                                                      columns="#{bindings.Pglcode.hints.displayWidth}"
+                                                      shortDesc="#{bindings.Pglcode.hints.tooltip}">
+                          <f:validator binding="#{bindings.Pglcode.validator}"/>
+                        </af:inputComboboxListOfValues>
+                        <af:inputComboboxListOfValues id="pccenterId"
+                                                      popupTitle="Search and Select: #{bindings.Pccenter.hints.label}"
+                                                      value="#{bindings.Pccenter.inputValue}"
+                                                      label="#{bindings.Pccenter.hints.label}"
+                                                      model="#{bindings.Pccenter.listOfValuesModel}"
+                                                      required="#{bindings.Pccenter.hints.mandatory}"
+                                                      columns="#{bindings.Pccenter.hints.displayWidth}"
+                                                      shortDesc="#{bindings.Pccenter.hints.tooltip}">
+                          <f:validator binding="#{bindings.Pccenter.validator}"/>
+                        </af:inputComboboxListOfValues>
+                        <af:inputComboboxListOfValues id="plccenterId"
+                                                      popupTitle="Search and Select: #{bindings.Plccenter.hints.label}"
+                                                      value="#{bindings.Plccenter.inputValue}"
+                                                      label="#{bindings.Plccenter.hints.label}"
+                                                      model="#{bindings.Plccenter.listOfValuesModel}"
+                                                      required="#{bindings.Plccenter.hints.mandatory}"
+                                                      columns="#{bindings.Plccenter.hints.displayWidth}"
+                                                      shortDesc="#{bindings.Plccenter.hints.tooltip}">
+                          <f:validator binding="#{bindings.Plccenter.validator}"/>
+                        </af:inputComboboxListOfValues>
+                        <af:inputComboboxListOfValues id="iclov1"
+                                                      popupTitle="Search and Select: #{bindings.Plccenter.hints.label}"
+                                                      value="#{bindings.Plccenter.inputValue}"
+                                                      label="#{bindings.Plccenter.hints.label}"
+                                                      model="#{bindings.Plccenter.listOfValuesModel}"
+                                                      required="#{bindings.Plccenter.hints.mandatory}"
+                                                      columns="#{bindings.Plccenter.hints.displayWidth}"
+                                                      shortDesc="#{bindings.Plccenter.hints.tooltip}">
+                          <f:validator binding="#{bindings.Plccenter.validator}"/>
+                        </af:inputComboboxListOfValues>
+                      </af:panelFormLayout>
+                    </af:showDetailItem>
+                    <af:showDetailItem id="tab1" text="Store" disabled="#{bindings.Itemid.inputValue==null}"/>
                   </af:panelTabbed>
                 </af:gridCell>
               </af:gridRow>

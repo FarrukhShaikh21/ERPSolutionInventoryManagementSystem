@@ -41,5 +41,19 @@
           SelectItemValueMode="ListObject"/>
     <list IterBinding="InItemsViewCRUDIterator" StaticList="false" Uses="LovSubgroupid" id="Subgroupid"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <action IterBinding="InItemsViewCRUDIterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="InItemsViewCRUDIterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="InItemsViewCRUDIterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="InItemsViewCRUDIterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="ERPSolIMSAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="ERPSolIMSAppModuleDataControl"/>
+    <listOfValues IterBinding="InItemsViewCRUDIterator" StaticList="false" Uses="LovIglcode" id="Iglcode"/>
+    <listOfValues IterBinding="InItemsViewCRUDIterator" StaticList="false" Uses="LovIccenter" id="Iccenter"/>
+    <listOfValues IterBinding="InItemsViewCRUDIterator" StaticList="false" Uses="LovPglcode" id="Pglcode"/>
+    <listOfValues IterBinding="InItemsViewCRUDIterator" StaticList="false" Uses="LovPccenter" id="Pccenter"/>
+    <listOfValues IterBinding="InItemsViewCRUDIterator" StaticList="false" Uses="LovPlccenter" id="Plccenter"/>
   </bindings>
 </pageDefinition>
