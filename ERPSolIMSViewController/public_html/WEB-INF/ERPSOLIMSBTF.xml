@@ -124,6 +124,12 @@
         <fixed-outcome>ERP-SOL-ACT-GOTO-MAIN</fixed-outcome>
       </outcome>
     </method-call>
+    <view id="IN_0001">
+      <page>/IN_0001.jsf</page>
+    </view>
+    <view id="IN_0001_SEARCH">
+      <page>/IN_0001_SEARCH.jsf</page>
+    </view>
     <control-flow-rule id="__16">
       <from-activity-id>ExecuteWithParamsTransactionIMS</from-activity-id>
       <control-flow-case id="__17">
@@ -158,6 +164,10 @@
       <control-flow-case id="__14">
         <from-outcome>ERP-ACT-IN-0002</from-outcome>
         <to-activity-id>IN_0002</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__48">
+        <from-outcome>ERP-ACT-IN-0001</from-outcome>
+        <to-activity-id>IN_0001</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__33">
@@ -268,6 +278,20 @@
       <control-flow-case id="__47">
         <from-outcome>ERP-SOL-ACT-GOTO-MAIN</from-outcome>
         <to-activity-id>ERPSolIMSMain</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__49">
+      <from-activity-id>IN_0001</from-activity-id>
+      <control-flow-case id="__50">
+        <from-outcome>ERP-ACT-IN-0001-SEARCH</from-outcome>
+        <to-activity-id>IN_0001_SEARCH</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__51">
+      <from-activity-id>IN_0001_SEARCH</from-activity-id>
+      <control-flow-case id="__52">
+        <from-outcome>ERP-ACT-IN-0001-SEARCH-BACK</from-outcome>
+        <to-activity-id>IN_0001</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>
