@@ -31,8 +31,6 @@
                                inlineStyle="border-color:#b8d6f3; outline-width:thin; border-width:thin thin thin thin;">
                     <f:facet name="toolbar">
                       <af:toolbar id="t1">
-                        <af:button actionListener="#{bindings.doSuperviseGRN.execute}" text="doSuperviseGRN"
-                                   disabled="#{!bindings.doSuperviseGRN.enabled}" id="b10" rendered="false"/>
                         <af:button text="Search" id="b12" action="ACT-ERP-IN-0004-SEARCH"
                                    icon="#{resource['images:imgFind.png']}" iconPosition="top" accessKey="s"/>
                         <af:button text="Print Preview" id="b14" icon="#{resource['images:imgPrintPreview.png']}"
@@ -49,7 +47,7 @@
                         <af:button actionListener="#{bindings.Delete.execute}" text="Delete Order"
                                    disabled="#{bindings.Posted.inputValue=='Y'}" id="b2"
                                    icon="#{resource['images:imgDelete.png']}" iconPosition="top" accessKey="l"/>
-                        <af:button actionListener="#{bindings.CreateInsert.execute}" text="New GRN"
+                        <af:button actionListener="#{bindings.CreateInsert.execute}" text="New Item"
                                    disabled="#{pageFlowScope.ERPSolTempBean.LERPSolAllowAdd=='N'}" id="b1"
                                    icon="#{resource['images:imgAdd.png']}" iconPosition="top" accessKey="w"/>
                         <af:button actionListener="#{bindings.Rollback.execute}" text="Undo Changes" immediate="true"
@@ -224,86 +222,10 @@
               </af:gridRow>
               <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr11">
                 <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc27" halign="stretch">
-                  <af:panelCollection id="pc1" styleClass="AFStretchWidth" featuresOff="viewMenu detach">
-                    <f:facet name="menus"/>
-                    <f:facet name="toolbar">
-                      <af:toolbar id="t3">
-                        <af:button actionListener="#{bindings.CreateInsert1.execute}" text="Add Product Line"
-                                   disabled="#{bindings.Posted.inputValue=='Y' || bindings.Recvdoctypeid.inputValue=='STA'}" id="b7" accessKey="a"/>
-                        <af:button actionListener="#{bindings.Delete1.execute}" text="Delete Product Line"
-                                   disabled="#{bindings.Posted.inputValue=='Y' || bindings.Recvdoctypeid.inputValue=='STA'}" id="b8"/>
-                      </af:toolbar>
-                    </f:facet>
-                    <f:facet name="statusbar"/>
-                    <af:table value="#{bindings.InReceivedItemsLinesDetCRUD.collectionModel}" var="row"
-                              rows="#{bindings.InReceivedItemsLinesDetCRUD.rangeSize}"
-                              emptyText="#{bindings.InReceivedItemsLinesDetCRUD.viewable ? 'No data to display.' : 'Access Denied.'}"
-                              rowBandingInterval="0"
-                              selectedRowKeys="#{bindings.InReceivedItemsLinesDetCRUD.collectionModel.selectedRow}"
-                              selectionListener="#{bindings.InReceivedItemsLinesDetCRUD.collectionModel.makeCurrent}"
-                              rowSelection="single" fetchSize="#{bindings.InReceivedItemsLinesDetCRUD.rangeSize}"
-                              id="t2" partialTriggers="::b7 ::b8" autoHeightRows="5" scrollPolicy="page"
-                              columnStretching="column:c3">
-                      <af:column id="c4" width="80" displayIndex="-1">
-                        <af:button text="IMEI" id="b11" action="ACT-ERP-IN-0004-IMEI"/>
-                      </af:column>
-                      <af:column headerText="#{bindings.InReceivedItemsLinesDetCRUD.hints.Lineno.label}" id="c1"
-                                 width="80" displayIndex="-1">
-                        <af:inputText value="#{row.bindings.Lineno.inputValue}"
-                                      label="#{bindings.InReceivedItemsLinesDetCRUD.hints.Lineno.label}"
-                                      required="#{bindings.InReceivedItemsLinesDetCRUD.hints.Lineno.mandatory}"
-                                      columns="#{bindings.InReceivedItemsLinesDetCRUD.hints.Lineno.displayWidth}"
-                                      maximumLength="#{bindings.InReceivedItemsLinesDetCRUD.hints.Lineno.precision}"
-                                      shortDesc="#{bindings.InReceivedItemsLinesDetCRUD.hints.Lineno.tooltip}" id="it3"
-                                      readOnly="true">
-                          <f:validator binding="#{row.bindings.Lineno.validator}"/>
-                          <af:convertNumber groupingUsed="false"
-                                            pattern="#{bindings.InReceivedItemsLinesDetCRUD.hints.Lineno.format}"/>
-                        </af:inputText>
-                      </af:column>
-                      <af:column headerText="#{bindings.InReceivedItemsLinesDetCRUD.hints.ItemRefId.label}" id="c2"
-                                 width="150" displayIndex="-1">
-                        <af:inputComboboxListOfValues id="itemRefIdId"
-                                                      popupTitle="Search and Select: #{bindings.InReceivedItemsLinesDetCRUD.hints.ItemRefId.label}"
-                                                      value="#{row.bindings.ItemRefId.inputValue}"
-                                                      model="#{row.bindings.ItemRefId.listOfValuesModel}"
-                                                      required="#{bindings.InReceivedItemsLinesDetCRUD.hints.ItemRefId.mandatory}"
-                                                      columns="#{bindings.InReceivedItemsLinesDetCRUD.hints.ItemRefId.displayWidth}"
-                                                      shortDesc="#{bindings.InReceivedItemsLinesDetCRUD.hints.ItemRefId.tooltip}"
-                                                      autoSubmit="true"
-                                                      disabled="#{bindings.Recvdoctypeid.inputValue=='STA'}"
-                                                      contentStyle="width:100%"
-                                                      readOnly="#{row.bindings.Lineno.inputValue>0}">
-                          <f:validator binding="#{row.bindings.ItemRefId.validator}"/>
-                          <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolIMSPageFlowBean.doERPSolGetAutoSuggestedModelValues}"/>
-                        </af:inputComboboxListOfValues>
-                      </af:column>
-                      <af:column headerText="#{bindings.InReceivedItemsLinesDetCRUD.hints.txtModelNo.label}" id="c3"
-                                 width="200" displayIndex="-1">
-                        <af:inputText value="#{row.bindings.txtModelNo.inputValue}"
-                                      label="#{bindings.InReceivedItemsLinesDetCRUD.hints.txtModelNo.label}"
-                                      required="#{bindings.InReceivedItemsLinesDetCRUD.hints.txtModelNo.mandatory}"
-                                      columns="#{bindings.InReceivedItemsLinesDetCRUD.hints.txtModelNo.displayWidth}"
-                                      maximumLength="#{bindings.InReceivedItemsLinesDetCRUD.hints.txtModelNo.precision}"
-                                      shortDesc="#{bindings.InReceivedItemsLinesDetCRUD.hints.txtModelNo.tooltip}"
-                                      id="it5" readOnly="true" partialTriggers="itemRefIdId">
-                          <f:validator binding="#{row.bindings.txtModelNo.validator}"/>
-                        </af:inputText>
-                      </af:column>
-                      <af:column headerText="#{bindings.InReceivedItemsLinesDetCRUD.hints.Shelfqty.label}" id="c6">
-                        <af:inputText value="#{row.bindings.Shelfqty.inputValue}"
-                                      label="#{bindings.InReceivedItemsLinesDetCRUD.hints.Shelfqty.label}"
-                                      required="#{bindings.InReceivedItemsLinesDetCRUD.hints.Shelfqty.mandatory}"
-                                      columns="#{bindings.InReceivedItemsLinesDetCRUD.hints.Shelfqty.displayWidth}"
-                                      maximumLength="#{bindings.InReceivedItemsLinesDetCRUD.hints.Shelfqty.precision}"
-                                      shortDesc="#{bindings.InReceivedItemsLinesDetCRUD.hints.Shelfqty.tooltip}"
-                                      id="it9" autoSubmit="true" disabled="#{bindings.Recvdoctypeid.inputValue=='STA'}"
-                                      readOnly="#{row.bindings.Lineno.inputValue>0}">
-                          <f:validator binding="#{row.bindings.Shelfqty.validator}"/>
-                        </af:inputText>
-                      </af:column>
-                    </af:table>
-                  </af:panelCollection>
+                  <af:panelTabbed position="above" id="pt2">
+                    <af:showDetailItem id="tab1" text="Store"/>
+                    <af:showDetailItem id="tab2" text="Chart Of Account Code"/>
+                  </af:panelTabbed>
                 </af:gridCell>
               </af:gridRow>
             </af:panelGridLayout>

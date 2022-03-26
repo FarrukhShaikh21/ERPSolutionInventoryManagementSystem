@@ -56,8 +56,14 @@
       <Item Value="Sigroupid"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="HsRate"/>
+      <Item Value="Hscode"/>
+    </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="Sigroupid"/>
+      <Item Value="HsRate"/>
+      <Item Value="Hscode"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Description"/>
