@@ -45,6 +45,10 @@
     Name="AccInStockItemSubGroupView"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InStockItemSubGroupView"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccVWChartOfAccQVO"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsqvo.VWChartOfAccQVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovSigroupid"
     ListVOName="AccInStockItemGroupView"
@@ -184,6 +188,26 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LovIglcode"
+    ListVOName="AccVWChartOfAccQVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Iglcode"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Glcode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Glcode"/>
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="InItems"
     Entity="erpsolims.erpsolimsmodel.erpsolimseo.InItems"/>
@@ -300,7 +324,15 @@
     PrecisionRule="true"
     EntityAttrName="Iglcode"
     EntityUsage="InItems"
-    AliasName="IGLCODE"/>
+    AliasName="IGLCODE"
+    LOVName="LovIglcode">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Iccenter"
     PrecisionRule="true"
