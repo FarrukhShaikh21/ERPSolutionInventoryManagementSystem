@@ -9,6 +9,7 @@ import java.sql.Timestamp;
 
 import oracle.jbo.AttributeList;
 import oracle.jbo.Key;
+import oracle.jbo.Row;
 import oracle.jbo.RowIterator;
 import oracle.jbo.domain.Date;
 import oracle.jbo.server.EntityDefImpl;
@@ -142,7 +143,8 @@ public class InItemsImpl extends ERPSolGlobalsEntityImpl {
         ItemCost,
         InReceivedItemsLines,
         InItemTransferNoteLines,
-        SoProducts;
+        SoProducts,
+        InStoreItems;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -286,6 +288,7 @@ public class InItemsImpl extends ERPSolGlobalsEntityImpl {
     public static final int INRECEIVEDITEMSLINES = AttributesEnum.InReceivedItemsLines.index();
     public static final int INITEMTRANSFERNOTELINES = AttributesEnum.InItemTransferNoteLines.index();
     public static final int SOPRODUCTS = AttributesEnum.SoProducts.index();
+    public static final int INSTOREITEMS = AttributesEnum.InStoreItems.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -2181,6 +2184,14 @@ public class InItemsImpl extends ERPSolGlobalsEntityImpl {
 
 
     /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getInStoreItems() {
+        return (RowIterator) getAttributeInternal(INSTOREITEMS);
+    }
+
+
+    /**
      * @param itemid key constituent
 
      * @return a Key object based on given key constituents.
@@ -2231,6 +2242,34 @@ public class InItemsImpl extends ERPSolGlobalsEntityImpl {
             
         } 
         super.doDML(operation, e);
+        if (operation==DML_DELETE) {
+           getSoProducts().first().remove();
+       }
+        if (operation!=DML_DELETE) {
+            Row r=null;
+            
+            if (operation==DML_INSERT) {
+               r= getSoProducts().createRow();
+            }
+            else {
+                r=getSoProducts().first();
+            }
+            
+            r.setAttribute("Pbrandid", getBrandid());
+           r.setAttribute("ProductShortName", getModelNo());
+           r.setAttribute("Uomsid", getUomsid());
+           r.setAttribute("Pgroupid", getSigroupid());
+           r.setAttribute("Companyid", ERPSolGlobClassModel.doGetUserCompanyCode());
+           r.setAttribute("Productsubtype", getProductsubtype());
+           r.setAttribute("ModelNo", getModelNo());
+           r.setAttribute("CompDescription", getDescription());
+           r.setAttribute("InvoiceDescription", getDescription());
+           r.setAttribute("ItemStatus", getItemStatus());
+           r.setAttribute("Divid", getDivid());
+           if (operation==DML_INSERT) {
+                getSoProducts().insertRow(r);
+            }
+        }
     }
 }
 

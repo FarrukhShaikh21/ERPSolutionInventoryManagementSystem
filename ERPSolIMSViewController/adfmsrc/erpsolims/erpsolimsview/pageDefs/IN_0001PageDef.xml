@@ -7,6 +7,8 @@
     <page path="erpsoltemp.erpsoltempview.pageDefs.ERPSolutionTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
     <iterator Binds="InItemsViewCRUD" RangeSize="25" DataControl="ERPSolIMSAppModuleDataControl"
               id="InItemsViewCRUDIterator"/>
+    <iterator Binds="InStoreItemsDetCRUD" RangeSize="25" DataControl="ERPSolIMSAppModuleDataControl"
+              id="InStoreItemsDetCRUDIterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="InItemsViewCRUDIterator" id="ItemRefId">
@@ -69,5 +71,18 @@
         <Item Value="Perbox"/>
       </AttrNames>
     </attributeValues>
+    <listOfValues IterBinding="InItemsViewCRUDIterator" StaticList="false" Uses="LovPlglcode" id="Plglcode"/>
+    <tree IterBinding="InStoreItemsDetCRUDIterator" id="InStoreItemsDetCRUD">
+      <nodeDefinition DefName="erpsolims.erpsolimsmodel.erpsolimsvo.InStoreItemsView" Name="InStoreItemsDetCRUD0">
+        <AttrNames>
+          <Item Value="Storeid"/>
+          <Item Value="Shelfid"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="InStoreItemsDetCRUDIterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="InStoreItemsDetCRUDIterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

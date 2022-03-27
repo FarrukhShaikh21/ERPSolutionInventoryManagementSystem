@@ -276,7 +276,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEMS">
+    TableName="IN_ITEMS"
+    DefaultValue="E10251000020">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -296,7 +297,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEMS">
+    TableName="IN_ITEMS"
+    DefaultValue="990100001">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -336,7 +338,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEMS">
+    TableName="IN_ITEMS"
+    DefaultValue="990100001">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -356,7 +359,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEMS">
+    TableName="IN_ITEMS"
+    DefaultValue="R10101000010">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -376,7 +380,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEMS">
+    TableName="IN_ITEMS"
+    DefaultValue="990100001">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -416,7 +421,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEMS">
+    TableName="IN_ITEMS"
+    DefaultValue="990100001">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -456,7 +462,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEMS">
+    TableName="IN_ITEMS"
+    DefaultValue="990100001">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -517,7 +524,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEMS">
+    TableName="IN_ITEMS"
+    DefaultValue="990100001">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -557,7 +565,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEMS">
+    TableName="IN_ITEMS"
+    DefaultValue="990100001">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -598,7 +607,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEMS">
+    TableName="IN_ITEMS"
+    DefaultValue="E10251000010">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -618,7 +628,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEMS">
+    TableName="IN_ITEMS"
+    DefaultValue="990100001">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -638,7 +649,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEMS">
+    TableName="IN_ITEMS"
+    DefaultValue="R10101000020">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -658,7 +670,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEMS">
+    TableName="IN_ITEMS"
+    DefaultValue="990100001">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -876,7 +889,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEMS">
+    TableName="IN_ITEMS"
+    DefaultValue="990100001">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -916,7 +930,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_ITEMS">
+    TableName="IN_ITEMS"
+    DefaultValue="990100001">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -2317,6 +2332,13 @@
     Association="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemsSoProductProductIDAssoc"
     AssociationEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemsSoProductProductIDAssoc.SoProducts"
     AssociationOtherEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemsSoProductProductIDAssoc.InItems"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="InStoreItems"
+    Association="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemsInStoreItemsItemIDAssoc"
+    AssociationEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemsInStoreItemsItemIDAssoc.InStoreItems"
+    AssociationOtherEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemsInStoreItemsItemIDAssoc.InItems"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <Key

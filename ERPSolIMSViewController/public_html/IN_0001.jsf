@@ -12,7 +12,6 @@
             <f:facet name="toolbar"/>
             <f:facet name="legend"/>
             <f:facet name="info"/>
-            <af:spacer width="10" height="10" id="s1"/>
             <af:panelGridLayout id="pgl3">
               <af:gridRow id="gr3">
                 <af:gridCell id="gc5" halign="stretch" valign="middle" styleClass="ERPSolFormEntryAreaHeader">
@@ -39,10 +38,10 @@
                         <af:button text="Close Form" id="b13" icon="#{resource['images:imgExitForm.png']}"
                                    action="ERP-ACT-EXIT-FORM-IMS" iconPosition="top"/>
                         <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
-                                   disabled="#{bindings.Rnoteno.inputValue==null || !bindings.Previous.enabled}" partialSubmit="true" id="b4"
+                                   disabled="#{bindings.Itemid.inputValue==null || !bindings.Previous.enabled}" partialSubmit="true" id="b4"
                                    icon="#{resource['images:imgPrevious.png']}" iconPosition="top" accessKey="r"/>
                         <af:button actionListener="#{bindings.Next.execute}" text="Next"
-                                   disabled="#{bindings.Rnoteno.inputValue==null || !bindings.Next.enabled}" partialSubmit="true" id="b3"
+                                   disabled="#{bindings.Itemid.inputValue==null || !bindings.Next.enabled}" partialSubmit="true" id="b3"
                                    icon="#{resource['images:imgNext.png']}" iconPosition="top" accessKey="n"/>
                         <af:button actionListener="#{bindings.Delete.execute}" text="Delete Item"
                                    disabled="#{bindings.Posted.inputValue=='Y'}" id="b2"
@@ -167,7 +166,7 @@
                         <af:gridCell id="gc16" width="15%" marginStart="5px" halign="center" valign="middle">
                           <af:outputLabel value="#{bindings.Productsubtype.label}" id="ol8"/>
                         </af:gridCell>
-                        <af:gridCell id="gc17" width="35%" marginStart="5px" halign="stretch">
+                        <af:gridCell id="gc17" width="35%" marginStart="5px" halign="stretch" valign="middle">
                           <af:selectOneChoice value="#{bindings.Productsubtype.inputValue}"
                                               label="#{bindings.Productsubtype.label}"
                                               required="#{bindings.Productsubtype.hints.mandatory}"
@@ -252,173 +251,222 @@
                 </af:gridCell>
               </af:gridRow>
               <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr11">
-                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc27" halign="stretch">
+                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc27" halign="stretch" valign="stretch">
                   <af:panelTabbed position="above" id="pt2">
                     <af:showDetailItem id="tab2" text="Chart Of Account Code">
-                      <af:panelFormLayout id="pfl1">
-                        <af:inputComboboxListOfValues id="iglcodeId"
-                                                      popupTitle="Search and Select: #{bindings.Iglcode.hints.label}"
-                                                      value="#{bindings.Iglcode.inputValue}"
-                                                      label="#{bindings.Iglcode.hints.label}"
-                                                      model="#{bindings.Iglcode.listOfValuesModel}"
-                                                      required="#{bindings.Iglcode.hints.mandatory}"
-                                                      columns="#{bindings.Iglcode.hints.displayWidth}"
-                                                      shortDesc="#{bindings.Iglcode.hints.tooltip}">
-                          <f:validator binding="#{bindings.Iglcode.validator}"/>
-                        </af:inputComboboxListOfValues>
-                        <af:inputComboboxListOfValues id="iccenterId"
-                                                      popupTitle="Search and Select: #{bindings.Iccenter.hints.label}"
-                                                      value="#{bindings.Iccenter.inputValue}"
-                                                      label="#{bindings.Iccenter.hints.label}"
-                                                      model="#{bindings.Iccenter.listOfValuesModel}"
-                                                      required="#{bindings.Iccenter.hints.mandatory}"
-                                                      columns="#{bindings.Iccenter.hints.displayWidth}"
-                                                      shortDesc="#{bindings.Iccenter.hints.tooltip}">
-                          <f:validator binding="#{bindings.Iccenter.validator}"/>
-                        </af:inputComboboxListOfValues>
-                        <af:inputComboboxListOfValues id="pglcodeId"
-                                                      popupTitle="Search and Select: #{bindings.Pglcode.hints.label}"
-                                                      value="#{bindings.Pglcode.inputValue}"
-                                                      label="#{bindings.Pglcode.hints.label}"
-                                                      model="#{bindings.Pglcode.listOfValuesModel}"
-                                                      required="#{bindings.Pglcode.hints.mandatory}"
-                                                      columns="#{bindings.Pglcode.hints.displayWidth}"
-                                                      shortDesc="#{bindings.Pglcode.hints.tooltip}">
-                          <f:validator binding="#{bindings.Pglcode.validator}"/>
-                        </af:inputComboboxListOfValues>
-                        <af:inputComboboxListOfValues id="pccenterId"
-                                                      popupTitle="Search and Select: #{bindings.Pccenter.hints.label}"
-                                                      value="#{bindings.Pccenter.inputValue}"
-                                                      label="#{bindings.Pccenter.hints.label}"
-                                                      model="#{bindings.Pccenter.listOfValuesModel}"
-                                                      required="#{bindings.Pccenter.hints.mandatory}"
-                                                      columns="#{bindings.Pccenter.hints.displayWidth}"
-                                                      shortDesc="#{bindings.Pccenter.hints.tooltip}">
-                          <f:validator binding="#{bindings.Pccenter.validator}"/>
-                        </af:inputComboboxListOfValues>
-                        <af:inputComboboxListOfValues id="plccenterId"
-                                                      popupTitle="Search and Select: #{bindings.Plccenter.hints.label}"
-                                                      value="#{bindings.Plccenter.inputValue}"
-                                                      label="#{bindings.Plccenter.hints.label}"
-                                                      model="#{bindings.Plccenter.listOfValuesModel}"
-                                                      required="#{bindings.Plccenter.hints.mandatory}"
-                                                      columns="#{bindings.Plccenter.hints.displayWidth}"
-                                                      shortDesc="#{bindings.Plccenter.hints.tooltip}">
-                          <f:validator binding="#{bindings.Plccenter.validator}"/>
-                        </af:inputComboboxListOfValues>
-                        <af:inputComboboxListOfValues id="iclov1"
-                                                      popupTitle="Search and Select: #{bindings.Plccenter.hints.label}"
-                                                      value="#{bindings.Plccenter.inputValue}"
-                                                      label="#{bindings.Plccenter.hints.label}"
-                                                      model="#{bindings.Plccenter.listOfValuesModel}"
-                                                      required="#{bindings.Plccenter.hints.mandatory}"
-                                                      columns="#{bindings.Plccenter.hints.displayWidth}"
-                                                      shortDesc="#{bindings.Plccenter.hints.tooltip}">
-                          <f:validator binding="#{bindings.Plccenter.validator}"/>
-                        </af:inputComboboxListOfValues>
-                        <af:inputComboboxListOfValues id="sglcodeId"
-                                                      popupTitle="Search and Select: #{bindings.Sglcode.hints.label}"
-                                                      value="#{bindings.Sglcode.inputValue}"
-                                                      label="#{bindings.Sglcode.hints.label}"
-                                                      model="#{bindings.Sglcode.listOfValuesModel}"
-                                                      required="#{bindings.Sglcode.hints.mandatory}"
-                                                      columns="#{bindings.Sglcode.hints.displayWidth}"
-                                                      shortDesc="#{bindings.Sglcode.hints.tooltip}">
-                          <f:validator binding="#{bindings.Sglcode.validator}"/>
-                        </af:inputComboboxListOfValues>
-                        <af:inputComboboxListOfValues id="sccenterId"
-                                                      popupTitle="Search and Select: #{bindings.Sccenter.hints.label}"
-                                                      value="#{bindings.Sccenter.inputValue}"
-                                                      label="#{bindings.Sccenter.hints.label}"
-                                                      model="#{bindings.Sccenter.listOfValuesModel}"
-                                                      required="#{bindings.Sccenter.hints.mandatory}"
-                                                      columns="#{bindings.Sccenter.hints.displayWidth}"
-                                                      shortDesc="#{bindings.Sccenter.hints.tooltip}">
-                          <f:validator binding="#{bindings.Sccenter.validator}"/>
-                        </af:inputComboboxListOfValues>
-                        <af:inputComboboxListOfValues id="cglcodeId"
-                                                      popupTitle="Search and Select: #{bindings.Cglcode.hints.label}"
-                                                      value="#{bindings.Cglcode.inputValue}"
-                                                      label="#{bindings.Cglcode.hints.label}"
-                                                      model="#{bindings.Cglcode.listOfValuesModel}"
-                                                      required="#{bindings.Cglcode.hints.mandatory}"
-                                                      columns="#{bindings.Cglcode.hints.displayWidth}"
-                                                      shortDesc="#{bindings.Cglcode.hints.tooltip}">
-                          <f:validator binding="#{bindings.Cglcode.validator}"/>
-                        </af:inputComboboxListOfValues>
-                        <af:inputComboboxListOfValues id="cccenterId"
-                                                      popupTitle="Search and Select: #{bindings.Cccenter.hints.label}"
-                                                      value="#{bindings.Cccenter.inputValue}"
-                                                      label="#{bindings.Cccenter.hints.label}"
-                                                      model="#{bindings.Cccenter.listOfValuesModel}"
-                                                      required="#{bindings.Cccenter.hints.mandatory}"
-                                                      columns="#{bindings.Cccenter.hints.displayWidth}"
-                                                      shortDesc="#{bindings.Cccenter.hints.tooltip}">
-                          <f:validator binding="#{bindings.Cccenter.validator}"/>
-                        </af:inputComboboxListOfValues>
-                        <af:inputComboboxListOfValues id="srglcodeId"
-                                                      popupTitle="Search and Select: #{bindings.Srglcode.hints.label}"
-                                                      value="#{bindings.Srglcode.inputValue}"
-                                                      label="#{bindings.Srglcode.hints.label}"
-                                                      model="#{bindings.Srglcode.listOfValuesModel}"
-                                                      required="#{bindings.Srglcode.hints.mandatory}"
-                                                      columns="#{bindings.Srglcode.hints.displayWidth}"
-                                                      shortDesc="#{bindings.Srglcode.hints.tooltip}">
-                          <f:validator binding="#{bindings.Srglcode.validator}"/>
-                        </af:inputComboboxListOfValues>
-                        <af:inputComboboxListOfValues id="srccenterId"
-                                                      popupTitle="Search and Select: #{bindings.Srccenter.hints.label}"
-                                                      value="#{bindings.Srccenter.inputValue}"
-                                                      label="#{bindings.Srccenter.hints.label}"
-                                                      model="#{bindings.Srccenter.listOfValuesModel}"
-                                                      required="#{bindings.Srccenter.hints.mandatory}"
-                                                      columns="#{bindings.Srccenter.hints.displayWidth}"
-                                                      shortDesc="#{bindings.Srccenter.hints.tooltip}">
-                          <f:validator binding="#{bindings.Srccenter.validator}"/>
-                        </af:inputComboboxListOfValues>
-                        <af:inputComboboxListOfValues id="adjCcenterId"
-                                                      popupTitle="Search and Select: #{bindings.AdjCcenter.hints.label}"
-                                                      value="#{bindings.AdjCcenter.inputValue}"
-                                                      label="#{bindings.AdjCcenter.hints.label}"
-                                                      model="#{bindings.AdjCcenter.listOfValuesModel}"
-                                                      required="#{bindings.AdjCcenter.hints.mandatory}"
-                                                      columns="#{bindings.AdjCcenter.hints.displayWidth}"
-                                                      shortDesc="#{bindings.AdjCcenter.hints.tooltip}">
-                          <f:validator binding="#{bindings.AdjCcenter.validator}"/>
-                        </af:inputComboboxListOfValues>
-                        <af:inputComboboxListOfValues id="iclov2"
-                                                      popupTitle="Search and Select: #{bindings.AdjCcenter.hints.label}"
-                                                      value="#{bindings.AdjCcenter.inputValue}"
-                                                      label="#{bindings.AdjCcenter.hints.label}"
-                                                      model="#{bindings.AdjCcenter.listOfValuesModel}"
-                                                      required="#{bindings.AdjCcenter.hints.mandatory}"
-                                                      columns="#{bindings.AdjCcenter.hints.displayWidth}"
-                                                      shortDesc="#{bindings.AdjCcenter.hints.tooltip}">
-                          <f:validator binding="#{bindings.AdjCcenter.validator}"/>
-                        </af:inputComboboxListOfValues>
-                        <af:inputComboboxListOfValues id="iclov3"
-                                                      popupTitle="Search and Select: #{bindings.Cglcode.hints.label}"
-                                                      value="#{bindings.Cglcode.inputValue}"
-                                                      label="#{bindings.Cglcode.hints.label}"
-                                                      model="#{bindings.Cglcode.listOfValuesModel}"
-                                                      required="#{bindings.Cglcode.hints.mandatory}"
-                                                      columns="#{bindings.Cglcode.hints.displayWidth}"
-                                                      shortDesc="#{bindings.Cglcode.hints.tooltip}">
-                          <f:validator binding="#{bindings.Cglcode.validator}"/>
-                        </af:inputComboboxListOfValues>
-                        <af:inputComboboxListOfValues id="iclov4"
-                                                      popupTitle="Search and Select: #{bindings.Cccenter.hints.label}"
-                                                      value="#{bindings.Cccenter.inputValue}"
-                                                      label="#{bindings.Cccenter.hints.label}"
-                                                      model="#{bindings.Cccenter.listOfValuesModel}"
-                                                      required="#{bindings.Cccenter.hints.mandatory}"
-                                                      columns="#{bindings.Cccenter.hints.displayWidth}"
-                                                      shortDesc="#{bindings.Cccenter.hints.tooltip}">
-                          <f:validator binding="#{bindings.Cccenter.validator}"/>
-                        </af:inputComboboxListOfValues>
-                      </af:panelFormLayout>
+                      <af:panelSplitter id="ps1" orientation="vertical">
+                        <f:facet name="first">
+                          <af:panelFormLayout id="pfl1" maxColumns="2" rows="4">
+                            <af:inputComboboxListOfValues id="iglcodeId"
+                                                          popupTitle="Search and Select: #{bindings.Iglcode.hints.label}"
+                                                          value="#{bindings.Iglcode.inputValue}"
+                                                          label="#{bindings.Iglcode.hints.label}"
+                                                          model="#{bindings.Iglcode.listOfValuesModel}"
+                                                          required="#{bindings.Iglcode.hints.mandatory}"
+                                                          columns="#{bindings.Iglcode.hints.displayWidth}"
+                                                          shortDesc="#{bindings.Iglcode.hints.tooltip}">
+                              <f:validator binding="#{bindings.Iglcode.validator}"/>
+                            </af:inputComboboxListOfValues>
+                            <af:inputComboboxListOfValues id="iccenterId"
+                                                          popupTitle="Search and Select: #{bindings.Iccenter.hints.label}"
+                                                          value="#{bindings.Iccenter.inputValue}"
+                                                          label="#{bindings.Iccenter.hints.label}"
+                                                          model="#{bindings.Iccenter.listOfValuesModel}"
+                                                          required="#{bindings.Iccenter.hints.mandatory}"
+                                                          columns="#{bindings.Iccenter.hints.displayWidth}"
+                                                          shortDesc="#{bindings.Iccenter.hints.tooltip}">
+                              <f:validator binding="#{bindings.Iccenter.validator}"/>
+                            </af:inputComboboxListOfValues>
+                            <af:inputComboboxListOfValues id="pglcodeId"
+                                                          popupTitle="Search and Select: #{bindings.Pglcode.hints.label}"
+                                                          value="#{bindings.Pglcode.inputValue}"
+                                                          label="#{bindings.Pglcode.hints.label}"
+                                                          model="#{bindings.Pglcode.listOfValuesModel}"
+                                                          required="#{bindings.Pglcode.hints.mandatory}"
+                                                          columns="#{bindings.Pglcode.hints.displayWidth}"
+                                                          shortDesc="#{bindings.Pglcode.hints.tooltip}">
+                              <f:validator binding="#{bindings.Pglcode.validator}"/>
+                            </af:inputComboboxListOfValues>
+                            <af:inputComboboxListOfValues id="pccenterId"
+                                                          popupTitle="Search and Select: #{bindings.Pccenter.hints.label}"
+                                                          value="#{bindings.Pccenter.inputValue}"
+                                                          label="#{bindings.Pccenter.hints.label}"
+                                                          model="#{bindings.Pccenter.listOfValuesModel}"
+                                                          required="#{bindings.Pccenter.hints.mandatory}"
+                                                          columns="#{bindings.Pccenter.hints.displayWidth}"
+                                                          shortDesc="#{bindings.Pccenter.hints.tooltip}">
+                              <f:validator binding="#{bindings.Pccenter.validator}"/>
+                            </af:inputComboboxListOfValues>
+                            <af:inputComboboxListOfValues id="plglcodeId"
+                                                          popupTitle="Search and Select: #{bindings.Plglcode.hints.label}"
+                                                          value="#{bindings.Plglcode.inputValue}"
+                                                          label="#{bindings.Plglcode.hints.label}"
+                                                          model="#{bindings.Plglcode.listOfValuesModel}"
+                                                          required="#{bindings.Plglcode.hints.mandatory}"
+                                                          columns="#{bindings.Plglcode.hints.displayWidth}"
+                                                          shortDesc="#{bindings.Plglcode.hints.tooltip}">
+                              <f:validator binding="#{bindings.Plglcode.validator}"/>
+                            </af:inputComboboxListOfValues>
+                            <af:inputComboboxListOfValues id="iclov1"
+                                                          popupTitle="Search and Select: #{bindings.Plccenter.hints.label}"
+                                                          value="#{bindings.Plccenter.inputValue}"
+                                                          label="#{bindings.Plccenter.hints.label}"
+                                                          model="#{bindings.Plccenter.listOfValuesModel}"
+                                                          required="#{bindings.Plccenter.hints.mandatory}"
+                                                          columns="#{bindings.Plccenter.hints.displayWidth}"
+                                                          shortDesc="#{bindings.Plccenter.hints.tooltip}">
+                              <f:validator binding="#{bindings.Plccenter.validator}"/>
+                            </af:inputComboboxListOfValues>
+                            <af:inputComboboxListOfValues id="sglcodeId"
+                                                          popupTitle="Search and Select: #{bindings.Sglcode.hints.label}"
+                                                          value="#{bindings.Sglcode.inputValue}"
+                                                          label="#{bindings.Sglcode.hints.label}"
+                                                          model="#{bindings.Sglcode.listOfValuesModel}"
+                                                          required="#{bindings.Sglcode.hints.mandatory}"
+                                                          columns="#{bindings.Sglcode.hints.displayWidth}"
+                                                          shortDesc="#{bindings.Sglcode.hints.tooltip}">
+                              <f:validator binding="#{bindings.Sglcode.validator}"/>
+                            </af:inputComboboxListOfValues>
+                            <af:inputComboboxListOfValues id="sccenterId"
+                                                          popupTitle="Search and Select: #{bindings.Sccenter.hints.label}"
+                                                          value="#{bindings.Sccenter.inputValue}"
+                                                          label="#{bindings.Sccenter.hints.label}"
+                                                          model="#{bindings.Sccenter.listOfValuesModel}"
+                                                          required="#{bindings.Sccenter.hints.mandatory}"
+                                                          columns="#{bindings.Sccenter.hints.displayWidth}"
+                                                          shortDesc="#{bindings.Sccenter.hints.tooltip}">
+                              <f:validator binding="#{bindings.Sccenter.validator}"/>
+                            </af:inputComboboxListOfValues>
+                            <af:inputComboboxListOfValues id="cglcodeId"
+                                                          popupTitle="Search and Select: #{bindings.Cglcode.hints.label}"
+                                                          value="#{bindings.Cglcode.inputValue}"
+                                                          label="#{bindings.Cglcode.hints.label}"
+                                                          model="#{bindings.Cglcode.listOfValuesModel}"
+                                                          required="#{bindings.Cglcode.hints.mandatory}"
+                                                          columns="#{bindings.Cglcode.hints.displayWidth}"
+                                                          shortDesc="#{bindings.Cglcode.hints.tooltip}">
+                              <f:validator binding="#{bindings.Cglcode.validator}"/>
+                            </af:inputComboboxListOfValues>
+                            <af:inputComboboxListOfValues id="cccenterId"
+                                                          popupTitle="Search and Select: #{bindings.Cccenter.hints.label}"
+                                                          value="#{bindings.Cccenter.inputValue}"
+                                                          label="#{bindings.Cccenter.hints.label}"
+                                                          model="#{bindings.Cccenter.listOfValuesModel}"
+                                                          required="#{bindings.Cccenter.hints.mandatory}"
+                                                          columns="#{bindings.Cccenter.hints.displayWidth}"
+                                                          shortDesc="#{bindings.Cccenter.hints.tooltip}">
+                              <f:validator binding="#{bindings.Cccenter.validator}"/>
+                            </af:inputComboboxListOfValues>
+                            <af:inputComboboxListOfValues id="srglcodeId"
+                                                          popupTitle="Search and Select: #{bindings.Srglcode.hints.label}"
+                                                          value="#{bindings.Srglcode.inputValue}"
+                                                          label="#{bindings.Srglcode.hints.label}"
+                                                          model="#{bindings.Srglcode.listOfValuesModel}"
+                                                          required="#{bindings.Srglcode.hints.mandatory}"
+                                                          columns="#{bindings.Srglcode.hints.displayWidth}"
+                                                          shortDesc="#{bindings.Srglcode.hints.tooltip}">
+                              <f:validator binding="#{bindings.Srglcode.validator}"/>
+                            </af:inputComboboxListOfValues>
+                            <af:inputComboboxListOfValues id="srccenterId"
+                                                          popupTitle="Search and Select: #{bindings.Srccenter.hints.label}"
+                                                          value="#{bindings.Srccenter.inputValue}"
+                                                          label="#{bindings.Srccenter.hints.label}"
+                                                          model="#{bindings.Srccenter.listOfValuesModel}"
+                                                          required="#{bindings.Srccenter.hints.mandatory}"
+                                                          columns="#{bindings.Srccenter.hints.displayWidth}"
+                                                          shortDesc="#{bindings.Srccenter.hints.tooltip}">
+                              <f:validator binding="#{bindings.Srccenter.validator}"/>
+                            </af:inputComboboxListOfValues>
+                            <af:inputComboboxListOfValues id="adjCcenterId"
+                                                          popupTitle="Search and Select: #{bindings.AdjCcenter.hints.label}"
+                                                          value="#{bindings.AdjCcenter.inputValue}"
+                                                          label="#{bindings.AdjCcenter.hints.label}"
+                                                          model="#{bindings.AdjCcenter.listOfValuesModel}"
+                                                          required="#{bindings.AdjCcenter.hints.mandatory}"
+                                                          columns="#{bindings.AdjCcenter.hints.displayWidth}"
+                                                          shortDesc="#{bindings.AdjCcenter.hints.tooltip}">
+                              <f:validator binding="#{bindings.AdjCcenter.validator}"/>
+                            </af:inputComboboxListOfValues>
+                            <af:inputComboboxListOfValues id="iclov2"
+                                                          popupTitle="Search and Select: #{bindings.AdjCcenter.hints.label}"
+                                                          value="#{bindings.AdjCcenter.inputValue}"
+                                                          label="#{bindings.AdjCcenter.hints.label}"
+                                                          model="#{bindings.AdjCcenter.listOfValuesModel}"
+                                                          required="#{bindings.AdjCcenter.hints.mandatory}"
+                                                          columns="#{bindings.AdjCcenter.hints.displayWidth}"
+                                                          shortDesc="#{bindings.AdjCcenter.hints.tooltip}">
+                              <f:validator binding="#{bindings.AdjCcenter.validator}"/>
+                            </af:inputComboboxListOfValues>
+                            <af:inputComboboxListOfValues id="iclov3"
+                                                          popupTitle="Search and Select: #{bindings.Cglcode.hints.label}"
+                                                          value="#{bindings.Cglcode.inputValue}"
+                                                          label="#{bindings.Cglcode.hints.label}"
+                                                          model="#{bindings.Cglcode.listOfValuesModel}"
+                                                          required="#{bindings.Cglcode.hints.mandatory}"
+                                                          columns="#{bindings.Cglcode.hints.displayWidth}"
+                                                          shortDesc="#{bindings.Cglcode.hints.tooltip}">
+                              <f:validator binding="#{bindings.Cglcode.validator}"/>
+                            </af:inputComboboxListOfValues>
+                            <af:inputComboboxListOfValues id="iclov4"
+                                                          popupTitle="Search and Select: #{bindings.Cccenter.hints.label}"
+                                                          value="#{bindings.Cccenter.inputValue}"
+                                                          label="#{bindings.Cccenter.hints.label}"
+                                                          model="#{bindings.Cccenter.listOfValuesModel}"
+                                                          required="#{bindings.Cccenter.hints.mandatory}"
+                                                          columns="#{bindings.Cccenter.hints.displayWidth}"
+                                                          shortDesc="#{bindings.Cccenter.hints.tooltip}">
+                              <f:validator binding="#{bindings.Cccenter.validator}"/>
+                            </af:inputComboboxListOfValues>
+                          </af:panelFormLayout>
+                        </f:facet>
+                        <f:facet name="second"/>
+                      </af:panelSplitter>
                     </af:showDetailItem>
-                    <af:showDetailItem id="tab1" text="Store" disabled="#{bindings.Itemid.inputValue==null}"/>
+                    <af:showDetailItem id="tab1" text="Store" disabled="#{bindings.Itemid.inputValue==null}">
+                      <af:panelCollection id="pc1">
+                        <f:facet name="menus"/>
+                        <f:facet name="toolbar">
+                          <af:toolbar id="t3">
+                            <af:button actionListener="#{bindings.CreateInsert1.execute}" text="Add Store"
+                                       disabled="#{!bindings.CreateInsert1.enabled}" id="b7"/>
+                            <af:button actionListener="#{bindings.Delete1.execute}" text="Delete Store"
+                                       disabled="#{!bindings.Delete1.enabled}" id="b8"/>
+                          </af:toolbar>
+                        </f:facet>
+                        <f:facet name="statusbar"/>
+                        <af:table value="#{bindings.InStoreItemsDetCRUD.collectionModel}" var="row"
+                                  rows="#{bindings.InStoreItemsDetCRUD.rangeSize}"
+                                  emptyText="#{bindings.InStoreItemsDetCRUD.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  rowBandingInterval="0"
+                                  selectedRowKeys="#{bindings.InStoreItemsDetCRUD.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.InStoreItemsDetCRUD.collectionModel.makeCurrent}"
+                                  rowSelection="single" fetchSize="#{bindings.InStoreItemsDetCRUD.rangeSize}" id="t2"
+                                  partialTriggers="::b7 ::b8" autoHeightRows="5" scrollPolicy="page"
+                                  displayRow="selected">
+                          <af:column headerText="#{bindings.InStoreItemsDetCRUD.hints.Storeid.label}" id="c1"
+                                     width="200" displayIndex="-1">
+                            <af:selectOneChoice value="#{row.bindings.Storeid.inputValue}"
+                                                label="#{row.bindings.Storeid.label}"
+                                                required="#{bindings.InStoreItemsDetCRUD.hints.Storeid.mandatory}"
+                                                shortDesc="#{bindings.InStoreItemsDetCRUD.hints.Storeid.tooltip}"
+                                                id="soc8">
+                              <f:selectItems value="#{row.bindings.Storeid.items}" id="si8"/>
+                              <f:validator binding="#{row.bindings.Storeid.validator}"/>
+                            </af:selectOneChoice>
+                          </af:column>
+                          <af:column headerText="#{bindings.InStoreItemsDetCRUD.hints.Shelfid.label}" id="c2">
+                            <af:inputText value="#{row.bindings.Shelfid.inputValue}"
+                                          label="#{bindings.InStoreItemsDetCRUD.hints.Shelfid.label}"
+                                          required="#{bindings.InStoreItemsDetCRUD.hints.Shelfid.mandatory}"
+                                          columns="#{bindings.InStoreItemsDetCRUD.hints.Shelfid.displayWidth}"
+                                          maximumLength="#{bindings.InStoreItemsDetCRUD.hints.Shelfid.precision}"
+                                          shortDesc="#{bindings.InStoreItemsDetCRUD.hints.Shelfid.tooltip}" id="it5">
+                              <f:validator binding="#{row.bindings.Shelfid.validator}"/>
+                            </af:inputText>
+                          </af:column>
+                        </af:table>
+                      </af:panelCollection>
+                    </af:showDetailItem>
                   </af:panelTabbed>
                 </af:gridCell>
               </af:gridRow>

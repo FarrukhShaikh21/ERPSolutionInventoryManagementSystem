@@ -59,6 +59,9 @@
   <ViewUsage
     Name="InItemsViewCRUD"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InItemsView"/>
+  <ViewUsage
+    Name="InStoreItemsDetCRUD"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InStoreItemsView"/>
   <ViewLinkUsage
     Name="FkInRecItemLinRnoteseqLink1"
     ViewLinkObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.FkInRecItemLinRnoteseqLink"
@@ -82,6 +85,12 @@
     ViewLinkObjectName="erpsolims.erpsolimsmodel.erpsolimslink.InRecItemsLinesInRecItemsSeriallveRnotedetailseqLink"
     SrcViewUsageName="erpsolims.erpsolimsmodel.erpsolimsam.ERPSolIMSAppModule.InReceivedItemsLinesDetCRUD"
     DstViewUsageName="erpsolims.erpsolimsmodel.erpsolimsam.ERPSolIMSAppModule.InReceivedItemsSnoDetCRUD"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="InItemsInStoreItemsItemIDLink1"
+    ViewLinkObjectName="erpsolims.erpsolimsmodel.erpsolimslink.InItemsInStoreItemsItemIDLink"
+    SrcViewUsageName="erpsolims.erpsolimsmodel.erpsolimsam.ERPSolIMSAppModule.InItemsViewCRUD"
+    DstViewUsageName="erpsolims.erpsolimsmodel.erpsolimsam.ERPSolIMSAppModule.InStoreItemsDetCRUD"
     Reversed="false"/>
   <ResourceBundle>
     <PropertiesBundle

@@ -14,7 +14,6 @@
     Cardinality="1"
     Source="true"
     Owner="erpsolims.erpsolimsmodel.erpsolimseo.InItems"
-    DeleteContainee="true"
     LockLevel="NONE">
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
@@ -29,8 +28,7 @@
   <AssociationEnd
     Name="SoProducts"
     Cardinality="-1"
-    Owner="erpsolims.erpsolimsmodel.erpsolimseo.SoProducts"
-    HasOwner="true">
+    Owner="erpsolims.erpsolimsmodel.erpsolimseo.SoProducts">
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="SoProducts"/>
