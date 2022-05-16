@@ -34,7 +34,7 @@
                                    icon="#{resource['images:imgFind.png']}" iconPosition="top" accessKey="s"/>
                         <af:button text="Print Preview" id="b14" icon="#{resource['images:imgPrintPreview.png']}"
                                    iconPosition="top"
-                                   action="#{pageFlowScope.ERPSolIMSPageFlowBean.doERPSolGRNReport}"/>
+                                   action="#{pageFlowScope.ERPSolIMSPageFlowBean.doERPSolGRNReport}" rendered="false"/>
                         <af:button text="Close Form" id="b13" icon="#{resource['images:imgExitForm.png']}"
                                    action="ERP-ACT-EXIT-FORM-IMS" iconPosition="top"/>
                         <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
