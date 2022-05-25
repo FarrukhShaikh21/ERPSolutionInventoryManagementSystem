@@ -10,7 +10,8 @@
   DBObjectName="IN_RECEIVED_ITEMS_LINES"
   AliasName="InReceivedItemsLines"
   BindingStyle="OracleName"
-  RowClass="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsLinesImpl">
+  RowClass="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsLinesImpl"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Init|Access|DML"/>
     <Attr Name="_superClass" Value="erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsEntityImpl"/>
@@ -691,6 +692,23 @@
       <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InReceivedItemsLines.RecvUomsid"/>
     </AttrArray>
   </Key>
+  <validation:ExpressionValidationBean
+    Name="InReceivedItemsLinesShelfQTYBR"
+    OperandType="EXPR"
+    Inverse="false">
+    <validation:MsgIds>
+      <validation:Item
+        Value="ERR_SHELF_QTY"/>
+    </validation:MsgIds>
+    <validation:TransientExpression
+      trustMode="untrusted"><![CDATA[if (Shelfqty==null||Shelfqty<=0 )
+{
+adf.error.raise("ERR_SHELF_QTY");
+return false;
+}
+
+return true;]]></validation:TransientExpression>
+  </validation:ExpressionValidationBean>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="erpsolims.erpsolimsmodel.ERPSolIMSModelBundle"/>
