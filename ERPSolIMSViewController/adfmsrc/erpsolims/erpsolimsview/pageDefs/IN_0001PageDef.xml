@@ -84,5 +84,10 @@
             Action="createInsertRow"/>
     <action IterBinding="InStoreItemsDetCRUDIterator" id="Delete1" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <attributeValues IterBinding="InItemsViewCRUDIterator" id="WcpShortName">
+      <AttrNames>
+        <Item Value="WcpShortName"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

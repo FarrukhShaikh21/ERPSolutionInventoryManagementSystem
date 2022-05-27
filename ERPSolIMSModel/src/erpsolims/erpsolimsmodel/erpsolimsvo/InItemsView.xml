@@ -1428,6 +1428,12 @@
     EntityAttrName="ItemCost"
     EntityUsage="InItems"
     AliasName="ITEM_COST"/>
+  <ViewAttribute
+    Name="WcpShortName"
+    PrecisionRule="true"
+    EntityAttrName="WcpShortName"
+    EntityUsage="InItems"
+    AliasName="WCP_SHORT_NAME"/>
   <ViewCriteria
     Name="InItemsViewFindVC"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InItemsView"

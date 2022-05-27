@@ -2313,6 +2313,26 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <Attribute
+    Name="WcpShortName"
+    Precision="10"
+    ColumnName="WCP_SHORT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="IN_ITEMS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InItems.WcpShortName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="InReceivedItemsLines"
     Association="erpsolims.erpsolimsmodel.erpsolimsassoc.InItemsInReceiveItemsLinesItemRefIdAssoc"

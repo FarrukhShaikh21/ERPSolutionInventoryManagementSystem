@@ -231,6 +231,24 @@
                           </af:inputText>
                         </af:gridCell>
                       </af:gridRow>
+                      <af:gridRow id="gr13" height="30px">
+                        <af:gridCell id="gc31" valign="middle" halign="center">
+                          <af:outputLabel value="#{bindings.WcpShortName.hints.label}" id="ol13"/>
+                        </af:gridCell>
+                        <af:gridCell id="gc32" halign="stretch">
+                          <af:inputText value="#{bindings.WcpShortName.inputValue}"
+                                        label="#{bindings.WcpShortName.hints.label}"
+                                        required="#{bindings.WcpShortName.hints.mandatory}"
+                                        columns="#{bindings.WcpShortName.hints.displayWidth}"
+                                        maximumLength="#{bindings.WcpShortName.hints.precision}"
+                                        shortDesc="#{bindings.WcpShortName.hints.tooltip}" id="it7" simple="true"
+                                        contentStyle="width:50%">
+                            <f:validator binding="#{bindings.WcpShortName.validator}"/>
+                          </af:inputText>
+                        </af:gridCell>
+                        <af:gridCell id="gc33"/>
+                        <af:gridCell id="gc34"/>
+                      </af:gridRow>
                     </af:panelGridLayout>
                   </af:panelBox>
                 </af:gridCell>

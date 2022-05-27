@@ -141,6 +141,7 @@ public class InItemsImpl extends ERPSolGlobalsEntityImpl {
         Itgroupidn,
         Discount,
         ItemCost,
+        WcpShortName,
         InReceivedItemsLines,
         InItemTransferNoteLines,
         SoProducts,
@@ -285,6 +286,7 @@ public class InItemsImpl extends ERPSolGlobalsEntityImpl {
     public static final int ITGROUPIDN = AttributesEnum.Itgroupidn.index();
     public static final int DISCOUNT = AttributesEnum.Discount.index();
     public static final int ITEMCOST = AttributesEnum.ItemCost.index();
+    public static final int WCPSHORTNAME = AttributesEnum.WcpShortName.index();
     public static final int INRECEIVEDITEMSLINES = AttributesEnum.InReceivedItemsLines.index();
     public static final int INITEMTRANSFERNOTELINES = AttributesEnum.InItemTransferNoteLines.index();
     public static final int SOPRODUCTS = AttributesEnum.SoProducts.index();
@@ -2158,6 +2160,22 @@ public class InItemsImpl extends ERPSolGlobalsEntityImpl {
      */
     public void setItemCost(BigDecimal value) {
         setAttributeInternal(ITEMCOST, value);
+    }
+
+    /**
+     * Gets the attribute value for WcpShortName, using the alias name WcpShortName.
+     * @return the value of WcpShortName
+     */
+    public String getWcpShortName() {
+        return (String) getAttributeInternal(WCPSHORTNAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for WcpShortName.
+     * @param value value to set the WcpShortName
+     */
+    public void setWcpShortName(String value) {
+        setAttributeInternal(WCPSHORTNAME, value);
     }
 
     /**
