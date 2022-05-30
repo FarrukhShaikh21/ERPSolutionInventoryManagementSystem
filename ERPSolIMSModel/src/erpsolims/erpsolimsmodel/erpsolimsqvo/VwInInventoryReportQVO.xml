@@ -61,11 +61,33 @@
   <ViewAccessor
     Name="AccVWDocTypeForInUnsubmit"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsqvo.VWDocTypeForInUnsubmitQVO"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="P_ADF_PROJECTID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA["IN"]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="P_ADF_USERID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel.doGetUserCode()]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ViewAccessor
     Name="AccVWDocumentIdForInUnsubmitQVO"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsqvo.VWDocumentIdForInUnsubmitQVO"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="P_ADF_DOCTYPEID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[txtDoctypeId==null?"0":txtDoctypeId]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="P_ADF_LOCATIONID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[Locationid==null?"0":Locationid]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LovCompanyid"
     ListVOName="AccAllCompanyView"

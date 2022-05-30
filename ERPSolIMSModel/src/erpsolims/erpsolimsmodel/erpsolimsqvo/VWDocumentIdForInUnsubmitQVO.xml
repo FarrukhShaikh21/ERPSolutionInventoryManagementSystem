@@ -21,11 +21,25 @@
   <Variable
     Name="P_ADF_LOCATIONID"
     Kind="where"
-    Type="java.lang.String"/>
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
   <Variable
     Name="P_ADF_DOCTYPEID"
     Kind="where"
-    Type="java.lang.String"/>
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
   <SQLQuery><![CDATA[SELECT  SO.STNNO as DOCUMENT_ID,           
         SO.DATE_OF_TRANSFER,           
         STORENAME(SO.SENDINGSTOREID) STORE_NAME,           
@@ -63,6 +77,12 @@ ORDER BY 2 DESC,1 DESC]]></SQLQuery>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="18"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="DateOfTransfer"
@@ -73,10 +93,18 @@ ORDER BY 2 DESC,1 DESC]]></SQLQuery>
     ColumnType="DATE"
     AliasName="DATE_OF_TRANSFER"
     Expression="DATE_OF_TRANSFER"
-    SQLType="TIMESTAMP">
+    SQLType="DATE">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="7"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimsqvo.VWDocumentIdForInUnsubmitQVO.DateOfTransfer_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="StoreName"
@@ -88,10 +116,17 @@ ORDER BY 2 DESC,1 DESC]]></SQLQuery>
     ColumnType="VARCHAR2"
     AliasName="STORE_NAME"
     Expression="STORE_NAME"
-    SQLType="VARCHAR">
+    SQLType="VARCHAR"
+    IsQueriable="false">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="4000"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="DocTypeId"
@@ -103,7 +138,8 @@ ORDER BY 2 DESC,1 DESC]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="DOC_TYPE_ID"
     Expression="DOC_TYPE_ID"
-    SQLType="CHAR">
+    SQLType="VARCHAR"
+    IsQueriable="false">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="3"/>
     </DesignTime>
@@ -118,7 +154,8 @@ ORDER BY 2 DESC,1 DESC]]></SQLQuery>
     ColumnType="VARCHAR2"
     AliasName="LOCATIONID"
     Expression="LOCATIONID"
-    SQLType="VARCHAR">
+    SQLType="VARCHAR"
+    IsQueriable="false">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>

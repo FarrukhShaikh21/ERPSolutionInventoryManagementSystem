@@ -43,7 +43,8 @@
                         <af:selectOneChoice value="#{bindings.txtDoctypeId.inputValue}"
                                             label="#{bindings.txtDoctypeId.label}"
                                             required="#{bindings.txtDoctypeId.hints.mandatory}"
-                                            shortDesc="#{bindings.txtDoctypeId.hints.tooltip}" id="soc2">
+                                            shortDesc="#{bindings.txtDoctypeId.hints.tooltip}" id="soc2"
+                                            autoSubmit="true">
                             <f:selectItems value="#{bindings.txtDoctypeId.items}" id="si2"/>
                             <f:validator binding="#{bindings.txtDoctypeId.validator}"/>
                         </af:selectOneChoice>
@@ -55,9 +56,9 @@
                                                       required="#{bindings.txtDocumentID.hints.mandatory}"
                                                       columns="#{bindings.txtDocumentID.hints.displayWidth}"
                                                       shortDesc="#{bindings.txtDocumentID.hints.tooltip}"
-                                                      partialTriggers="soc2">
+                                                      partialTriggers="soc2" autoSubmit="true">
                             <f:validator binding="#{bindings.txtDocumentID.validator}"/>
-                            <af:autoSuggestBehavior/>
+                            <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolIMSPageFlowBean.doERPSolGetAutoSuggestedInUnsubmitDoc}"/>
                         </af:inputComboboxListOfValues>
                         <af:inputText value="#{bindings.Description.inputValue}"
                                       label="#{bindings.Description.hints.label}"

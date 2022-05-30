@@ -21,11 +21,25 @@
   <Variable
     Name="P_ADF_PROJECTID"
     Kind="where"
-    Type="java.lang.String"/>
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
   <Variable
     Name="P_ADF_USERID"
     Kind="where"
-    Type="java.lang.String"/>
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
   <SQLQuery><![CDATA[select m.DocTypeId , m.module_name   
   from sys_program m, sys_users_detail d    
  where m.moduleid = d.moduleid    
