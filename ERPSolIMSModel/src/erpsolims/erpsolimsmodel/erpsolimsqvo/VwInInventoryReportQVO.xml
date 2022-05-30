@@ -58,6 +58,14 @@
     Name="AccAllStoresView"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllStoresView"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccVWDocTypeForInUnsubmit"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsqvo.VWDocTypeForInUnsubmitQVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccVWDocumentIdForInUnsubmitQVO"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsqvo.VWDocumentIdForInUnsubmitQVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovCompanyid"
     ListVOName="AccAllCompanyView"
@@ -229,6 +237,49 @@
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="StoreName"/>
       <Item Value="Storeid"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovtxtDoctypeId"
+    ListVOName="AccVWDocTypeForInUnsubmit"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtDoctypeId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Doctypeid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ModuleName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovtxtDocumentID"
+    ListVOName="AccVWDocumentIdForInUnsubmitQVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtDocumentID"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DocumentId"/>
+      <Item Value="Description"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="DocumentId"/>
+      <Item Value="Description"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -555,13 +606,16 @@
     Type="java.lang.String"
     ColumnType="VARCHAR2"
     AliasName="VIEW_ATTR"
-    SQLType="VARCHAR">
+    SQLType="VARCHAR"
+    LOVName="LovtxtDoctypeId">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
           ResId="erpsolims.erpsolimsmodel.erpsolimsqvo.VwInInventoryReportQVO.txtDoctypeId_LABEL"/>
         <DISPLAYWIDTH
           Value="20"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -574,13 +628,16 @@
     Type="java.lang.String"
     ColumnType="VARCHAR2"
     AliasName="VIEW_ATTR"
-    SQLType="VARCHAR">
+    SQLType="VARCHAR"
+    LOVName="LovtxtDocumentID">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
           ResId="erpsolims.erpsolimsmodel.erpsolimsqvo.VwInInventoryReportQVO.txtDocumentID_LABEL"/>
         <DISPLAYWIDTH
           Value="20"/>
+        <CONTROLTYPE
+          Value="combo_lov"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
