@@ -29,6 +29,8 @@
     <page path="/IN_0109.jsf" usageId="erpsolims_erpsolimsview_IN_0109PageDef"/>
     <page path="/WEB-INF/ERPSOLIMSBTF.xml#ERPSOLIMSBTF@ExecuteWithParamsReverseIMS"
           usageId="erpsolims_erpsolimsview_ERPSOLIMSBTF_ERPSOLIMSBTF_ExecuteWithParamsPageDef111"/>
+    <page path="/WEB-INF/ERPSOLIMSBTF.xml#ERPSOLIMSBTF@doSetInvReportDefForUnsubmit"
+          usageId="erpsolims_erpsolimsview_ERPSOLIMSBTF_ERPSOLIMSBTF_doSetInventoryReportDefaults1PageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="erpsolims_erpsolimsview_IN_0004PageDef" path="erpsolims.erpsolimsview.pageDefs.IN_0004PageDef"/>
@@ -62,6 +64,8 @@
     <page id="erpsolims_erpsolimsview_IN_0109PageDef" path="erpsolims.erpsolimsview.pageDefs.IN_0109PageDef"/>
     <page id="erpsolims_erpsolimsview_ERPSOLIMSBTF_ERPSOLIMSBTF_ExecuteWithParamsPageDef111"
           path="erpsolims.erpsolimsview.pageDefs.ERPSOLIMSBTF_ERPSOLIMSBTF_ExecuteWithParamsPageDef111"/>
+    <page id="erpsolims_erpsolimsview_ERPSOLIMSBTF_ERPSOLIMSBTF_doSetInventoryReportDefaults1PageDef"
+          path="erpsolims.erpsolimsview.pageDefs.ERPSOLIMSBTF_ERPSOLIMSBTF_doSetInventoryReportDefaults1PageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="ERPSolTempAppModuleDataControl" Package="erpsoltemp.erpsoltempmodel.erpsoltempam"

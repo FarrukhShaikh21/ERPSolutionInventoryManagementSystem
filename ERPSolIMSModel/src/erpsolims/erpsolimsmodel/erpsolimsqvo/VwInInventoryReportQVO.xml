@@ -640,6 +640,10 @@
           Value="combo_lov"/>
       </SchemaBasedProperties>
     </Properties>
+    <Dependencies>
+      <Item
+        Value="txtDoctypeId"/>
+    </Dependencies>
   </ViewAttribute>
   <ViewAttribute
     Name="Description"
@@ -657,6 +661,12 @@
           Value="20"/>
       </SchemaBasedProperties>
     </Properties>
+    <Dependencies>
+      <Item
+        Value="txtDoctypeId"/>
+      <Item
+        Value="txtDocumentID"/>
+    </Dependencies>
   </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="Pk"/>
@@ -673,6 +683,13 @@
     <Method
       Name="doExecuteStockAgingProcedure"
       MethodName="doExecuteStockAgingProcedure">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+    </Method>
+    <Method
+      Name="doSetERPSolINDocumentUnsubmit"
+      MethodName="doSetERPSolINDocumentUnsubmit">
       <Return
         Name="_return_type_"
         Type="void"/>

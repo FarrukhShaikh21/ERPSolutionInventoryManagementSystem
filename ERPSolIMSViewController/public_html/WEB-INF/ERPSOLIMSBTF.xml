@@ -136,6 +136,15 @@
         <fixed-outcome>ERP-SOL-ACT-GOTO-MAIN</fixed-outcome>
       </outcome>
     </method-call>
+    <view id="IN_0109">
+      <page>/IN_0109.jsf</page>
+    </view>
+    <method-call id="doSetInvReportDefForUnsubmit">
+      <method>#{bindings.doSetInventoryReportDefaults.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-ACT-IN-0109</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__16">
       <from-activity-id>ExecuteWithParamsTransactionIMS</from-activity-id>
       <control-flow-case id="__17">
@@ -174,6 +183,10 @@
       <control-flow-case id="__48">
         <from-outcome>ERP-ACT-IN-0001</from-outcome>
         <to-activity-id>IN_0001</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__55">
+        <from-outcome>ERP-ACT-IN-0109</from-outcome>
+        <to-activity-id>doSetInvReportDefForUnsubmit</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__33">
@@ -305,6 +318,13 @@
       <control-flow-case id="__54">
         <from-outcome>ERP-SOL-ACT-GOTO-MAIN</from-outcome>
         <to-activity-id>ERPSolIMSMain</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__56">
+      <from-activity-id>doSetInvReportDefForUnsubmit</from-activity-id>
+      <control-flow-case id="__57">
+        <from-outcome>ERP-ACT-IN-0109</from-outcome>
+        <to-activity-id>IN_0109</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>

@@ -67,5 +67,35 @@ public class VwInInventoryReportQVOImpl extends ViewObjectImpl implements VwInIn
 
     }
 
+
+    public void doSetERPSolINDocumentUnsubmit() {
+        CallableStatement cs=this.getDBTransaction().createCallableStatement("begin ?:=PKG_GRN.FUNC_UNSUBMIT_DOCUMENT('"+this.first().getAttribute("txtDoctypeId")+"','"+this.first().getAttribute("txtDocumentID")+"','"+ERPSolGlobClassModel.doGetUserCode()+"'); END;", 1);
+        System.out.println("begin ?:=PKG_GRN.FUNC_UNSUBMIT_DOCUMENT('"+this.first().getAttribute("txtDoctypeId")+"','"+this.first().getAttribute("txtDocumentID")+"','"+ERPSolGlobClassModel.doGetUserCode()+"'); END;");
+        try {
+            cs.registerOutParameter(1, Types.VARCHAR);
+            cs.executeUpdate();
+            
+    //            if (!cs.getString(1).equals("ERPSOLSUCCESS")) {
+                JboException jboex=new JboException(cs.getString(1));
+                jboex.setSeverity(JboException.SEVERITY_WARNING); 
+                throw new JboException(jboex);
+    //           }
+    //            this.getDBTransaction().commit();
+        } catch (SQLException e) {
+        //            this.getCurrentRow().setAttribute("Submit", "N");
+            this.getDBTransaction().commit();
+            System.out.println(e.getMessage()+ "this is message");
+            throw new JboException("Unable to supervise ");
+        }
+        finally{
+            try {
+                cs.close();
+                System.out.println("closing----");
+            } catch (SQLException e) {
+            }
+        }
+
+        
+    }
 }
 

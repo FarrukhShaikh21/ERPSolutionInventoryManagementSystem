@@ -9,5 +9,7 @@ public interface VwInInventoryReportQVO extends ViewObject {
     void doSetInventoryReportDefaults();
 
     void doExecuteStockAgingProcedure();
+
+    void doSetERPSolINDocumentUnsubmit();
 }
 

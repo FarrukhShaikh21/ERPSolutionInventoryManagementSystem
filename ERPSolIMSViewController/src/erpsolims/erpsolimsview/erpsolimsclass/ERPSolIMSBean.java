@@ -510,6 +510,26 @@ public class ERPSolIMSBean {
         doErpSolOpenReportTab(pReportUrl);
         return null;
     }
-    
+
+    public List<SelectItem> doERPSolGetAutoSuggestedInUnsubmitDoc(String pStringValues) {
+        List<SelectItem> ResultList=new ArrayList<SelectItem>();
+        System.out.println("a");
+        BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
+        DCIteratorBinding ERPSolIB=(DCIteratorBinding)ERPSolbc.get("VwInInventoryReportROIterator");
+        ApplicationModule ERPSolAM=ERPSolIB.getViewObject().getApplicationModule();
+        System.out.println("b");
+        String ERPLocid=ERPSolGlobClassModel.doGetUserLocationCode();
+        AttributeBinding ERPDocType =(AttributeBinding)ERPSolbc.getControlBinding("txtDoctypeId");
+        ViewObject vo=ERPSolAM.findViewObject("VWDocumentIdForInUnsubmitAutoSuggestRO");
+        vo.setNamedWhereClauseParam("P_ADF_DOCTYPEID", ERPDocType.getInputValue());
+        vo.setNamedWhereClauseParam("P_ADF_LOCATIONID", ERPLocid);
+        vo.executeQuery();
+        System.out.println("d");
+        System.out.println(ERPLocid);//ERPSolGlobalViewBean.
+        ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "VWDocumentIdForInUnsubmitAutoSuggestRO",
+                                                            " UPPER(CONCAT(DOCUMENT_ID,STORE_NAME))", "DocumentId", "Description", 10);
+        return ResultList;
+        
+    }    
 }
 

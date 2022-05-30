@@ -263,7 +263,7 @@
       <property
          name="fromOutcome">ERP-SOL-ACT-GOTO-MAIN</property>
       <property
-         name="sdm:polyPoints">T50,-202.64844,305.39648,-300.64844,249.09766,B50</property>
+         name="sdm:polyPoints">T50,-202.64844,305.39648,-304.14844,254.65866,B44</property>
    </ControlFlowCase>
    <WildcardControlFlowRule
       id="WildcardControlFlowRule24">
@@ -647,5 +647,53 @@
          name="fromOutcome">ERP-SOL-ACT-GOTO-MAIN</property>
       <property
          name="sdm:polyPoints">T50,-264.64844,58.097656,-191.31934,113.34473,T50</property>
+   </ControlFlowCase>
+   <View
+      id="View57">
+      <property
+         name="activityId">IN_0109</property>
+      <property
+         name="page">/IN_0109.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>IN_0109&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">630.7988</property>
+      <property
+         name="x">-382.5</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase58"
+      from="MethodCall7"
+      to="MethodCall59">
+      <property
+         name="fromOutcome">ERP-ACT-IN-0109</property>
+      <property
+         name="sdm:polyPoints">L50,225.6875,72.149414,-320.28418,415.09766,T50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall59">
+      <property
+         name="activityId">doSetInvReportDefForUnsubmit</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>doSetInvReportDefForUnsubmit&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">469.44824</property>
+      <property
+         name="x">-320.28418</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase60"
+      from="MethodCall59"
+      to="View57">
+      <property
+         name="fromOutcome">ERP-ACT-IN-0109</property>
+      <property
+         name="sdm:polyPoints">B50,-320.28418,523.09766,-382.5,576.44824,T50</property>
    </ControlFlowCase>
 </SDM>
