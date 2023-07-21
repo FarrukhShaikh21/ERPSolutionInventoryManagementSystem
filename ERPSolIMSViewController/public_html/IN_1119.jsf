@@ -62,6 +62,14 @@
                                                                    id="ot1" partialTriggers="txtStoreNameId"/>
                                                 </af:panelGroupLayout>
                                             </af:panelLabelAndMessage>
+                                            <af:selectOneChoice value="#{bindings.Productgroup.inputValue}"
+                                                                label="#{bindings.Productgroup.label}"
+                                                                required="#{bindings.Productgroup.hints.mandatory}"
+                                                                shortDesc="#{bindings.Productgroup.hints.tooltip}"
+                                                                id="soc4" contentStyle="width:185px" autoSubmit="true">
+                                                <f:selectItems value="#{bindings.Productgroup.items}" id="si4"/>
+                                                <f:validator binding="#{bindings.Productgroup.validator}"/>
+                                            </af:selectOneChoice>
                                             <af:panelLabelAndMessage label="#{bindings.txtProductName.hints.label}"
                                                                      id="plam2">
                                                 <af:panelGroupLayout id="pgl3" layout="horizontal">
@@ -110,14 +118,6 @@
                                                     </af:inputText>
                                                 </af:panelGroupLayout>
                                             </af:panelLabelAndMessage>
-                                            <af:selectOneChoice value="#{bindings.Productgroup.inputValue}"
-                                                                label="#{bindings.Productgroup.label}"
-                                                                required="#{bindings.Productgroup.hints.mandatory}"
-                                                                shortDesc="#{bindings.Productgroup.hints.tooltip}"
-                                                                id="soc4" contentStyle="width:185px" autoSubmit="true">
-                                                <f:selectItems value="#{bindings.Productgroup.items}" id="si4"/>
-                                                <f:validator binding="#{bindings.Productgroup.validator}"/>
-                                            </af:selectOneChoice>
                                             <af:panelLabelAndMessage label="#{bindings.txtFromDate.hints.label}"
                                                                      id="plam3">
                                                 <af:panelGroupLayout id="pgl4" layout="horizontal">

@@ -46,7 +46,7 @@
     <ParameterMap>
       <PIMap Variable="P_SIGROUPID">
         <TransientExpression
-          trustMode="untrusted"><![CDATA[Productgroup==null?"0":Productgroup]]></TransientExpression>
+          trustMode="untrusted"><![CDATA[Productgroup]]></TransientExpression>
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
@@ -185,7 +185,7 @@
       <Item Value="Productid"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
-      <Item Value="ModelNo"/>
+      <Item Value="Productid"/>
       <Item Value="ItemRefId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
@@ -547,12 +547,12 @@
     LOVName="LovtxtProductName">
     <Properties>
       <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo_lov"/>
         <DISPLAYWIDTH
           Value="20"/>
         <LABEL
           ResId="erpsolims.erpsolimsmodel.erpsolimsqvo.VwInInventoryReportQVO.txtProductName_LABEL"/>
+        <CONTROLTYPE
+          Value="combo_lov"/>
       </SchemaBasedProperties>
     </Properties>
     <Dependencies>
