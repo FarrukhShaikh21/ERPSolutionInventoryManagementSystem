@@ -389,7 +389,7 @@ public class ERPSolIMSBean {
         reportParameter+="&P_LOCID="+(ERPLocationid.getInputValue()==null?"":ERPLocationid.getInputValue());
         reportParameter+="&P_STOREID="+(ERPStoreid.getInputValue()==null?"":ERPStoreid.getInputValue());
     //        reportParameter+="&P_STOREID_ID="+(ERPStoreid.getInputValue()==null?"":ERPStoreid.getInputValue());
-        reportParameter+="&SIGROUPID="+(ERPProductgroup.getInputValue()==null?"":ERPProductgroup.getInputValue());
+        reportParameter+="&P_SIGROUPID="+(ERPProductgroup.getInputValue()==null?"":ERPProductgroup.getInputValue());
         reportParameter+="&P_PRODUCT_ID="+(ERPProductid.getInputValue()==null?"":ERPProductid.getInputValue());
         reportParameter+="&FROM_DATE="+(ERPFromDate.getInputValue()==null?"":doERPSolGetFormatDate(""+ERPFromDate.getInputValue() ) );
         reportParameter+="&TO_DATE="+(ERPToDate.getInputValue()==null?"":doERPSolGetFormatDate(""+ERPToDate.getInputValue())  );
