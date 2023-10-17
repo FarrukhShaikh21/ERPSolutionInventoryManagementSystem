@@ -6,6 +6,8 @@
     <variableIterator id="variables"/>
     <iterator Binds="InReceivedItemsSnoDetCRUD" RangeSize="25" DataControl="ERPSolIMSAppModuleDataControl"
               id="InReceivedItemsSnoDetCRUDIterator"/>
+    <iterator Binds="InReceivedItemsCRUD" RangeSize="25" DataControl="ERPSolIMSAppModuleDataControl"
+              id="InReceivedItemsCRUDIterator"/>
   </executables>
   <bindings>
     <tree IterBinding="InReceivedItemsSnoDetCRUDIterator" id="InReceivedItemsSnoDetCRUD">
@@ -18,5 +20,21 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <action IterBinding="InReceivedItemsSnoDetCRUDIterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <attributeValues IterBinding="InReceivedItemsCRUDIterator" id="Posted">
+      <AttrNames>
+        <Item Value="Posted"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="doERPSolRemoveGRNBox" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="doERPSolRemoveGRNBox" IsViewObjectMethod="true"
+                  DataControl="ERPSolIMSAppModuleDataControl"
+                  InstanceName="data.ERPSolIMSAppModuleDataControl.InReceivedItemsSnoDetCRUD"
+                  ReturnName="data.ERPSolIMSAppModuleDataControl.methodResults.doERPSolRemoveGRNBox_ERPSolIMSAppModuleDataControl_InReceivedItemsSnoDetCRUD_doERPSolRemoveGRNBox_result"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="ERPSolIMSAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="ERPSolIMSAppModuleDataControl"/>
   </bindings>
 </pageDefinition>

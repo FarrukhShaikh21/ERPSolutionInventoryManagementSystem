@@ -345,7 +345,12 @@
                               id="t2" partialTriggers="::b7 ::b8 :::sourceDocRefId" autoHeightRows="5" scrollPolicy="page"
                               columnStretching="column:c3">
                       <af:column id="c4" width="80" displayIndex="-1">
-                        <af:button text="IMEI" id="b11" action="ACT-ERP-IN-0004-IMEI"/>
+                        <af:button text="IMEI" id="b11" action="ACT-ERP-IN-0004-IMEI">
+                                <af:setActionListener from="#{bindings.Rnoteno.inputValue}"
+                                to="#{pageFlowScope.ERPSolIMSPageFlowBean.ERPSolGRNNO}"/>
+                                <af:setActionListener from="#{row.bindings.ItemRefId.inputValue}"
+                                                to="#{pageFlowScope.ERPSolIMSPageFlowBean.ERPSolProductId}"/>      
+                        </af:button>
                       </af:column>
                       <af:column headerText="#{bindings.InReceivedItemsLinesDetCRUD.hints.Lineno.label}" id="c1"
                                  width="80" displayIndex="-1">

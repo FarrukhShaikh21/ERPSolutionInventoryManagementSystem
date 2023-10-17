@@ -58,6 +58,7 @@ public class ERPSolIMSBean {
     String ERPSolScanType="B";
     String ERPSolProductId;
     String ERPSolSTNNO;
+    String ERPSolGRNNO;
     RichPopup ERPSolImeiPopup;
 //    RichInputText ERPSolImeiBoxText;
     String ERPSolImeiString;
@@ -260,6 +261,16 @@ public class ERPSolIMSBean {
         System.out.println("5435");    
         
     }
+    
+    public void erpSolGRNIMEI(ValueChangeEvent erpvce) {
+        if (erpvce.getNewValue()==null) {
+            return ;
+        }
+        doInserterpSolGRNImeiBox(erpvce.getNewValue().toString(),"I");
+    //        AdfFacesContext.getCurrentInstance().addPartialTarget(getERPSolImeiBoxText());
+        System.out.println("5435");    
+        
+    }
 
     public void erpSolSTNBOX(ValueChangeEvent erpvce) {
         if (erpvce.getNewValue()==null) {
@@ -268,6 +279,16 @@ public class ERPSolIMSBean {
         doInserterpSolSTNImeiBox(erpvce.getNewValue().toString(),"B");
 //        AdfFacesContext.getCurrentInstance().addPartialTarget(getERPSolImeiBoxText());
         System.out.println("5435");    
+        
+    }
+ 
+    public void erpSolGRNBOX(ValueChangeEvent erpvce) {
+        if (erpvce.getNewValue()==null) {
+            return ;
+        }
+        doInserterpSolGRNImeiBox(erpvce.getNewValue().toString(),"B");
+    //        AdfFacesContext.getCurrentInstance().addPartialTarget(getERPSolImeiBoxText());
+        System.out.println("grnimei");    
         
     }
     
@@ -319,7 +340,53 @@ public class ERPSolIMSBean {
         
     }
 
-
+    public void doInserterpSolGRNImeiBox(String pImeiBox, String pValueType) {
+        if (pImeiBox==null) {
+            return ;
+        }
+        System.out.println("1so");
+        DCBindingContainer bc = (DCBindingContainer) ERPSolGlobalViewBean.doGetERPBindings();
+        System.out.println("2so");
+        DCDataControl dc = bc.getDataControl();
+        
+        System.out.println("3");
+        String ERPSolPlsql="begin ?:=PKG_GRN.FUNC_GRN_IMEI_BOX_VALIDATION('"+getERPSolGRNNO()+"','"+pImeiBox+"','"+pValueType+"','"+getERPSolProductId()+"'); end;";
+        System.out.println(ERPSolPlsql +"ERPSolPlsql");
+        System.out.println("4");
+        DBTransaction erpsoldbt=(DBTransaction)dc.getApplicationModule().getTransaction();
+        System.out.println("5");
+        CallableStatement cs = erpsoldbt.createCallableStatement(ERPSolPlsql, DBTransaction.DEFAULT);
+        try {
+                     System.out.println("6");
+                     cs.registerOutParameter(1, Types.VARCHAR);
+                     System.out.println("7");
+                     cs.executeUpdate();
+                     System.out.println("8");
+                     ERPSolPlsql=cs.getString(1);
+                     System.out.println("9");
+                     if (ERPSolPlsql.equals("ERPSOLSUCCESS"))
+                     {  
+                         
+                         erpsoldbt.commit();
+                     dc.getApplicationModule().findViewObject("InReceivedItemsSnoDetCRUD").executeQuery();
+    //                         dc.getApplicationModule().findViewObject("SoSalesOrderViewCRUD").getCurrentRow().setAttribute("txtIMEIAndBox", null);
+                     }
+                     else {
+                         FacesContext.getCurrentInstance().addMessage(null , new FacesMessage(ERPSolPlsql));
+                //                throw new JboException(ERPSolPlsql);
+                     }
+                 } catch (SQLException e) {
+                e.printStackTrace();
+                     
+                 }
+                 finally{
+                    try {
+                        cs.close();
+                    } catch (SQLException e) {
+                    }
+                }
+        
+    }
     public void doERPSolScanRebateImei2(ValueChangeEvent erpvcevt) {
         System.out.println(erpvcevt.getNewValue()+ " get new value");
         System.out.println("one");
@@ -530,6 +597,14 @@ public class ERPSolIMSBean {
                                                             " UPPER(CONCAT(DOCUMENT_ID,STORE_NAME))", "DocumentId", "Description", 10);
         return ResultList;
         
-    }    
+    }
+
+    public void setERPSolGRNNO(String ERPSolGRNNO) {
+        this.ERPSolGRNNO = ERPSolGRNNO;
+    }
+
+    public String getERPSolGRNNO() {
+        return ERPSolGRNNO;
+    }
 }
 
