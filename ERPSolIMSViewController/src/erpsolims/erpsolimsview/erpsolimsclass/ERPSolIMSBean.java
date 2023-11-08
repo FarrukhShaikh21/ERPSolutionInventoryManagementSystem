@@ -578,6 +578,43 @@ public class ERPSolIMSBean {
         return null;
     }
 
+    public String doERPSolSTAReport() {
+        BindingContainer bc = ERPSolGlobalViewBean.doGetERPBindings();
+        DCIteratorBinding ib=(DCIteratorBinding)bc.get("InItemTransferNoteCRUDIterator");
+        ApplicationModule am=ib.getViewObject().getApplicationModule();
+        ViewObject vo=am.findViewObject("QVOGRN");
+        if (vo!=null) {
+            vo.remove();
+       }
+        
+        vo=am.createViewObjectFromQueryStmt("QVOGRN", "select PARAMETER_VALUE FROM so_sales_parameter a where a.Parameter_Id='REPORT_SERVER_URL'");
+        vo.executeQuery();
+        String pReportUrl=vo.first().getAttribute(0).toString();
+        vo.remove();
+        vo=am.createViewObjectFromQueryStmt("QVOGRN", "select PATH PATH FROM SYSTEM a where a.PROJECTID='IN' ");
+        vo.executeQuery();
+        BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
+        System.out.println("b");
+        AttributeBinding Rnoteno                =(AttributeBinding)ERPSolbc.getControlBinding("Stnno");
+        String pReportPath=vo.first().getAttribute(0).toString()+"REPORTS\\\\";
+        System.out.println(pReportPath);
+        pReportPath=pReportPath+"RPT_STA.RDF";
+        
+    
+        
+        String reportParameter="";
+        reportParameter="P_GRN_NO="+ (Rnoteno.getInputValue()==null?"":Rnoteno.getInputValue());
+        reportParameter+="&USER="+ERPSolGlobClassModel.doGetUserCode();
+        pReportUrl=pReportUrl.replace("<P_REPORT_PATH>", pReportPath);
+        pReportUrl=pReportUrl.replace("<P_REPORT_PARAMETERS>", reportParameter);
+        
+        System.out.println(pReportPath);
+        System.out.println(reportParameter);
+        System.out.println(pReportUrl);
+        
+        doErpSolOpenReportTab(pReportUrl);
+        return null;
+    }
     public List<SelectItem> doERPSolGetAutoSuggestedInUnsubmitDoc(String pStringValues) {
         List<SelectItem> ResultList=new ArrayList<SelectItem>();
         System.out.println("a");
