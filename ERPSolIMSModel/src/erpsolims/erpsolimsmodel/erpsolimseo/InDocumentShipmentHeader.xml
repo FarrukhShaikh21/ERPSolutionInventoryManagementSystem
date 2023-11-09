@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="InDocumentShipmentHeader"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="IN_DOCUMENT_SHIPMENT_HEADER"
+  AliasName="InDocumentShipmentHeader"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="ShipmentHeaderSno"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="SHIPMENT_HEADER_SNO"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="IN_DOCUMENT_SHIPMENT_HEADER"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="ShipmentHeaderId"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="SHIPMENT_HEADER_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="IN_DOCUMENT_SHIPMENT_HEADER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Locationid"
+    Precision="15"
+    ColumnName="LOCATIONID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="IN_DOCUMENT_SHIPMENT_HEADER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ShipmentDate"
+    IsNotNull="true"
+    ColumnName="SHIPMENT_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="IN_DOCUMENT_SHIPMENT_HEADER"/>
+  <Attribute
+    Name="DepartureFrom"
+    Precision="50"
+    ColumnName="DEPARTURE_FROM"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="IN_DOCUMENT_SHIPMENT_HEADER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="VehicleNo"
+    Precision="20"
+    ColumnName="VEHICLE_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="IN_DOCUMENT_SHIPMENT_HEADER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DriverName"
+    Precision="50"
+    ColumnName="DRIVER_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="IN_DOCUMENT_SHIPMENT_HEADER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DriverContactNo"
+    Precision="20"
+    ColumnName="DRIVER_CONTACT_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="IN_DOCUMENT_SHIPMENT_HEADER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    Precision="20"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="IN_DOCUMENT_SHIPMENT_HEADER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="IN_DOCUMENT_SHIPMENT_HEADER"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="20"
+    ColumnName="MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="IN_DOCUMENT_SHIPMENT_HEADER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedDate"
+    ColumnName="MODIFIED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="IN_DOCUMENT_SHIPMENT_HEADER"/>
+  <AccessorAttribute
+    Name="InDocumentShipmentLines"
+    Association="erpsolims.erpsolimsmodel.erpsolimsassoc.InDocShipmentHeaderInDocShipLinesShipHeaderSnoAssoc"
+    AssociationEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InDocShipmentHeaderInDocShipLinesShipHeaderSnoAssoc.InDocumentShipmentLines"
+    AssociationOtherEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InDocShipmentHeaderInDocShipLinesShipHeaderSnoAssoc.InDocumentShipmentHeader"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="PkInDocumentShipmentHeader"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_IN_DOCUMENT_SHIPMENT_HEADER"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InDocumentShipmentHeader.ShipmentHeaderSno"/>
+    </AttrArray>
+  </Key>
+</Entity>
