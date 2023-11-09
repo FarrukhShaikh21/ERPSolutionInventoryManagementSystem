@@ -65,6 +65,12 @@
   <ViewUsage
     Name="VWDocumentIdForInUnsubmitAutoSuggestRO"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsqvo.VWDocumentIdForInUnsubmitQVO"/>
+  <ViewUsage
+    Name="InDocumentShipmentHeaderCRUD"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InDocumentShipmentHeaderVO"/>
+  <ViewUsage
+    Name="InDocumentShipmentLinesDetCRUD"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InDocumentShipmentLinesVO"/>
   <ViewLinkUsage
     Name="FkInRecItemLinRnoteseqLink1"
     ViewLinkObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.FkInRecItemLinRnoteseqLink"
@@ -94,6 +100,12 @@
     ViewLinkObjectName="erpsolims.erpsolimsmodel.erpsolimslink.InItemsInStoreItemsItemIDLink"
     SrcViewUsageName="erpsolims.erpsolimsmodel.erpsolimsam.ERPSolIMSAppModule.InItemsViewCRUD"
     DstViewUsageName="erpsolims.erpsolimsmodel.erpsolimsam.ERPSolIMSAppModule.InStoreItemsDetCRUD"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="InDocShipmentHeaderInDocShipLinesShipHeaderSnoLink1"
+    ViewLinkObjectName="erpsolims.erpsolimsmodel.erpsolimslink.InDocShipmentHeaderInDocShipLinesShipHeaderSnoLink"
+    SrcViewUsageName="erpsolims.erpsolimsmodel.erpsolimsam.ERPSolIMSAppModule.InDocumentShipmentHeaderCRUD"
+    DstViewUsageName="erpsolims.erpsolimsmodel.erpsolimsam.ERPSolIMSAppModule.InDocumentShipmentLinesDetCRUD"
     Reversed="false"/>
   <ResourceBundle>
     <PropertiesBundle

@@ -13,6 +13,29 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="AccAllLocationsView"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllLocationsView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LovLocationid"
+    ListVOName="AccAllLocationsView"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Locationid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Locationid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="LocationDescription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="InDocumentShipmentHeader"
     Entity="erpsolims.erpsolimsmodel.erpsolimseo.InDocumentShipmentHeader"/>
@@ -35,7 +58,15 @@
     PrecisionRule="true"
     EntityAttrName="Locationid"
     EntityUsage="InDocumentShipmentHeader"
-    AliasName="LOCATIONID"/>
+    AliasName="LOCATIONID"
+    LOVName="LovLocationid">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ShipmentDate"
     IsNotNull="true"
@@ -91,9 +122,27 @@
     EntityAttrName="ModifiedDate"
     EntityUsage="InDocumentShipmentHeader"
     AliasName="MODIFIED_DATE"/>
+  <ViewAttribute
+    Name="Storeid"
+    PrecisionRule="true"
+    EntityAttrName="Storeid"
+    EntityUsage="InDocumentShipmentHeader"
+    AliasName="STOREID"/>
+  <ViewAttribute
+    Name="Posted"
+    PrecisionRule="true"
+    EntityAttrName="Posted"
+    EntityUsage="InDocumentShipmentHeader"
+    AliasName="POSTED"/>
   <ViewLinkAccessor
     Name="InDocumentShipmentLinesVO"
     ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.InDocShipmentHeaderInDocShipLinesShipHeaderSnoLink"
     Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AllStoresView"
+    ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.AllStoresInDocumentShipmentHeaderStoreIdLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
     IsUpdateable="false"/>
 </ViewObject>

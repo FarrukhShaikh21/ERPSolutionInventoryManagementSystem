@@ -51,7 +51,7 @@
     IsNotNull="true"
     ColumnName="SHIPMENT_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="IN_DOCUMENT_SHIPMENT_HEADER"/>
   <Attribute
@@ -118,7 +118,7 @@
     Name="CreatedDate"
     ColumnName="CREATED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="IN_DOCUMENT_SHIPMENT_HEADER"/>
   <Attribute
@@ -137,9 +137,48 @@
     Name="ModifiedDate"
     ColumnName="MODIFIED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="IN_DOCUMENT_SHIPMENT_HEADER"/>
+  <Attribute
+    Name="Posted"
+    Precision="1"
+    ColumnName="POSTED"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="IN_DOCUMENT_SHIPMENT_HEADER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Storeid"
+    Precision="15"
+    ColumnName="STOREID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="IN_DOCUMENT_SHIPMENT_HEADER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="txtStoreName"
+    Precision="80"
+    ColumnName="TXT_STORE_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="IN_DOCUMENT_SHIPMENT_HEADER">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[AllStores?.StoreName]]></TransientExpression>
+    <Dependencies>
+      <Item
+        Value="Storeid"/>
+    </Dependencies>
+  </Attribute>
   <AccessorAttribute
     Name="InDocumentShipmentLines"
     Association="erpsolims.erpsolimsmodel.erpsolimsassoc.InDocShipmentHeaderInDocShipLinesShipHeaderSnoAssoc"
@@ -147,6 +186,13 @@
     AssociationOtherEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.InDocShipmentHeaderInDocShipLinesShipHeaderSnoAssoc.InDocumentShipmentHeader"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="AllStores"
+    Association="erpsolims.erpsolimsmodel.erpsolimsassoc.AllStoresInDocumentShipmentHeaderStoreIdAssoc"
+    AssociationEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.AllStoresInDocumentShipmentHeaderStoreIdAssoc.AllStores"
+    AssociationOtherEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.AllStoresInDocumentShipmentHeaderStoreIdAssoc.InDocumentShipmentHeader"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="PkInDocumentShipmentHeader"
     PrimaryKey="true">
@@ -155,6 +201,17 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InDocumentShipmentHeader.ShipmentHeaderSno"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_InDocumentShipmentHeader">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="XPKALL_STORES"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_IN_DOCUMENT_SHIPMENT_HEADER"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InDocumentShipmentHeader.Storeid"/>
     </AttrArray>
   </Key>
 </Entity>

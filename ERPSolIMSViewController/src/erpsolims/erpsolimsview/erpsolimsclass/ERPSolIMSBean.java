@@ -598,10 +598,9 @@ public class ERPSolIMSBean {
         AttributeBinding Rnoteno                =(AttributeBinding)ERPSolbc.getControlBinding("Stnno");
         String pReportPath=vo.first().getAttribute(0).toString()+"REPORTS\\\\";
         System.out.println(pReportPath);
-        pReportPath=pReportPath+"RPT_STA.RDF";
-        
-    
-        
+        String string = pReportPath = pReportPath + getERPSolReportName();
+
+
         String reportParameter="";
         reportParameter="P_GRN_NO="+ (Rnoteno.getInputValue()==null?"":Rnoteno.getInputValue());
         reportParameter+="&USER="+ERPSolGlobClassModel.doGetUserCode();

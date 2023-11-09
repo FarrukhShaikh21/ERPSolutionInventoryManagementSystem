@@ -191,16 +191,16 @@
                     <af:panelGridLayout id="pgl5">
                       <af:gridRow height="30px" id="gr4">
                         <af:gridCell marginStart="5px" width="15%" id="gc2" valign="middle">
-                          <af:outputLabel value="#{bindings.Stnno.hints.label}" id="ol5"/>
+                          <af:outputLabel value="#{bindings.ShipmentHeaderId.hints.label}" id="ol5"/>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="35%" id="gc3" valign="middle">
-                          <af:inputText value="#{bindings.Stnno.inputValue}" label="#{bindings.Stnno.hints.label}"
-                                        required="#{bindings.Stnno.hints.mandatory}"
-                                        columns="#{bindings.Stnno.hints.displayWidth}"
-                                        maximumLength="#{bindings.Stnno.hints.precision}"
-                                        shortDesc="#{bindings.Stnno.hints.tooltip}" id="it2" simple="true"
-                                        readOnly="true">
-                            <f:validator binding="#{bindings.Stnno.validator}"/>
+                          <af:inputText value="#{bindings.ShipmentHeaderId.inputValue}"
+                                        label="#{bindings.ShipmentHeaderId.hints.label}"
+                                        required="#{bindings.ShipmentHeaderId.hints.mandatory}"
+                                        columns="#{bindings.ShipmentHeaderId.hints.displayWidth}"
+                                        maximumLength="#{bindings.ShipmentHeaderId.hints.precision}"
+                                        shortDesc="#{bindings.ShipmentHeaderId.hints.tooltip}" id="it10">
+                            <f:validator binding="#{bindings.ShipmentHeaderId.validator}"/>
                           </af:inputText>
                           <af:inputText value="#{bindings.Posted.inputValue}" label="#{bindings.Posted.hints.label}"
                                         required="#{bindings.Posted.hints.mandatory}"
@@ -529,17 +529,6 @@
         <f:facet name="erptempleft"/>
       </af:pageTemplate>
     </af:form>
-    <f:facet name="metaContainer">
-      <af:resource type="javascript">function jserpcontrolEnterKey(erpevt) {
-
-      var _keyCode = erpevt.getKeyCode();
-      //check for Enter Key
-      if (_keyCode == AdfKeyStroke.ENTER_KEY ){    
-          var comp = erpevt.getSource();
-          AdfCustomEvent.queue(comp, "ERPEnterEvent", {erpvalue:comp.getSubmittedValue()}, true);
-          erpevt.cancel();
-      }
-   }</af:resource>
-    </f:facet>
+    <f:facet name="metaContainer"/>
   </af:document>
 </f:view>

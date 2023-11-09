@@ -583,6 +583,13 @@
     AssociationOtherEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.AllStoreInItemTransferNoteReceivingStoreIdAssoc.AllStores1"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="InDocumentShipmentHeader"
+    Association="erpsolims.erpsolimsmodel.erpsolimsassoc.AllStoresInDocumentShipmentHeaderStoreIdAssoc"
+    AssociationEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.AllStoresInDocumentShipmentHeaderStoreIdAssoc.InDocumentShipmentHeader"
+    AssociationOtherEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.AllStoresInDocumentShipmentHeaderStoreIdAssoc.AllStores"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="XpkallStores"
     PrimaryKey="true">
