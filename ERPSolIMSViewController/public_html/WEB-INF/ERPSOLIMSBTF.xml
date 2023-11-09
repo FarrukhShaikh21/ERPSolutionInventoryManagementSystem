@@ -145,6 +145,9 @@
         <fixed-outcome>ERP-ACT-IN-0109</fixed-outcome>
       </outcome>
     </method-call>
+    <view id="IN_0007">
+      <page>/IN_0007.jsf</page>
+    </view>
     <control-flow-rule id="__16">
       <from-activity-id>ExecuteWithParamsTransactionIMS</from-activity-id>
       <control-flow-case id="__17">
@@ -187,6 +190,10 @@
       <control-flow-case id="__55">
         <from-outcome>ERP-ACT-IN-0109</from-outcome>
         <to-activity-id>doSetInvReportDefForUnsubmit</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__59">
+        <from-outcome>ERP-ACT-IN-0007</from-outcome>
+        <to-activity-id>IN_0007</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__33">

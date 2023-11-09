@@ -71,6 +71,9 @@
   <ViewUsage
     Name="InDocumentShipmentLinesDetCRUD"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InDocumentShipmentLinesVO"/>
+  <ViewUsage
+    Name="VwIssueItemForDocumentShipmentRO"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsqvo.VwIssueItemForDocumentShipmentQVO"/>
   <ViewLinkUsage
     Name="FkInRecItemLinRnoteseqLink1"
     ViewLinkObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.FkInRecItemLinRnoteseqLink"

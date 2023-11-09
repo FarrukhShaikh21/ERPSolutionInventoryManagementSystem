@@ -671,7 +671,7 @@
       <property
          name="fromOutcome">ERP-ACT-IN-0109</property>
       <property
-         name="sdm:polyPoints">L50,225.6875,72.149414,-320.28418,415.09766,T50</property>
+         name="sdm:polyPoints">L54,225.6875,75.649414,-320.28418,415.09766,T50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall59">
@@ -695,5 +695,34 @@
          name="fromOutcome">ERP-ACT-IN-0109</property>
       <property
          name="sdm:polyPoints">B50,-320.28418,523.09766,-382.5,576.44824,T50</property>
+   </ControlFlowCase>
+   <View
+      id="View61">
+      <property
+         name="activityId">IN_0007</property>
+      <property
+         name="page">/IN_0007.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>IN_0007&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">373.79883</property>
+      <property
+         name="x">-526.5</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase63"
+      from="MethodCall7"
+      to="View61">
+      <property
+         name="fromOutcome">ERP-ACT-IN-0007</property>
+      <property
+         name="tosrcid">__59</property>
+      <property
+         name="fromsrcid">__31</property>
+      <property
+         name="sdm:polyPoints">L46,223.96976,68.649414,-485.5,373.44824,R50</property>
    </ControlFlowCase>
 </SDM>

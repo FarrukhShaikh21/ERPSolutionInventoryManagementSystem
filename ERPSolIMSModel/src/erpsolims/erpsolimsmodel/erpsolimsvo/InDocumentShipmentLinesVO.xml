@@ -13,6 +13,47 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="AccVwIssueItemForDocumentShipmentQVO"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsqvo.VwIssueItemForDocumentShipmentQVO"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="P_ADF_LOCATIONID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[InDocumentShipmentHeaderVO?.Locationid==null?"-1":InDocumentShipmentHeaderVO?.Locationid]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="P_ADF_STOREID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[InDocumentShipmentHeaderVO?.Storeid==null?"-1":InDocumentShipmentHeaderVO?.Storeid]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ListBinding
+    Name="LovDocumentId"
+    ListVOName="AccVwIssueItemForDocumentShipmentQVO"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0"
+    ComboRowCountHint="10">
+    <AttrArray Name="AttrNames">
+      <Item Value="DocumentId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="DocumentType"/>
+      <Item Value="Quantity"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DocumentId"/>
+      <Item Value="DocTypeId"/>
+      <Item Value="Quantity"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="DocumentId"/>
+      <Item Value="DocTypeId"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="InDocumentShipmentLines"
     Entity="erpsolims.erpsolimsmodel.erpsolimseo.InDocumentShipmentLines"/>
@@ -35,7 +76,15 @@
     PrecisionRule="true"
     EntityAttrName="DocumentId"
     EntityUsage="InDocumentShipmentLines"
-    AliasName="DOCUMENT_ID"/>
+    AliasName="DOCUMENT_ID"
+    LOVName="LovDocumentId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="DocumentType"
     PrecisionRule="true"

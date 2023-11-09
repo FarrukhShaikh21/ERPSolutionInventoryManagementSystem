@@ -598,11 +598,48 @@ public class ERPSolIMSBean {
         AttributeBinding Rnoteno                =(AttributeBinding)ERPSolbc.getControlBinding("Stnno");
         String pReportPath=vo.first().getAttribute(0).toString()+"REPORTS\\\\";
         System.out.println(pReportPath);
-        String string = pReportPath = pReportPath + getERPSolReportName();
+        pReportPath = pReportPath + getERPSolReportName();
 
 
         String reportParameter="";
         reportParameter="P_GRN_NO="+ (Rnoteno.getInputValue()==null?"":Rnoteno.getInputValue());
+        reportParameter+="&USER="+ERPSolGlobClassModel.doGetUserCode();
+        pReportUrl=pReportUrl.replace("<P_REPORT_PATH>", pReportPath);
+        pReportUrl=pReportUrl.replace("<P_REPORT_PARAMETERS>", reportParameter);
+        
+        System.out.println(pReportPath);
+        System.out.println(reportParameter);
+        System.out.println(pReportUrl);
+        
+        doErpSolOpenReportTab(pReportUrl);
+        return null;
+    }
+    
+    public String doERPSolDocumentReport() {
+        BindingContainer bc = ERPSolGlobalViewBean.doGetERPBindings();
+        DCIteratorBinding ib=(DCIteratorBinding)bc.get("InDocumentShipmentHeaderCRUDIterator");
+        ApplicationModule am=ib.getViewObject().getApplicationModule();
+        ViewObject vo=am.findViewObject("QVOGRN");
+        if (vo!=null) {
+            vo.remove();
+       }
+        
+        vo=am.createViewObjectFromQueryStmt("QVOGRN", "select PARAMETER_VALUE FROM so_sales_parameter a where a.Parameter_Id='REPORT_SERVER_URL'");
+        vo.executeQuery();
+        String pReportUrl=vo.first().getAttribute(0).toString();
+        vo.remove();
+        vo=am.createViewObjectFromQueryStmt("QVOGRN", "select PATH PATH FROM SYSTEM a where a.PROJECTID='IN' ");
+        vo.executeQuery();
+        BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
+        System.out.println("b");
+        AttributeBinding DocumentCode                =(AttributeBinding)ERPSolbc.getControlBinding("ShipmentHeaderId");
+        String pReportPath=vo.first().getAttribute(0).toString()+"REPORTS\\\\";
+        System.out.println(pReportPath);
+        pReportPath = pReportPath + "RPT_DOCUMENT_SHIP.RDF";
+
+
+        String reportParameter="";
+        reportParameter="P_SHIPMENT_NO="+ (DocumentCode.getInputValue()==null?"":DocumentCode.getInputValue());
         reportParameter+="&USER="+ERPSolGlobClassModel.doGetUserCode();
         pReportUrl=pReportUrl.replace("<P_REPORT_PATH>", pReportPath);
         pReportUrl=pReportUrl.replace("<P_REPORT_PARAMETERS>", reportParameter);
@@ -635,6 +672,27 @@ public class ERPSolIMSBean {
         
     }
 
+    public List<SelectItem> doERPSolGetAutoSuggestedDocumentShipment(String pStringValues) {
+        List<SelectItem> ResultList=new ArrayList<SelectItem>();
+        System.out.println("a");
+        BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
+        DCIteratorBinding ERPSolIB=(DCIteratorBinding)ERPSolbc.get("InDocumentShipmentHeaderCRUDIterator");
+        ApplicationModule ERPSolAM=ERPSolIB.getViewObject().getApplicationModule();
+        System.out.println("b");
+        String ERPLocid=ERPSolGlobClassModel.doGetUserLocationCode();
+        AttributeBinding ERPLocationid =(AttributeBinding)ERPSolbc.getControlBinding("Locationid");
+        AttributeBinding ERPStoreid =(AttributeBinding)ERPSolbc.getControlBinding("Storeid");
+        ViewObject vo=ERPSolAM.findViewObject("VwIssueItemForDocumentShipmentRO");
+        vo.setNamedWhereClauseParam("P_ADF_STOREID", ERPStoreid.getInputValue());
+        vo.setNamedWhereClauseParam("P_ADF_LOCATIONID", ERPLocationid.getInputValue());
+        vo.executeQuery();
+        System.out.println("d");
+        System.out.println(ERPLocid);//ERPSolGlobalViewBean.
+        ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "VwIssueItemForDocumentShipmentRO",
+                                                            " UPPER(CONCAT(DOCUMENT_ID,STORE_NAME))", "DocumentId", "Description", 10);
+        return ResultList;
+        
+    }
     public void setERPSolGRNNO(String ERPSolGRNNO) {
         this.ERPSolGRNNO = ERPSolGRNNO;
     }
