@@ -49,6 +49,8 @@
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="20"/>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InDocumentShipmentHeader.ShipmentHeaderId_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
@@ -333,4 +335,8 @@
       <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InDocumentShipmentHeader.Storeid"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolims.erpsolimsmodel.ERPSolIMSModelBundle"/>
+  </ResourceBundle>
 </Entity>

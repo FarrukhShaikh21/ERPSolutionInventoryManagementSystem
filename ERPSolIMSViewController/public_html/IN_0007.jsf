@@ -38,8 +38,9 @@
                       <af:toolbar id="t1">
                         <af:button actionListener="#{bindings.doSuperviseShipment.execute}" text="doSuperviseShipment"
                                    disabled="#{!bindings.doSuperviseShipment.enabled}" id="b10" rendered="false"/>
-                        <af:button text="Search" id="b12" action="ERP-ACT-IN-0002-SEARCH"
-                                   icon="#{resource['images:imgFind.png']}" iconPosition="top" accessKey="s"/>
+                        <af:button text="Search" id="b12"
+                                   icon="#{resource['images:imgFind.png']}" iconPosition="top" accessKey="s"
+                                   action="ACT-GOTO-IN_0007_SEARCH"/>
                         <af:button text="Print Preview" id="b14" icon="#{resource['images:imgPrintPreview.png']}"
                                    iconPosition="top"
                                    action="#{pageFlowScope.ERPSolIMSPageFlowBean.doERPSolDocumentReport}"/>

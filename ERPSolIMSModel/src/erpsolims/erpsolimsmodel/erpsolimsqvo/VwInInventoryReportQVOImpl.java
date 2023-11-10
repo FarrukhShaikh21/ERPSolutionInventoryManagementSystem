@@ -35,7 +35,20 @@ public class VwInInventoryReportQVOImpl extends ViewObjectImpl implements VwInIn
               this.first().setAttribute("Companyid", ERPSolGlobClassModel.doGetUserCompanyCode());
               this.first().setAttribute("txtFromDate", this.first().getAttribute("txtDefaultDate"));
               this.first().setAttribute("txtToDate", this.first().getAttribute("txtDefaultDate"));
-              vo.remove();
+        if (vo!=null) {
+            vo.remove();
+        }
+        vo=getApplicationModule().createViewObjectFromQueryStmt("QvoLImsoc", "select STOREID, STORE_NAME from ALL_STORES where STOREID='"+ERPSolGlobClassModel.doGetUserStoreCode()+"'");
+        vo.executeQuery();
+        
+        this.first().setAttribute("Storeid", vo.first().getAttribute(0));
+        this.first().setAttribute("txtStoreName", vo.first().getAttribute(1));
+        
+        if (vo!=null) {
+            vo.remove();
+        }
+        
+        
     }
     
     public void doExecuteStockAgingProcedure() {

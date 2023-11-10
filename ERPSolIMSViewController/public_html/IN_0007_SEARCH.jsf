@@ -22,13 +22,15 @@
                               id="t2">
                         <af:column headerText="#{bindings.InDocumentShipmentHeaderCRUD.hints.ShipmentHeaderId.label}"
                                    id="c1">
+                            <af:link text="#{row.bindings.ShipmentHeaderId.inputValue}" id="l1" partialSubmit="true"
+                                     action="ACT-BACK-TO-IN_0007"/>
                             <af:inputText value="#{row.bindings.ShipmentHeaderId.inputValue}"
                                           label="#{bindings.InDocumentShipmentHeaderCRUD.hints.ShipmentHeaderId.label}"
                                           required="#{bindings.InDocumentShipmentHeaderCRUD.hints.ShipmentHeaderId.mandatory}"
                                           columns="#{bindings.InDocumentShipmentHeaderCRUD.hints.ShipmentHeaderId.displayWidth}"
                                           maximumLength="#{bindings.InDocumentShipmentHeaderCRUD.hints.ShipmentHeaderId.precision}"
                                           shortDesc="#{bindings.InDocumentShipmentHeaderCRUD.hints.ShipmentHeaderId.tooltip}"
-                                          id="it1" readOnly="true">
+                                          id="it1" readOnly="true" rendered="false">
                                 <f:validator binding="#{row.bindings.ShipmentHeaderId.validator}"/>
                             </af:inputText>
                         </af:column>
@@ -140,7 +142,7 @@
                         <af:toolbar id="t1">
                             <af:link text="Back To Document Shipment" id="l2"
                                      icon="#{resource['images:imgExitForm.png']}" partialSubmit="true"
-                                     action="ACT-ERP-IN-0002-SEARCH-BACK"/>
+                                     action="ACT-BACK-TO-IN_0007"/>
                         </af:toolbar>
                     </f:facet>
                 </af:panelHeader>

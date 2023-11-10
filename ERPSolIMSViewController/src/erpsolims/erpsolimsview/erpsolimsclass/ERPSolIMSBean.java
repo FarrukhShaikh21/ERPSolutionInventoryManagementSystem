@@ -468,7 +468,10 @@ public class ERPSolIMSBean {
         reportParameter+="&FROM_DATE="+(ERPFromDate.getInputValue()==null?"":doERPSolGetFormatDate(""+ERPFromDate.getInputValue() ) );
         reportParameter+="&TO_DATE="+(ERPToDate.getInputValue()==null?"":doERPSolGetFormatDate(""+ERPToDate.getInputValue())  );
         reportParameter+="&USER="+ERPSolGlobClassModel.doGetUserCode();
-        
+        if (  !ERPSolGlobClassModel.doGetUserHLevel().equals("A")) {
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Please Select Store."));
+            return null;
+       }
         pReportUrl=pReportUrl.replace("<P_REPORT_PATH>", pReportPath);
         pReportUrl=pReportUrl.replace("<P_REPORT_PARAMETERS>", reportParameter);
         

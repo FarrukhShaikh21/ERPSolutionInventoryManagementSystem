@@ -8,6 +8,7 @@
               id="InDocumentShipmentHeaderCRUDIterator"/>
     <iterator Binds="InDocumentShipmentLinesDetCRUD" RangeSize="25" DataControl="ERPSolIMSAppModuleDataControl"
               id="InDocumentShipmentLinesDetCRUDIterator"/>
+    <page path="erpsoltemp.erpsoltempview.pageDefs.ERPSolutionTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="InDocumentShipmentHeaderCRUDIterator" id="ShipmentHeaderId">
