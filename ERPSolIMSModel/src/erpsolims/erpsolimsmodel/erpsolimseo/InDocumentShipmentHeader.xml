@@ -228,7 +228,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="IN_DOCUMENT_SHIPMENT_HEADER">
+    TableName="IN_DOCUMENT_SHIPMENT_HEADER"
+    DefaultValue="N">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>

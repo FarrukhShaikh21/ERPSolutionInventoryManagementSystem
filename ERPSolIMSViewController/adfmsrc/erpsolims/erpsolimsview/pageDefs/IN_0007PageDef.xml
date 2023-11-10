@@ -72,6 +72,8 @@
           <Item Value="DocumentId"/>
           <Item Value="DocumentType"/>
           <Item Value="Quantity"/>
+          <Item Value="ShipmentLinesSno"/>
+          <Item Value="ShipmentHeaderSno"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -79,5 +81,10 @@
             Action="removeCurrentRow"/>
     <action IterBinding="InDocumentShipmentLinesDetCRUDIterator" id="CreateInsert1" RequiresUpdateModel="true"
             Action="createInsertRow"/>
+    <methodAction IterBinding="InDocumentShipmentHeaderCRUDIterator" id="doSuperviseShipment" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="doSuperviseShipment" IsViewObjectMethod="false"
+                  DataControl="ERPSolIMSAppModuleDataControl"
+                  InstanceName="bindings.InDocumentShipmentHeaderCRUDIterator.currentRow" IsLocalObjectReference="true"
+                  ReturnName="data.ERPSolIMSAppModuleDataControl.methodResults.doSuperviseShipment_doSuperviseShipment_doSuperviseShipment_result"/>
   </bindings>
 </pageDefinition>

@@ -12,7 +12,14 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  RowClass="erpsolims.erpsolimsmodel.erpsolimsvo.InDocumentShipmentHeaderVORowImpl"
+  RowInterface="erpsolims.erpsolimsmodel.erpsolimsvo.common.InDocumentShipmentHeaderVORow"
+  ClientRowProxyName="erpsolims.erpsolimsmodel.erpsolimsvo.client.InDocumentShipmentHeaderVORowClient">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <ViewAccessor
     Name="AccAllLocationsView"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllLocationsView"
@@ -194,6 +201,103 @@
     EntityAttrName="Remarks"
     EntityUsage="InDocumentShipmentHeader"
     AliasName="REMARKS"/>
+  <ViewCriteria
+    Name="InDocumentShipmentHeaderFindVC"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.InDocumentShipmentHeaderVO"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="InDocumentShipmentHeaderVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="Locationid"
+        ViewAttribute="Locationid"
+        Operator="="
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="ShipmentDate"
+        ViewAttribute="ShipmentDate"
+        Operator="BETWEEN"
+        Conjunction="AND"
+        Required="Optional">
+        <ViewCriteriaItemValue
+          Name="InDocumentShipmentHeaderVOCriteria_InDocumentShipmentHeaderVOCriteria_row_0_AllStoresView_vcval0"
+          Value=""/>
+      </ViewCriteriaItem>
+      <ViewCriteriaItem
+        Name="VehicleNo"
+        ViewAttribute="VehicleNo"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="DriverName"
+        ViewAttribute="DriverName"
+        Operator="STARTSWITH"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="DriverContactNo"
+        ViewAttribute="DriverContactNo"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Posted"
+        ViewAttribute="Posted"
+        Operator="="
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="InDocumentShipmentHeaderVOCriteria_InDocumentShipmentHeaderVOCriteria_row_0_AllStoresView"
+        ViewAttribute="AllStoresView"
+        Operator="EXISTS"
+        Conjunction="AND"
+        IsNestedCriteria="true"
+        Required="Optional">
+        <ViewCriteria
+          Name="AllStoresViewNestedCriteria"
+          ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllStoresView"
+          Conjunction="AND">
+          <ViewCriteriaRow
+            Name="AllStoresViewNestedCriteria_row_0"
+            UpperColumns="1">
+            <ViewCriteriaItem
+              Name="StoreName"
+              ViewAttribute="StoreName"
+              Operator="CONTAINS"
+              Conjunction="AND"
+              Value=""
+              Required="Optional"/>
+          </ViewCriteriaRow>
+        </ViewCriteria>
+      </ViewCriteriaItem>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="InDocumentShipmentLinesVO"
     ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.InDocShipmentHeaderInDocShipLinesShipHeaderSnoLink"
@@ -205,4 +309,14 @@
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
+  <ClientRowInterface
+    Name="__rowClientInterface">
+    <Method
+      Name="doSuperviseShipment"
+      MethodName="doSuperviseShipment">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+    </Method>
+  </ClientRowInterface>
 </ViewObject>

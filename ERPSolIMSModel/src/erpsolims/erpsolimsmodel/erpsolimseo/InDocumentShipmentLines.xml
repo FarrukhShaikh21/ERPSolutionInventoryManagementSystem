@@ -66,7 +66,8 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="IN_DOCUMENT_SHIPMENT_LINES"/>
+    TableName="IN_DOCUMENT_SHIPMENT_LINES"
+    DefaultValue="0"/>
   <Attribute
     Name="CreatedBy"
     Precision="20"
@@ -120,9 +121,8 @@
       <Attr Name="_DBObjectName" Value="IN_DOCUMENT_SHIPMENT_LINES"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InDocumentShipmentLines.DocumentType"/>
       <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InDocumentShipmentLines.DocumentId"/>
-      <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InDocumentShipmentLines.ShipmentHeaderSno"/>
+      <Item Value="erpsolims.erpsolimsmodel.erpsolimseo.InDocumentShipmentLines.DocumentType"/>
     </AttrArray>
   </Key>
   <Key
@@ -159,6 +159,19 @@
         Value="ShipmentHeaderSno"/>
     </validation:OnAttributes>
   </validation:UniqueKeyValidationBean>
+  <validation:CompareValidationBean
+    Name="InDocumentShipmentLinesRule0"
+    ResId="erpsolims.erpsolimsmodel.erpsolimseo.InDocumentShipmentLines_Rule_1"
+    OnAttribute="Quantity"
+    OperandType="LITERAL"
+    Inverse="false"
+    CompareType="GREATERTHAN"
+    CompareValue="0">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="Quantity"/>
+    </validation:OnAttributes>
+  </validation:CompareValidationBean>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="erpsolims.erpsolimsmodel.ERPSolIMSModelBundle"/>

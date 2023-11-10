@@ -12,7 +12,12 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  RowClass="erpsolims.erpsolimsmodel.erpsolimsvo.InDocumentShipmentLinesVORowImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <ViewAccessor
     Name="AccVwIssueItemForDocumentShipmentQVO"
     ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsqvo.VwIssueItemForDocumentShipmentQVO"

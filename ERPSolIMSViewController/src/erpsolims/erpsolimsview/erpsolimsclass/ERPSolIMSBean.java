@@ -238,6 +238,13 @@ public class ERPSolIMSBean {
             binding.execute();
         }
     }
+    
+    public void doERPSolShipmentDialogConfirm(DialogEvent erpsolde) {
+        if (erpsolde.getOutcome()==DialogEvent.Outcome.yes) {
+            OperationBinding binding = ERPSolGlobalViewBean.doIsERPSolGerOperationBinding("doSuperviseShipment");
+            binding.execute();
+        }
+    }
 
     public void setERPSolImeiPopup(RichPopup ERPSolImeiPopup) {
         this.ERPSolImeiPopup = ERPSolImeiPopup;
