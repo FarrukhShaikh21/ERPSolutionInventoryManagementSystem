@@ -31,10 +31,15 @@
     <ViewCriteriaUsage
       Name="AllStoresViewByStoreVC"
       FullName="erpsolims.erpsolimsmodel.erpsolimsvo.AllStoresView.AllStoresViewByStoreVC"/>
+    <ViewCriteriaUsage
+      Name="AllStoresViewByUserVC"
+      FullName="erpsolims.erpsolimsmodel.erpsolimsvo.AllStoresView.AllStoresViewByUserVC"/>
     <ParameterMap>
       <PIMap Variable="P_ADF_LOCATIONID">
-        <TransientExpression
-          trustMode="untrusted"><![CDATA[Locationid==null?"-1":Locationid]]></TransientExpression>
+        <TransientExpression><![CDATA[Locationid==null?"-1":Locationid]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="P_ADF_USERID">
+        <TransientExpression><![CDATA[erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel.doGetUserCode()]]></TransientExpression>
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
@@ -79,7 +84,7 @@
       <Item Value="StoreName"/>
     </AttrArray>
     <DisplayCriteria
-      Hint="hide"/>
+      Name="AllStoresViewCriteriaFindVC"/>
   </ListBinding>
   <EntityUsage
     Name="InDocumentShipmentHeader"
@@ -232,45 +237,36 @@
         ViewAttribute="Locationid"
         Operator="="
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="ShipmentDate"
         ViewAttribute="ShipmentDate"
         Operator="BETWEEN"
         Conjunction="AND"
-        Required="Optional">
-        <ViewCriteriaItemValue
-          Name="InDocumentShipmentHeaderVOCriteria_InDocumentShipmentHeaderVOCriteria_row_0_AllStoresView_vcval0"
-          Value=""/>
-      </ViewCriteriaItem>
+        Required="Optional"/>
       <ViewCriteriaItem
         Name="VehicleNo"
         ViewAttribute="VehicleNo"
         Operator="CONTAINS"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="DriverName"
         ViewAttribute="DriverName"
         Operator="STARTSWITH"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="DriverContactNo"
         ViewAttribute="DriverContactNo"
         Operator="CONTAINS"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="Posted"
         ViewAttribute="Posted"
         Operator="="
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="InDocumentShipmentHeaderVOCriteria_InDocumentShipmentHeaderVOCriteria_row_0_AllStoresView"
@@ -291,7 +287,6 @@
               ViewAttribute="StoreName"
               Operator="CONTAINS"
               Conjunction="AND"
-              Value=""
               Required="Optional"/>
           </ViewCriteriaRow>
         </ViewCriteria>

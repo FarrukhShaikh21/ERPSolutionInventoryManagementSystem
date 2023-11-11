@@ -590,6 +590,13 @@
     AssociationOtherEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.AllStoresInDocumentShipmentHeaderStoreIdAssoc.AllStores"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="SysUserStore"
+    Association="erpsolims.erpsolimsmodel.erpsolimsassoc.AllStoresSysUserStoresStoreIdAssoc"
+    AssociationEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.AllStoresSysUserStoresStoreIdAssoc.SysUserStore"
+    AssociationOtherEnd="erpsolims.erpsolimsmodel.erpsolimsassoc.AllStoresSysUserStoresStoreIdAssoc.AllStores"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="XpkallStores"
     PrimaryKey="true">

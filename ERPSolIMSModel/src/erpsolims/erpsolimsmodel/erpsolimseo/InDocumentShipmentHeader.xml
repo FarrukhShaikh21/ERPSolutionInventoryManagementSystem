@@ -279,6 +279,8 @@
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="20"/>
+        <LABEL
+          ResId="erpsolims.erpsolimsmodel.erpsolimseo.InDocumentShipmentHeader.txtStoreName_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>

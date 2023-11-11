@@ -28,10 +28,17 @@
     <ViewCriteriaUsage
       Name="AllStoresViewByStoreVC"
       FullName="erpsolims.erpsolimsmodel.erpsolimsvo.AllStoresView.AllStoresViewByStoreVC"/>
+    <ViewCriteriaUsage
+      Name="AllStoresViewByUserVC"
+      FullName="erpsolims.erpsolimsmodel.erpsolimsvo.AllStoresView.AllStoresViewByUserVC"/>
     <ParameterMap>
       <PIMap Variable="P_ADF_LOCATIONID">
         <TransientExpression
-          trustMode="untrusted"><![CDATA[Locationid]]></TransientExpression>
+          trustMode="trusted"><![CDATA[Locationid]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="P_ADF_USERID">
+        <TransientExpression
+          trustMode="trusted"><![CDATA[erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel.doGetUserCode()]]></TransientExpression>
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
@@ -509,29 +516,6 @@
         </ViewCriteria>
       </ViewCriteriaItem>
       <ViewCriteriaItem
-        Name="InItemTransferNoteViewCriteria_InItemTransferNoteViewCriteria_row_0_AllStoresView1"
-        ViewAttribute="AllStoresView1"
-        Operator="EXISTS"
-        Conjunction="AND"
-        IsNestedCriteria="true"
-        Required="Optional">
-        <ViewCriteria
-          Name="AllStoresViewNestedCriteria"
-          ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllStoresView"
-          Conjunction="AND">
-          <ViewCriteriaRow
-            Name="AllStoresViewNestedCriteria_row_0"
-            UpperColumns="1">
-            <ViewCriteriaItem
-              Name="ReceivingStoreName"
-              ViewAttribute="ReceivingStoreName"
-              Operator="STARTSWITH"
-              Conjunction="AND"
-              Required="Optional"/>
-          </ViewCriteriaRow>
-        </ViewCriteria>
-      </ViewCriteriaItem>
-      <ViewCriteriaItem
         Name="InItemTransferNoteViewCriteria_InItemTransferNoteViewCriteria_row_0_AllLocationsView"
         ViewAttribute="AllLocationsView"
         Operator="EXISTS"
@@ -555,6 +539,29 @@
               Name="LocationDescription"
               ViewAttribute="LocationDescription"
               Operator="CONTAINS"
+              Conjunction="AND"
+              Required="Optional"/>
+          </ViewCriteriaRow>
+        </ViewCriteria>
+      </ViewCriteriaItem>
+      <ViewCriteriaItem
+        Name="InItemTransferNoteViewCriteria_InItemTransferNoteViewCriteria_row_0_AllStoresView1"
+        ViewAttribute="AllStoresView1"
+        Operator="EXISTS"
+        Conjunction="AND"
+        IsNestedCriteria="true"
+        Required="Optional">
+        <ViewCriteria
+          Name="AllStoresViewNestedCriteria"
+          ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllStoresView"
+          Conjunction="AND">
+          <ViewCriteriaRow
+            Name="AllStoresViewNestedCriteria_row_0"
+            UpperColumns="1">
+            <ViewCriteriaItem
+              Name="ReceivingStoreName"
+              ViewAttribute="ReceivingStoreName"
+              Operator="STARTSWITH"
               Conjunction="AND"
               Required="Optional"/>
           </ViewCriteriaRow>

@@ -17,6 +17,10 @@
     Name="P_ADF_LOCATIONID"
     Kind="viewcriteria"
     Type="java.lang.String"/>
+  <Variable
+    Name="P_ADF_USERID"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
   <EntityUsage
     Name="AllStores"
     Entity="erpsolims.erpsolimsmodel.erpsolimseo.AllStores"/>
@@ -361,6 +365,122 @@
         Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>
+  <ViewCriteria
+    Name="AllStoresViewByUserVC"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllStoresView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="AllStoresViewByUserVC_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="SysUserStoreVO"
+        ViewAttribute="SysUserStoreVO"
+        Operator="EXISTS"
+        Conjunction="AND"
+        IsNestedCriteria="true"
+        Required="Optional">
+        <ViewCriteria
+          Name="SysUserStoreVONestedCriteria"
+          ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.SysUserStoreVO"
+          Conjunction="AND">
+          <ViewCriteriaRow
+            Name="SysUserStoreVONestedCriteria_row_0"
+            UpperColumns="1">
+            <ViewCriteriaItem
+              Name="Storeid"
+              ViewAttribute="Storeid"
+              Operator="ISNOTBLANK"
+              Conjunction="AND"
+              Required="Optional"/>
+            <ViewCriteriaItem
+              Name="Userid"
+              ViewAttribute="Userid"
+              Operator="="
+              Conjunction="AND"
+              Value=":P_ADF_USERID"
+              IsBindVarValue="true"
+              Required="Optional"/>
+          </ViewCriteriaRow>
+        </ViewCriteria>
+      </ViewCriteriaItem>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ViewCriteria
+    Name="AllStoresViewCriteriaFindVC"
+    ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllStoresView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="AllStoresViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="AllStoresViewCriteria_AllStoresViewCriteria_row_0_AllStoresView"
+        ViewAttribute="AllStoresView"
+        Operator="EXISTS"
+        Conjunction="AND"
+        IsNestedCriteria="true"
+        Required="Optional">
+        <ViewCriteria
+          Name="AllStoresViewSelfNestedCriteria"
+          ViewObjectName="erpsolims.erpsolimsmodel.erpsolimsvo.AllStoresView"
+          Conjunction="AND">
+          <ViewCriteriaRow
+            Name="AllStoresViewSelfNestedCriteria_row_0"
+            UpperColumns="1">
+            <ViewCriteriaItem
+              Name="AllStoresViewSelfNestedCriteria_AllStoresViewSelfNestedCriteria_row_0_Storeid"
+              ViewAttribute="Storeid"
+              Operator="CONTAINS"
+              Conjunction="AND"
+              Required="Optional"/>
+            <ViewCriteriaItem
+              Name="StoreName"
+              ViewAttribute="StoreName"
+              Operator="CONTAINS"
+              Conjunction="AND"
+              Required="Optional"/>
+          </ViewCriteriaRow>
+        </ViewCriteria>
+      </ViewCriteriaItem>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="AllStoresView"
     ViewLink="erpsolims.erpsolimsmodel.erpsolimsvo.RPstoreLink"
@@ -384,6 +504,11 @@
   <ViewLinkAccessor
     Name="InDocumentShipmentHeaderVO"
     ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.AllStoresInDocumentShipmentHeaderStoreIdLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="SysUserStoreVO"
+    ViewLink="erpsolims.erpsolimsmodel.erpsolimslink.AllStoresSysUserStoresStoreIdLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>
