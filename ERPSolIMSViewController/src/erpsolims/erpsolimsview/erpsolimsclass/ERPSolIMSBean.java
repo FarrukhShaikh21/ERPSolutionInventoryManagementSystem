@@ -128,7 +128,7 @@ public class ERPSolIMSBean {
         System.out.println("d");
         System.out.println(ERPLocid.getInputValue());//ERPSolGlobalViewBean.
         ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "AllStoresAutoSuggestRO",
-                                                            "LOCATIONID='"+ERPLocid.getInputValue()+"' AND UPPER(CONCAT(STOREID,STORE_NAME))", "StoreName", "Storeid", 10,"ERPSolIMSAppModuleDataControl");
+                                                            " EXISTS(SELECT '' FROM SYS_USER_STORE SUS WHERE SUS.STOREID=AllStores.STOREID AND SUS.USERID='"+ERPSolGlobalViewBean.doGetUserCode()+"') AND LOCATIONID='"+ERPLocid.getInputValue()+"' AND UPPER(CONCAT(STOREID,STORE_NAME))", "StoreName", "Storeid", 10,"ERPSolIMSAppModuleDataControl");
         return ResultList;
         
     }
@@ -468,7 +468,8 @@ public class ERPSolIMSBean {
         reportParameter+="&FROM_DATE="+(ERPFromDate.getInputValue()==null?"":doERPSolGetFormatDate(""+ERPFromDate.getInputValue() ) );
         reportParameter+="&TO_DATE="+(ERPToDate.getInputValue()==null?"":doERPSolGetFormatDate(""+ERPToDate.getInputValue())  );
         reportParameter+="&USER="+ERPSolGlobClassModel.doGetUserCode();
-        if (  !ERPSolGlobClassModel.doGetUserHLevel().equals("A")) {
+        System.out.println(ERPSolGlobClassModel.doGetUserHLevel()+"hlevel");
+        if (  (!ERPSolGlobClassModel.doGetUserHLevel().equals("A")) && ERPStoreid.getInputValue()==null) {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Please Select Store."));
             return null;
        }

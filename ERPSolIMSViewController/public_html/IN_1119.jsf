@@ -52,8 +52,7 @@
                                                                                   required="#{bindings.txtStoreName.hints.mandatory}"
                                                                                   columns="#{bindings.txtStoreName.hints.displayWidth}"
                                                                                   shortDesc="#{bindings.txtStoreName.hints.tooltip}"
-                                                                                  simple="true" autoSubmit="true"
-                                                                                  disabled="#{pageFlowScope.ERPSolTempBean.LERPSolHLevel!='A'}">
+                                                                                  simple="true" autoSubmit="true">
                                                         <f:validator binding="#{bindings.txtStoreName.validator}"/>
                                                         <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolIMSPageFlowBean.doERPSolGetAutoSuggestedStoreValues}"/>
                                                     </af:inputComboboxListOfValues>
@@ -103,7 +102,8 @@
                                                                                   required="#{bindings.txtLocationName.hints.mandatory}"
                                                                                   columns="#{bindings.txtLocationName.hints.displayWidth}"
                                                                                   shortDesc="#{bindings.txtLocationName.hints.tooltip}"
-                                                                                  simple="true" autoSubmit="true">
+                                                                                  simple="true" autoSubmit="true"
+                                                                                  disabled="#{pageFlowScope.ERPSolTempBean.LERPSolHLevel!='A'}">
                                                         <f:validator binding="#{bindings.txtLocationName.validator}"/>
                                                         <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolIMSPageFlowBean.doERPSolGetAutoSuggestedLocationValues}"/>
                                                     </af:inputComboboxListOfValues>
