@@ -40,28 +40,34 @@
       </SchemaBasedProperties>
     </Properties>
   </Variable>
-  <SQLQuery><![CDATA[SELECT  so.source_doc_ref DOCUMENT_ID, 
-        SO.ISSUE_DATE DOCUMENT_DATE,    
-        ST.STORE_NAME STORE_NAME,            
-        SO.ISSUEDOCTYPEID DOC_TYPE_ID,            
-        SO.LOCATIONID   ,       
-        ST.STORE_NAME||' '||ISSUEDOCTYPEID||' '|| to_char(SO.ISSUE_DATE,'dd/mm/rrrr') DESCRIPTION    , 
-        SUM(IIL.SHELFQTY) QUANTITY   
-FROM    In_Issued_Items SO  , 
-        ALL_STORES ST    , 
-        in_issued_items_lines iil      
-WHERE   SO.POSTED='Y' 
-and     so.issueno=iil.issueno 
-AND     SO.STOREID=ST.STOREID  
-AND NOT EXISTS(SELECT '' FROM IN_DOCUMENT_SHIPMENT_LINES DSL WHERE DSL.DOCUMENT_ID=SO.SOURCE_DOC_REF AND DSL.DOCUMENT_TYPE=SO.ISSUEDOCTYPEID)
-AND     SO.LOCATIONID=:P_ADF_LOCATIONID    
+  <SQLQuery><![CDATA[SELECT  so.source_doc_ref DOCUMENT_ID,  
+        SO.ISSUE_DATE DOCUMENT_DATE,     
+        ST.STORE_NAME STORE_NAME,             
+        SO.ISSUEDOCTYPEID DOC_TYPE_ID,             
+        SO.LOCATIONID   ,        
+        ST.STORE_NAME||' '||ISSUEDOCTYPEID||' '|| to_char(SO.ISSUE_DATE,'dd/mm/rrrr') DESCRIPTION    ,  
+        SUM(IIL.SHELFQTY) QUANTITY    
+FROM    In_Issued_Items SO  ,  
+        ALL_STORES ST    ,  
+        in_issued_items_lines iil , 
+        (SELECT SYSDATE-SP.PARAMETER_VALUE VW_SHIP_DAYS 
+         FROM SO_SALES_PARAMETER SP 
+         WHERE SP.PARAMETER_ID='IN_SHIPMENT_DAYS' 
+         ) VW_DAYS     
+WHERE   SO.POSTED='Y'  
+and     so.issueno=iil.issueno  
+AND     SO.STOREID=ST.STOREID   
+AND NOT EXISTS(SELECT '' FROM IN_DOCUMENT_SHIPMENT_LINES DSL WHERE DSL.DOCUMENT_ID=SO.SOURCE_DOC_REF AND DSL.DOCUMENT_TYPE=SO.ISSUEDOCTYPEID) 
+AND     SO.LOCATIONID=:P_ADF_LOCATIONID 
 AND     SO.STOREID=:P_ADF_STOREID 
-GROUP BY so.source_doc_ref , 
-        SO.ISSUE_DATE ,    
-        ST.STORE_NAME ,            
-        SO.ISSUEDOCTYPEID ,            
-        SO.LOCATIONID   ,       
-        ST.STORE_NAME||' '||ISSUEDOCTYPEID||' '|| to_char(SO.ISSUE_DATE,'dd/mm/rrrr')]]></SQLQuery>
+AND     SO.ISSUE_DATE>=VW_DAYS.VW_SHIP_DAYS 
+GROUP BY so.source_doc_ref ,  
+        SO.ISSUE_DATE ,     
+        ST.STORE_NAME ,             
+        SO.ISSUEDOCTYPEID ,             
+        SO.LOCATIONID   ,        
+        ST.STORE_NAME||' '||ISSUEDOCTYPEID||' '|| to_char(SO.ISSUE_DATE,'dd/mm/rrrr') 
+        ORDER BY SO.ISSUE_DATE DESC]]></SQLQuery>
   <ViewAttribute
     Name="DocumentId"
     IsUpdateable="false"
