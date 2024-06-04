@@ -6,11 +6,12 @@
         <af:form id="f1">
             <af:pageTemplate viewId="/ERPSolutionTemplate.jsf" value="#{bindings.ptb1}" id="pt1">
                 <f:facet name="erptempmain">
-                    <af:panelBox id="pb1" showDisclosure="false">
+                    <af:panelBox id="pb1" showDisclosure="false" text="Inventory Management System">
                         <f:facet name="toolbar">
                             <af:link id="l1" action="ERPSOL-RETURN-FROM-IMS" partialSubmit="true"
                                      icon="#{resource['images:imgHome.png']}"/>
                         </f:facet>
+                        <af:image source="#{resource['images:imgInvengory.png']}" id="i1"/>
                     </af:panelBox>
                 </f:facet>
                 <f:facet name="erptempleft"/>
